@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 
@@ -19,6 +20,9 @@ public class Larry : MonoBehaviour
     //Geschwindigkeitsvariable. Gibt die Bewegungsgeschwindigkeit an.
     public float geschwindigkeit=0.1f;
 
+    public InputAction drehenAktion;
+    public InputAction sammelnAktion;
+
     //Richtungsvektor. Gibt die Bewegungsrichtung an
     private Vector2 bewegung;
     //Körperkomponente
@@ -26,16 +30,30 @@ public class Larry : MonoBehaviour
     
     private void Awake()
     {
+        //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
+        drehenAktion.performed += RichtungWechsel;
         //Hole Rigidbody Komponente des Objekts
         rigidbody2d = GetComponent<Rigidbody2D>();
         //Initialisierung des Richtungsvektors
         bewegung = new Vector2(0f, 0f);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        //Aktiviere InputActions
+        drehenAktion.Enable();
+        sammelnAktion.Enable();
+    }
+    private void OnDisable()
+    {
+        //Deaktiviere InputActions
+        drehenAktion.Disable();
+        sammelnAktion.Disable();
+    }
+    private void OnDestroy()
+    {
+        //Löse Verknüpfung
+        drehenAktion.performed -= RichtungWechsel;
     }
 
     void FixedUpdate()
@@ -75,7 +93,7 @@ public class Larry : MonoBehaviour
     /// <summary>
     /// Wechselt die aktuelle Bewegungsrichtung im Uhrzeigersinn
     /// </summary>
-    void RichtungWechseln()
+    void RichtungWechsel(InputAction.CallbackContext obj)
     {
         if (richtung != Richtung.Links)
         {
