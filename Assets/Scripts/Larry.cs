@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 using UnityEngine.InputSystem;
@@ -25,6 +26,10 @@ public class Larry : MonoBehaviour
     //InputActions um auf Tastendrücke zu reagieren
     public InputAction drehenAktion;
     public InputAction sammelAktion;
+
+    public String Zielwort="Larry";
+
+    public List<TextMeshProUGUI> tmp_Zielwort;
 
     //Richtungsvektor. Gibt die Bewegungsrichtung an
     private Vector2 bewegung;
@@ -61,7 +66,7 @@ public class Larry : MonoBehaviour
     }
     private void OnDestroy()
     {
-        //Löse Verknüpfung
+        //Löse Verknüpfungen
         drehenAktion.performed -= RichtungWechsel;
         sammelAktion.performed -= Sammeln;
     }
@@ -114,7 +119,6 @@ public class Larry : MonoBehaviour
         {
             richtung = 0;
         }
-        Debug.Log(bewegung.ToString());
         //Wechselt die Richtung je nach Richtungsvariable
         switch (richtung)
         {
@@ -139,24 +143,45 @@ public class Larry : MonoBehaviour
     /// </summary>
     private void Sammeln(InputAction.CallbackContext context)
     {
+       
         if (sammelObjekt != null)
         {
             //TODO Objekt entfernen, Buchstaben prüfen, Wort anzeigen
+            //Wenn der Objektname nur ein Zeichen lang ist und im Lösungswort enthalten ist
+            if (sammelObjekt.name.Length == 1 && Zielwort.ToUpper().Contains(sammelObjekt.name))
+            {               
+                //Für jeden Buchstaben des Zielworts
+                foreach(TextMeshProUGUI text in tmp_Zielwort)
+                {
+                    //Aktiviere das passende Textobjekt
+                    if (text.name == sammelObjekt.name)
+                    {
+                        text.gameObject.SetActive(true);
+                    }
+                }
+                //Deaktiviere den Buchstaben
+                sammelObjekt.SetActive(false);
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag=="Sammelbar")
+        //Bei Betreten eines sammelbaren Objekts
+        if (collision.CompareTag("Sammelbar"))
         {
+            //Speichere das Objekt
             sammelObjekt = collision.gameObject;
+            Debug.Log(sammelObjekt.name);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Sammelbar")
+        //Bei Verlassen eines sammelbaren Objekts
+        if (collision.CompareTag("Sammelbar"))
         {
+            //Vergiss das Objekt
             sammelObjekt = null;
         }
     }
