@@ -18,8 +18,9 @@ public class Larry : MonoBehaviour
     //Richtungsvariable. Gibt die Bewegungsrichtung an. [SerializeField] ermöglicht Zugriff über Unity Editor
     [SerializeField] Richtung richtung;
     //Geschwindigkeitsvariable. Gibt die Bewegungsgeschwindigkeit an.
-    public float geschwindigkeit=0.1f;
+    [Range(0.01f,0.2f)] public float geschwindigkeit=0.1f;
 
+    //InputActions um auf Tastendrücke zu reagieren
     public InputAction drehenAktion;
     public InputAction sammelnAktion;
 
@@ -58,7 +59,6 @@ public class Larry : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Wechselt die Richtung je nach Richtungsvariable
         switch (richtung)
         {
             case Richtung.Oben:
@@ -95,13 +95,34 @@ public class Larry : MonoBehaviour
     /// </summary>
     void RichtungWechsel(InputAction.CallbackContext obj)
     {
-        if (richtung != Richtung.Links)
+        //Wenn nicht der letzte Eintrag im Richtungsenum erreicht ist, wechsle einen Eintrag weiter
+        if ( ((int)richtung) != 3)
         {
             richtung++;
         }
+        //Sollte der letzte Eintrag erreicht sein, springe zum ersten
         else
         {
-            richtung = Richtung.Oben;
+            richtung = 0;
+        }
+        Debug.Log(bewegung.ToString());
+        //Wechselt die Richtung je nach Richtungsvariable
+        switch (richtung)
+        {
+            case Richtung.Oben:
+                transform.Rotate(new Vector3(0f, 0f, -90f));
+                break;
+            case Richtung.Unten:
+                transform.Rotate(new Vector3(0f, 0f, -90f));
+                break;
+            case Richtung.Rechts:
+                transform.Rotate(new Vector3(0f, 0f, -90f));
+                break;
+            case Richtung.Links:
+                transform.Rotate(new Vector3(0f, 0f, -90f));
+                break;
+            default:
+                break;
         }
     }
 }
