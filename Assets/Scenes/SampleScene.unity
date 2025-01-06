@@ -180,7 +180,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &92852804
 RectTransform:
   m_ObjectHideFlags: 0
@@ -445,7 +445,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &392201587
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1426,7 +1426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1327755942
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1560,7 +1560,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1421428504
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1694,7 +1694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1445590610
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2314,6 +2314,30 @@ PrefabInstance:
       propertyPath: sammelAktion.m_Name
       value: Sammel Aktion
       objectReference: {fileID: 0}
+    - target: {fileID: 1543054937310726826, guid: 9bb04bc1734e61e49b1a60d372bf5f1c, type: 3}
+      propertyPath: tmp_Zielwort.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1543054937310726826, guid: 9bb04bc1734e61e49b1a60d372bf5f1c, type: 3}
+      propertyPath: tmp_Zielwort.Array.data[0]
+      value: 
+      objectReference: {fileID: 1421428505}
+    - target: {fileID: 1543054937310726826, guid: 9bb04bc1734e61e49b1a60d372bf5f1c, type: 3}
+      propertyPath: tmp_Zielwort.Array.data[1]
+      value: 
+      objectReference: {fileID: 392201588}
+    - target: {fileID: 1543054937310726826, guid: 9bb04bc1734e61e49b1a60d372bf5f1c, type: 3}
+      propertyPath: tmp_Zielwort.Array.data[2]
+      value: 
+      objectReference: {fileID: 1445590611}
+    - target: {fileID: 1543054937310726826, guid: 9bb04bc1734e61e49b1a60d372bf5f1c, type: 3}
+      propertyPath: tmp_Zielwort.Array.data[3]
+      value: 
+      objectReference: {fileID: 1327755943}
+    - target: {fileID: 1543054937310726826, guid: 9bb04bc1734e61e49b1a60d372bf5f1c, type: 3}
+      propertyPath: tmp_Zielwort.Array.data[4]
+      value: 
+      objectReference: {fileID: 92852805}
     - target: {fileID: 1543054937310726826, guid: 9bb04bc1734e61e49b1a60d372bf5f1c, type: 3}
       propertyPath: sammelAktion.m_SingletonActionBindings.Array.size
       value: 1
