@@ -13,25 +13,32 @@ public class Larry : MonoBehaviour
     //Richtungsvariable. Gibt die Bewegungsrichtung an. [SerializeField] ermöglicht Zugriff über Unity Editor
     [SerializeField] Richtung richtung;
     //Geschwindigkeitsvariable. Gibt die Bewegungsgeschwindigkeit an.
-    [Range(0.01f,0.2f)] public float geschwindigkeit=0.1f;
-
+    [Range(0.1f,5f)] public float geschwindigkeit=1f;
     //InputActions um auf Tastendrücke zu reagieren
     public InputAction drehenAktion;
     public InputAction sammelAktion;
 
     public String Zielwort="Larry";
+    /// <summary>
+    /// Zeit die eine Kurve dauert (Testzweck)
+    /// </summary>
+    [SerializeField]float drehZeit = 100f;
 
+    //Buchstabenliste für Zielwort
     public List<TextMeshProUGUI> tmp_Zielwort;
 
     //Richtungsvektor. Gibt die Bewegungsrichtung an
-    private Vector2 bewegung;
+    //public Vector2 bewegung;
     //Körperkomponente
     private Rigidbody2D rigidbody2d;
     //Sammelbares Objekt, das berührt wird
     private GameObject sammelObjekt;
     //Richtungspfeil, der berührt wird
     private GameObject pfeilObjekt;
-    
+    //Richtung in die sich bewegt werden soll
+    Vector2 zielrichtung;
+
+
     private void Awake()
     {
         //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
@@ -40,12 +47,8 @@ public class Larry : MonoBehaviour
         sammelAktion.performed += Sammeln;
         //Hole Rigidbody Komponente des Objekts
         rigidbody2d = GetComponent<Rigidbody2D>();
-        //Initialisierung des Richtungsvektors
-        bewegung = new Vector2(0f, 0f);
+        zielrichtung = transform.up;
     }
-
-    
-
     private void OnEnable()
     {
         //Aktiviere InputActions
@@ -67,35 +70,45 @@ public class Larry : MonoBehaviour
 
     void FixedUpdate()
     {
-        switch (richtung)
+        //Geschwindigkeit mit der die Kurve passiert wird
+        float drehGeschwindigkeit = 0f;
+        
+        //Bestimme neue Zielrichtung
+        switch(richtung)
         {
             case Richtung.Oben:
-                bewegung.y = 1f;    //Vertikal aufwärts
-                bewegung.x = 0f;    //Horizontal neutral
+                zielrichtung = Vector2.up;
                 break;
             case Richtung.Unten:
-                bewegung.y = -1f;   //Vertikal abwärts
-                bewegung.x = 0f;    //Horizontal neutral
+                zielrichtung = Vector2.down;
                 break;
             case Richtung.Rechts:
-                bewegung.x = 1f;    //Horizontal aufwärts
-                bewegung.y = 0f;    //Vertikal neutral
+                zielrichtung = Vector2.right;                
                 break;
             case Richtung.Links:
-                bewegung.x = -1f;   //Horizontal abwärts
-                bewegung.y = 0f;    //Vertikal neutral
-                break;
-            default:
+                zielrichtung = Vector2.left;
                 break;
         }
-        //Multipliziere Richtung mit Geschwindigkeit um die Bewegungsgeschwindigkeit zu steuern
-        bewegung *= geschwindigkeit;
-
-        //Addiere aktuelle Position zur Bewegungsrichtung dazu
-        bewegung.x += transform.position.x;
-        bewegung.y += transform.position.y;
-        //Bewege das Objekt an die Position
-        rigidbody2d.MovePosition(bewegung);
+        
+        if(Vector2.SignedAngle(transform.up,zielrichtung) !=0f)
+        {
+            if (Vector2.SignedAngle(transform.up, zielrichtung) >= 0f)
+            {
+                drehGeschwindigkeit = drehZeit * Time.fixedDeltaTime; //Linkskurve
+            }
+            else if (Vector2.SignedAngle(transform.up, zielrichtung) <= 0f)
+            {
+                drehGeschwindigkeit = -drehZeit * Time.fixedDeltaTime; //Rechtskurve
+            }
+        }
+        else
+        {
+            drehGeschwindigkeit = 0;
+        }
+        // Rotation
+        transform.Rotate(0, 0, drehGeschwindigkeit);
+        // Vorwärtsbewegung basierend auf der aktuellen Richtung
+        rigidbody2d.velocity = transform.up * geschwindigkeit;
     }
 
     /// <summary>
@@ -119,7 +132,7 @@ public class Larry : MonoBehaviour
         }
         */
 
-        /* //Drehung durch Pfeile
+        //Drehung durch Pfeile
         //Wenn ein Pfeil gespeichert ist
         if (pfeilObjekt != null)
         {
@@ -141,52 +154,27 @@ public class Larry : MonoBehaviour
                 default:
                     break;
             }
-        }
-        */
-
-        //Drehung der Pfeile
-        //Wenn ein Pfeil gespeichert ist
-        if (pfeilObjekt != null)
-        {
-            //Wechsle in die Richtung des Pfeils
-            switch (pfeilObjekt.tag)
-            {
-                case "PfeilRechts":
-                    richtung = Richtung.Rechts;
-                    break;
-                case "PfeilOben":
-                    richtung = Richtung.Oben;
-                    break;
-                case "PfeilLinks":
-                    richtung = Richtung.Links;
-                    break;
-                case "PfeilUnten":
-                    richtung = Richtung.Unten;
-                    break;
-                default:
-                    break;
-            }
+            //StartCoroutine(nameof(Kurvefahren));
         }
 
-
-        //Wechselt die Richtung je nach Richtungsvariable
-        switch (richtung)
-        {
-            case Richtung.Oben:
-                transform.eulerAngles = new Vector3 (0f, 0f, 0f);
-                break;
-            case Richtung.Unten:
-                transform.eulerAngles = new Vector3(0f, 0f, 180f);
-                break;
-            case Richtung.Rechts:
-                transform.eulerAngles = new Vector3(0f, 0f, -90f);
-                break;
-            case Richtung.Links:
-                transform.eulerAngles = new Vector3(0f, 0f, 90f);
-                break;
-            default:
-                break;
-        }
+        //Wechsle Bewegungsrichtung
+        //switch (richtung)
+        //{
+        //    case Richtung.Oben:
+        //        bewegung = Vector2.up; //Vektor aufwärts
+        //        break;
+        //    case Richtung.Unten:
+        //        bewegung = Vector2.down; //Vektor abwärts
+        //        break;
+        //    case Richtung.Rechts:
+        //        bewegung = Vector2.right; //Vektor rechts
+        //        break;
+        //    case Richtung.Links:
+        //        bewegung = Vector2.left; //Vektor links
+        //        break;
+        //    default:
+        //        break;
+        //}
     }
     /// <summary>
     /// Sammelt das Momentan berührte Objekt ein
@@ -222,53 +210,31 @@ public class Larry : MonoBehaviour
         {
             //Speichere das Objekt
             sammelObjekt = collision.gameObject;
-            Debug.Log(sammelObjekt.name);
         }
         //Bei Kontakt mit einem Pfeil
         if(collision.CompareTag("PfeilRechts"))
         {
             //Speichere das Objekt
             pfeilObjekt = collision.gameObject;
-            Debug.Log(pfeilObjekt.name);
         }
         else if (collision.CompareTag("PfeilLinks"))
         {
             //Speichere das Objekt
             pfeilObjekt = collision.gameObject;
-            Debug.Log(pfeilObjekt.name);
         }
         else if (collision.CompareTag("PfeilOben"))
         {
             //Speichere das Objekt
             pfeilObjekt = collision.gameObject;
-            Debug.Log(pfeilObjekt.name);
         }
         else if (collision.CompareTag("PfeilUnten"))
         {
             //Speichere das Objekt
             pfeilObjekt = collision.gameObject;
-            Debug.Log(pfeilObjekt.name);
         }
         else if (collision.CompareTag("PfeilDrehend"))
         {
             richtung = collision.GetComponent<DrehenderPfeil>().richtung;
-            switch (richtung)
-            {
-                case Richtung.Oben:
-                    transform.eulerAngles = new Vector3(0f, 0f, 0f);
-                    break;
-                case Richtung.Unten:
-                    transform.eulerAngles = new Vector3(0f, 0f, 180f);
-                    break;
-                case Richtung.Rechts:
-                    transform.eulerAngles = new Vector3(0f, 0f, -90f);
-                    break;
-                case Richtung.Links:
-                    transform.eulerAngles = new Vector3(0f, 0f, 90f);
-                    break;
-                default:
-                    break;
-            }
         }
     }
 
@@ -283,25 +249,21 @@ public class Larry : MonoBehaviour
         //Bei Verlassen eines Pfeils
         else if (collision.CompareTag("PfeilRechts"))
         {
-            Debug.Log(pfeilObjekt.name + "Weg");
             //Vergiss den Pfeil
             pfeilObjekt = null;
         }
         else if (collision.CompareTag("PfeilLinks"))
         {
-            Debug.Log(pfeilObjekt.name + "Weg");
             //Vergiss den Pfeil
             pfeilObjekt = null;
         }
         else if (collision.CompareTag("PfeilOben"))
         {
-            Debug.Log(pfeilObjekt.name + "Weg");
             //Vergiss den Pfeil
             pfeilObjekt = null;
         }
         else if (collision.CompareTag("PfeilUnten"))
         {
-            Debug.Log(pfeilObjekt.name + "Weg");
             //Vergiss den Pfeil
             pfeilObjekt = null;
         }
