@@ -45,11 +45,12 @@ public class DrehenderPfeil : MonoBehaviour
 
     private void RichtungWechsel(InputAction.CallbackContext context)
     {
+        //Wechsle zur nächsten Richtung aus der Richtungsliste
         if (richtungsListe.IndexOf(richtung) + 1 != richtungsListe.Count)
         {
             richtung = richtungsListe[richtungsListe.IndexOf(richtung) + 1];
         }
-        else 
+        else //Beginn am Ende der Liste von vorne
         { 
             richtung = richtungsListe [0];
         }
