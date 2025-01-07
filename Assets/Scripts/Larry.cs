@@ -9,15 +9,7 @@ using UnityEngine.InputSystem;
 
 
 public class Larry : MonoBehaviour
-{   
-    //Richtungsenum. Ordnet Zahlen Namen zu
-    enum Richtung
-    {
-        Oben,
-        Rechts,
-        Unten,
-        Links
-    }
+{  
     //Richtungsvariable. Gibt die Bewegungsrichtung an. [SerializeField] ermöglicht Zugriff über Unity Editor
     [SerializeField] Richtung richtung;
     //Geschwindigkeitsvariable. Gibt die Bewegungsgeschwindigkeit an.
@@ -112,13 +104,11 @@ public class Larry : MonoBehaviour
     void RichtungWechsel(InputAction.CallbackContext context)
     {
 
-        /* Bewegungsvariante 90 Grad Drehung
-        Debug.Log("WHAT");
+        /* //Bewegungsvariante 90 Grad Drehung
         //Wenn nicht der letzte Eintrag im Richtungsenum erreicht ist, wechsle einen Eintrag weiter
         if ( ((int)richtung) != 3)
         {
             richtung++;
-        Debug.Log("WHAT");
         }
         //Sollte der letzte Eintrag erreicht sein, springe zum ersten
         else
@@ -127,8 +117,9 @@ public class Larry : MonoBehaviour
         }
         
         }
-        Debug.Log("WHAT");
         */
+
+        /* //Drehung durch Pfeile
         //Wenn ein Pfeil gespeichert ist
         if (pfeilObjekt != null)
         {
@@ -151,6 +142,33 @@ public class Larry : MonoBehaviour
                     break;
             }
         }
+        */
+
+        //Drehung der Pfeile
+        //Wenn ein Pfeil gespeichert ist
+        if (pfeilObjekt != null)
+        {
+            //Wechsle in die Richtung des Pfeils
+            switch (pfeilObjekt.tag)
+            {
+                case "PfeilRechts":
+                    richtung = Richtung.Rechts;
+                    break;
+                case "PfeilOben":
+                    richtung = Richtung.Oben;
+                    break;
+                case "PfeilLinks":
+                    richtung = Richtung.Links;
+                    break;
+                case "PfeilUnten":
+                    richtung = Richtung.Unten;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
         //Wechselt die Richtung je nach Richtungsvariable
         switch (richtung)
         {
@@ -230,6 +248,27 @@ public class Larry : MonoBehaviour
             //Speichere das Objekt
             pfeilObjekt = collision.gameObject;
             Debug.Log(pfeilObjekt.name);
+        }
+        else if (collision.CompareTag("PfeilDrehend"))
+        {
+            richtung = collision.GetComponent<DrehenderPfeil>().richtung;
+            switch (richtung)
+            {
+                case Richtung.Oben:
+                    transform.eulerAngles = new Vector3(0f, 0f, 0f);
+                    break;
+                case Richtung.Unten:
+                    transform.eulerAngles = new Vector3(0f, 0f, 180f);
+                    break;
+                case Richtung.Rechts:
+                    transform.eulerAngles = new Vector3(0f, 0f, -90f);
+                    break;
+                case Richtung.Links:
+                    transform.eulerAngles = new Vector3(0f, 0f, 90f);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
