@@ -26,11 +26,29 @@ public class DrehenderPfeil : MonoBehaviour
     {
         //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
         drehenAktion.performed += RichtungWechsel;
+
+        //Wechselt die Richtung je nach Richtungsvariable
+        switch (richtung)
+        {
+            case Richtung.Oben:
+                transform.eulerAngles = new Vector3(0f, 0f, 0f);
+                break;
+            case Richtung.Unten:
+                transform.eulerAngles = new Vector3(0f, 0f, 180f);
+                break;
+            case Richtung.Rechts:
+                transform.eulerAngles = new Vector3(0f, 0f, -90f);
+                break;
+            case Richtung.Links:
+                transform.eulerAngles = new Vector3(0f, 0f, 90f);
+                break;
+            default:
+                break;
+        }
     }
     private void OnEnable()
     {
-        //Aktiviere InputActions
-        drehenAktion.Enable();
+        
     }
     private void OnDisable()
     {
@@ -73,4 +91,25 @@ public class DrehenderPfeil : MonoBehaviour
                 break;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.gameObject.name);
+        if (collision.CompareTag("Player"))
+        {
+            //Aktiviere InputActions
+            drehenAktion.Enable();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            //Aktiviere InputActions
+            drehenAktion.Disable();
+        }
+    }
+
+
 }

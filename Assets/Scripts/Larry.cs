@@ -12,17 +12,23 @@ public class Larry : MonoBehaviour
 {  
     //Richtungsvariable. Gibt die Bewegungsrichtung an. [SerializeField] ermöglicht Zugriff über Unity Editor
     [SerializeField] Richtung richtung;
-    //Geschwindigkeitsvariable. Gibt die Bewegungsgeschwindigkeit an.
+    /// <summary>
+    /// Geschwindigkeitsvariable. Gibt die Bewegungsgeschwindigkeit an.
+    /// </summary>
     [Range(0.1f,5f)] public float geschwindigkeit=1f;
     //InputActions um auf Tastendrücke zu reagieren
     public InputAction drehenAktion;
     public InputAction sammelAktion;
+    /// <summary>
+    /// Drehung mithilfe von Pfeilen oder fixe 90°
+    /// </summary>
+    public bool PfeilsteuerungON = true;
 
     public String Zielwort="Larry";
     /// <summary>
-    /// Zeit die eine Kurve dauert (Testzweck)
+    /// Tempo in dem Abgebogen wird (Testzweck)
     /// </summary>
-    [SerializeField]float drehZeit = 100f;
+    [SerializeField]float drehTempo = 100f;
 
     //Buchstabenliste für Zielwort
     public List<TextMeshProUGUI> tmp_Zielwort;
@@ -35,6 +41,8 @@ public class Larry : MonoBehaviour
     private GameObject sammelObjekt;
     //Richtungspfeil, der berührt wird
     private GameObject pfeilObjekt;
+    //Drehender Richtungspfeil, der berührt wird
+    private GameObject drehPfeilObjekt;
     //Richtung in die sich bewegt werden soll
     Vector2 zielrichtung;
 
@@ -94,11 +102,11 @@ public class Larry : MonoBehaviour
         {
             if (Vector2.SignedAngle(transform.up, zielrichtung) >= 0f)
             {
-                drehGeschwindigkeit = drehZeit * Time.fixedDeltaTime; //Linkskurve
+                drehGeschwindigkeit = drehTempo * Time.fixedDeltaTime; //Linkskurve
             }
             else if (Vector2.SignedAngle(transform.up, zielrichtung) <= 0f)
             {
-                drehGeschwindigkeit = -drehZeit * Time.fixedDeltaTime; //Rechtskurve
+                drehGeschwindigkeit = -drehTempo * Time.fixedDeltaTime; //Rechtskurve
             }
         }
         else
@@ -116,65 +124,47 @@ public class Larry : MonoBehaviour
     /// </summary>
     void RichtungWechsel(InputAction.CallbackContext context)
     {
-
-        /* //Bewegungsvariante 90 Grad Drehung
-        //Wenn nicht der letzte Eintrag im Richtungsenum erreicht ist, wechsle einen Eintrag weiter
-        if ( ((int)richtung) != 3)
+        if (!PfeilsteuerungON)
         {
-            richtung++;
-        }
-        //Sollte der letzte Eintrag erreicht sein, springe zum ersten
-        else
-        {
-            richtung = 0;
-        }
-        
-        }
-        */
-
-        //Drehung durch Pfeile
-        //Wenn ein Pfeil gespeichert ist
-        if (pfeilObjekt != null)
-        {
-            //Wechsle in die Richtung des Pfeils
-            switch (pfeilObjekt.tag)
+            //Bewegungsvariante 90 Grad Drehung
+            //Wenn nicht der letzte Eintrag im Richtungsenum erreicht ist, wechsle einen Eintrag weiter
+            if (((int)richtung) != 3)
             {
-                case "PfeilRechts":
-                    richtung = Richtung.Rechts;
-                    break;
-                case "PfeilOben":
-                    richtung = Richtung.Oben;
-                    break;
-                case "PfeilLinks":
-                    richtung = Richtung.Links;
-                    break;
-                case "PfeilUnten":
-                    richtung = Richtung.Unten;
-                    break;
-                default:
-                    break;
+                richtung++;
             }
-            //StartCoroutine(nameof(Kurvefahren));
-        }
+            //Sollte der letzte Eintrag erreicht sein, springe zum ersten
+            else
+            {
+                richtung = 0;
+            }
 
-        //Wechsle Bewegungsrichtung
-        //switch (richtung)
-        //{
-        //    case Richtung.Oben:
-        //        bewegung = Vector2.up; //Vektor aufwärts
-        //        break;
-        //    case Richtung.Unten:
-        //        bewegung = Vector2.down; //Vektor abwärts
-        //        break;
-        //    case Richtung.Rechts:
-        //        bewegung = Vector2.right; //Vektor rechts
-        //        break;
-        //    case Richtung.Links:
-        //        bewegung = Vector2.left; //Vektor links
-        //        break;
-        //    default:
-        //        break;
-        //}
+        }
+        else if (PfeilsteuerungON)
+        {
+            //Drehung durch Pfeile
+            //Wenn ein Pfeil gespeichert ist
+            if (pfeilObjekt != null)
+            {
+                //Wechsle in die Richtung des Pfeils
+                switch (pfeilObjekt.tag)
+                {
+                    case "PfeilRechts":
+                        richtung = Richtung.Rechts;
+                        break;
+                    case "PfeilOben":
+                        richtung = Richtung.Oben;
+                        break;
+                    case "PfeilLinks":
+                        richtung = Richtung.Links;
+                        break;
+                    case "PfeilUnten":
+                        richtung = Richtung.Unten;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
     /// <summary>
     /// Sammelt das Momentan berührte Objekt ein
@@ -234,7 +224,8 @@ public class Larry : MonoBehaviour
         }
         else if (collision.CompareTag("PfeilDrehend"))
         {
-            richtung = collision.GetComponent<DrehenderPfeil>().richtung;
+            Debug.Log(collision.gameObject.name);
+            richtung = collision.transform.parent.gameObject.GetComponent<DrehenderPfeil>().richtung;
         }
     }
 

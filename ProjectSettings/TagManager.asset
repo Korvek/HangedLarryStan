@@ -11,6 +11,7 @@ TagManager:
   - PfeilUnten
   - PfeilLinks
   - PfeilDrehend
+  - PfeilDrehendSteuerung
   layers:
   - Default
   - TransparentFX
