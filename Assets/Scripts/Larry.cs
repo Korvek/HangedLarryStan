@@ -129,9 +129,10 @@ public class Larry : MonoBehaviour
         }
         Debug.Log("WHAT");
         */
-
+        //Wenn ein Pfeil gespeichert ist
         if (pfeilObjekt != null)
         {
+            //Wechsle in die Richtung des Pfeils
             switch (pfeilObjekt.tag)
             {
                 case "PfeilRechts":
@@ -154,16 +155,16 @@ public class Larry : MonoBehaviour
         switch (richtung)
         {
             case Richtung.Oben:
-                transform.Rotate(new Vector3(0f, 0f, -90f));
+                transform.eulerAngles = new Vector3 (0f, 0f, 0f);
                 break;
             case Richtung.Unten:
-                transform.Rotate(new Vector3(0f, 0f, -90f));
+                transform.eulerAngles = new Vector3(0f, 0f, 180f);
                 break;
             case Richtung.Rechts:
-                transform.Rotate(new Vector3(0f, 0f, -90f));
+                transform.eulerAngles = new Vector3(0f, 0f, -90f);
                 break;
             case Richtung.Links:
-                transform.Rotate(new Vector3(0f, 0f, -90f));
+                transform.eulerAngles = new Vector3(0f, 0f, 90f);
                 break;
             default:
                 break;
