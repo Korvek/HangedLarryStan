@@ -2311,6 +2311,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1543054937310726826, guid: 9bb04bc1734e61e49b1a60d372bf5f1c, type: 3}
+      propertyPath: geschwindigkeit
+      value: 0.039
+      objectReference: {fileID: 0}
+    - target: {fileID: 1543054937310726826, guid: 9bb04bc1734e61e49b1a60d372bf5f1c, type: 3}
       propertyPath: sammelAktion.m_Name
       value: Sammel Aktion
       objectReference: {fileID: 0}
