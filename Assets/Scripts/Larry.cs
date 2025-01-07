@@ -37,6 +37,8 @@ public class Larry : MonoBehaviour
     private Rigidbody2D rigidbody2d;
     //Sammelbares Objekt, das berührt wird
     private GameObject sammelObjekt;
+    //Richtungspfeil, der berührt wird
+    private GameObject pfeilObjekt;
     
     private void Awake()
     {
@@ -109,15 +111,44 @@ public class Larry : MonoBehaviour
     /// </summary>
     void RichtungWechsel(InputAction.CallbackContext context)
     {
+
+        /* Bewegungsvariante 90 Grad Drehung
+        Debug.Log("WHAT");
         //Wenn nicht der letzte Eintrag im Richtungsenum erreicht ist, wechsle einen Eintrag weiter
         if ( ((int)richtung) != 3)
         {
             richtung++;
+        Debug.Log("WHAT");
         }
         //Sollte der letzte Eintrag erreicht sein, springe zum ersten
         else
         {
             richtung = 0;
+        }
+        
+        }
+        Debug.Log("WHAT");
+        */
+
+        if (pfeilObjekt != null)
+        {
+            switch (pfeilObjekt.tag)
+            {
+                case "PfeilRechts":
+                    richtung = Richtung.Rechts;
+                    break;
+                case "PfeilOben":
+                    richtung = Richtung.Oben;
+                    break;
+                case "PfeilLinks":
+                    richtung = Richtung.Links;
+                    break;
+                case "PfeilUnten":
+                    richtung = Richtung.Unten;
+                    break;
+                default:
+                    break;
+            }
         }
         //Wechselt die Richtung je nach Richtungsvariable
         switch (richtung)
@@ -174,6 +205,31 @@ public class Larry : MonoBehaviour
             sammelObjekt = collision.gameObject;
             Debug.Log(sammelObjekt.name);
         }
+        //Bei Kontakt mit einem Pfeil
+        if(collision.CompareTag("PfeilRechts"))
+        {
+            //Speichere das Objekt
+            pfeilObjekt = collision.gameObject;
+            Debug.Log(pfeilObjekt.name);
+        }
+        else if (collision.CompareTag("PfeilLinks"))
+        {
+            //Speichere das Objekt
+            pfeilObjekt = collision.gameObject;
+            Debug.Log(pfeilObjekt.name);
+        }
+        else if (collision.CompareTag("PfeilOben"))
+        {
+            //Speichere das Objekt
+            pfeilObjekt = collision.gameObject;
+            Debug.Log(pfeilObjekt.name);
+        }
+        else if (collision.CompareTag("PfeilUnten"))
+        {
+            //Speichere das Objekt
+            pfeilObjekt = collision.gameObject;
+            Debug.Log(pfeilObjekt.name);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -183,6 +239,31 @@ public class Larry : MonoBehaviour
         {
             //Vergiss das Objekt
             sammelObjekt = null;
+        }
+        //Bei Verlassen eines Pfeils
+        else if (collision.CompareTag("PfeilRechts"))
+        {
+            Debug.Log(pfeilObjekt.name + "Weg");
+            //Vergiss den Pfeil
+            pfeilObjekt = null;
+        }
+        else if (collision.CompareTag("PfeilLinks"))
+        {
+            Debug.Log(pfeilObjekt.name + "Weg");
+            //Vergiss den Pfeil
+            pfeilObjekt = null;
+        }
+        else if (collision.CompareTag("PfeilOben"))
+        {
+            Debug.Log(pfeilObjekt.name + "Weg");
+            //Vergiss den Pfeil
+            pfeilObjekt = null;
+        }
+        else if (collision.CompareTag("PfeilUnten"))
+        {
+            Debug.Log(pfeilObjekt.name + "Weg");
+            //Vergiss den Pfeil
+            pfeilObjekt = null;
         }
     }
 }
