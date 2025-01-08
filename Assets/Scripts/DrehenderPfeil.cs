@@ -16,11 +16,6 @@ public class DrehenderPfeil : MonoBehaviour
     [SerializeField] List<Richtung> richtungsListe;
     //InputActions um auf Tastendrücke zu reagieren
     public InputAction drehenAktion;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     private void Awake()
     {
@@ -45,10 +40,6 @@ public class DrehenderPfeil : MonoBehaviour
             default:
                 break;
         }
-    }
-    private void OnEnable()
-    {
-        
     }
     private void OnDisable()
     {
@@ -94,19 +85,20 @@ public class DrehenderPfeil : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
+        //Wenn ein Spieler den Umschaltbereich betritt
         if (collision.CompareTag("Player"))
         {
-            //Aktiviere InputActions
+            //Aktiviere Action
             drehenAktion.Enable();
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        //Wenn ein Spieler den Umschaltbereich verlässt
         if (collision.CompareTag("Player"))
         {
-            //Aktiviere InputActions
+            //Deaktiviere InputActions
             drehenAktion.Disable();
         }
     }
