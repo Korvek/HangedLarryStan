@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class endGame : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("WOOHOO");
+        if (collision.CompareTag("Player"))
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
     }
 }
