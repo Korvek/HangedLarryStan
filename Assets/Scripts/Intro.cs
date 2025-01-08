@@ -12,11 +12,21 @@ public class Intro : MonoBehaviour
     {
         startAktion.performed += StarteSpiel;
     }
-
+    private void OnEnable()
+    {
+        startAktion.Enable();
+    }
+    private void OnDisable()
+    {
+        startAktion.Disable();
+    }
+    private void OnDestroy()
+    {
+        startAktion.performed -= StarteSpiel;
+    }
     private void StarteSpiel(InputAction.CallbackContext context)
     {
         SceneManager.LoadScene(1);
-        throw new NotImplementedException();
     }
 
     // Update is called once per frame

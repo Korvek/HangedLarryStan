@@ -4927,6 +4927,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BarryTriangle
       objectReference: {fileID: 0}
+    - target: {fileID: 5233587918053043279, guid: 9bb04bc1734e61e49b1a60d372bf5f1c, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6683579718708457948, guid: 9bb04bc1734e61e49b1a60d372bf5f1c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10

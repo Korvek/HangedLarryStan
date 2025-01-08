@@ -52,32 +52,14 @@ public class Larry : MonoBehaviour
         ZielwortT.text=gelöstesWort;
         //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
         drehenAktion.performed += RichtungWechsel;
+        drehenAktion.performed += StarteBewegung;
         //Verknüpfe sammelAktion mit der Sammeln Methode
         sammelAktion.performed += Sammeln;
         //Hole Rigidbody Komponente des Objekts
         rigidbody2d = GetComponent<Rigidbody2D>();
         zielrichtung = transform.up;
-
-        
     }
-    private void OnEnable()
-    {
-        //Aktiviere InputActions
-        drehenAktion.Enable();
-        sammelAktion.Enable();
-    }
-    private void OnDisable()
-    {
-        //Deaktiviere InputActions
-        drehenAktion.Disable();
-        sammelAktion.Disable();
-    }
-    private void OnDestroy()
-    {
-        //Löse Verknüpfungen
-        drehenAktion.performed -= RichtungWechsel;
-        sammelAktion.performed -= Sammeln;
-    }
+    
 
     void FixedUpdate()
     {
@@ -214,6 +196,12 @@ public class Larry : MonoBehaviour
         }
     }
 
+    private void StarteBewegung(InputAction.CallbackContext context)
+    {
+        rigidbody2d.constraints = RigidbodyConstraints2D.None;
+        drehenAktion.performed -= StarteBewegung;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Bei Betreten eines sammelbaren Objekts
@@ -279,5 +267,24 @@ public class Larry : MonoBehaviour
             //Vergiss den Pfeil
             pfeilObjekt = null;
         }
+    }
+
+    private void OnEnable()
+    {
+        //Aktiviere InputActions
+        drehenAktion.Enable();
+        sammelAktion.Enable();
+    }
+    private void OnDisable()
+    {
+        //Deaktiviere InputActions
+        drehenAktion.Disable();
+        sammelAktion.Disable();
+    }
+    private void OnDestroy()
+    {
+        //Löse Verknüpfungen
+        drehenAktion.performed -= RichtungWechsel;
+        sammelAktion.performed -= Sammeln;
     }
 }
