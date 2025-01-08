@@ -6,8 +6,6 @@ using UnityEngine;
 using UnityEngine.Assertions.Must;
 using UnityEngine.InputSystem;
 
-
-
 public class Larry : MonoBehaviour
 {  
     //Richtungsvariable. Gibt die Bewegungsrichtung an. [SerializeField] ermöglicht Zugriff über Unity Editor
@@ -22,16 +20,17 @@ public class Larry : MonoBehaviour
     /// <summary>
     /// Drehung mithilfe von Pfeilen oder fixe 90°
     /// </summary>
-    public bool PfeilsteuerungON = true;
+    public bool pfeilsteuerungON = true;
 
-    public String Zielwort="Larry";
+    public String zielwort="Larry";
+    public String gelöstesWort="AAAAAAAAAAAAAAAAAA";
     /// <summary>
     /// Tempo in dem Abgebogen wird (Testzweck)
     /// </summary>
     [SerializeField]float drehTempo = 100f;
 
-    //Buchstabenliste für Zielwort
-    public List<TextMeshProUGUI> tmp_Zielwort;
+    //Textanzeige für das Zielwort
+    public TextMeshProUGUI ZielwortT;
 
     //Richtungsvektor. Gibt die Bewegungsrichtung an
     //public Vector2 bewegung;
@@ -49,6 +48,8 @@ public class Larry : MonoBehaviour
 
     private void Awake()
     {
+        gelöstesWort = new string('_', zielwort.Length);
+        ZielwortT.text=gelöstesWort;
         //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
         drehenAktion.performed += RichtungWechsel;
         //Verknüpfe sammelAktion mit der Sammeln Methode
@@ -56,6 +57,8 @@ public class Larry : MonoBehaviour
         //Hole Rigidbody Komponente des Objekts
         rigidbody2d = GetComponent<Rigidbody2D>();
         zielrichtung = transform.up;
+
+        
     }
     private void OnEnable()
     {
@@ -97,7 +100,7 @@ public class Larry : MonoBehaviour
                 zielrichtung = Vector2.left;
                 break;
         }
-        
+        //Wenn abgebogen werden soll
         if(Vector2.SignedAngle(transform.up,zielrichtung) !=0f)
         {
             if (Vector2.SignedAngle(transform.up, zielrichtung) >= 0f)
@@ -109,6 +112,7 @@ public class Larry : MonoBehaviour
                 drehGeschwindigkeit = -drehTempo * Time.fixedDeltaTime; //Rechtskurve
             }
         }
+        //Wenn nicht mehr abgebogen wird
         else
         {
             drehGeschwindigkeit = 0;
@@ -124,7 +128,7 @@ public class Larry : MonoBehaviour
     /// </summary>
     void RichtungWechsel(InputAction.CallbackContext context)
     {
-        if (!PfeilsteuerungON)
+        if (!pfeilsteuerungON)
         {
             //Bewegungsvariante 90 Grad Drehung
             //Wenn nicht der letzte Eintrag im Richtungsenum erreicht ist, wechsle einen Eintrag weiter
@@ -139,7 +143,7 @@ public class Larry : MonoBehaviour
             }
 
         }
-        else if (PfeilsteuerungON)
+        else if (pfeilsteuerungON)
         {
             //Drehung durch Pfeile
             //Wenn ein Pfeil gespeichert ist
@@ -176,17 +180,34 @@ public class Larry : MonoBehaviour
         {
             //TODO Objekt entfernen, Buchstaben prüfen, Wort anzeigen
             //Wenn der Objektname nur ein Zeichen lang ist und im Lösungswort enthalten ist
-            if (sammelObjekt.name.Length == 1 && Zielwort.ToUpper().Contains(sammelObjekt.name))
-            {               
-                //Für jeden Buchstaben des Zielworts
-                foreach(TextMeshProUGUI text in tmp_Zielwort)
+            if (sammelObjekt.name.Length == 1 && zielwort.ToUpper().Contains(sammelObjekt.name))
+            {
+                //Wenn der gesammelte Buchstabe nicht im Zielwort enthalten ist
+                if (!zielwort.ToUpper().Contains(sammelObjekt.name))
                 {
-                    //Aktiviere das passende Textobjekt
-                    if (text.name == sammelObjekt.name)
+                    //TODO: Buchstabe nicht im Wort enthalten
+                }
+                //Wenn der gesammelte Buchstabe im Zielwort enthalten ist
+                else
+                {
+                    //Suche nach dem Buchstaben im Zielwort
+                    for (int i = 0; i < zielwort.Length; i++)
                     {
-                        text.gameObject.SetActive(true);
+                        if (zielwort.ToUpper()[i].Equals(sammelObjekt.name[0]))
+                        {
+                            //Ersetze ein _ im gelösten Wort
+                            gelöstesWort = gelöstesWort.Remove(i,1).Insert(i, sammelObjekt.name);
+                            ZielwortT.text = gelöstesWort;
+                        }
                     }
                 }
+                
+                
+
+
+
+
+
                 //Deaktiviere den Buchstaben
                 sammelObjekt.SetActive(false);
             }
@@ -222,6 +243,7 @@ public class Larry : MonoBehaviour
             //Speichere das Objekt
             pfeilObjekt = collision.gameObject;
         }
+        //Wenn es ein drehender Pfeil ist
         else if (collision.CompareTag("PfeilDrehend"))
         {
             Debug.Log(collision.gameObject.name);
