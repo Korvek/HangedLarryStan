@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Larry : MonoBehaviour
 {  
@@ -23,7 +24,7 @@ public class Larry : MonoBehaviour
     public bool pfeilsteuerungON = true;
 
     public String zielwort="Larry";
-    public String gelöstesWort="AAAAAAAAAAAAAAAAAA";
+    public String gelöstesWort="";
     /// <summary>
     /// Tempo in dem Abgebogen wird (Testzweck)
     /// </summary>
@@ -52,6 +53,7 @@ public class Larry : MonoBehaviour
         ZielwortT.text=gelöstesWort;
         //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
         drehenAktion.performed += RichtungWechsel;
+        //Verknüpfe drehenAktion mit dem Starten der Bewegung
         drehenAktion.performed += StarteBewegung;
         //Verknüpfe sammelAktion mit der Sammeln Methode
         sammelAktion.performed += Sammeln;
@@ -269,6 +271,16 @@ public class Larry : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Bei Zusammenstoß mit einer Wand
+        if (collision.gameObject.CompareTag("Wand"))
+        {
+            //Starte das Level neu
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+
     private void OnEnable()
     {
         //Aktiviere InputActions
@@ -285,6 +297,7 @@ public class Larry : MonoBehaviour
     {
         //Löse Verknüpfungen
         drehenAktion.performed -= RichtungWechsel;
+        drehenAktion.performed -= StarteBewegung;
         sammelAktion.performed -= Sammeln;
     }
 }

@@ -4923,6 +4923,14 @@ PrefabInstance:
       propertyPath: ZielwortT
       value: 
       objectReference: {fileID: 1909732300}
+    - target: {fileID: 1543054937310726826, guid: 9bb04bc1734e61e49b1a60d372bf5f1c, type: 3}
+      propertyPath: drehenAktion.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/q
+      objectReference: {fileID: 0}
+    - target: {fileID: 1543054937310726826, guid: 9bb04bc1734e61e49b1a60d372bf5f1c, type: 3}
+      propertyPath: sammelAktion.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/e
+      objectReference: {fileID: 0}
     - target: {fileID: 4428760477484682982, guid: 9bb04bc1734e61e49b1a60d372bf5f1c, type: 3}
       propertyPath: m_Name
       value: BarryTriangle

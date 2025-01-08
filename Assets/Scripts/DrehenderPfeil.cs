@@ -85,16 +85,17 @@ public class DrehenderPfeil : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("TTTTT");
+        
         //Wenn ein Spieler den Umschaltbereich betritt
         if (collision.CompareTag("Player"))
         {
+            Debug.Log("TTTTT");
             //Aktiviere Action
             drehenAktion.Enable();
         }
     }
 
-    private void OnColliderExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         //Wenn ein Spieler den Umschaltbereich verlässt
         if (collision.CompareTag("Player"))
