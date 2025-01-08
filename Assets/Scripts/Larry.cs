@@ -13,7 +13,7 @@ public class Larry : MonoBehaviour
     /// <summary>
     /// Geschwindigkeitsvariable. Gibt die Bewegungsgeschwindigkeit an.
     /// </summary>
-    [Range(0.1f,5f)] public float geschwindigkeit=1f;
+    [Range(0.1f,15f)] public float geschwindigkeit=1f;
     //InputActions um auf Tastendrücke zu reagieren
     public InputAction drehenAktion;
     public InputAction sammelAktion;
@@ -246,7 +246,6 @@ public class Larry : MonoBehaviour
         //Wenn es ein drehender Pfeil ist
         else if (collision.CompareTag("PfeilDrehend"))
         {
-            Debug.Log(collision.gameObject.name);
             richtung = collision.transform.parent.gameObject.GetComponent<DrehenderPfeil>().richtung;
         }
     }
