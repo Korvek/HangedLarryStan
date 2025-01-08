@@ -559,7 +559,7 @@ MonoBehaviour:
     m_SingletonActionBindings:
     - m_Name: 
       m_Id: 6b5659aa-acc0-42ce-bd15-08ca01f788c1
-      m_Path: <Keyboard>/enter
+      m_Path: <Keyboard>/q
       m_Interactions: 
       m_Processors: 
       m_Groups: 
