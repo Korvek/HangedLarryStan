@@ -83,7 +83,7 @@ public class DrehenderPfeil : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnColliderEnter2D(Collider2D collision)
     {
         //Wenn ein Spieler den Umschaltbereich betritt
         if (collision.CompareTag("Player"))
@@ -93,7 +93,7 @@ public class DrehenderPfeil : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnColliderExit2D(Collider2D collision)
     {
         //Wenn ein Spieler den Umschaltbereich verlässt
         if (collision.CompareTag("Player"))

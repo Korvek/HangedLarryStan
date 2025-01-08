@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class endGame : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnColliderEnter2D(Collider2D collision)
     {
         Debug.Log("WOOHOO");
         if (collision.CompareTag("Player"))
