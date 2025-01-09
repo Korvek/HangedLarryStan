@@ -10,6 +10,7 @@ public class endGame : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             UnityEditor.EditorApplication.isPlaying = false;
+            Application.Quit();
         }
     }
 }
