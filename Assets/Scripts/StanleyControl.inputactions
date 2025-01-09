@@ -1,0 +1,60 @@
+{
+    "name": "StanleyControl",
+    "maps": [
+        {
+            "name": "Main",
+            "id": "e7629076-0d91-429e-bb4d-2af557f38569",
+            "actions": [
+                {
+                    "name": "DrehenAktion",
+                    "type": "Button",
+                    "id": "d4bcf292-dec0-4319-9a8d-c6ce74971011",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SammelAktion",
+                    "type": "Button",
+                    "id": "aeb2cf37-98f1-42d6-bdd1-eb9e9d1d45c2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5ce2c04d-28e8-4440-a7a2-bcbae916bd4f",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DrehenAktion",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fc424fd7-5112-49ee-86fe-094d2809e561",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SammelAktion",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Main",
+            "bindingGroup": "Main",
+            "devices": []
+        }
+    ]
+}

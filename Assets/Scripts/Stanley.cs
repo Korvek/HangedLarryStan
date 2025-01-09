@@ -7,17 +7,30 @@ using UnityEngine.Assertions.Must;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class Larry : MonoBehaviour
+
+//TODO für Abiegeanimation
+//1. Vorwärtsbewegung stoppen (wahrscheinlich)
+//1.1 Kollisionen während Animation abschalten?
+//2. Bewegungsanimation abspielen
+//2.1. Letzter Knoten soll auf Höhe des Kopfes beim Start sein
+//3. Neue Position und Rotation übernehmen ( 90° addieren und Länge des Wurms addieren
+//3.1 An OnAnimatorMove denken
+//4. Wenn das nicht funktioniert, Animation per Sprites
+//5. Vorwärtsbewegung fortsetzen
+//6. Geschwindigkeit abgleichen
+
+public class Stanley : MonoBehaviour
 {  
     //Richtungsvariable. Gibt die Bewegungsrichtung an. [SerializeField] ermöglicht Zugriff über Unity Editor
     [SerializeField] Richtung richtung;
     /// <summary>
     /// Geschwindigkeitsvariable. Gibt die Bewegungsgeschwindigkeit an.
     /// </summary>
-    [Range(0.1f,15f)] public float geschwindigkeit=1f;
+    [Range(0f,15f)] public float geschwindigkeit=1f;
     //InputActions um auf Tastendrücke zu reagieren
-    public InputAction drehenAktion;
-    public InputAction sammelAktion;
+    public InputActionAsset actions;
+    private InputAction drehenAktion;
+    private InputAction sammelAktion;
     /// <summary>
     /// Drehung mithilfe von Pfeilen oder fixe 90°
     /// </summary>
@@ -36,21 +49,25 @@ public class Larry : MonoBehaviour
     //Richtungsvektor. Gibt die Bewegungsrichtung an
     //public Vector2 bewegung;
     //Körperkomponente
-    //private Rigidbody2D rigidbody2d;
+    private Rigidbody2D rigidbody2d;
     //Sammelbares Objekt, das berührt wird
     private GameObject sammelObjekt;
     //Richtungspfeil, der berührt wird
     private GameObject pfeilObjekt;
-    //Drehender Richtungspfeil, der berührt wird
-    private GameObject drehPfeilObjekt;
     //Richtung in die sich bewegt werden soll
     private Vector2 zielrichtung;
+
     private Animator anim;
 
     private void Awake()
     {
         gelöstesWort = new string('_', zielwort.Length);
         ZielwortT.text=gelöstesWort;
+
+
+       drehenAktion = actions.FindActionMap("Main").FindAction("DrehenAktion");
+        sammelAktion = actions.FindActionMap("Main").FindAction("SammelAktion");
+
         //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
         drehenAktion.performed += RichtungWechsel;
         //Verknüpfe drehenAktion mit dem Starten der Bewegung
@@ -58,8 +75,8 @@ public class Larry : MonoBehaviour
         //Verknüpfe sammelAktion mit der Sammeln Methode
         sammelAktion.performed += Sammeln;
         //Hole Rigidbody Komponente des Objekts
-        //rigidbody2d = GetComponent<Rigidbody2D>();
-        anim =GetComponent<Animator>();
+        rigidbody2d = GetComponent<Rigidbody2D>();
+        anim= GetComponent<Animator>();
         zielrichtung = transform.up;
     }
     
@@ -88,16 +105,14 @@ public class Larry : MonoBehaviour
         //Wenn abgebogen werden soll
         if(Vector2.SignedAngle(transform.up,zielrichtung) !=0f)
         {
-            
-            anim.Play("RechtsKurve");
-            //if (Vector2.SignedAngle(transform.up, zielrichtung) >= 0f)
-            //{
-            //    drehGeschwindigkeit = drehTempo * Time.fixedDeltaTime; //Linkskurve
-            //}
-            //else if (Vector2.SignedAngle(transform.up, zielrichtung) <= 0f)
-            //{
-            //    drehGeschwindigkeit = -drehTempo * Time.fixedDeltaTime; //Rechtskurve
-            //}
+            if (Vector2.SignedAngle(transform.up, zielrichtung) >= 0f)
+            {
+                drehGeschwindigkeit = drehTempo * Time.fixedDeltaTime; //Linkskurve
+            }
+            else if (Vector2.SignedAngle(transform.up, zielrichtung) <= 0f)
+            {
+                drehGeschwindigkeit = -drehTempo * Time.fixedDeltaTime; //Rechtskurve
+            }
         }
         //Wenn nicht mehr abgebogen wird
         else
@@ -107,14 +122,15 @@ public class Larry : MonoBehaviour
         // Rotation
         //transform.Rotate(0, 0, drehGeschwindigkeit);
         // Vorwärtsbewegung basierend auf der aktuellen Richtung
-        //rigidbody2d.velocity = transform.up * geschwindigkeit;
+        rigidbody2d.velocity = transform.up * geschwindigkeit;
     }
 
     /// <summary>
     /// Wechselt die aktuelle Bewegungsrichtung im Uhrzeigersinn
     /// </summary>
-    void RichtungWechsel(InputAction.CallbackContext context)
+    public void RichtungWechsel(InputAction.CallbackContext context)
     {
+        anim.SetTrigger("TriggerRechtskurve");
         if (!pfeilsteuerungON)
         {
             //Bewegungsvariante 90 Grad Drehung
@@ -162,7 +178,6 @@ public class Larry : MonoBehaviour
     /// </summary>
     private void Sammeln(InputAction.CallbackContext context)
     {
-       
         if (sammelObjekt != null)
         {
             //TODO Objekt entfernen, Buchstaben prüfen, Wort anzeigen
@@ -203,7 +218,7 @@ public class Larry : MonoBehaviour
 
     private void StarteBewegung(InputAction.CallbackContext context)
     {
-        //rigidbody2d.constraints = RigidbodyConstraints2D.None;
+        rigidbody2d.constraints = RigidbodyConstraints2D.None;
         drehenAktion.performed -= StarteBewegung;
     }
 
@@ -276,7 +291,6 @@ public class Larry : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("HO");
         //Bei Zusammenstoß mit einer Wand
         if (collision.gameObject.CompareTag("Wand"))
         {
