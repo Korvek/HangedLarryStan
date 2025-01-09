@@ -36,7 +36,7 @@ public class Larry : MonoBehaviour
     //Richtungsvektor. Gibt die Bewegungsrichtung an
     //public Vector2 bewegung;
     //Körperkomponente
-    private Rigidbody2D rigidbody2d;
+    //private Rigidbody2D rigidbody2d;
     //Sammelbares Objekt, das berührt wird
     private GameObject sammelObjekt;
     //Richtungspfeil, der berührt wird
@@ -44,8 +44,8 @@ public class Larry : MonoBehaviour
     //Drehender Richtungspfeil, der berührt wird
     private GameObject drehPfeilObjekt;
     //Richtung in die sich bewegt werden soll
-    Vector2 zielrichtung;
-
+    private Vector2 zielrichtung;
+    private Animator anim;
 
     private void Awake()
     {
@@ -58,7 +58,8 @@ public class Larry : MonoBehaviour
         //Verknüpfe sammelAktion mit der Sammeln Methode
         sammelAktion.performed += Sammeln;
         //Hole Rigidbody Komponente des Objekts
-        rigidbody2d = GetComponent<Rigidbody2D>();
+        //rigidbody2d = GetComponent<Rigidbody2D>();
+        anim =GetComponent<Animator>();
         zielrichtung = transform.up;
     }
     
@@ -87,14 +88,16 @@ public class Larry : MonoBehaviour
         //Wenn abgebogen werden soll
         if(Vector2.SignedAngle(transform.up,zielrichtung) !=0f)
         {
-            if (Vector2.SignedAngle(transform.up, zielrichtung) >= 0f)
-            {
-                drehGeschwindigkeit = drehTempo * Time.fixedDeltaTime; //Linkskurve
-            }
-            else if (Vector2.SignedAngle(transform.up, zielrichtung) <= 0f)
-            {
-                drehGeschwindigkeit = -drehTempo * Time.fixedDeltaTime; //Rechtskurve
-            }
+            
+            anim.Play("RechtsKurve");
+            //if (Vector2.SignedAngle(transform.up, zielrichtung) >= 0f)
+            //{
+            //    drehGeschwindigkeit = drehTempo * Time.fixedDeltaTime; //Linkskurve
+            //}
+            //else if (Vector2.SignedAngle(transform.up, zielrichtung) <= 0f)
+            //{
+            //    drehGeschwindigkeit = -drehTempo * Time.fixedDeltaTime; //Rechtskurve
+            //}
         }
         //Wenn nicht mehr abgebogen wird
         else
@@ -102,9 +105,9 @@ public class Larry : MonoBehaviour
             drehGeschwindigkeit = 0;
         }
         // Rotation
-        transform.Rotate(0, 0, drehGeschwindigkeit);
+        //transform.Rotate(0, 0, drehGeschwindigkeit);
         // Vorwärtsbewegung basierend auf der aktuellen Richtung
-        rigidbody2d.velocity = transform.up * geschwindigkeit;
+        //rigidbody2d.velocity = transform.up * geschwindigkeit;
     }
 
     /// <summary>
@@ -200,7 +203,7 @@ public class Larry : MonoBehaviour
 
     private void StarteBewegung(InputAction.CallbackContext context)
     {
-        rigidbody2d.constraints = RigidbodyConstraints2D.None;
+        //rigidbody2d.constraints = RigidbodyConstraints2D.None;
         drehenAktion.performed -= StarteBewegung;
     }
 
@@ -273,6 +276,7 @@ public class Larry : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("HO");
         //Bei Zusammenstoß mit einer Wand
         if (collision.gameObject.CompareTag("Wand"))
         {
