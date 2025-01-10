@@ -238,23 +238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   richtung: 0
   richtungsListe: 0000000001000000
-  drehenAktion:
-    m_Name: Drehen Aktion
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 675cd743-2a78-41ff-b007-1b38f5b84882
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: c443eb2a-d99b-4a91-bee8-6b122c193a21
-      m_Path: <Keyboard>/q
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Drehen Aktion
-      m_Flags: 0
-    m_Flags: 0
+  actions: {fileID: -944628639613478452, guid: b44b58f16488fda448b3d0d642175356, type: 3}
 --- !u!4 &9145806717128455540 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3336863620121182990, guid: 24807ec05d7fcd9448c5ba652d7efc90, type: 3}

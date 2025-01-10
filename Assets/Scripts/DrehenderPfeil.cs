@@ -15,10 +15,12 @@ public class DrehenderPfeil : MonoBehaviour
     /// </summary>
     [SerializeField] List<Richtung> richtungsListe;
     //InputActions um auf Tastendrücke zu reagieren
-    public InputAction drehenAktion;
+    public InputActionAsset actions;
+    private InputAction drehenAktion;
 
     private void Awake()
     {
+        drehenAktion = actions.FindActionMap("Main").FindAction("DrehenAktion");
         //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
         drehenAktion.performed += RichtungWechsel;
 
