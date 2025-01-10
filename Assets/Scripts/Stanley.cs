@@ -8,16 +8,10 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 
-//TODO für Abiegeanimation
-//1. Vorwärtsbewegung stoppen (wahrscheinlich)
-//1.1 Kollisionen während Animation abschalten?
-//2. Bewegungsanimation abspielen
-//2.1. Letzter Knoten soll auf Höhe des Kopfes beim Start sein
-//3. Neue Position und Rotation übernehmen ( 90° addieren und Länge des Wurms addieren
-//3.1 An OnAnimatorMove denken
-//4. Wenn das nicht funktioniert, Animation per Sprites
-//5. Vorwärtsbewegung fortsetzen
-//6. Geschwindigkeit abgleichen
+//TODO für Pfeile
+// 1. Collider in Gang
+// 2. Collider löst Drehung aus
+
 
 public class Stanley : MonoBehaviour
 {
@@ -118,8 +112,8 @@ public class Stanley : MonoBehaviour
     {
         ////Geschwindigkeit mit der die Kurve passiert wird
         //float drehGeschwindigkeit = 0f;
-        
-        
+
+
         ////Wenn abgebogen werden soll  WIRD WAHRSCHEINLICH ENTFERNT
         //if(Vector2.SignedAngle(transform.up,zielrichtung) !=0f)
         //{
@@ -144,7 +138,7 @@ public class Stanley : MonoBehaviour
         //// Rotation WIRD WAHRSCHEINLICH ENTFERNT
         ////transform.Rotate(0, 0, drehGeschwindigkeit);
         // Vorwärtsbewegung basierend auf der aktuellen Richtung
-        rigidbody2d.velocity = transform.up * geschwindigkeit;
+        //rigidbody2d.velocity = transform.up * geschwindigkeit;
     }
 
     /// <summary>
@@ -156,6 +150,8 @@ public class Stanley : MonoBehaviour
         //Löse bei Tastendruck die Animation aus TEST
         anim.SetTrigger("TriggerWenden");
         //anim.SetTrigger("TriggerRechtskurve");
+
+        //anim.SetTrigger("TriggerLinkskurve");
         if (!pfeilsteuerungON)
         {
             //Bewegungsvariante 90 Grad Drehung
