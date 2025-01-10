@@ -20,34 +20,42 @@ using UnityEngine.SceneManagement;
 //6. Geschwindigkeit abgleichen
 
 public class Stanley : MonoBehaviour
-{  
-    //Richtungsvariable. Gibt die Bewegungsrichtung an. [SerializeField] ermöglicht Zugriff über Unity Editor
-    [SerializeField] Richtung richtung;
+{
+    /// <summary>
+    /// Richtungsvariable. Gibt die Bewegungsrichtung an. 
+    /// </summary>
+    [SerializeField] Richtung richtung; //[SerializeField] ermöglicht Zugriff über Unity Editor
     /// <summary>
     /// Geschwindigkeitsvariable. Gibt die Bewegungsgeschwindigkeit an.
     /// </summary>
     [Range(0f,15f)] public float geschwindigkeit=1f;
-    //InputActions um auf Tastendrücke zu reagieren
+    /// <summary>
+    /// Set von Input Aktionen
+    /// </summary>
     public InputActionAsset actions;
-    private InputAction drehenAktion;
-    private InputAction sammelAktion;
+    
     /// <summary>
     /// Drehung mithilfe von Pfeilen oder fixe 90°
     /// </summary>
     public bool pfeilsteuerungON = true;
-
+    /// <summary>
+    /// Das zu lösende Wort
+    /// </summary>
     public String zielwort="Larry";
+    /// <summary>
+    /// Speicher für gefundene Buchstaben
+    /// </summary>
     public String gelöstesWort="";
     /// <summary>
     /// Tempo in dem Abgebogen wird (Testzweck)
     /// </summary>
     [SerializeField]float drehTempo = 100f;
 
-    //Textanzeige für das Zielwort
+    /// <summary>
+    /// Textanzeige für das Zielwort
+    /// </summary>
     public TextMeshProUGUI ZielwortT;
 
-    //Richtungsvektor. Gibt die Bewegungsrichtung an
-    //public Vector2 bewegung;
     //Körperkomponente
     private Rigidbody2D rigidbody2d;
     //Sammelbares Objekt, das berührt wird
@@ -56,16 +64,20 @@ public class Stanley : MonoBehaviour
     private GameObject pfeilObjekt;
     //Richtung in die sich bewegt werden soll
     private Vector2 zielrichtung;
-
+    //Animationskomponente
     private Animator anim;
+    //Aktionen die auf Inputs reagieren
+    private InputAction drehenAktion;
+    private InputAction sammelAktion;
 
     private void Awake()
     {
+        //Füllen der Lösungswortanzeige mit '_'
         gelöstesWort = new string('_', zielwort.Length);
         ZielwortT.text=gelöstesWort;
 
-
-       drehenAktion = actions.FindActionMap("Main").FindAction("DrehenAktion");
+        //Weise Aktionen den Tasten zu
+        drehenAktion = actions.FindActionMap("Main").FindAction("DrehenAktion");
         sammelAktion = actions.FindActionMap("Main").FindAction("SammelAktion");
 
         //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
@@ -76,18 +88,16 @@ public class Stanley : MonoBehaviour
         sammelAktion.performed += Sammeln;
         //Hole Rigidbody Komponente des Objekts
         rigidbody2d = GetComponent<Rigidbody2D>();
+        //Hole Animator Komponente des Objekts
         anim= GetComponent<Animator>();
+        //Zielrichtung zum Start ist vorwärts
         zielrichtung = transform.up;
     }
-    
 
-    void FixedUpdate()
+    private void Update()
     {
-        //Geschwindigkeit mit der die Kurve passiert wird
-        float drehGeschwindigkeit = 0f;
-        
         //Bestimme neue Zielrichtung
-        switch(richtung)
+        switch (richtung)
         {
             case Richtung.Oben:
                 zielrichtung = Vector2.up;
@@ -96,31 +106,43 @@ public class Stanley : MonoBehaviour
                 zielrichtung = Vector2.down;
                 break;
             case Richtung.Rechts:
-                zielrichtung = Vector2.right;                
+                zielrichtung = Vector2.right;
                 break;
             case Richtung.Links:
                 zielrichtung = Vector2.left;
                 break;
         }
-        //Wenn abgebogen werden soll
-        if(Vector2.SignedAngle(transform.up,zielrichtung) !=0f)
-        {
-            if (Vector2.SignedAngle(transform.up, zielrichtung) >= 0f)
-            {
-                drehGeschwindigkeit = drehTempo * Time.fixedDeltaTime; //Linkskurve
-            }
-            else if (Vector2.SignedAngle(transform.up, zielrichtung) <= 0f)
-            {
-                drehGeschwindigkeit = -drehTempo * Time.fixedDeltaTime; //Rechtskurve
-            }
-        }
-        //Wenn nicht mehr abgebogen wird
-        else
-        {
-            drehGeschwindigkeit = 0;
-        }
-        // Rotation
-        //transform.Rotate(0, 0, drehGeschwindigkeit);
+    }
+
+    void FixedUpdate()
+    {
+        ////Geschwindigkeit mit der die Kurve passiert wird
+        //float drehGeschwindigkeit = 0f;
+        
+        
+        ////Wenn abgebogen werden soll  WIRD WAHRSCHEINLICH ENTFERNT
+        //if(Vector2.SignedAngle(transform.up,zielrichtung) !=0f)
+        //{
+        //    if (Vector2.SignedAngle(transform.up, zielrichtung) >= 0f)
+        //    {
+        //        drehGeschwindigkeit = drehTempo * Time.fixedDeltaTime; //Linkskurve
+        //    }
+        //    else if (Vector2.SignedAngle(transform.up, zielrichtung) <= 0f)
+        //    {
+        //        drehGeschwindigkeit = -drehTempo * Time.fixedDeltaTime; //Rechtskurve
+        //    }
+        //    else if (Vector2.SignedAngle(transform.up, zielrichtung) == 180f)
+        //    {
+
+        //    }
+        //}
+        ////Wenn nicht mehr abgebogen wird
+        //else
+        //{
+        //    drehGeschwindigkeit = 0;
+        //}
+        //// Rotation WIRD WAHRSCHEINLICH ENTFERNT
+        ////transform.Rotate(0, 0, drehGeschwindigkeit);
         // Vorwärtsbewegung basierend auf der aktuellen Richtung
         rigidbody2d.velocity = transform.up * geschwindigkeit;
     }
@@ -130,7 +152,10 @@ public class Stanley : MonoBehaviour
     /// </summary>
     public void RichtungWechsel(InputAction.CallbackContext context)
     {
-        anim.SetTrigger("TriggerRechtskurve");
+        Debug.Log("HIP");
+        //Löse bei Tastendruck die Animation aus TEST
+        anim.SetTrigger("TriggerWenden");
+        //anim.SetTrigger("TriggerRechtskurve");
         if (!pfeilsteuerungON)
         {
             //Bewegungsvariante 90 Grad Drehung
@@ -182,7 +207,7 @@ public class Stanley : MonoBehaviour
         {
             //TODO Objekt entfernen, Buchstaben prüfen, Wort anzeigen
             //Wenn der Objektname nur ein Zeichen lang ist und im Lösungswort enthalten ist
-            if (sammelObjekt.name.Length == 1 && zielwort.ToUpper().Contains(sammelObjekt.name))
+            if (sammelObjekt.name.Length == 1)
             {
                 //Wenn der gesammelte Buchstabe nicht im Zielwort enthalten ist
                 if (!zielwort.ToUpper().Contains(sammelObjekt.name))
@@ -215,7 +240,9 @@ public class Stanley : MonoBehaviour
             }
         }
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
     private void StarteBewegung(InputAction.CallbackContext context)
     {
         rigidbody2d.constraints = RigidbodyConstraints2D.None;
