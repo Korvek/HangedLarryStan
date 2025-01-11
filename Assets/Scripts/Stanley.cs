@@ -109,52 +109,19 @@ public class Stanley : MonoBehaviour
     }
 
     void FixedUpdate()
-    {
-        ////Geschwindigkeit mit der die Kurve passiert wird
-        //float drehGeschwindigkeit = 0f;
-
-
-        ////Wenn abgebogen werden soll  WIRD WAHRSCHEINLICH ENTFERNT
-        //if(Vector2.SignedAngle(transform.up,zielrichtung) !=0f)
-        //{
-        //    if (Vector2.SignedAngle(transform.up, zielrichtung) >= 0f)
-        //    {
-        //        drehGeschwindigkeit = drehTempo * Time.fixedDeltaTime; //Linkskurve
-        //    }
-        //    else if (Vector2.SignedAngle(transform.up, zielrichtung) <= 0f)
-        //    {
-        //        drehGeschwindigkeit = -drehTempo * Time.fixedDeltaTime; //Rechtskurve
-        //    }
-        //    else if (Vector2.SignedAngle(transform.up, zielrichtung) == 180f)
-        //    {
-
-        //    }
-        //}
-        ////Wenn nicht mehr abgebogen wird
-        //else
-        //{
-        //    drehGeschwindigkeit = 0;
-        //}
-        //// Rotation WIRD WAHRSCHEINLICH ENTFERNT
-        ////transform.Rotate(0, 0, drehGeschwindigkeit);
+    {        
         // Vorwärtsbewegung basierend auf der aktuellen Richtung
-        //rigidbody2d.velocity = transform.up * geschwindigkeit;
+        rigidbody2d.velocity = transform.up * geschwindigkeit;
     }
 
     /// <summary>
-    /// Wechselt die aktuelle Bewegungsrichtung im Uhrzeigersinn
+    /// Setzt die Richtung in die Abgebogen werden soll
     /// </summary>
     public void RichtungWechsel(InputAction.CallbackContext context)
     {
-        Debug.Log("HIP");
-        //Löse bei Tastendruck die Animation aus TEST
-        anim.SetTrigger("TriggerWenden");
-        //anim.SetTrigger("TriggerRechtskurve");
-
-        //anim.SetTrigger("TriggerLinkskurve");
+        //Bewegungsvariante 90 Grad Drehung
         if (!pfeilsteuerungON)
-        {
-            //Bewegungsvariante 90 Grad Drehung
+        {            
             //Wenn nicht der letzte Eintrag im Richtungsenum erreicht ist, wechsle einen Eintrag weiter
             if (((int)richtung) != 3)
             {
@@ -165,7 +132,6 @@ public class Stanley : MonoBehaviour
             {
                 richtung = 0;
             }
-
         }
         else if (pfeilsteuerungON)
         {
@@ -194,6 +160,29 @@ public class Stanley : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// Das Objekt biegt in Zielrichtung ab
+    /// </summary>
+    private void Abbiegen() 
+    {
+        //Wenn abgebogen werden soll
+        if (Vector2.SignedAngle(transform.up, zielrichtung) != 0f)
+        {
+            if (Vector2.SignedAngle(transform.up, zielrichtung) >= 0f)
+            {
+                anim.SetTrigger("TriggerLinkskurve"); //Linkskurve
+            }
+            else if (Vector2.SignedAngle(transform.up, zielrichtung) <= 0f)
+            {
+                anim.SetTrigger("TriggerRechtskurve"); //Rechtskurve
+            }
+            else if (Vector2.SignedAngle(transform.up, zielrichtung) == 180f)
+            {
+                anim.SetTrigger("TriggerWenden"); //Wenden
+            }
+        }
+    }
+
     /// <summary>
     /// Sammelt das Momentan berührte Objekt ein
     /// </summary>
@@ -253,8 +242,12 @@ public class Stanley : MonoBehaviour
             //Speichere das Objekt
             sammelObjekt = collision.gameObject;
         }
+        if (collision.CompareTag("PfeilAbbiegen"))
+        {
+            Abbiegen();
+        }
         //Bei Kontakt mit einem Pfeil
-        if(collision.CompareTag("PfeilRechts"))
+        else if(collision.CompareTag("PfeilRechts"))
         {
             //Speichere das Objekt
             pfeilObjekt = collision.gameObject;

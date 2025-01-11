@@ -10,19 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3336863620121182990, guid: 24807ec05d7fcd9448c5ba652d7efc90, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3336863620121182990, guid: 24807ec05d7fcd9448c5ba652d7efc90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.79999995
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3336863620121182990, guid: 24807ec05d7fcd9448c5ba652d7efc90, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.027552458
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3336863620121182990, guid: 24807ec05d7fcd9448c5ba652d7efc90, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3336863620121182990, guid: 24807ec05d7fcd9448c5ba652d7efc90, type: 3}
       propertyPath: m_LocalRotation.x
@@ -34,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3336863620121182990, guid: 24807ec05d7fcd9448c5ba652d7efc90, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3336863620121182990, guid: 24807ec05d7fcd9448c5ba652d7efc90, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -46,17 +46,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3336863620121182990, guid: 24807ec05d7fcd9448c5ba652d7efc90, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 180
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126443864058503702, guid: 24807ec05d7fcd9448c5ba652d7efc90, type: 3}
+      propertyPath: m_TagString
+      value: PfeilOben
       objectReference: {fileID: 0}
     - target: {fileID: 6836703257631866630, guid: 24807ec05d7fcd9448c5ba652d7efc90, type: 3}
       propertyPath: m_Name
-      value: UntenPfeil
+      value: ObenPfeil
       objectReference: {fileID: 0}
     - target: {fileID: 6836703257631866630, guid: 24807ec05d7fcd9448c5ba652d7efc90, type: 3}
       propertyPath: m_TagString
-      value: PfeilUnten
+      value: PfeilAbbiegen
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8918846107089395966, guid: 24807ec05d7fcd9448c5ba652d7efc90, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
