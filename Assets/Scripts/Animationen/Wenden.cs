@@ -19,8 +19,9 @@ public class Wenden : StateMachineBehaviour
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.gameObject.transform.position += animator.gameObject.transform.up * 13.29f;
+        //animator.gameObject.transform.position += animator.gameObject.transform.up * 13.29f;
         animator.gameObject.transform.Rotate(0f, 0f, 180f);
+        animator.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

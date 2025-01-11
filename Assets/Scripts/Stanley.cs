@@ -168,6 +168,7 @@ public class Stanley : MonoBehaviour
         //Wenn abgebogen werden soll
         if (Vector2.SignedAngle(transform.up, zielrichtung) != 0f)
         {
+            rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
             if (Vector2.SignedAngle(transform.up, zielrichtung) >= 0f)
             {
                 anim.SetTrigger("TriggerLinkskurve"); //Linkskurve
@@ -214,12 +215,6 @@ public class Stanley : MonoBehaviour
                     }
                 }
                 
-                
-
-
-
-
-
                 //Deaktiviere den Buchstaben
                 sammelObjekt.SetActive(false);
             }
