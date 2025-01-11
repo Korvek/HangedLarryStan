@@ -1809,12 +1809,12 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.01
+  m_Radius: 0.1
 --- !u!1001 &682138072
 PrefabInstance:
   m_ObjectHideFlags: 0

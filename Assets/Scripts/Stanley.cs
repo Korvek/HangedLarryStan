@@ -160,18 +160,19 @@ public class Stanley : MonoBehaviour
         //Wenn abgebogen werden soll
         if (Vector2.SignedAngle(transform.up, zielrichtung) != 0f)
         {
+            Debug.Log(Vector2.SignedAngle(transform.up, zielrichtung));
             rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
-            if (Vector2.SignedAngle(transform.up, zielrichtung) >= 0f)
+            if (Vector2.Angle(transform.up, zielrichtung) == 180) 
             {
-                anim.SetTrigger("TriggerLinkskurve"); //Linkskurve
+                anim.SetTrigger("TriggerWenden"); //Wenden
             }
             else if (Vector2.SignedAngle(transform.up, zielrichtung) <= 0f)
             {
                 anim.SetTrigger("TriggerRechtskurve"); //Rechtskurve
             }
-            else if (Vector2.SignedAngle(transform.up, zielrichtung) == 180f)
+            else if (Vector2.SignedAngle(transform.up, zielrichtung) >= 0f)
             {
-                anim.SetTrigger("TriggerWenden"); //Wenden
+                anim.SetTrigger("TriggerLinkskurve"); //Linkskurve
             }
         }
     }
