@@ -2,7 +2,7 @@
     "name": "StanleyControl",
     "maps": [
         {
-            "name": "Main",
+            "name": "Player",
             "id": "e7629076-0d91-429e-bb4d-2af557f38569",
             "actions": [
                 {
@@ -64,6 +64,34 @@
                     "processors": "",
                     "groups": "",
                     "action": "StillstandAktion",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Weiche",
+            "id": "86b1b31f-703a-4ffe-af74-4d8a9c5670e6",
+            "actions": [
+                {
+                    "name": "DrehenAktion",
+                    "type": "Button",
+                    "id": "906fe0e1-b39a-49c8-b2f1-0487a146f1d0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bc189596-3e3e-467f-a54e-3dbac5c4b066",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DrehenAktion",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -22,6 +22,7 @@ public class Rechtskurve : StateMachineBehaviour
     {
         //animator.gameObject.transform.position += animator.gameObject.transform.up * 13.29f;
         animator.gameObject.transform.Rotate(0f, 0f, -90f);
+        animator.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
     }
 
     ////OnStateMove is called right after Animator.OnAnimatorMove()

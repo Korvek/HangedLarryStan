@@ -31,7 +31,7 @@ public class Stanley : MonoBehaviour
     /// <summary>
     /// Drehung mithilfe von Pfeilen oder fixe 90°
     /// </summary>
-    public bool pfeilsteuerungON = true;
+    //public bool pfeilsteuerungON = true;
     /// <summary>
     /// Das zu lösende Wort
     /// </summary>
@@ -43,7 +43,7 @@ public class Stanley : MonoBehaviour
     /// <summary>
     /// Tempo in dem Abgebogen wird (Testzweck)
     /// </summary>
-    [SerializeField]float drehTempo = 100f;
+    //[SerializeField]float drehTempo = 100f;
 
     /// <summary>
     /// Textanzeige für das Zielwort
@@ -69,14 +69,12 @@ public class Stanley : MonoBehaviour
         //Füllen der Lösungswortanzeige mit '_'
         gelöstesWort = new string('_', zielwort.Length);
         ZielwortT.text=gelöstesWort;
-
         //Weise Aktionen den Tasten zu
-        drehenAktion = actions.FindActionMap("Main").FindAction("DrehenAktion");
-        sammelAktion = actions.FindActionMap("Main").FindAction("SammelAktion");
-
+        drehenAktion = actions.FindActionMap("Player").FindAction("DrehenAktion");
+        sammelAktion = actions.FindActionMap("Player").FindAction("SammelAktion");
         //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
         drehenAktion.performed += RichtungWechsel;
-        //Verknüpfe drehenAktion mit dem Starten der Bewegung
+        //Verknüpfe drehenAktion mit der Bewegung starten Methode
         drehenAktion.performed += StarteBewegung;
         //Verknüpfe sammelAktion mit der Sammeln Methode
         sammelAktion.performed += Sammeln;
@@ -87,89 +85,33 @@ public class Stanley : MonoBehaviour
         //Zielrichtung zum Start ist vorwärts
         zielrichtung = transform.up;
     }
-
-    private void Update()
-    {
-        //Bestimme neue Zielrichtung
-        switch (richtung)
-        {
-            case Richtung.Oben:
-                zielrichtung = Vector2.up;
-                break;
-            case Richtung.Unten:
-                zielrichtung = Vector2.down;
-                break;
-            case Richtung.Rechts:
-                zielrichtung = Vector2.right;
-                break;
-            case Richtung.Links:
-                zielrichtung = Vector2.left;
-                break;
-        }
-    }
-
     void FixedUpdate()
-    {
-        ////Geschwindigkeit mit der die Kurve passiert wird
-        //float drehGeschwindigkeit = 0f;
-
-
-        ////Wenn abgebogen werden soll  WIRD WAHRSCHEINLICH ENTFERNT
-        //if(Vector2.SignedAngle(transform.up,zielrichtung) !=0f)
-        //{
-        //    if (Vector2.SignedAngle(transform.up, zielrichtung) >= 0f)
-        //    {
-        //        drehGeschwindigkeit = drehTempo * Time.fixedDeltaTime; //Linkskurve
-        //    }
-        //    else if (Vector2.SignedAngle(transform.up, zielrichtung) <= 0f)
-        //    {
-        //        drehGeschwindigkeit = -drehTempo * Time.fixedDeltaTime; //Rechtskurve
-        //    }
-        //    else if (Vector2.SignedAngle(transform.up, zielrichtung) == 180f)
-        //    {
-
-        //    }
-        //}
-        ////Wenn nicht mehr abgebogen wird
-        //else
-        //{
-        //    drehGeschwindigkeit = 0;
-        //}
-        //// Rotation WIRD WAHRSCHEINLICH ENTFERNT
-        ////transform.Rotate(0, 0, drehGeschwindigkeit);
+    {        
         // Vorwärtsbewegung basierend auf der aktuellen Richtung
-        //rigidbody2d.velocity = transform.up * geschwindigkeit;
+        rigidbody2d.velocity = transform.up * geschwindigkeit;
     }
-
     /// <summary>
-    /// Wechselt die aktuelle Bewegungsrichtung im Uhrzeigersinn
+    /// Setzt die Richtung in die Abgebogen werden soll
     /// </summary>
     public void RichtungWechsel(InputAction.CallbackContext context)
     {
-        Debug.Log("HIP");
-        //Löse bei Tastendruck die Animation aus TEST
-        anim.SetTrigger("TriggerWenden");
-        //anim.SetTrigger("TriggerRechtskurve");
-
-        //anim.SetTrigger("TriggerLinkskurve");
-        if (!pfeilsteuerungON)
-        {
-            //Bewegungsvariante 90 Grad Drehung
-            //Wenn nicht der letzte Eintrag im Richtungsenum erreicht ist, wechsle einen Eintrag weiter
-            if (((int)richtung) != 3)
-            {
-                richtung++;
-            }
-            //Sollte der letzte Eintrag erreicht sein, springe zum ersten
-            else
-            {
-                richtung = 0;
-            }
-
-        }
-        else if (pfeilsteuerungON)
-        {
-            //Drehung durch Pfeile
+        ////Bewegungsvariante 90 Grad Drehung
+        //if (!pfeilsteuerungON)
+        //{            
+        //    //Wenn nicht der letzte Eintrag im Richtungsenum erreicht ist, wechsle einen Eintrag weiter
+        //    if (((int)richtung) != 3)
+        //    {
+        //        richtung++;
+        //    }
+        //    //Sollte der letzte Eintrag erreicht sein, springe zum ersten
+        //    else
+        //    {
+        //        richtung = 0;
+        //    }
+        //}
+        //Richtungsänderung durch Pfeile
+        //else if (pfeilsteuerungON)
+        //{            
             //Wenn ein Pfeil gespeichert ist
             if (pfeilObjekt != null)
             {
@@ -192,16 +134,55 @@ public class Stanley : MonoBehaviour
                         break;
                 }
             }
+        //}
+    }
+    /// <summary>
+    /// Das Objekt biegt in Zielrichtung ab
+    /// </summary>
+    private void Abbiegen() 
+    {
+        //Bestimme neue Zielrichtung
+        switch (richtung)
+        {
+            case Richtung.Oben:
+                zielrichtung = Vector2.up;
+                break;
+            case Richtung.Unten:
+                zielrichtung = Vector2.down;
+                break;
+            case Richtung.Rechts:
+                zielrichtung = Vector2.right;
+                break;
+            case Richtung.Links:
+                zielrichtung = Vector2.left;
+                break;
+        }
+        //Wenn abgebogen werden soll
+        if (Vector2.SignedAngle(transform.up, zielrichtung) != 0f)
+        {
+            Debug.Log(Vector2.SignedAngle(transform.up, zielrichtung));
+            rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
+            if (Vector2.Angle(transform.up, zielrichtung) == 180) 
+            {
+                anim.SetTrigger("TriggerWenden"); //Wenden
+            }
+            else if (Vector2.SignedAngle(transform.up, zielrichtung) <= 0f)
+            {
+                anim.SetTrigger("TriggerRechtskurve"); //Rechtskurve
+            }
+            else if (Vector2.SignedAngle(transform.up, zielrichtung) >= 0f)
+            {
+                anim.SetTrigger("TriggerLinkskurve"); //Linkskurve
+            }
         }
     }
     /// <summary>
-    /// Sammelt das Momentan berührte Objekt ein
+    /// Sammelt das momentan berührte Objekt ein
     /// </summary>
     private void Sammeln(InputAction.CallbackContext context)
     {
         if (sammelObjekt != null)
         {
-            //TODO Objekt entfernen, Buchstaben prüfen, Wort anzeigen
             //Wenn der Objektname nur ein Zeichen lang ist und im Lösungswort enthalten ist
             if (sammelObjekt.name.Length == 1)
             {
@@ -225,26 +206,19 @@ public class Stanley : MonoBehaviour
                     }
                 }
                 
-                
-
-
-
-
-
                 //Deaktiviere den Buchstaben
                 sammelObjekt.SetActive(false);
             }
         }
     }
     /// <summary>
-    /// 
+    /// Startet die Bewegung bei Tastendruck
     /// </summary>
     private void StarteBewegung(InputAction.CallbackContext context)
     {
         rigidbody2d.constraints = RigidbodyConstraints2D.None;
         drehenAktion.performed -= StarteBewegung;
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Bei Betreten eines sammelbaren Objekts
@@ -253,8 +227,12 @@ public class Stanley : MonoBehaviour
             //Speichere das Objekt
             sammelObjekt = collision.gameObject;
         }
+        if (collision.CompareTag("PfeilAbbiegen"))
+        {
+            Abbiegen();
+        }
         //Bei Kontakt mit einem Pfeil
-        if(collision.CompareTag("PfeilRechts"))
+        else if(collision.CompareTag("PfeilRechts"))
         {
             //Speichere das Objekt
             pfeilObjekt = collision.gameObject;
@@ -277,10 +255,10 @@ public class Stanley : MonoBehaviour
         //Wenn es ein drehender Pfeil ist
         else if (collision.CompareTag("PfeilDrehend"))
         {
-            richtung = collision.transform.parent.gameObject.GetComponent<DrehenderPfeil>().richtung;
+            richtung = collision.transform.parent.gameObject.GetComponent<Weiche>().richtung;
+            Abbiegen();
         }
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
         //Bei Verlassen eines sammelbaren Objekts
@@ -311,7 +289,6 @@ public class Stanley : MonoBehaviour
             pfeilObjekt = null;
         }
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //Bei Zusammenstoß mit einer Wand
@@ -321,7 +298,6 @@ public class Stanley : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
-
     private void OnEnable()
     {
         //Aktiviere InputActions
@@ -333,8 +309,7 @@ public class Stanley : MonoBehaviour
         //Deaktiviere InputActions
         drehenAktion.Disable();
         sammelAktion.Disable();
-    }
-    private void OnDestroy()
+    }    private void OnDestroy()
     {
         //Löse Verknüpfungen
         drehenAktion.performed -= RichtungWechsel;

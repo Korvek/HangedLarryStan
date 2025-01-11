@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class DrehenderPfeil : MonoBehaviour
+public class Weiche : MonoBehaviour
 {
     /// <summary>
     /// Aktive Richtung
@@ -20,38 +20,11 @@ public class DrehenderPfeil : MonoBehaviour
 
     private void Awake()
     {
-        drehenAktion = actions.FindActionMap("Main").FindAction("DrehenAktion");
+        drehenAktion = actions.FindActionMap("Weiche").FindAction("DrehenAktion");
         //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
         drehenAktion.performed += RichtungWechsel;
-
         //Wechselt die Richtung je nach Richtungsvariable
-        switch (richtung)
-        {
-            case Richtung.Oben:
-                transform.eulerAngles = new Vector3(0f, 0f, 0f);
-                break;
-            case Richtung.Unten:
-                transform.eulerAngles = new Vector3(0f, 0f, 180f);
-                break;
-            case Richtung.Rechts:
-                transform.eulerAngles = new Vector3(0f, 0f, -90f);
-                break;
-            case Richtung.Links:
-                transform.eulerAngles = new Vector3(0f, 0f, 90f);
-                break;
-            default:
-                break;
-        }
-    }
-    private void OnDisable()
-    {
-        //Deaktiviere InputActions
-        drehenAktion.Disable();
-    }
-    private void OnDestroy()
-    {
-        //Löse Verknüpfungen
-        drehenAktion.performed -= RichtungWechsel;
+        Drehen(richtung);
     }
 
     private void RichtungWechsel(InputAction.CallbackContext context)
@@ -66,6 +39,14 @@ public class DrehenderPfeil : MonoBehaviour
             richtung = richtungsListe [0];
         }
         //Wechselt die Richtung je nach Richtungsvariable
+        Drehen(richtung);
+    }
+    /// <summary>
+    /// Dreht den Pfeil in die gewählte Richtung
+    /// </summary>
+    /// <param name="richtung">Gewählte Richtung</param>
+    private void Drehen(Richtung richtung)
+    {
         switch (richtung)
         {
             case Richtung.Oben:
@@ -87,11 +68,9 @@ public class DrehenderPfeil : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         //Wenn ein Spieler den Umschaltbereich betritt
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("TTTTT");
             //Aktiviere Action
             drehenAktion.Enable();
         }
@@ -106,6 +85,14 @@ public class DrehenderPfeil : MonoBehaviour
             drehenAktion.Disable();
         }
     }
-
-
+    private void OnDisable()
+    {
+        //Deaktiviere InputActions
+        drehenAktion.Disable();
+    }
+    private void OnDestroy()
+    {
+        //Löse Verknüpfungen
+        drehenAktion.performed -= RichtungWechsel;
+    }
 }
