@@ -7832,6 +7832,7 @@ MonoBehaviour:
   targetCamera: {fileID: 486675889}
   moveDuration: 1
   moveOnStart: 0
+  actions: {fileID: -944628639613478452, guid: b44b58f16488fda448b3d0d642175356, type: 3}
 --- !u!1001 &1905630381
 PrefabInstance:
   m_ObjectHideFlags: 0
