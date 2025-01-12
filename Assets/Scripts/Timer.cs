@@ -33,7 +33,7 @@ public class Timer : MonoBehaviour
         abgelaufeneZeit = 0f;
         startAktion = actions.FindActionMap("Menu").FindAction("StartGameAktion");
         startAktion.performed += TimerAktivieren;
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
     }
 
     private void Update()
@@ -50,7 +50,8 @@ public class Timer : MonoBehaviour
     }
     private void TimerAktivieren(InputAction.CallbackContext context)
     {
-        Time.timeScale = 1;
+        abgelaufeneZeit = 0f;
+        //Time.timeScale = 1;
         startAktion.Disable();
     }
 

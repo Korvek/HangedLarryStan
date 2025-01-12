@@ -61,7 +61,7 @@ public class Stanley : MonoBehaviour
         //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
         drehenAktion.performed += RichtungWechsel;
         //Verknüpfe drehenAktion mit der Bewegung starten Methode
-        //drehenAktion.performed += StarteBewegung;
+        startAktion.performed += StarteBewegung;
         //Verknüpfe sammelAktion mit der Sammeln Methode
         sammelAktion.performed += Sammeln;
         //Hole Rigidbody Komponente des Objekts
@@ -183,11 +183,11 @@ public class Stanley : MonoBehaviour
     /// <summary>
     /// Startet die Bewegung bei Tastendruck
     /// </summary>
-    //private void StarteBewegung(InputAction.CallbackContext context)
-    //{
-    //    rigidbody2d.constraints = RigidbodyConstraints2D.None;
-    //    drehenAktion.performed -= StarteBewegung;
-    //}
+    private void StarteBewegung(InputAction.CallbackContext context)
+    {
+        rigidbody2d.constraints = RigidbodyConstraints2D.None;
+        drehenAktion.performed -= StarteBewegung;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Bei Betreten eines sammelbaren Objekts
@@ -276,17 +276,19 @@ public class Stanley : MonoBehaviour
         //Aktiviere InputActions
         drehenAktion.Enable();
         sammelAktion.Enable();
+        startAktion.Enable();
     }
     private void OnDisable()
     {
         //Deaktiviere InputActions
         drehenAktion.Disable();
         sammelAktion.Disable();
+        startAktion.Disable();
     }    private void OnDestroy()
     {
         //Löse Verknüpfungen
         drehenAktion.performed -= RichtungWechsel;
-        //drehenAktion.performed -= StarteBewegung;
+        startAktion.performed -= StarteBewegung;
         sammelAktion.performed -= Sammeln;
     }
 }
