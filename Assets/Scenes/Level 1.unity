@@ -5497,7 +5497,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1564613863550805793, guid: 8d13350fde2e57f43acfacd93c9b6e59, type: 3}
       propertyPath: m_Offset.x
-      value: 0.33643708
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: 1564613863550805793, guid: 8d13350fde2e57f43acfacd93c9b6e59, type: 3}
       propertyPath: m_Offset.y
@@ -7187,6 +7187,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.11645949
       objectReference: {fileID: 0}
+    - target: {fileID: 4087872787354858775, guid: 1a0486a3fad73734f9e83955565c145c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8576098460779273963, guid: 1a0486a3fad73734f9e83955565c145c, type: 3}
       propertyPath: m_Name
       value: RechtsPfeil
@@ -8220,7 +8224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2891941290161344496, guid: 9011d773d4e4b3847af7e0ee11b12155, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -48.7
+      value: -63.13
       objectReference: {fileID: 0}
     - target: {fileID: 2891941290161344496, guid: 9011d773d4e4b3847af7e0ee11b12155, type: 3}
       propertyPath: m_LocalPosition.z

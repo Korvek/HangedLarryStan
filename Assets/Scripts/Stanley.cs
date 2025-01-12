@@ -141,6 +141,7 @@ public class Stanley : MonoBehaviour
     /// </summary>
     private void Abbiegen() 
     {
+        Debug.Log(pfeilObjekt.transform.parent.name);
         //Bestimme neue Zielrichtung
         switch (richtung)
         {
@@ -287,6 +288,10 @@ public class Stanley : MonoBehaviour
         {
             //Vergiss den Pfeil
             pfeilObjekt = null;
+        }
+        if (collision.CompareTag("PfeilAbbiegen"))
+        {
+            Debug.Log("Scheidung");
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
