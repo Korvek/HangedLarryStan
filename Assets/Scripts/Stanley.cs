@@ -8,12 +8,6 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-
-//TODO für Pfeile
-// 1. Collider in Gang
-// 2. Collider löst Drehung aus
-
-
 public class Stanley : MonoBehaviour
 {
     /// <summary>
@@ -28,13 +22,17 @@ public class Stanley : MonoBehaviour
     /// Set von Input Aktionen
     /// </summary>
     public InputActionAsset actions;
-    
+
     /// <summary>
     /// Drehung mithilfe von Pfeilen oder fixe 90°
     /// </summary>
     //public bool pfeilsteuerungON = true;
 
+    /// <summary>
+    /// Event, das ausgelöst wird wenn ein Buchstabe gesammelt wird
+    /// </summary>
     public GameEventChar buchstabeGesammelt;
+    public GameEvent resetGame;
     
 
     //Körperkomponente
@@ -257,10 +255,6 @@ public class Stanley : MonoBehaviour
             //Vergiss den Pfeil
             pfeilObjekt = null;
         }
-        if (collision.CompareTag("PfeilAbbiegen"))
-        {
-            Debug.Log("Scheidung");
-        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -268,7 +262,7 @@ public class Stanley : MonoBehaviour
         if (collision.gameObject.CompareTag("Wand"))
         {
             //Starte das Level neu
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            resetGame.TriggerEvent();
         }
     }
     private void OnEnable()

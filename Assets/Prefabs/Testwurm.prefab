@@ -189,7 +189,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.86, y: 0}
@@ -256,7 +256,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6852441063186415694}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -363,7 +363,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 3
+  m_Constraints: 0
 --- !u!114 &1195624289279886975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,11 +377,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   richtung: 0
-  geschwindigkeit: 1
+  geschwindigkeit: 5
   actions: {fileID: -944628639613478452, guid: b44b58f16488fda448b3d0d642175356, type: 3}
-  zielwort: Larry
-  "gel\xF6stesWort": 
-  ZielwortT: {fileID: 0}
+  buchstabeGesammelt: {fileID: 11400000, guid: cca7ea87db5356d4b8e2af11321e5da0, type: 2}
+  resetGame: {fileID: 11400000, guid: 9ebd0916ab4be484ba72532a26d47465, type: 2}
 --- !u!114 &5815603380244508587
 MonoBehaviour:
   m_ObjectHideFlags: 0
