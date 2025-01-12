@@ -1242,7 +1242,7 @@ GameObject:
   - component: {fileID: 347212623}
   - component: {fileID: 347212622}
   m_Layer: 0
-  m_Name: Level 1 Buch
+  m_Name: Buch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
