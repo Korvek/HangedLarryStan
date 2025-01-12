@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -32,23 +33,9 @@ public class Stanley : MonoBehaviour
     /// Drehung mithilfe von Pfeilen oder fixe 90°
     /// </summary>
     //public bool pfeilsteuerungON = true;
-    /// <summary>
-    /// Das zu lösende Wort
-    /// </summary>
-    public String zielwort="Larry";
-    /// <summary>
-    /// Speicher für gefundene Buchstaben
-    /// </summary>
-    public String gelöstesWort="";
-    /// <summary>
-    /// Tempo in dem Abgebogen wird (Testzweck)
-    /// </summary>
-    //[SerializeField]float drehTempo = 100f;
 
-    /// <summary>
-    /// Textanzeige für das Zielwort
-    /// </summary>
-    public TextMeshProUGUI ZielwortT;
+    public GameEventChar buchstabeGesammelt;
+    
 
     //Körperkomponente
     private Rigidbody2D rigidbody2d;
@@ -63,19 +50,18 @@ public class Stanley : MonoBehaviour
     //Aktionen die auf Inputs reagieren
     private InputAction drehenAktion;
     private InputAction sammelAktion;
+    private InputAction startAktion;
 
     private void Awake()
     {
-        //Füllen der Lösungswortanzeige mit '_'
-        gelöstesWort = new string('_', zielwort.Length);
-        ZielwortT.text=gelöstesWort;
         //Weise Aktionen den Tasten zu
         drehenAktion = actions.FindActionMap("Player").FindAction("DrehenAktion");
         sammelAktion = actions.FindActionMap("Player").FindAction("SammelAktion");
+        startAktion = actions.FindActionMap("Menu").FindAction("StartGameAktion");
         //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
         drehenAktion.performed += RichtungWechsel;
         //Verknüpfe drehenAktion mit der Bewegung starten Methode
-        drehenAktion.performed += StarteBewegung;
+        //drehenAktion.performed += StarteBewegung;
         //Verknüpfe sammelAktion mit der Sammeln Methode
         sammelAktion.performed += Sammeln;
         //Hole Rigidbody Komponente des Objekts
@@ -187,26 +173,8 @@ public class Stanley : MonoBehaviour
             //Wenn der Objektname nur ein Zeichen lang ist und im Lösungswort enthalten ist
             if (sammelObjekt.name.Length == 1)
             {
-                //Wenn der gesammelte Buchstabe nicht im Zielwort enthalten ist
-                if (!zielwort.ToUpper().Contains(sammelObjekt.name))
-                {
-                    //TODO: Buchstabe nicht im Wort enthalten
-                }
-                //Wenn der gesammelte Buchstabe im Zielwort enthalten ist
-                else
-                {
-                    //Suche nach dem Buchstaben im Zielwort
-                    for (int i = 0; i < zielwort.Length; i++)
-                    {
-                        if (zielwort.ToUpper()[i].Equals(sammelObjekt.name[0]))
-                        {
-                            //Ersetze ein _ im gelösten Wort
-                            gelöstesWort = gelöstesWort.Remove(i,1).Insert(i, sammelObjekt.name);
-                            ZielwortT.text = gelöstesWort;
-                        }
-                    }
-                }
-                
+                //Löse ein Buchstabe gesammelt Event aus
+                buchstabeGesammelt.TriggerEvent(sammelObjekt.name[0]);
                 //Deaktiviere den Buchstaben
                 sammelObjekt.SetActive(false);
             }
@@ -215,11 +183,11 @@ public class Stanley : MonoBehaviour
     /// <summary>
     /// Startet die Bewegung bei Tastendruck
     /// </summary>
-    private void StarteBewegung(InputAction.CallbackContext context)
-    {
-        rigidbody2d.constraints = RigidbodyConstraints2D.None;
-        drehenAktion.performed -= StarteBewegung;
-    }
+    //private void StarteBewegung(InputAction.CallbackContext context)
+    //{
+    //    rigidbody2d.constraints = RigidbodyConstraints2D.None;
+    //    drehenAktion.performed -= StarteBewegung;
+    //}
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Bei Betreten eines sammelbaren Objekts
@@ -318,7 +286,7 @@ public class Stanley : MonoBehaviour
     {
         //Löse Verknüpfungen
         drehenAktion.performed -= RichtungWechsel;
-        drehenAktion.performed -= StarteBewegung;
+        //drehenAktion.performed -= StarteBewegung;
         sammelAktion.performed -= Sammeln;
     }
 }

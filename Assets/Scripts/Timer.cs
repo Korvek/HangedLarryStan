@@ -13,22 +13,27 @@ public class Timer : MonoBehaviour
     /// <summary>
     /// Abgelaufene Zeit des Spielers in Sekunden
     /// </summary>
-    public floatObject abgelaufeneZeit;
+    public float abgelaufeneZeit;
 
-    public InputAction timerAktivieren;
+    /// <summary>
+    /// Set von Input Aktionen
+    /// </summary>
+    public InputActionAsset actions;
+    public InputAction startAktion;
 
     private void Awake()
     {
-        //TODO: Timer initialisieren ohne reset bei Levelwechsel
-        abgelaufeneZeit.value = 0f;
-        timerAktivieren.performed += TimerAktivieren;
+        abgelaufeneZeit = 0f;
+        startAktion = actions.FindActionMap("Menu").FindAction("StartGameAktion");
+        startAktion.performed += TimerAktivieren;
+        Time.timeScale = 0f;
     }
 
     private void Update()
     {
-        if (abgelaufeneZeit.value < maxZeit)
+        if (abgelaufeneZeit < maxZeit)
         {
-            abgelaufeneZeit.value += Time.deltaTime;
+            abgelaufeneZeit += Time.deltaTime;
         }
         else
         {
@@ -37,23 +42,22 @@ public class Timer : MonoBehaviour
 
         }
     }
-
     private void TimerAktivieren(InputAction.CallbackContext context)
     {
-        timerAktivieren.Disable();
-        throw new NotImplementedException();
+        Time.timeScale = 1;
+        startAktion.Disable();
     }
 
     private void OnEnable()
     {
-        timerAktivieren.Enable();
+        startAktion.Enable();
     }
     private void OnDisable()
     {
-        timerAktivieren.Disable();
+        startAktion.Disable();
     }
     private void OnDestroy()
     {
-        timerAktivieren.performed -= TimerAktivieren;
+        startAktion.performed -= TimerAktivieren;
     }
 }

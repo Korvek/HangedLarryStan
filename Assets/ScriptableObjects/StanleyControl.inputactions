@@ -118,6 +118,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "StartGameAktion",
+                    "type": "Button",
+                    "id": "97235e96-df7e-4ce0-82d5-a414cfd12baf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -162,6 +171,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "CameraMoveAktion",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "25d2becd-167c-4421-ae98-5f340c293069",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StartGameAktion",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
