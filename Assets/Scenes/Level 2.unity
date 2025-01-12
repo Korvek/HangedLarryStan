@@ -2473,6 +2473,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5866884385412669141, guid: d64702c711c83df4980f2a5a4aafdfdb, type: 3}
+      propertyPath: m_Constraints
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6852441063186415694, guid: d64702c711c83df4980f2a5a4aafdfdb, type: 3}
       propertyPath: m_Name
       value: Testwurm
