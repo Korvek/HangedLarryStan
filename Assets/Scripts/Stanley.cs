@@ -58,6 +58,7 @@ public class Stanley : MonoBehaviour
         drehenAktion = actions.FindActionMap("Player").FindAction("DrehenAktion");
         sammelAktion = actions.FindActionMap("Player").FindAction("SammelAktion");
         startAktion = actions.FindActionMap("Menu").FindAction("StartGameAktion");
+        Debug.Log(startAktion.ToString());
         //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
         drehenAktion.performed += RichtungWechsel;
         //Verknüpfe drehenAktion mit der Bewegung starten Methode

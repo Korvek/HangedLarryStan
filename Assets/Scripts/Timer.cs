@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,18 +20,24 @@ public class Timer : MonoBehaviour
     /// Set von Input Aktionen
     /// </summary>
     public InputActionAsset actions;
-    public InputAction startAktion;
+    private InputAction startAktion;
+
+    private TextMeshProUGUI timerT;
 
     private void Awake()
     {
+        timerT = GetComponent<TextMeshProUGUI>();
         abgelaufeneZeit = 0f;
+        Debug.Log(actions.FindActionMap("Menu").FindAction("StartGameAktion").ToString());
         startAktion = actions.FindActionMap("Menu").FindAction("StartGameAktion");
+        Debug.Log(startAktion.ToString());
         startAktion.performed += TimerAktivieren;
         Time.timeScale = 0f;
     }
 
     private void Update()
     {
+        timerT.text=abgelaufeneZeit.ToString();
         if (abgelaufeneZeit < maxZeit)
         {
             abgelaufeneZeit += Time.deltaTime;

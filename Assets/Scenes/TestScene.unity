@@ -453,18 +453,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1ec147b3ef1d9c469754d8859f7e480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxZeit: 0
+  maxZeit: 1000
   abgelaufeneZeit: 0
-  actions: {fileID: 0}
-  startAktion:
-    m_Name: Start Aktion
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 44b9f1e7-fc41-45e8-8450-b29ccd9dbd3d
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
+  actions: {fileID: -944628639613478452, guid: b44b58f16488fda448b3d0d642175356, type: 3}
 --- !u!114 &136829721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5378,16 +5369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxZeit: 1000
   abgelaufeneZeit: 0
-  actions: {fileID: 0}
-  startAktion:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 0240834e-bd14-4598-924f-5efc86e0ecde
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
+  actions: {fileID: -944628639613478452, guid: b44b58f16488fda448b3d0d642175356, type: 3}
 --- !u!4 &1914355789
 Transform:
   m_ObjectHideFlags: 0
