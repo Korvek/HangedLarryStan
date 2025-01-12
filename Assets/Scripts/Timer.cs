@@ -16,6 +16,10 @@ public class Timer : MonoBehaviour
     /// Abgelaufene Zeit des Spielers in Sekunden
     /// </summary>
     public float abgelaufeneZeit;
+    [Tooltip("Sekunden, die als Strafe abgezogen werden.")]
+    public int strafZeit;
+    [Tooltip("Sekunden, die als Bonus addiert werden.")]
+    public int bonusZeit;
 
     /// <summary>
     /// Set von Input Aktionen
@@ -53,6 +57,16 @@ public class Timer : MonoBehaviour
         abgelaufeneZeit = 0f;
         //Time.timeScale = 1;
         startAktion.Disable();
+    }
+
+    public void Zeitstrafe()
+    {
+        abgelaufeneZeit += strafZeit;
+    }
+
+    public void Zeitbonus()
+    {
+        abgelaufeneZeit -= bonusZeit;
     }
 
     private void OnEnable()

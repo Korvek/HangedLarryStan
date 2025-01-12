@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1985490073867753557}
   - component: {fileID: 580520584153665245}
   - component: {fileID: 4014104195207852524}
+  - component: {fileID: 2199399164161785785}
+  - component: {fileID: 3966299820409265488}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -149,5 +151,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxZeit: 120
   abgelaufeneZeit: 0
+  strafZeit: 5
+  bonusZeit: 0
   actions: {fileID: -944628639613478452, guid: b44b58f16488fda448b3d0d642175356, type: 3}
   endGameEvent: {fileID: 11400000, guid: 68afb45466b2cb24e9d0c0027bc7d9f9, type: 2}
+--- !u!114 &2199399164161785785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5782556499891086164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: a35455193471adf40af6fa5d17aa06f6, type: 2}
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4014104195207852524}
+        m_TargetAssemblyTypeName: Timer, Assembly-CSharp
+        m_MethodName: Zeitstrafe
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3966299820409265488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5782556499891086164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 556e781260b0bd8499e1e313128d659e, type: 2}
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4014104195207852524}
+        m_TargetAssemblyTypeName: Timer, Assembly-CSharp
+        m_MethodName: Zeitbonus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
