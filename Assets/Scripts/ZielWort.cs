@@ -45,7 +45,7 @@ public class ZielWort : MonoBehaviour
                 }
             }
             zeitBonus.TriggerEvent();
-            if(gelöstesWort.Contains('_'))
+            if(!gelöstesWort.Contains('_'))
             {
                 wortGefunden.TriggerEvent();
             }

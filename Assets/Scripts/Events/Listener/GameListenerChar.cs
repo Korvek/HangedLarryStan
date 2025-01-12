@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameEventListener : MonoBehaviour
+public class GameEventListenerChar : MonoBehaviour
 {
     public GameEventChar charEvent;
-    public UnityEvent onEventTriggered;
     public CharEvent onEventTriggeredChar;
+    
 
     void OnEnable()
     {
@@ -15,10 +15,6 @@ public class GameEventListener : MonoBehaviour
     void OnDisable()
     {
         charEvent.RemoveListener(this);
-    }
-    public void OnEventTriggered()
-    {
-        onEventTriggered.Invoke();
     }
     public void OnEventTriggered(char buchstabe)
     {

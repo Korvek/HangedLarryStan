@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class Timer : MonoBehaviour
@@ -20,6 +21,8 @@ public class Timer : MonoBehaviour
     /// Set von Input Aktionen
     /// </summary>
     public InputActionAsset actions;
+    public GameEvent endGameEvent;
+
     private InputAction startAktion;
 
     private TextMeshProUGUI timerT;
@@ -28,9 +31,7 @@ public class Timer : MonoBehaviour
     {
         timerT = GetComponent<TextMeshProUGUI>();
         abgelaufeneZeit = 0f;
-        Debug.Log(actions.FindActionMap("Menu").FindAction("StartGameAktion").ToString());
         startAktion = actions.FindActionMap("Menu").FindAction("StartGameAktion");
-        Debug.Log(startAktion.ToString());
         startAktion.performed += TimerAktivieren;
         Time.timeScale = 0f;
     }
@@ -44,9 +45,7 @@ public class Timer : MonoBehaviour
         }
         else
         {
-            UnityEditor.EditorApplication.isPlaying = false;
-            Application.Quit();
-
+            endGameEvent.TriggerEvent();
         }
     }
     private void TimerAktivieren(InputAction.CallbackContext context)

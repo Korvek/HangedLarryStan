@@ -5,22 +5,22 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObjects/Event/Char")]
 public class GameEventChar : ScriptableObject
 {
-    private List<GameEventListener> listeners = new List<GameEventListener> ();
+    private List<GameEventListenerChar> listeners = new List<GameEventListenerChar> ();
 
     public void TriggerEvent(char buchstabe)
     {
-        foreach(GameEventListener listener in listeners)
+        foreach(GameEventListenerChar listener in listeners)
         {
             listener.OnEventTriggered(buchstabe);
         }
     }
 
-    public void AddListener(GameEventListener listener)
+    public void AddListener(GameEventListenerChar listener)
     {
         listeners.Add(listener);
     }
 
-    public void RemoveListener(GameEventListener listener)
+    public void RemoveListener(GameEventListenerChar listener)
     {
         listeners.Remove(listener);
     }
