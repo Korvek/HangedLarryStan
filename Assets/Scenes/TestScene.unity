@@ -6124,14 +6124,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1136675099}
     m_Modifications:
-    - target: {fileID: 4014104195207852524, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
-      propertyPath: maxZeit
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 4014104195207852524, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
-      propertyPath: strafZeit
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 5782556499891086164, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
       propertyPath: m_Name
       value: Timer
