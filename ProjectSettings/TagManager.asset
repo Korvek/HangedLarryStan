@@ -50,3 +50,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Routen
+    uniqueID: 1584450367
+    locked: 0
+  - name: Pfeile
+    uniqueID: 1065614049
+    locked: 0
+  - name: Buchstaben
+    uniqueID: 1282829133
+    locked: 0
+  - name: Wurm
+    uniqueID: 950724621
+    locked: 0
+  - name: "W\xE4nde"
+    uniqueID: 482203985
+    locked: 0

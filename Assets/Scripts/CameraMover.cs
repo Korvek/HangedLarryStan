@@ -1,12 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CameraMover : MonoBehaviour
 {
     public Camera targetCamera; // Zielkamera, deren Startposition, Rotation und Size übernommen werden
     public float moveDuration = 2f; // Dauer der Bewegung in Sekunden
     public bool moveOnStart = true; // Bewegung automatisch bei Spielstart
+    /// <summary>
+    /// Set von Input Aktionen
+    /// </summary>
+    public InputActionAsset actions;
 
     private bool isMoving = false;
     private float elapsedTime = 0f; // Verstrichene Zeit
@@ -14,9 +20,14 @@ public class CameraMover : MonoBehaviour
     private Quaternion originalRotation; // Ursprüngliche Rotation der Main Camera
     private float originalSize; // Ursprüngliche Größe der Main Camera
     private float targetSize; // Zielgröße (Size der Target Camera)
+    private InputAction cameraMoveAktion;
 
-    void Start()
+    void Awake()
     {
+        //InputAktion zuweisen
+        cameraMoveAktion = actions.FindActionMap("Menu").FindAction("CameraMoveAktion");
+        cameraMoveAktion.performed += startMoveCamera;
+
         // Speichere die ursprünglichen Werte der Main Camera
         originalPosition = transform.position;
         originalRotation = transform.rotation;
@@ -41,13 +52,20 @@ public class CameraMover : MonoBehaviour
         }
     }
 
+    private void startMoveCamera(InputAction.CallbackContext context)
+    {
+        isMoving = true;
+        elapsedTime = 0f;
+        cameraMoveAktion.performed -= startMoveCamera;
+    }
+
     void Update()
     {
         // Bewegung durch Tastendruck starten (optional)
-        if (Input.GetKeyDown(KeyCode.Space) && !isMoving)
-        {
-            StartMove();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space) && !isMoving)
+        //{
+        //    StartMove();
+        //}
 
         // Bewegung durchführen
         if (isMoving)
@@ -77,5 +95,21 @@ public class CameraMover : MonoBehaviour
     {
         isMoving = true;
         elapsedTime = 0f;
+    }
+
+    private void OnEnable()
+    {
+        //Aktiviere InputActions
+        cameraMoveAktion.Enable();
+    }
+    private void OnDisable()
+    {
+        //Deaktiviere InputActions
+        cameraMoveAktion.Disable();
+    }
+    private void OnDestroy()
+    {
+        //Löse Verknüpfungen
+        cameraMoveAktion.performed -= startMoveCamera;
     }
 }
