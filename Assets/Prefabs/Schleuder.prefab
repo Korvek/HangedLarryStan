@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zielpunkt: {fileID: 2587217306271785281}
+  sprung: {fileID: 11400000, guid: d4ac4c038a8f45e4880981c0f0e58337, type: 2}
 --- !u!114 &9071112774981877307
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,21 +3,21 @@ using UnityEngine.Events;
 
 public class GameEventListenerPosition : MonoBehaviour
 {
-    public GameEventPosition charEvent;
-    public CharEvent onEventTriggeredChar;
+    public GameEventPosition posEvent;
+    public PositionsEvent onEventTriggeredPos;
     
 
     void OnEnable()
     {
-        charEvent.AddListener(this);
+        posEvent.AddListener(this);
     }
 
     void OnDisable()
     {
-        charEvent.RemoveListener(this);
+        posEvent.RemoveListener(this);
     }
     public void OnEventTriggered(Vector3 pos)
     {
-        //onEventTriggeredChar.Invoke(pos);
+        onEventTriggeredPos.Invoke(pos);
     }
 }
