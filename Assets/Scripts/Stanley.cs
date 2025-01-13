@@ -78,8 +78,6 @@ public class Stanley : MonoBehaviour
     private void StoppeBewegung(InputAction.CallbackContext context)
     {
         rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
-        Debug.Log(context.performed);
-        Debug.Log(context.canceled);
         if (context.canceled)
         {
             rigidbody2d.constraints = RigidbodyConstraints2D.None;
