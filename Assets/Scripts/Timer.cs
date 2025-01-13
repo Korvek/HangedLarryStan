@@ -42,10 +42,10 @@ public class Timer : MonoBehaviour
 
     private void Update()
     {
-        timerT.text=abgelaufeneZeit.ToString();
+        timerT.text=(maxZeit+Mathf.Round(abgelaufeneZeit)).ToString();
         if (abgelaufeneZeit < maxZeit)
         {
-            abgelaufeneZeit += Time.deltaTime;
+            abgelaufeneZeit -= Time.deltaTime;
         }
         else
         {
@@ -61,12 +61,12 @@ public class Timer : MonoBehaviour
 
     public void Zeitstrafe()
     {
-        abgelaufeneZeit += strafZeit;
+        abgelaufeneZeit -= strafZeit;
     }
 
     public void Zeitbonus()
     {
-        abgelaufeneZeit -= bonusZeit;
+        abgelaufeneZeit += bonusZeit;
     }
 
     private void OnEnable()
