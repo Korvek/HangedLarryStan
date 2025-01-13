@@ -59,13 +59,46 @@
                 {
                     "name": "",
                     "id": "0be94f68-0293-486c-9eb2-793180235076",
-                    "path": "",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "StillstandAktion",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "Button With One Modifier",
+                    "id": "9a41a438-1494-4c84-b656-52eeb696a07f",
+                    "path": "ButtonWithOneModifier",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StillstandAktion",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Modifier",
+                    "id": "0b2368f3-5c03-4e04-8779-59a1fe80f2a3",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StillstandAktion",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Button",
+                    "id": "21e3c68e-61f2-431d-9f60-a064900a0678",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StillstandAktion",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },

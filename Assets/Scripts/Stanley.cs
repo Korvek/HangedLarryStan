@@ -49,17 +49,22 @@ public class Stanley : MonoBehaviour
     private InputAction drehenAktion;
     private InputAction sammelAktion;
     private InputAction startAktion;
+    private InputAction stopAktion;
 
     private void Awake()
     {
         //Weise Aktionen den Tasten zu
         drehenAktion = actions.FindActionMap("Player").FindAction("DrehenAktion");
         sammelAktion = actions.FindActionMap("Player").FindAction("SammelAktion");
+        stopAktion = actions.FindActionMap("Player").FindAction("StillstandAktion");
         startAktion = actions.FindActionMap("Menu").FindAction("StartGameAktion");
         //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
         drehenAktion.performed += RichtungWechsel;
-        //Verknüpfe drehenAktion mit der Bewegung starten Methode
+        //Verknüpfe startAktion mit der Bewegung starten Methode
         startAktion.performed += StarteBewegung;
+        //Verknüpfe stopAktion mit der Bewegung stoppen Methode
+        stopAktion.performed += StoppeBewegung;
+        stopAktion.canceled += StarteBewegung;
         //Verknüpfe sammelAktion mit der Sammeln Methode
         sammelAktion.performed += Sammeln;
         //Hole Rigidbody Komponente des Objekts
@@ -69,6 +74,18 @@ public class Stanley : MonoBehaviour
         //Zielrichtung zum Start ist vorwärts
         zielrichtung = transform.up;
     }
+
+    private void StoppeBewegung(InputAction.CallbackContext context)
+    {
+        rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
+        Debug.Log(context.performed);
+        Debug.Log(context.canceled);
+        if (context.canceled)
+        {
+            rigidbody2d.constraints = RigidbodyConstraints2D.None;
+        }
+    }
+
     void FixedUpdate()
     {        
         // Vorwärtsbewegung basierend auf der aktuellen Richtung
@@ -183,7 +200,7 @@ public class Stanley : MonoBehaviour
     private void StarteBewegung(InputAction.CallbackContext context)
     {
         rigidbody2d.constraints = RigidbodyConstraints2D.None;
-        drehenAktion.performed -= StarteBewegung;
+        startAktion.performed -= StarteBewegung;
     }
 
     public void Sprung(Vector3 newPos)
@@ -274,6 +291,7 @@ public class Stanley : MonoBehaviour
         //Aktiviere InputActions
         drehenAktion.Enable();
         sammelAktion.Enable();
+        stopAktion.Enable();
         startAktion.Enable();
     }
     private void OnDisable()
@@ -281,12 +299,14 @@ public class Stanley : MonoBehaviour
         //Deaktiviere InputActions
         drehenAktion.Disable();
         sammelAktion.Disable();
+        stopAktion.Disable();
         startAktion.Disable();
     }    private void OnDestroy()
     {
         //Löse Verknüpfungen
         drehenAktion.performed -= RichtungWechsel;
         startAktion.performed -= StarteBewegung;
+        stopAktion.performed -= StoppeBewegung;
         sammelAktion.performed -= Sammeln;
     }
 }
