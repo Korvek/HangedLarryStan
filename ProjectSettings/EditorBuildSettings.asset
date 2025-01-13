@@ -16,9 +16,12 @@ EditorBuildSettings:
     guid: 709785e90674b27448a7fe7784e10919
   - enabled: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     path: Assets/Scenes/Level 3.unity
     guid: 2504f761711645f4c9acc4d1d074226d
 =======
+=======
+>>>>>>> Stashed changes
     path: Assets/Scenes/Level 3OLD.unity
     guid: e9e100563561e68449ec3249dd690b3f
 >>>>>>> Stashed changes

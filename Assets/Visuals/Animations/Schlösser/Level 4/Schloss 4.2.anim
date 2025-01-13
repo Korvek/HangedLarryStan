@@ -84,7 +84,11 @@ AnimationClip:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         value: {x: 166.2, y: 38.4, z: 0}
+=======
+        value: {x: 161.1, y: -90.5, z: 0}
+>>>>>>> Stashed changes
 =======
         value: {x: 161.1, y: -90.5, z: 0}
 >>>>>>> Stashed changes
@@ -105,7 +109,11 @@ AnimationClip:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         value: {x: 166.2, y: 38.4, z: 0}
+=======
+        value: {x: 161.1, y: -90.5, z: 0}
+>>>>>>> Stashed changes
 =======
         value: {x: 161.1, y: -90.5, z: 0}
 >>>>>>> Stashed changes
@@ -126,7 +134,11 @@ AnimationClip:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         value: {x: 166.2, y: 48.9, z: 0}
+=======
+        value: {x: 161.1, y: -81.1, z: 0}
+>>>>>>> Stashed changes
 =======
         value: {x: 161.1, y: -81.1, z: 0}
 >>>>>>> Stashed changes
@@ -146,8 +158,13 @@ AnimationClip:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         time: 0.76666665
         value: {x: 166.2, y: -159, z: 0}
+=======
+        time: 0.7
+        value: {x: 161.1, y: -154.4, z: 0}
+>>>>>>> Stashed changes
 =======
         time: 0.7
         value: {x: 161.1, y: -154.4, z: 0}
@@ -222,6 +239,7 @@ AnimationClip:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       value: {fileID: 21300000, guid: 96f2859255daa954fbb2bd98dafaa948, type: 3}
     - time: 0.016666668
       value: {fileID: 21300000, guid: 4de8aaf290fb7284bb7023c2c801e4ac, type: 3}
@@ -260,6 +278,8 @@ AnimationClip:
     - time: 0.3
       value: {fileID: 21300000, guid: 3ad916168c239c3419ed3c8bc22e0c50, type: 3}
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -303,6 +323,9 @@ AnimationClip:
       value: {fileID: 21300000, guid: e1e9f8be3ef7d564dbcb9da0feaa8504, type: 3}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -360,6 +383,7 @@ AnimationClip:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     - {fileID: 21300000, guid: 96f2859255daa954fbb2bd98dafaa948, type: 3}
     - {fileID: 21300000, guid: 4de8aaf290fb7284bb7023c2c801e4ac, type: 3}
     - {fileID: 21300000, guid: 830fd3fc1f8727d4084e6107ee7e6350, type: 3}
@@ -380,6 +404,8 @@ AnimationClip:
     - {fileID: 21300000, guid: f769129ad5577bb4cac09ed7cc58d270, type: 3}
     - {fileID: 21300000, guid: 3ad916168c239c3419ed3c8bc22e0c50, type: 3}
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -405,6 +431,9 @@ AnimationClip:
     - {fileID: 21300000, guid: e1e9f8be3ef7d564dbcb9da0feaa8504, type: 3}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -418,7 +447,11 @@ AnimationClip:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     m_StopTime: 0.76666665
+=======
+    m_StopTime: 0.7
+>>>>>>> Stashed changes
 =======
     m_StopTime: 0.7
 >>>>>>> Stashed changes
@@ -452,7 +485,11 @@ AnimationClip:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         value: 166.2
+=======
+        value: 161.1
+>>>>>>> Stashed changes
 =======
         value: 161.1
 >>>>>>> Stashed changes
@@ -473,7 +510,11 @@ AnimationClip:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         value: 166.2
+=======
+        value: 161.1
+>>>>>>> Stashed changes
 =======
         value: 161.1
 >>>>>>> Stashed changes
@@ -494,7 +535,11 @@ AnimationClip:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         value: 166.2
+=======
+        value: 161.1
+>>>>>>> Stashed changes
 =======
         value: 161.1
 >>>>>>> Stashed changes
@@ -514,8 +559,13 @@ AnimationClip:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         time: 0.76666665
         value: 166.2
+=======
+        time: 0.7
+        value: 161.1
+>>>>>>> Stashed changes
 =======
         time: 0.7
         value: 161.1
@@ -551,7 +601,11 @@ AnimationClip:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         value: 38.4
+=======
+        value: -90.5
+>>>>>>> Stashed changes
 =======
         value: -90.5
 >>>>>>> Stashed changes
@@ -572,7 +626,11 @@ AnimationClip:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         value: 38.4
+=======
+        value: -90.5
+>>>>>>> Stashed changes
 =======
         value: -90.5
 >>>>>>> Stashed changes
@@ -593,7 +651,11 @@ AnimationClip:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         value: 48.9
+=======
+        value: -81.1
+>>>>>>> Stashed changes
 =======
         value: -81.1
 >>>>>>> Stashed changes
@@ -613,8 +675,13 @@ AnimationClip:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         time: 0.76666665
         value: -159
+=======
+        time: 0.7
+        value: -154.4
+>>>>>>> Stashed changes
 =======
         time: 0.7
         value: -154.4
@@ -676,7 +743,11 @@ AnimationClip:
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         time: 0.76666665
+=======
+        time: 0.7
+>>>>>>> Stashed changes
 =======
         time: 0.7
 >>>>>>> Stashed changes
