@@ -5,4 +5,4 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [Serializable]
-public class PositionsEvent : UnityEvent<char> { }
+public class PositionsEvent : UnityEvent<Vector3> { }
