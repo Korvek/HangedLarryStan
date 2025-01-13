@@ -125,7 +125,7 @@ public class Stanley : MonoBehaviour
     /// </summary>
     private void Abbiegen() 
     {
-        
+        Debug.Log("Position vor Animation: "+ transform.position);
         //Bestimme neue Zielrichtung
         switch (richtung)
         {
