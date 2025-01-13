@@ -18,6 +18,6 @@ public class GameEventListenerPosition : MonoBehaviour
     }
     public void OnEventTriggered(Vector3 pos)
     {
-        onEventTriggeredChar.Invoke(pos);
+        //onEventTriggeredChar.Invoke(pos);
     }
 }
