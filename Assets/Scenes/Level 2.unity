@@ -1295,17 +1295,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1784772047}
     m_Modifications:
+    - target: {fileID: 5821484769856577484, guid: e058c3c7009910a4a9580e06911fa51d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 66332ed4c24e3e346a5abfdbcad82805, type: 3}
+    - target: {fileID: 5821484769856577484, guid: e058c3c7009910a4a9580e06911fa51d, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821484769856577484, guid: e058c3c7009910a4a9580e06911fa51d, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1065614049
+      objectReference: {fileID: 0}
     - target: {fileID: 6032079447735795551, guid: e058c3c7009910a4a9580e06911fa51d, type: 3}
       propertyPath: m_Name
       value: Schloss 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 7908203541416612818, guid: e058c3c7009910a4a9580e06911fa51d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -81.29897
+      value: -81.6
       objectReference: {fileID: 0}
     - target: {fileID: 7908203541416612818, guid: e058c3c7009910a4a9580e06911fa51d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -95.327194
+      value: -68.2
       objectReference: {fileID: 0}
     - target: {fileID: 7908203541416612818, guid: e058c3c7009910a4a9580e06911fa51d, type: 3}
       propertyPath: m_LocalPosition.z
