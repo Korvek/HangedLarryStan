@@ -125,6 +125,7 @@ public class Stanley : MonoBehaviour
     /// </summary>
     private void Abbiegen() 
     {
+        
         //Bestimme neue Zielrichtung
         switch (richtung)
         {
@@ -144,7 +145,6 @@ public class Stanley : MonoBehaviour
         //Wenn abgebogen werden soll
         if (Vector2.SignedAngle(transform.up, zielrichtung) != 0f)
         {
-            Debug.Log(Vector2.SignedAngle(transform.up, zielrichtung));
             rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
             if (Vector2.Angle(transform.up, zielrichtung) == 180) 
             {
