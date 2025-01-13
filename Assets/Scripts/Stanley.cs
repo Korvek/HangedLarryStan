@@ -8,6 +8,21 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
+//Steuerung überdenken ( QE rechts/links abbiegen; Auslöser bei Pfeil (kein innerer Collider);
+//Q/E biegt immer ab, Sammeln automatisch
+//Q Abbiegetaste: Biegt auf Pfeil ab
+//E Aktionstaste: Sammelt Buchstabe / Stellt Weiche
+
+/* TODO Liste
+ * 1. Steuerung überdenken
+ * 2. Zweites Zielwort
+ * 3. Beulen/Leben + Soft Reset
+ * 4. Sprungfedern drehen den Spieler
+ * 5. Aufräumen und Kommentare
+ * 6. Volume Slider
+ * 7. Sounds verteilen
+ */
+
 public class Stanley : MonoBehaviour
 {
     /// <summary>
@@ -51,6 +66,10 @@ public class Stanley : MonoBehaviour
     private InputAction startAktion;
     private InputAction stopAktion;
 
+    //TEST Aktionen die Abbiegen
+    private InputAction linksAktion;
+    private InputAction rechtsAktion;
+
     private void Awake()
     {
         //Weise Aktionen den Tasten zu
@@ -58,6 +77,11 @@ public class Stanley : MonoBehaviour
         sammelAktion = actions.FindActionMap("Player").FindAction("SammelAktion");
         stopAktion = actions.FindActionMap("Player").FindAction("StillstandAktion");
         startAktion = actions.FindActionMap("Menu").FindAction("StartGameAktion");
+
+        //TEST
+        linksAktion = actions.FindActionMap("Player").FindAction("LinksAktion");
+        rechtsAktion = actions.FindActionMap("Player").FindAction("RechtsAktion");
+
         //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
         drehenAktion.performed += RichtungWechsel;
         //Verknüpfe startAktion mit der Bewegung starten Methode
@@ -67,12 +91,28 @@ public class Stanley : MonoBehaviour
         stopAktion.canceled += StarteBewegung;
         //Verknüpfe sammelAktion mit der Sammeln Methode
         sammelAktion.performed += Sammeln;
+
+        //TEST
+        linksAktion.performed += linksAbbiegen;
+        rechtsAktion.performed += rechtsAbbiegen;
         //Hole Rigidbody Komponente des Objekts
         rigidbody2d = GetComponent<Rigidbody2D>();
         //Hole Animator Komponente des Objekts
         anim= GetComponent<Animator>();
         //Zielrichtung zum Start ist vorwärts
         zielrichtung = transform.up;
+    }
+
+    private void rechtsAbbiegen(InputAction.CallbackContext context)
+    {
+        rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
+        anim.SetTrigger("TriggerRechtskurve"); //Rechtskurve
+    }
+
+    private void linksAbbiegen(InputAction.CallbackContext context)
+    {
+        rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
+        anim.SetTrigger("TriggerLinkskurve"); //Linkskurve
     }
 
     private void StoppeBewegung(InputAction.CallbackContext context)
@@ -291,6 +331,10 @@ public class Stanley : MonoBehaviour
         sammelAktion.Enable();
         stopAktion.Enable();
         startAktion.Enable();
+
+        //TEST
+        linksAktion.Enable();
+        rechtsAktion.Enable();
     }
     private void OnDisable()
     {
@@ -299,6 +343,10 @@ public class Stanley : MonoBehaviour
         sammelAktion.Disable();
         stopAktion.Disable();
         startAktion.Disable();
+
+        //TEST
+        linksAktion.Disable();
+        rechtsAktion.Disable();
     }    private void OnDestroy()
     {
         //Löse Verknüpfungen
@@ -306,5 +354,9 @@ public class Stanley : MonoBehaviour
         startAktion.performed -= StarteBewegung;
         stopAktion.performed -= StoppeBewegung;
         sammelAktion.performed -= Sammeln;
+
+        //TEST
+        linksAktion.performed -= linksAbbiegen;
+        rechtsAktion.performed -= rechtsAbbiegen;
     }
 }
