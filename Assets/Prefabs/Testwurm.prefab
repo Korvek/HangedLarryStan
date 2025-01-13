@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 7334383016885416691}
   - component: {fileID: 5866884385412669141}
   - component: {fileID: 1195624289279886975}
+  - component: {fileID: 4858260728090172406}
   - component: {fileID: 5815603380244508587}
   m_Layer: 0
   m_Name: Testwurm
@@ -349,6 +350,34 @@ MonoBehaviour:
   actions: {fileID: -944628639613478452, guid: b44b58f16488fda448b3d0d642175356, type: 3}
   buchstabeGesammelt: {fileID: 11400000, guid: cca7ea87db5356d4b8e2af11321e5da0, type: 2}
   resetGame: {fileID: 11400000, guid: 9ebd0916ab4be484ba72532a26d47465, type: 2}
+--- !u!114 &4858260728090172406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6852441063186415694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2575343826e1a8e4da3770a1499f9ab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posEvent: {fileID: 11400000, guid: d4ac4c038a8f45e4880981c0f0e58337, type: 2}
+  onEventTriggeredPos:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1195624289279886975}
+        m_TargetAssemblyTypeName: Stanley, Assembly-CSharp
+        m_MethodName: Sprung
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5815603380244508587
 MonoBehaviour:
   m_ObjectHideFlags: 0

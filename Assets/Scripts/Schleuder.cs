@@ -6,6 +6,7 @@ public class Schleuder : MonoBehaviour
 {
     //Zielpunkt der Schleuder
     public GameObject zielpunkt;
+    public GameEventPosition sprung;
 
     private Animator anim;
 
@@ -20,10 +21,7 @@ public class Schleuder : MonoBehaviour
         {
             anim.SetTrigger("TriggerSprungfeder");
             //Setz ihn an den Zielpunkt
-            Debug.Log(collision.gameObject.transform.position);
-            collision.gameObject.transform.position = zielpunkt.transform.position;
-            Debug.Log(zielpunkt.transform.position);
-            Debug.Log(collision.gameObject.transform.position);
+            sprung.TriggerEvent(zielpunkt.transform.position);
         }
     }
 }

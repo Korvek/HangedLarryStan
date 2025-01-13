@@ -185,6 +185,11 @@ public class Stanley : MonoBehaviour
         rigidbody2d.constraints = RigidbodyConstraints2D.None;
         drehenAktion.performed -= StarteBewegung;
     }
+
+    public void Sprung(Vector3 newPos)
+    {
+        rigidbody2d.MovePosition(newPos);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Bei Betreten eines sammelbaren Objekts
