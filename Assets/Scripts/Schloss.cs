@@ -11,7 +11,7 @@ public class Schloss : MonoBehaviour
         //Finde Animator Komponente
         anim = GetComponent<Animator>();
         //Löse Animation aus
-        anim.SetTrigger("TriggerSchloss");
+        //anim.SetTrigger("TriggerSchloss");
     }
 
     public void Schlossauflösen()
