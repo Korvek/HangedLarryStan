@@ -71,7 +71,7 @@
                     "name": "Button With One Modifier",
                     "id": "9a41a438-1494-4c84-b656-52eeb696a07f",
                     "path": "ButtonWithOneModifier",
-                    "interactions": "Hold",
+                    "interactions": "Hold(duration=0.1)",
                     "processors": "",
                     "groups": "",
                     "action": "StillstandAktion",
