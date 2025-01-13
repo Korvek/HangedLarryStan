@@ -125,7 +125,6 @@ public class Stanley : MonoBehaviour
     /// </summary>
     private void Abbiegen() 
     {
-        Debug.Log(pfeilObjekt.transform.parent.name);
         //Bestimme neue Zielrichtung
         switch (richtung)
         {
