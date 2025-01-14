@@ -2338,7 +2338,7 @@ PrefabInstance:
       objectReference: {fileID: 1735626796}
     - target: {fileID: 1195624289279886975, guid: d64702c711c83df4980f2a5a4aafdfdb, type: 3}
       propertyPath: geschwindigkeit
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1543207158461112908, guid: d64702c711c83df4980f2a5a4aafdfdb, type: 3}
       propertyPath: m_LocalScale.x
@@ -3123,6 +3123,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
+      propertyPath: vorWortT
+      value: 
+      objectReference: {fileID: 697981378}
+    - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
+      propertyPath: zielWort
+      value: "B\xFCcher"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
+      propertyPath: nachWortT
+      value: 
+      objectReference: {fileID: 281977596}
     - target: {fileID: 5399736971006537126, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
       propertyPath: m_text
       value: ______
