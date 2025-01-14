@@ -17,18 +17,18 @@ using UnityEngine.SceneManagement;
  * 1. Steuerung überdenken  E
  * 2. Zweites Zielwort E
  * 2.1. Zeitabzug E
- * 3. Kollision mit Wegrand/Verlassen der Route
- * 3. Beulen/Leben + Soft Reset
- * 4. Sprungfedern drehen den Spieler
- * 4.1 Visuelle Bewegung des Spielers
- * 4.1.1 Animation
- * 5. Aufräumen und Kommentare
- * 6. Volume Slider
- * 7. Sounds verteilen
- * 7.1 Sounds abspielen wenn nötig
- * 8. Credits
- * 9. Video Levelwechsel
- * 10. IntroScreen
+ * 3. Kollision mit Wegrand/Verlassen der Route E
+ * 4. Beulen/Leben + Soft Reset
+ * 5. Sprungfedern drehen den Spieler
+ * 5.1 Visuelle Bewegung des Spielers
+ * 5.1.1 Animation
+ * 6. Aufräumen und Kommentare
+ * 7. Volume Slider
+ * 8. Sounds verteilen
+ * 9.1 Sounds abspielen wenn nötig
+ * 10. Credits
+ * 11. Video Levelwechsel
+ * 12. IntroScreen
  */
 
 public class Stanley : MonoBehaviour
