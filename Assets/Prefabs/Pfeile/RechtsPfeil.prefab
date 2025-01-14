@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RechtsPfeil
       objectReference: {fileID: 0}
+    - target: {fileID: 6836703257631866630, guid: 24807ec05d7fcd9448c5ba652d7efc90, type: 3}
+      propertyPath: m_TagString
+      value: PfeilRechts
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -19,9 +19,14 @@ using UnityEngine.SceneManagement;
  * 3. Kollision mit Wegrand/Verlassen der Route
  * 3. Beulen/Leben + Soft Reset
  * 4. Sprungfedern drehen den Spieler
+ * 4.1 Visuelle Bewegung des Spielers
+ * 4.1.1 Animation
  * 5. Aufräumen und Kommentare
  * 6. Volume Slider
  * 7. Sounds verteilen
+ * 7.1 Sounds abspielen wenn nötig
+ * 8. Credits
+ * 9. Video Levelwechsel
  */
 
 public class Stanley : MonoBehaviour
@@ -135,53 +140,35 @@ public class Stanley : MonoBehaviour
     /// </summary>
     public void RichtungWechsel(InputAction.CallbackContext context)
     {
-        ////Bewegungsvariante 90 Grad Drehung
-        //if (!pfeilsteuerungON)
-        //{            
-        //    //Wenn nicht der letzte Eintrag im Richtungsenum erreicht ist, wechsle einen Eintrag weiter
-        //    if (((int)richtung) != 3)
-        //    {
-        //        richtung++;
-        //    }
-        //    //Sollte der letzte Eintrag erreicht sein, springe zum ersten
-        //    else
-        //    {
-        //        richtung = 0;
-        //    }
-        //}
-        //Richtungsänderung durch Pfeile
-        //else if (pfeilsteuerungON)
-        //{            
-            //Wenn ein Pfeil gespeichert ist
-            if (pfeilObjekt != null)
+        //Wenn ein Pfeil gespeichert ist
+        if (pfeilObjekt != null)
+        {
+            //Wechsle in die Richtung des Pfeils
+            switch (pfeilObjekt.tag)
             {
-                //Wechsle in die Richtung des Pfeils
-                switch (pfeilObjekt.tag)
-                {
-                    case "PfeilRechts":
-                        richtung = Richtung.Rechts;
-                        break;
-                    case "PfeilOben":
-                        richtung = Richtung.Oben;
-                        break;
-                    case "PfeilLinks":
-                        richtung = Richtung.Links;
-                        break;
-                    case "PfeilUnten":
-                        richtung = Richtung.Unten;
-                        break;
-                    default:
-                        break;
-                }
+                case "PfeilRechts":
+                    richtung = Richtung.Rechts;
+                    break;
+                case "PfeilOben":
+                    richtung = Richtung.Oben;
+                    break;
+                case "PfeilLinks":
+                    richtung = Richtung.Links;
+                    break;
+                case "PfeilUnten":
+                    richtung = Richtung.Unten;
+                    break;
+                default:
+                    break;
             }
-        //}
+        }
+        Abbiegen();
     }
     /// <summary>
     /// Das Objekt biegt in Zielrichtung ab
     /// </summary>
     private void Abbiegen() 
     {
-        Debug.Log("Position vor Animation: "+ transform.position);
         //Bestimme neue Zielrichtung
         switch (richtung)
         {
@@ -238,6 +225,7 @@ public class Stanley : MonoBehaviour
     /// </summary>
     private void StarteBewegung(InputAction.CallbackContext context)
     {
+        Debug.Log("GO");
         rigidbody2d.constraints = RigidbodyConstraints2D.None;
         startAktion.performed -= StarteBewegung;
     }
