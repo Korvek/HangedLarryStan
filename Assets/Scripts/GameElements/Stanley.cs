@@ -23,7 +23,7 @@ using UnityEngine.SceneManagement;
  * 5. Sprungfedern drehen den Spieler
  * 5.1 Visuelle Bewegung des Spielers
  * 5.1.1 Animation
- * 6. Aufräumen und Kommentare
+ * 6. Aufräumen und Kommentare e
  * 7. Volume Slider
  * 8. Sounds verteilen
  * 9.1 Sounds abspielen wenn nötig

@@ -5147,7 +5147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d8bccef22ca586408a6fac9ff27215f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resetGame: {fileID: 11400000, guid: 9ebd0916ab4be484ba72532a26d47465, type: 2}
+  kollisionEvent: {fileID: 11400000, guid: 853da0a708cd4f74a82bc54c1d7c6202, type: 2}
 --- !u!66 &1030640442
 CompositeCollider2D:
   m_ObjectHideFlags: 0
