@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class Schleuder : MonoBehaviour
 {
-    //Zielpunkt der Schleuder
+    /// <summary>
+    /// Zielpunkt für die Schleuder
+    /// </summary>
     public GameObject zielpunkt;
+    /// <summary>
+    /// Ausgelöstes Event
+    /// </summary>
     public GameEventPosition sprung;
-
+    //Animator Komponente
     private Animator anim;
 
     private void Awake()
     {
+        //Hole Animator
         anim = GetComponent<Animator>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -19,6 +25,7 @@ public class Schleuder : MonoBehaviour
         //Wenn der Spieler die Schleuder berührt
         if (collision.gameObject.CompareTag("Player"))
         {
+            //Starte Animation
             anim.SetTrigger("TriggerSprungfeder");
             //Setz ihn an den Zielpunkt
             sprung.TriggerEvent(zielpunkt.transform.position);

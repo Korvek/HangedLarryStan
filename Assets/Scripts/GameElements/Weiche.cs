@@ -15,19 +15,25 @@ public class Weiche : MonoBehaviour
     /// Liste möglicher Richtungen
     /// </summary>
     [SerializeField] List<Richtung> richtungsListe;
-    //InputActions um auf Tastendrücke zu reagieren
+    /// <summary>
+    /// Set von Input Aktionen
+    /// </summary>
     public InputActionAsset actions;
+    //Input der die Weiche dreht
     private InputAction drehenAktion;
 
     private void Awake()
     {
+        //Weise Aktion den Tasten zu
         drehenAktion = actions.FindActionMap("Weiche").FindAction("DrehenAktion");
         //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
         drehenAktion.performed += RichtungWechsel;
         //Wechselt die Richtung je nach Richtungsvariable
         Drehen(richtung);
     }
-
+    /// <summary>
+    /// Wenn die Weiche die Richtung wechselt
+    /// </summary>
     private void RichtungWechsel(InputAction.CallbackContext context)
     {
         //Wechsle zur nächsten Richtung aus der Richtungsliste
@@ -66,11 +72,16 @@ public class Weiche : MonoBehaviour
                 break;
         }
     }
-
+    /// <summary>
+    /// Aktiviert das Drehen der Weiche
+    /// </summary>
     public void WeicheAktivieren()
     {
         drehenAktion.Enable();
     }
+    /// <summary>
+    /// Deaktiviert das Drehen der Weiche
+    /// </summary>
     public void WeicheBlockieren()
     {
         drehenAktion.Disable();

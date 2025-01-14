@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class Schloss : MonoBehaviour
 {
-    
-    Animator anim;
+    //Animator Komponente
+    private Animator anim;
     void Awake()
     {
         //Finde Animator Komponente
         anim = GetComponent<Animator>();
         //Löse Animation aus
-        //anim.SetTrigger("TriggerSchloss");
     }
-
+    /// <summary>
+    /// Animation bei Schlossentfernung
+    /// </summary>
     public void Schlossauflösen()
     {
         //Löse Animation aus
