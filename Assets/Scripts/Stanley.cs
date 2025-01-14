@@ -40,7 +40,7 @@ public class Stanley : MonoBehaviour
     /// <summary>
     /// Geschwindigkeitsvariable. Gibt die Bewegungsgeschwindigkeit an.
     /// </summary>
-    [Range(0f,15f)] public float geschwindigkeit=1f;
+    [Range(5f,20f)] public float geschwindigkeit=1f;
     /// <summary>
     /// Set von Input Aktionen
     /// </summary>
