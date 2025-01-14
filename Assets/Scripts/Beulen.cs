@@ -18,13 +18,16 @@ public class Beulen : MonoBehaviour
         img = GetComponent<Image>();
     }
     public void Autsch()
-    {        
-        beulen++;        
-        if(beulen >= maxBeulen )
+    {
+        beulen++;
+        if (beulen > maxBeulen)
         {
             resetGame.TriggerEvent();
         }
-        img.overrideSprite = beulenSprites[beulen];
-        img.color = beulenColors[beulen];
+        else
+        {
+            img.overrideSprite = beulenSprites[beulen];
+            img.color = beulenColors[beulen];
+        }
     }
 }

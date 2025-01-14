@@ -18,7 +18,8 @@ using UnityEngine.SceneManagement;
  * 2. Zweites Zielwort E
  * 2.1. Zeitabzug E
  * 3. Kollision mit Wegrand/Verlassen der Route E
- * 4. Beulen/Leben + Soft Reset
+ * 4. Beulen/Leben E
+ * 4.1 Soft Reset
  * 5. Sprungfedern drehen den Spieler
  * 5.1 Visuelle Bewegung des Spielers
  * 5.1.1 Animation
@@ -47,15 +48,17 @@ public class Stanley : MonoBehaviour
     public InputActionAsset actions;
 
     /// <summary>
-    /// Drehung mithilfe von Pfeilen oder fixe 90°
-    /// </summary>
-    //public bool pfeilsteuerungON = true;
-
-    /// <summary>
     /// Event, das ausgelöst wird wenn ein Buchstabe gesammelt wird
     /// </summary>
     public GameEventChar buchstabeGesammelt;
+    /// <summary>
+    /// Spielreset Event
+    /// </summary>
     public GameEvent resetGame;
+    /// <summary>
+    /// Kollisions Event
+    /// </summary>
+    public GameEvent kollisionEvent;
     
 
     //Körperkomponente
@@ -74,9 +77,9 @@ public class Stanley : MonoBehaviour
     private InputAction startAktion;
     private InputAction stopAktion;
 
-    //TEST Aktionen die Abbiegen
-    private InputAction linksAktion;
-    private InputAction rechtsAktion;
+    ////TEST Aktionen die Abbiegen
+    //private InputAction linksAktion;
+    //private InputAction rechtsAktion;
 
     private void Awake()
     {
@@ -86,9 +89,9 @@ public class Stanley : MonoBehaviour
         stopAktion = actions.FindActionMap("Player").FindAction("StillstandAktion");
         startAktion = actions.FindActionMap("Menu").FindAction("StartGameAktion");
 
-        //TEST
-        linksAktion = actions.FindActionMap("Player").FindAction("LinksAktion");
-        rechtsAktion = actions.FindActionMap("Player").FindAction("RechtsAktion");
+        ////TEST
+        //linksAktion = actions.FindActionMap("Player").FindAction("LinksAktion");
+        //rechtsAktion = actions.FindActionMap("Player").FindAction("RechtsAktion");
 
         //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
         drehenAktion.performed += Abbiegen;
@@ -100,9 +103,9 @@ public class Stanley : MonoBehaviour
         //Verknüpfe sammelAktion mit der Sammeln Methode
         sammelAktion.performed += Sammeln;
 
-        //TEST
-        linksAktion.performed += linksAbbiegen;
-        rechtsAktion.performed += rechtsAbbiegen;
+        ////TEST
+        //linksAktion.performed += linksAbbiegen;
+        //rechtsAktion.performed += rechtsAbbiegen;
         //Hole Rigidbody Komponente des Objekts
         rigidbody2d = GetComponent<Rigidbody2D>();
         //Hole Animator Komponente des Objekts
@@ -111,18 +114,22 @@ public class Stanley : MonoBehaviour
         zielrichtung = transform.up;
     }
 
-    private void rechtsAbbiegen(InputAction.CallbackContext context)
-    {
-        rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
-        anim.SetTrigger("TriggerRechtskurve"); //Rechtskurve
-    }
+    ////TEST
+    //private void RechtsAbbiegen(InputAction.CallbackContext context)
+    //{
+    //    rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
+    //    anim.SetTrigger("TriggerRechtskurve"); //Rechtskurve
+    //}
 
-    private void linksAbbiegen(InputAction.CallbackContext context)
-    {
-        rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
-        anim.SetTrigger("TriggerLinkskurve"); //Linkskurve
-    }
+    //private void LinksAbbiegen(InputAction.CallbackContext context)
+    //{
+    //    rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
+    //    anim.SetTrigger("TriggerLinkskurve"); //Linkskurve
+    //}
 
+    /// <summary>
+    /// Hält die Bewegung des Spielers an
+    /// </summary>
     private void StoppeBewegung(InputAction.CallbackContext context)
     {
         rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
@@ -230,7 +237,10 @@ public class Stanley : MonoBehaviour
         rigidbody2d.constraints = RigidbodyConstraints2D.None;
         startAktion.performed -= StarteBewegung;
     }
-
+    /// <summary>
+    /// Setzt den Spieler an eine neue Position
+    /// </summary>
+    /// <param name="newPos">Neue Position</param>
     public void Sprung(Vector3 newPos)
     {
         rigidbody2d.MovePosition(newPos);
@@ -242,10 +252,6 @@ public class Stanley : MonoBehaviour
         {
             //Speichere das Objekt
             sammelObjekt = collision.gameObject;
-        }
-        if (collision.CompareTag("PfeilAbbiegen"))
-        {
-            //Abbiegen();
         }
         //Bei Kontakt mit einem Pfeil
         else if(collision.CompareTag("PfeilRechts"))
@@ -275,8 +281,6 @@ public class Stanley : MonoBehaviour
         //Wenn es ein drehender Pfeil ist
         else if (collision.CompareTag("PfeilDrehend"))
         {
-            Debug.Log(collision.gameObject);
-            Debug.Log(collision.gameObject.GetComponent<Weiche>().richtung);
             richtung = collision.gameObject.GetComponent<Weiche>().richtung;
         }
     }
@@ -310,15 +314,15 @@ public class Stanley : MonoBehaviour
             pfeilObjekt = null;
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        //Bei Zusammenstoß mit einer Wand
-        if (collision.gameObject.CompareTag("Wand"))
-        {
-            //Starte das Level neu
-            resetGame.TriggerEvent();
-        }
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    //Bei Zusammenstoß mit einer Wand
+    //    if (collision.gameObject.CompareTag("Wand"))
+    //    {
+    //        //Starte das Level neu
+    //        kollisionEvent.TriggerEvent();
+    //    }
+    //}
     private void OnEnable()
     {
         //Aktiviere InputActions
@@ -327,9 +331,9 @@ public class Stanley : MonoBehaviour
         stopAktion.Enable();
         startAktion.Enable();
 
-        //TEST
-        linksAktion.Enable();
-        rechtsAktion.Enable();
+        ////TEST
+        //linksAktion.Enable();
+        //rechtsAktion.Enable();
     }
     private void OnDisable()
     {
@@ -339,9 +343,9 @@ public class Stanley : MonoBehaviour
         stopAktion.Disable();
         startAktion.Disable();
 
-        //TEST
-        linksAktion.Disable();
-        rechtsAktion.Disable();
+        ////TEST
+        //linksAktion.Disable();
+        //rechtsAktion.Disable();
     }    private void OnDestroy()
     {
         //Löse Verknüpfungen
@@ -350,8 +354,8 @@ public class Stanley : MonoBehaviour
         stopAktion.performed -= StoppeBewegung;
         sammelAktion.performed -= Sammeln;
 
-        //TEST
-        linksAktion.performed -= linksAbbiegen;
-        rechtsAktion.performed -= rechtsAbbiegen;
+        ////TEST
+        //linksAktion.performed -= linksAbbiegen;
+        //rechtsAktion.performed -= rechtsAbbiegen;
     }
 }
