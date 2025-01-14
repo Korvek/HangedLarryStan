@@ -8,8 +8,11 @@ public class ZielWort : MonoBehaviour
 {
     [Header("Zielwort des Levels")]
     public string zielWort;
+    public string zielWort2;
     public string vorWort;
+    public string vorWort2;
     public string nachWort;
+    public string nachWort2;
     //public GameObject neuesZielwort;
     private string gelöstesWort;
     /// <summary>
@@ -22,16 +25,22 @@ public class ZielWort : MonoBehaviour
     public GameEvent zeitBonus;
     public GameEvent zeitAbzug;
     public GameEvent wortGefunden;
+    public GameEvent wortGefunden2;
+
+    private bool erstesWortgelöst = false;
     void Awake()
     {
         zielwortT = gameObject.GetComponent<TextMeshProUGUI>();
         //Füllen der Lösungswortanzeige mit '_'
         gelöstesWort = new string('_', zielWort.Length);
         zielwortT.text = gelöstesWort;
+        vorWortT.text = vorWort;
+        nachWortT.text = nachWort;
     }
 
     public void checkBuchstabe(char buchstabe)
     {
+        //Debug.LogWarning("AAA");
         if (!zielWort.ToUpper().Contains(buchstabe))
         {
             zeitAbzug.TriggerEvent();
@@ -46,19 +55,31 @@ public class ZielWort : MonoBehaviour
                 {
                     //Ersetze ein _ im gelösten Wort
                     gelöstesWort = gelöstesWort.Remove(i, 1).Insert(i, buchstabe.ToString());
-                    zielwortT.text = gelöstesWort;                    
+                    zielwortT.text = gelöstesWort;
                 }
             }
             zeitBonus.TriggerEvent();
-            if(!gelöstesWort.Contains('_'))
+            //Debug.Log(gelöstesWort);
+            if (!gelöstesWort.Contains('_'))
             {
-
+                //Debug.Log(gelöstesWort);
                 wortGefunden.TriggerEvent();
-                //if (neuesZielwort!=null)
-                //{
-                //    neuesZielwort.SetActive(true);
-                //    this.gameObject.SetActive(false);
-                //}
+                //Füllen der Lösungswortanzeige mit '_'
+                zielWort = zielWort2;
+                gelöstesWort = new string('_', zielWort.Length);
+                zielwortT.text = gelöstesWort;
+                vorWortT.text = vorWort2;
+                nachWortT.text = nachWort2;
+                //Debug.Log(erstesWortgelöst);
+                if (erstesWortgelöst)
+                {
+                    wortGefunden2.TriggerEvent();
+                    zielwortT.text = zielWort2;
+                    vorWortT.text = vorWort2;
+                    nachWortT.text = nachWort2;
+                }
+
+                erstesWortgelöst = true;
             }
         }
     }

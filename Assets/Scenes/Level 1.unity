@@ -982,8 +982,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 95, y: 80}
-  m_SizeDelta: {x: 1164.7, y: 50}
+  m_AnchoredPosition: {x: 200, y: 80}
+  m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &281977596
 MonoBehaviour:
@@ -1039,7 +1039,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1048,7 +1048,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -2338,7 +2338,7 @@ PrefabInstance:
       objectReference: {fileID: 1735626796}
     - target: {fileID: 1195624289279886975, guid: d64702c711c83df4980f2a5a4aafdfdb, type: 3}
       propertyPath: geschwindigkeit
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1543207158461112908, guid: d64702c711c83df4980f2a5a4aafdfdb, type: 3}
       propertyPath: m_LocalScale.x
@@ -2672,9 +2672,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1686075136}
   - {fileID: 1029339573}
   - {fileID: 1515539342}
-  - {fileID: 1686075136}
   - {fileID: 1898691112}
   - {fileID: 1006654114}
   - {fileID: 1992435041}
@@ -2801,8 +2801,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: 80}
-  m_SizeDelta: {x: 1164.7, y: 50}
+  m_AnchoredPosition: {x: -200, y: 80}
+  m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &697981378
 MonoBehaviour:
@@ -2858,7 +2858,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2867,7 +2867,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -3123,6 +3123,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
+      propertyPath: vorWort
+      value: Stan liebte
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
+      propertyPath: nachWort
+      value: "\xFCber alles"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
+      propertyPath: vorWort2
+      value: "Es landete mit einem lauten Ger\xE4usch und  hinterlie\xDF eine kleine"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
+      propertyPath: vorWortT
+      value: 
+      objectReference: {fileID: 697981378}
+    - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
+      propertyPath: zielWort
+      value: "B\xFCcher"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
+      propertyPath: nachWort2
+      value: ' auf Stans Kopf. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
+      propertyPath: nachWortT
+      value: 
+      objectReference: {fileID: 281977596}
+    - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
+      propertyPath: zielWort2
+      value: Beule
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
+      propertyPath: nextZielwort
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
+      propertyPath: wortGefunden2
+      value: 
+      objectReference: {fileID: 11400000, guid: 1a14d56ac9c18974db397cd97012b8c4, type: 2}
     - target: {fileID: 5399736971006537126, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
       propertyPath: m_text
       value: ______
@@ -3150,13 +3190,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6273082697288646066, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1735626800}
-    - targetCorrespondingSourceObject: {fileID: 6273082697288646066, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1735626801}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
 --- !u!1001 &735044453
 PrefabInstance:
@@ -3313,11 +3347,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4021467925557810013, guid: b631f3d6bad1b924c823c8016120fe23, type: 3}
   m_PrefabInstance: {fileID: 739727306}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &745174883 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6273082697288646066, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
-  m_PrefabInstance: {fileID: 716471635}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &756341501
 PrefabInstance:
@@ -6764,7 +6793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6602562535417253055, guid: 2bbbebb635057804aa7d73bb72c45f76, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -29
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 6602562535417253055, guid: 2bbbebb635057804aa7d73bb72c45f76, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8312,7 +8341,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5399736971006537126, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
   m_PrefabInstance: {fileID: 716471635}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745174883}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -8323,54 +8352,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 951046207453396958, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
   m_PrefabInstance: {fileID: 716471635}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1735626800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745174883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6eb7f3bdc490654a9ae449f04c0d521, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  zielWort: 
-  vorWort: 
-  nachWort: 
-  vorWortT: {fileID: 0}
-  nachWortT: {fileID: 0}
-  zeitBonus: {fileID: 11400000, guid: 556e781260b0bd8499e1e313128d659e, type: 2}
-  zeitAbzug: {fileID: 11400000, guid: a35455193471adf40af6fa5d17aa06f6, type: 2}
-  wortGefunden: {fileID: 11400000, guid: bb3b5bd4b257c3f4e94096a4bc510a85, type: 2}
---- !u!114 &1735626801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745174883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58dcd6425d8e6bb41bf8b5645babf590, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  charEvent: {fileID: 11400000, guid: cca7ea87db5356d4b8e2af11321e5da0, type: 2}
-  onEventTriggeredChar:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1735626800}
-        m_TargetAssemblyTypeName: ZielWort, Assembly-CSharp
-        m_MethodName: checkBuchstabe
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &1738400012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9558,6 +9539,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 89550098}
     m_Modifications:
+    - target: {fileID: 419381751565861619, guid: 9011d773d4e4b3847af7e0ee11b12155, type: 3}
+      propertyPath: endGame
+      value: 
+      objectReference: {fileID: 11400000, guid: 9ebd0916ab4be484ba72532a26d47465, type: 2}
     - target: {fileID: 770118740754261295, guid: 9011d773d4e4b3847af7e0ee11b12155, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -9625,6 +9610,10 @@ PrefabInstance:
     - target: {fileID: 8246352586541812433, guid: 9011d773d4e4b3847af7e0ee11b12155, type: 3}
       propertyPath: m_Name
       value: Buchstabensalat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8246352586541812433, guid: 9011d773d4e4b3847af7e0ee11b12155, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

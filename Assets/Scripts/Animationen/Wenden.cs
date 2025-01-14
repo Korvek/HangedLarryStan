@@ -23,14 +23,14 @@ public class Wenden : StateMachineBehaviour
 
         //90° Drehung
         animator.gameObject.transform.Rotate(0f, 0f, 180f);
-        Debug.Log("Position vor Bewegung: " + position);
+        //Debug.Log("Position vor Bewegung: " + position);
         //Halbe Länge addieren
         position = position +
             (animator.gameObject.transform.up *
             (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f));
-        Debug.Log("Position vor Rundung: " + position);
-        Debug.Log("Bewegung: " + (animator.gameObject.transform.up *
-            (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f)));
+        //Debug.Log("Position vor Rundung: " + position);
+        //Debug.Log("Bewegung: " + (animator.gameObject.transform.up *
+        //    (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f)));
         //Position Runden
         if (animator.gameObject.transform.up == Vector3.up || animator.gameObject.transform.up == Vector3.down)
         {
@@ -40,7 +40,7 @@ public class Wenden : StateMachineBehaviour
         {
             position.y = (Mathf.Round(2f * position.y) / 2f);
         }
-        Debug.Log("Position nach Rundung: " + position);
+        //Debug.Log("Position nach Rundung: " + position);
         animator.gameObject.transform.position = position;
         animator.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
     }

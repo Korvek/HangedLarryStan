@@ -14,8 +14,9 @@ using UnityEngine.SceneManagement;
 //E Aktionstaste: Sammelt Buchstabe / Stellt Weiche
 
 /* TODO Liste
- * 1. Steuerung überdenken
- * 2. Zweites Zielwort
+ * 1. Steuerung überdenken  E
+ * 2. Zweites Zielwort E
+ * 2.1. Zeitabzug E
  * 3. Kollision mit Wegrand/Verlassen der Route
  * 3. Beulen/Leben + Soft Reset
  * 4. Sprungfedern drehen den Spieler
@@ -27,6 +28,7 @@ using UnityEngine.SceneManagement;
  * 7.1 Sounds abspielen wenn nötig
  * 8. Credits
  * 9. Video Levelwechsel
+ * 10. IntroScreen
  */
 
 public class Stanley : MonoBehaviour
@@ -38,7 +40,7 @@ public class Stanley : MonoBehaviour
     /// <summary>
     /// Geschwindigkeitsvariable. Gibt die Bewegungsgeschwindigkeit an.
     /// </summary>
-    [Range(0f,15f)] public float geschwindigkeit=1f;
+    [Range(5f,20f)] public float geschwindigkeit=1f;
     /// <summary>
     /// Set von Input Aktionen
     /// </summary>
@@ -89,7 +91,7 @@ public class Stanley : MonoBehaviour
         rechtsAktion = actions.FindActionMap("Player").FindAction("RechtsAktion");
 
         //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
-        drehenAktion.performed += RichtungWechsel;
+        drehenAktion.performed += Abbiegen;
         //Verknüpfe startAktion mit der Bewegung starten Methode
         startAktion.performed += StarteBewegung;
         //Verknüpfe stopAktion mit der Bewegung stoppen Methode
@@ -138,7 +140,7 @@ public class Stanley : MonoBehaviour
     /// <summary>
     /// Setzt die Richtung in die Abgebogen werden soll
     /// </summary>
-    public void RichtungWechsel(InputAction.CallbackContext context)
+    public void RichtungWechsel()
     {
         //Wenn ein Pfeil gespeichert ist
         if (pfeilObjekt != null)
@@ -162,12 +164,11 @@ public class Stanley : MonoBehaviour
                     break;
             }
         }
-        Abbiegen();
     }
     /// <summary>
     /// Das Objekt biegt in Zielrichtung ab
     /// </summary>
-    private void Abbiegen() 
+    private void Abbiegen(InputAction.CallbackContext context) 
     {
         //Bestimme neue Zielrichtung
         switch (richtung)
@@ -225,7 +226,7 @@ public class Stanley : MonoBehaviour
     /// </summary>
     private void StarteBewegung(InputAction.CallbackContext context)
     {
-        Debug.Log("GO");
+        //Debug.Log("GO");
         rigidbody2d.constraints = RigidbodyConstraints2D.None;
         startAktion.performed -= StarteBewegung;
     }
@@ -244,34 +245,39 @@ public class Stanley : MonoBehaviour
         }
         if (collision.CompareTag("PfeilAbbiegen"))
         {
-            Abbiegen();
+            //Abbiegen();
         }
         //Bei Kontakt mit einem Pfeil
         else if(collision.CompareTag("PfeilRechts"))
         {
             //Speichere das Objekt
             pfeilObjekt = collision.gameObject;
+            RichtungWechsel();
         }
         else if (collision.CompareTag("PfeilLinks"))
         {
             //Speichere das Objekt
             pfeilObjekt = collision.gameObject;
+            RichtungWechsel();
         }
         else if (collision.CompareTag("PfeilOben"))
         {
             //Speichere das Objekt
             pfeilObjekt = collision.gameObject;
+            RichtungWechsel();
         }
         else if (collision.CompareTag("PfeilUnten"))
         {
             //Speichere das Objekt
             pfeilObjekt = collision.gameObject;
+            RichtungWechsel();
         }
         //Wenn es ein drehender Pfeil ist
         else if (collision.CompareTag("PfeilDrehend"))
         {
-            richtung = collision.transform.parent.gameObject.GetComponent<Weiche>().richtung;
-            Abbiegen();
+            Debug.Log(collision.gameObject);
+            Debug.Log(collision.gameObject.GetComponent<Weiche>().richtung);
+            richtung = collision.gameObject.GetComponent<Weiche>().richtung;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -339,7 +345,7 @@ public class Stanley : MonoBehaviour
     }    private void OnDestroy()
     {
         //Löse Verknüpfungen
-        drehenAktion.performed -= RichtungWechsel;
+        drehenAktion.performed -= Abbiegen;
         startAktion.performed -= StarteBewegung;
         stopAktion.performed -= StoppeBewegung;
         sammelAktion.performed -= Sammeln;

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 770118740754261295}
   - component: {fileID: 2375274271820485948}
   - component: {fileID: 419381751565861619}
+  - component: {fileID: 7647558417285003761}
   m_Layer: 0
   m_Name: Buchstabensalat
   m_TagString: Untagged
@@ -143,4 +144,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e59bc3ffb2cf1bb4e9dee808c6d24203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endGame: {fileID: 0}
+  endGame: {fileID: 11400000, guid: 9ebd0916ab4be484ba72532a26d47465, type: 2}
+--- !u!114 &7647558417285003761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8246352586541812433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: bb3b5bd4b257c3f4e94096a4bc510a85, type: 2}
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 419381751565861619}
+        m_TargetAssemblyTypeName: BuchstabenSalat, Assembly-CSharp
+        m_MethodName: "BuchstabenSalatAufl\xF6sen"
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

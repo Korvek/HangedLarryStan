@@ -67,24 +67,13 @@ public class Weiche : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void WeicheAktivieren()
     {
-        //Wenn ein Spieler den Umschaltbereich betritt
-        if (collision.CompareTag("Player"))
-        {
-            //Aktiviere Action
-            drehenAktion.Enable();
-        }
+        drehenAktion.Enable();
     }
-
-    private void OnTriggerExit2D(Collider2D collision)
+    public void WeicheBlockieren()
     {
-        //Wenn ein Spieler den Umschaltbereich verlässt
-        if (collision.CompareTag("Player"))
-        {
-            //Deaktiviere InputActions
-            drehenAktion.Disable();
-        }
+        drehenAktion.Disable();
     }
     private void OnDisable()
     {
