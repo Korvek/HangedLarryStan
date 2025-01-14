@@ -144,8 +144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zielpunkt: {fileID: 5182134022552108488}
-  startpunkt: {x: 0, y: 0}
   tempo: 2
+  kollisionEvent: {fileID: 11400000, guid: 853da0a708cd4f74a82bc54c1d7c6202, type: 2}
 --- !u!1 &5182134022552108488
 GameObject:
   m_ObjectHideFlags: 0
