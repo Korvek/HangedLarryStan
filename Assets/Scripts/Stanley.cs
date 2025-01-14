@@ -16,7 +16,7 @@ using UnityEngine.SceneManagement;
 /* TODO Liste
  * 1. Steuerung überdenken  E
  * 2. Zweites Zielwort
- * 2.1. Zeitabzug
+ * 2.1. Zeitabzug E
  * 3. Kollision mit Wegrand/Verlassen der Route
  * 3. Beulen/Leben + Soft Reset
  * 4. Sprungfedern drehen den Spieler

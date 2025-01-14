@@ -630,7 +630,6 @@ Transform:
   - {fileID: 542845124}
   - {fileID: 1534510637}
   - {fileID: 1496280007}
-  - {fileID: 1686075136}
   - {fileID: 663071190}
   - {fileID: 1463590895}
   - {fileID: 3124598844478140944}
@@ -2673,6 +2672,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1686075136}
   - {fileID: 1029339573}
   - {fileID: 1515539342}
   - {fileID: 1898691112}
@@ -6733,7 +6733,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 89550098}
+    m_TransformParent: {fileID: 663071190}
     m_Modifications:
     - target: {fileID: 1971883330591036430, guid: 2bbbebb635057804aa7d73bb72c45f76, type: 3}
       propertyPath: m_Color.b
@@ -6761,11 +6761,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6602562535417253055, guid: 2bbbebb635057804aa7d73bb72c45f76, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -178.5
+      value: -156.5
       objectReference: {fileID: 0}
     - target: {fileID: 6602562535417253055, guid: 2bbbebb635057804aa7d73bb72c45f76, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -61.5
+      value: -28.75
       objectReference: {fileID: 0}
     - target: {fileID: 6602562535417253055, guid: 2bbbebb635057804aa7d73bb72c45f76, type: 3}
       propertyPath: m_LocalPosition.z
