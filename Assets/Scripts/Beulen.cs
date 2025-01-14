@@ -10,6 +10,7 @@ public class Beulen : MonoBehaviour
     public int beulen;
     public GameEvent resetGame;
     public List<Sprite> beulenSprites;
+    public List<Color> beulenColors;
 
     private Image img;
     private void Awake()
@@ -24,5 +25,6 @@ public class Beulen : MonoBehaviour
             resetGame.TriggerEvent();
         }
         img.overrideSprite = beulenSprites[beulen];
+        img.color = beulenColors[beulen];
     }
 }
