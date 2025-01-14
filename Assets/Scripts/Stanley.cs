@@ -15,7 +15,7 @@ using UnityEngine.SceneManagement;
 
 /* TODO Liste
  * 1. Steuerung überdenken  E
- * 2. Zweites Zielwort
+ * 2. Zweites Zielwort E
  * 2.1. Zeitabzug E
  * 3. Kollision mit Wegrand/Verlassen der Route
  * 3. Beulen/Leben + Soft Reset
@@ -226,7 +226,7 @@ public class Stanley : MonoBehaviour
     /// </summary>
     private void StarteBewegung(InputAction.CallbackContext context)
     {
-        Debug.Log("GO");
+        //Debug.Log("GO");
         rigidbody2d.constraints = RigidbodyConstraints2D.None;
         startAktion.performed -= StarteBewegung;
     }

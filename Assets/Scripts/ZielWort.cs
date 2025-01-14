@@ -40,7 +40,7 @@ public class ZielWort : MonoBehaviour
 
     public void checkBuchstabe(char buchstabe)
     {
-        Debug.LogWarning("AAA");
+        //Debug.LogWarning("AAA");
         if (!zielWort.ToUpper().Contains(buchstabe))
         {
             zeitAbzug.TriggerEvent();
@@ -59,10 +59,10 @@ public class ZielWort : MonoBehaviour
                 }
             }
             zeitBonus.TriggerEvent();
-            Debug.Log(gelöstesWort);
+            //Debug.Log(gelöstesWort);
             if (!gelöstesWort.Contains('_'))
             {
-                Debug.Log(gelöstesWort);
+                //Debug.Log(gelöstesWort);
                 wortGefunden.TriggerEvent();
                 //Füllen der Lösungswortanzeige mit '_'
                 zielWort = zielWort2;
@@ -70,10 +70,13 @@ public class ZielWort : MonoBehaviour
                 zielwortT.text = gelöstesWort;
                 vorWortT.text = vorWort2;
                 nachWortT.text = nachWort2;
-                Debug.Log(erstesWortgelöst);
+                //Debug.Log(erstesWortgelöst);
                 if (erstesWortgelöst)
                 {
                     wortGefunden2.TriggerEvent();
+                    zielwortT.text = zielWort2;
+                    vorWortT.text = vorWort2;
+                    nachWortT.text = nachWort2;
                 }
 
                 erstesWortgelöst = true;
