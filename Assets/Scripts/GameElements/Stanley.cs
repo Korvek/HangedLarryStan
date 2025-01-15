@@ -20,7 +20,7 @@ using UnityEngine.SceneManagement;
  * 3. Kollision mit Wegrand/Verlassen der Route E
  * 4. Beulen/Leben E
  * 4.1 Soft Reset
- * 5. Sprungfedern drehen den Spieler
+ * 5. Sprungfedern drehen den Spieler E
  * 5.1 Visuelle Bewegung des Spielers
  * 5.1.1 Animation
  * 6. Aufräumen und Kommentare e
