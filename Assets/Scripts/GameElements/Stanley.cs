@@ -8,20 +8,19 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-//Steuerung überdenken ( QE rechts/links abbiegen; Auslöser bei Pfeil (kein innerer Collider);
-//Q/E biegt immer ab, Sammeln automatisch
-//Q Abbiegetaste: Biegt auf Pfeil ab
-//E Aktionstaste: Sammelt Buchstabe / Stellt Weiche
-
 /* TODO Liste
  * Soft Reset
  * Visuelle Bewegung des Spielers bei Schleuder
  *  Animation Rotieren während Bewegung, Landung in richtiger Richtung?
+ * Textgröße anpassen
  * Sounds verteilen
  *  Sounds abspielen wenn nötig
+ * Automatisch Ranzoomen bei Levelstart
+ *  Vielleicht kratzendes oder blätterndes Geräusch
  * Credits
  * Video Levelwechsel
  * IntroScreen
+ * Rückkehr zum IntroScreen
  * Abbiegen prüfen ?
  */
 

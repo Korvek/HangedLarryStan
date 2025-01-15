@@ -10,7 +10,6 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void NextLevel()
     {
-        Debug.Log("TTTT");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
     /// <summary>
