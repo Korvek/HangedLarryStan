@@ -14,23 +14,15 @@ using UnityEngine.SceneManagement;
 //E Aktionstaste: Sammelt Buchstabe / Stellt Weiche
 
 /* TODO Liste
- * 1. Steuerung überdenken  E
- * 2. Zweites Zielwort E
- * 2.1. Zeitabzug E
- * 3. Kollision mit Wegrand/Verlassen der Route E
- * 4. Beulen/Leben E
- * 4.1 Soft Reset
- * 5. Sprungfedern drehen den Spieler E
- * 5.1 Visuelle Bewegung des Spielers
- * 5.1.1 Animation
- * 6. Aufräumen und Kommentare e
- * 7. Volume Slider
- * 8. Sounds verteilen
- * 9.1 Sounds abspielen wenn nötig
- * 10. Credits
- * 11. Video Levelwechsel
- * 12. IntroScreen
- * 13. Abbiegen prüfen
+ * Soft Reset
+ * Visuelle Bewegung des Spielers
+ *  Animation Rotieren während Bewegung, Landung in richtiger Richtung?
+ * Sounds verteilen
+ *  Sounds abspielen wenn nötig
+ * Credits
+ * Video Levelwechsel
+ * IntroScreen
+ * Abbiegen prüfen ?
  */
 
 public class Stanley : MonoBehaviour
@@ -253,19 +245,20 @@ public class Stanley : MonoBehaviour
     /// </summary>
     private void StarteBewegung(InputAction.CallbackContext context)
     {
-        //Debug.Log("GO");
         rigidbody2d.constraints = RigidbodyConstraints2D.None;
         startAktion.performed -= StarteBewegung;
     }
     /// <summary>
-    /// Setzt den Spieler an eine neue Position
+    /// Setzt den Spieler an eine neue Position und gibt ihm eine neue Richtung
     /// </summary>
     /// <param name="newPos">Neue Position</param>
+    /// <param name="newRichtung">Neue Richtung</param>
     public void Sprung(Vector3 newPos, Richtung newRichtung)
     {
+        //Bewege den Spieler
         rigidbody2d.MovePosition(newPos);
+        //Setze neue Richtung
         richtung = newRichtung;
-        //Bestimme neue Zielrichtung
         switch (richtung)
         {
             case Richtung.Oben:
