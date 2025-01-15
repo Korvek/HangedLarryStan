@@ -221,6 +221,7 @@ public class Stanley : MonoBehaviour
     }
     public void AnimationBeendet()
     {
+        Debug.Log("GO");
         drehenAktion.Enable();
     }
     /// <summary>

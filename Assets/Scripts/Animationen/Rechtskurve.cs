@@ -43,8 +43,9 @@ public class RechtsKurve : StateMachineBehaviour
             position.y = (Mathf.Round(2f * position.y) / 2f);
         }
         //Debug.Log("Position nach Rundung: " + position);
-        animator.gameObject.transform.position = position;
+        //animator.gameObject.transform.position = position;
         animator.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        Debug.Log(bewegungAbgeschlossen);
         bewegungAbgeschlossen.TriggerEvent();
     }
 
