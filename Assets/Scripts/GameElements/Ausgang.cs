@@ -23,9 +23,12 @@ public class Ausgang : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("HIER");
+        
         //Wenn der Spieler das Element betritt
         if (collision.CompareTag("Player"))
         {
+            Debug.Log("AUCH");
             //Wenn das Wort gelöst worden ist
             if (wortGelöst)
             {

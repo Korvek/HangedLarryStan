@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Linkskurve : StateMachineBehaviour
 {
-    public GameEvent bewegungAbgeschlossen;
+    public GameEvent bewegungAbgeschlossenLinks;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{
@@ -28,7 +28,10 @@ public class Linkskurve : StateMachineBehaviour
         //Halbe Länge addieren
         position = position +
             (animator.gameObject.transform.up *
-            (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f));
+            (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y * 0.667f));
+        position = position +
+            (animator.gameObject.transform.right *
+            (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y * 0.667f));
         //Debug.Log("Position vor Rundung: " + position);
         //Debug.Log("Bewegung: " + (animator.gameObject.transform.up *
         //    (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f)));
@@ -44,7 +47,7 @@ public class Linkskurve : StateMachineBehaviour
         //Debug.Log("Position nach Rundung: " + position);
         animator.gameObject.transform.position = position;
         animator.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-        bewegungAbgeschlossen.TriggerEvent();
+        bewegungAbgeschlossenLinks.TriggerEvent();
     }
 
     //// OnStateMove is called right after Animator.OnAnimatorMove()

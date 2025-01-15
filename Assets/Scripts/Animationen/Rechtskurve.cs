@@ -5,7 +5,7 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class RechtsKurve : StateMachineBehaviour
 {
-    public GameEvent bewegungAbgeschlossen;
+    public GameEvent bewegungAbgeschlossenRechts;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{
@@ -29,7 +29,10 @@ public class RechtsKurve : StateMachineBehaviour
         //Halbe Länge addieren
         position = position +
             (animator.gameObject.transform.up *
-            (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f));
+            (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y * 0.667f));
+        position = position -
+            (animator.gameObject.transform.right *
+            (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y * 0.667f));
         //Debug.Log("Position vor Rundung: " + position);
         //Debug.Log("Bewegung: " + (animator.gameObject.transform.up *
         //    (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f)));
@@ -43,10 +46,9 @@ public class RechtsKurve : StateMachineBehaviour
             position.y = (Mathf.Round(2f * position.y) / 2f);
         }
         //Debug.Log("Position nach Rundung: " + position);
-        //animator.gameObject.transform.position = position;
+        animator.gameObject.transform.position = position;
         animator.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-        Debug.Log(bewegungAbgeschlossen);
-        bewegungAbgeschlossen.TriggerEvent();
+        bewegungAbgeschlossenRechts.TriggerEvent();
     }
 
     ////OnStateMove is called right after Animator.OnAnimatorMove()
