@@ -10,7 +10,8 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.loadedSceneCount+1);
+        Debug.Log("TTTT");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
     /// <summary>
     /// Beende das Spiel

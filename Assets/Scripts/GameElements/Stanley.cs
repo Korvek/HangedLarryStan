@@ -60,7 +60,9 @@ public class Stanley : MonoBehaviour
     /// Kollisions Event
     /// </summary>
     public GameEvent kollisionEvent;
-    
+
+    public Sprite stanleyL;
+    public Sprite stanleyR;
 
     //Körperkomponente
     private Rigidbody2D rigidbody2d;
@@ -219,9 +221,14 @@ public class Stanley : MonoBehaviour
             }
         }
     }
-    public void AnimationBeendet()
+    public void AnimationBeendetLinks()
     {
-        Debug.Log("GO");
+        Debug.Log("GOL");
+        drehenAktion.Enable();
+    }
+    public void AnimationBeendetRechts()
+    {
+        Debug.Log("GOR");
         drehenAktion.Enable();
     }
     /// <summary>
