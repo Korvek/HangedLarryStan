@@ -12,6 +12,11 @@ public class Schleuder : MonoBehaviour
     /// Ausgelöstes Event
     /// </summary>
     public GameEventPosition sprung;
+
+    /// <summary>
+    /// Richtung des Spielers nachdem er geschleudert wurde
+    /// </summary>
+    public Richtung richtung;
     //Animator Komponente
     private Animator anim;
 
@@ -28,7 +33,7 @@ public class Schleuder : MonoBehaviour
             //Starte Animation
             anim.SetTrigger("TriggerSprungfeder");
             //Setz ihn an den Zielpunkt
-            sprung.TriggerEvent(zielpunkt.transform.position);
+            sprung.TriggerEvent(zielpunkt.transform.position,richtung);
         }
     }
 }

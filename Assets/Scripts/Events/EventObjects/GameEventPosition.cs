@@ -7,11 +7,11 @@ public class GameEventPosition : ScriptableObject
 {
     private List<GameEventListenerPosition> listeners = new List<GameEventListenerPosition> ();
 
-    public void TriggerEvent(Vector3 pos)
+    public void TriggerEvent(Vector3 pos, Richtung richtung)
     {
         foreach(GameEventListenerPosition listener in listeners)
         {
-            listener.OnEventTriggered(pos);
+            listener.OnEventTriggered(pos,richtung);
         }
     }
 

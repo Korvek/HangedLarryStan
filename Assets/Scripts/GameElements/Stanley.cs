@@ -261,9 +261,26 @@ public class Stanley : MonoBehaviour
     /// Setzt den Spieler an eine neue Position
     /// </summary>
     /// <param name="newPos">Neue Position</param>
-    public void Sprung(Vector3 newPos)
+    public void Sprung(Vector3 newPos, Richtung newRichtung)
     {
         rigidbody2d.MovePosition(newPos);
+        richtung = newRichtung;
+        //Bestimme neue Zielrichtung
+        switch (richtung)
+        {
+            case Richtung.Oben:
+                transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                break;
+            case Richtung.Unten:
+                transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+                break;
+            case Richtung.Rechts:
+                transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+                break;
+            case Richtung.Links:
+                transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+                break;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
