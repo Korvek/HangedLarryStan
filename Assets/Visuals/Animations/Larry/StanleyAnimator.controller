@@ -51,32 +51,6 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &-2899383861116758340
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Test
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e6304032e1b6c1f4fb581d334646b1df, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1107 &-1465688169975237501
 AnimatorStateMachine:
   serializedVersion: 6
@@ -98,9 +72,6 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 153464912627662161}
     m_Position: {x: 340, y: 330, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -2899383861116758340}
-    m_Position: {x: 375, y: 395, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -222,6 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e1d3be1989c4445bf1e6fb60380e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bewegungAbgeschlossen: {fileID: 11400000, guid: 7a517b1b44c04d847af5f4651dd87c6a, type: 2}
 --- !u!1101 &1647655782028375535
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -346,6 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19f65024b909e54a95a344028310da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bewegungAbgeschlossen: {fileID: 11400000, guid: 7a517b1b44c04d847af5f4651dd87c6a, type: 2}
 --- !u!1101 &7349652694536770669
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -383,6 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9603a42bbfb416f44957f24a2e2389d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bewegungAbgeschlossen: {fileID: 11400000, guid: 7a517b1b44c04d847af5f4651dd87c6a, type: 2}
 --- !u!1101 &8351364026116625891
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

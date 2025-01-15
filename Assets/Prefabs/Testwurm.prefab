@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 1195624289279886975}
   - component: {fileID: 4858260728090172406}
   - component: {fileID: 5815603380244508587}
+  - component: {fileID: -5529589530422038431}
   m_Layer: 0
   m_Name: Testwurm
   m_TagString: Player
@@ -350,6 +351,7 @@ MonoBehaviour:
   actions: {fileID: -944628639613478452, guid: b44b58f16488fda448b3d0d642175356, type: 3}
   buchstabeGesammelt: {fileID: 11400000, guid: cca7ea87db5356d4b8e2af11321e5da0, type: 2}
   resetGame: {fileID: 11400000, guid: 9ebd0916ab4be484ba72532a26d47465, type: 2}
+  kollisionEvent: {fileID: 0}
 --- !u!114 &4858260728090172406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,6 +405,34 @@ MonoBehaviour:
     m_Extent: {x: 0.735, y: 6.6449995, z: 0}
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
+--- !u!114 &-5529589530422038431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6852441063186415694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 7a517b1b44c04d847af5f4651dd87c6a, type: 2}
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1195624289279886975}
+        m_TargetAssemblyTypeName: Stanley, Assembly-CSharp
+        m_MethodName: AnimationBeendet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9099985197217616699
 GameObject:
   m_ObjectHideFlags: 0

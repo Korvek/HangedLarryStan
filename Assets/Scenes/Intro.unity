@@ -706,6 +706,14 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Start Aktion
       m_Flags: 0
+    - m_Name: 
+      m_Id: 7ec1f330-ace2-47f5-b1e1-d67394bd8114
+      m_Path: <Keyboard>/enter
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Start Aktion
+      m_Flags: 0
     m_Flags: 0
 --- !u!4 &1736328931
 Transform:

@@ -148,10 +148,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6eb7f3bdc490654a9ae449f04c0d521, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zielwort: LARRY
+  zielWort: 
+  zielWort2: 
+  vorWort: 
+  vorWort2: 
+  nachWort: 
+  nachWort2: 
+  vorWortT: {fileID: 0}
+  nachWortT: {fileID: 0}
   zeitBonus: {fileID: 11400000, guid: 556e781260b0bd8499e1e313128d659e, type: 2}
   zeitAbzug: {fileID: 11400000, guid: a35455193471adf40af6fa5d17aa06f6, type: 2}
   wortGefunden: {fileID: 11400000, guid: bb3b5bd4b257c3f4e94096a4bc510a85, type: 2}
+  wortGefunden2: {fileID: 11400000, guid: 1a14d56ac9c18974db397cd97012b8c4, type: 2}
 --- !u!114 &-4711655151347485389
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -30,6 +30,7 @@ using UnityEngine.SceneManagement;
  * 10. Credits
  * 11. Video Levelwechsel
  * 12. IntroScreen
+ * 13. Abbiegen prüfen
  */
 
 public class Stanley : MonoBehaviour
@@ -176,7 +177,7 @@ public class Stanley : MonoBehaviour
     /// Das Objekt biegt in Zielrichtung ab
     /// </summary>
     private void Abbiegen(InputAction.CallbackContext context) 
-    {
+    {        
         //Bestimme neue Zielrichtung
         switch (richtung)
         {
@@ -196,20 +197,32 @@ public class Stanley : MonoBehaviour
         //Wenn abgebogen werden soll
         if (Vector2.SignedAngle(transform.up, zielrichtung) != 0f)
         {
+            drehenAktion.Disable();
             rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
-            if (Vector2.Angle(transform.up, zielrichtung) == 180) 
+            if (Vector2.Angle(transform.up, zielrichtung) == 180)
             {
                 anim.SetTrigger("TriggerWenden"); //Wenden
             }
             else if (Vector2.SignedAngle(transform.up, zielrichtung) <= 0f)
             {
-                anim.SetTrigger("TriggerRechtskurve"); //Rechtskurve
+                if (!anim.GetCurrentAnimatorStateInfo(0).IsName("RechtsKurve"))
+                {
+                    anim.SetTrigger("TriggerRechtskurve"); //Rechtskurve
+                }
             }
             else if (Vector2.SignedAngle(transform.up, zielrichtung) >= 0f)
             {
-                anim.SetTrigger("TriggerLinkskurve"); //Linkskurve
+                if (!anim.GetCurrentAnimatorStateInfo(0).IsName("LinksKurve"))
+                {
+                    anim.SetTrigger("TriggerLinkskurve"); //Linkskurve
+                }
             }
         }
+    }
+    public void AnimationBeendet()
+    {
+        Debug.Log("GO");
+        drehenAktion.Enable();
     }
     /// <summary>
     /// Sammelt das momentan berührte Objekt ein
