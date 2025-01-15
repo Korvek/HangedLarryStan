@@ -15,7 +15,7 @@ using UnityEngine.SceneManagement;
 
 /* TODO Liste
  * Soft Reset
- * Visuelle Bewegung des Spielers
+ * Visuelle Bewegung des Spielers bei Schleuder
  *  Animation Rotieren während Bewegung, Landung in richtiger Richtung?
  * Sounds verteilen
  *  Sounds abspielen wenn nötig
@@ -52,9 +52,6 @@ public class Stanley : MonoBehaviour
     /// Kollisions Event
     /// </summary>
     public GameEvent kollisionEvent;
-
-    public Sprite stanleyL;
-    public Sprite stanleyR;
 
     //Körperkomponente
     private Rigidbody2D rigidbody2d;
@@ -215,12 +212,12 @@ public class Stanley : MonoBehaviour
     }
     public void AnimationBeendetLinks()
     {
-        Debug.Log("GOL");
+        Debug.Log("GO L");
         drehenAktion.Enable();
     }
     public void AnimationBeendetRechts()
     {
-        Debug.Log("GOR");
+        Debug.Log("GO R");
         drehenAktion.Enable();
     }
     /// <summary>
