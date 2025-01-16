@@ -9,7 +9,6 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 /* TODO Liste
- * Soft Reset
  * Visuelle Bewegung des Spielers bei Schleuder
  *  Animation Rotieren während Bewegung, Landung in richtiger Richtung?
  * Textgröße anpassen
