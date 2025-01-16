@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 7528423526638570940}
   - component: {fileID: 5316562165180052964}
   - component: {fileID: 1498707335086616300}
+  - component: {fileID: 3252878477337754233}
   m_Layer: 0
   m_Name: DrehtSpieler
-  m_TagString: PfeilDrehend
+  m_TagString: PfeilDrehendSteuerung
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,6 +131,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3252878477337754233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952948945441200598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac5c846406371741ad728561d0d3173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weicheStellen: {fileID: 11400000, guid: 8c79f2d83b14073459eaa3f50b7e75a5, type: 2}
+  weicheBlocken: {fileID: 11400000, guid: 14934bc26eea64c499c0f30ea7c4102e, type: 2}
 --- !u!1 &1027485280330500476
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,9 +157,11 @@ GameObject:
   - component: {fileID: 9038198901663225025}
   - component: {fileID: 7849932975848812726}
   - component: {fileID: 6222089176442715421}
+  - component: {fileID: 777580803520261278}
+  - component: {fileID: 7924811292982433821}
   m_Layer: 0
   m_Name: Weiche
-  m_TagString: PfeilDrehendSteuerung
+  m_TagString: PfeilDrehend
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -277,3 +294,59 @@ MonoBehaviour:
   richtung: 0
   richtungsListe: 0000000001000000
   actions: {fileID: -944628639613478452, guid: b44b58f16488fda448b3d0d642175356, type: 3}
+--- !u!114 &777580803520261278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027485280330500476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 8c79f2d83b14073459eaa3f50b7e75a5, type: 2}
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6222089176442715421}
+        m_TargetAssemblyTypeName: Weiche, Assembly-CSharp
+        m_MethodName: WeicheAktivieren
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7924811292982433821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027485280330500476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 14934bc26eea64c499c0f30ea7c4102e, type: 2}
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6222089176442715421}
+        m_TargetAssemblyTypeName: Weiche, Assembly-CSharp
+        m_MethodName: WeicheBlockieren
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
