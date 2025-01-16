@@ -209,14 +209,8 @@ public class Stanley : MonoBehaviour
             }
         }
     }
-    public void AnimationBeendetLinks()
+    public void AnimationBeendet()
     {
-        Debug.Log("GO L");
-        drehenAktion.Enable();
-    }
-    public void AnimationBeendetRechts()
-    {
-        Debug.Log("GO R");
         drehenAktion.Enable();
     }
     /// <summary>

@@ -271,4 +271,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e1d3be1989c4445bf1e6fb60380e69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bewegungAbgeschlossenRechts: {fileID: 11400000, guid: db720d8f3ab711241adc75563a1f7a75, type: 2}
+  bewegungAbgeschlossenRechts: {fileID: 11400000, guid: 7a517b1b44c04d847af5f4651dd87c6a, type: 2}
