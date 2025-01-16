@@ -159,6 +159,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 42.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5458369418740524179, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -26
+      objectReference: {fileID: 0}
     - target: {fileID: 7528423526638570940, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
       propertyPath: m_LocalScale.x
       value: 54.35
@@ -402,6 +406,175 @@ Transform:
   - {fileID: 8321753220959540263}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1109924700
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1027485280330500476, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: m_Name
+      value: Weiche (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498707335086616300, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3252878477337754233, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: weicheBlocken
+      value: 
+      objectReference: {fileID: 11400000, guid: de5078f89c1deb449b2ea1555bf10db3, type: 2}
+    - target: {fileID: 3252878477337754233, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: weicheStellen
+      value: 
+      objectReference: {fileID: 11400000, guid: a57a0f6255b14aa40bf920dc8b92b79f, type: 2}
+    - target: {fileID: 4752102494994239526, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: weicheBlocken
+      value: 
+      objectReference: {fileID: 11400000, guid: de5078f89c1deb449b2ea1555bf10db3, type: 2}
+    - target: {fileID: 4752102494994239526, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: weicheStellen
+      value: 
+      objectReference: {fileID: 11400000, guid: a57a0f6255b14aa40bf920dc8b92b79f, type: 2}
+    - target: {fileID: 5458369418740524179, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 42.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528423526638570940, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 54.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7528423526638570940, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145806717128455540, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 62
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145806717128455540, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145806717128455540, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145806717128455540, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145806717128455540, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145806717128455540, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145806717128455540, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145806717128455540, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145806717128455540, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145806717128455540, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3587944702558648683, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+    - {fileID: 4299210548145789226, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5122563738398133433, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1360118133}
+    - targetCorrespondingSourceObject: {fileID: 5122563738398133433, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1360118132}
+  m_SourcePrefab: {fileID: 100100000, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+--- !u!1 &1360118130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5122563738398133433, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+  m_PrefabInstance: {fileID: 1109924700}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1360118132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360118130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e18263951ba2c448d5a904cb4226ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectEvent: {fileID: 11400000, guid: de5078f89c1deb449b2ea1555bf10db3, type: 2}
+  onEventTriggeredObject:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1360118134}
+        m_TargetAssemblyTypeName: Weiche, Assembly-CSharp
+        m_MethodName: WeicheBlockieren
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1360118133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360118130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94e18263951ba2c448d5a904cb4226ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectEvent: {fileID: 11400000, guid: a57a0f6255b14aa40bf920dc8b92b79f, type: 2}
+  onEventTriggeredObject:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1360118134}
+        m_TargetAssemblyTypeName: Weiche, Assembly-CSharp
+        m_MethodName: WeicheAktivieren
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1360118134 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3498949602262075102, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+  m_PrefabInstance: {fileID: 1109924700}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360118130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f140bc0a801004bb296af5df41c0dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1889297622 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5122563738398133433, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
@@ -831,3 +1004,4 @@ SceneRoots:
   - {fileID: 609618244}
   - {fileID: 1023670273}
   - {fileID: 344385262}
+  - {fileID: 1109924700}
