@@ -19,11 +19,17 @@ using UnityEngine.SceneManagement;
  * Credits
  * Video Levelwechsel
  * IntroScreen
+ *  Buttons zur Levelwahl
+ *  Button zu Credits
  * Rückkehr zum IntroScreen
- * Abbiegen prüfen ?
+ * Tutorial Texte
+ *  Piktogramme
+ * Ausrufezeichen bei möglicher Interaktion
+ * VolumeSlider für Stimme
+ *  Vorlesen unterbrechen
  * 
- * !Weichen aktivierung nicht mitdrehen
- * !Schlösser Animation
+ * Game Over Einblendung? (Szene?)
+ * 
  * Maximale Länge vorwort/nachwort * 
  * Ein Text
  */
