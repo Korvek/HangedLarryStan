@@ -22,6 +22,11 @@ using UnityEngine.SceneManagement;
  * IntroScreen
  * Rückkehr zum IntroScreen
  * Abbiegen prüfen ?
+ * 
+ * 
+ * Maximale Länge vorwort/nachwort
+ * 
+ * Ein Text
  */
 
 public class Stanley : MonoBehaviour

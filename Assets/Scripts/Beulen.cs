@@ -42,7 +42,7 @@ public class Beulen : MonoBehaviour
         //Wenn die maximale Beulenzahl überschritten ist
         if (beulen > maxBeulen)
         {
-            //resetGame.TriggerEvent(); //Starte Level neu
+            resetGame.TriggerEvent(); //Starte Level neu
         }
         else
         {
