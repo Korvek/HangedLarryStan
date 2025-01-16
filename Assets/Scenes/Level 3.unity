@@ -13204,6 +13204,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 672794389}
     m_Modifications:
+    - target: {fileID: -6315353440325053580, guid: f47f26d4a8fa03641b8029c84682161c, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6315353440325053580, guid: f47f26d4a8fa03641b8029c84682161c, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6820867757662245147}
+    - target: {fileID: -6315353440325053580, guid: f47f26d4a8fa03641b8029c84682161c, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: "Schlossaufl\xF6sen"
+      objectReference: {fileID: 0}
+    - target: {fileID: -6315353440325053580, guid: f47f26d4a8fa03641b8029c84682161c, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Schloss, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1179406227295529983, guid: f47f26d4a8fa03641b8029c84682161c, type: 3}
       propertyPath: m_Name
       value: Schloss 3.2
@@ -13282,6 +13298,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2116511729004298719, guid: f47f26d4a8fa03641b8029c84682161c, type: 3}
   m_PrefabInstance: {fileID: 6820867757662245145}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6820867757662245147 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -4265138245605221254, guid: f47f26d4a8fa03641b8029c84682161c, type: 3}
+  m_PrefabInstance: {fileID: 6820867757662245145}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb93dfdf9f531e246aad77f8e18d33c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
