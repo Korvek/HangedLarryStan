@@ -132,11 +132,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: bb3b5bd4b257c3f4e94096a4bc510a85, type: 2}
+  gameEvent: {fileID: 11400000, guid: 1a14d56ac9c18974db397cd97012b8c4, type: 2}
   onEventTriggered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4319725619412240572, guid: 555b28bec9f02884082bbf4793646daf, type: 3}
+      - m_Target: {fileID: -6315353440325053580}
         m_TargetAssemblyTypeName: Schloss, Assembly-CSharp
         m_MethodName: "Schlossaufl\xF6sen"
         m_Mode: 1

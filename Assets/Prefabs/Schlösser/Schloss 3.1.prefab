@@ -136,7 +136,7 @@ MonoBehaviour:
   onEventTriggered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4319725619412240572, guid: 555b28bec9f02884082bbf4793646daf, type: 3}
+      - m_Target: {fileID: 4880125579323017597}
         m_TargetAssemblyTypeName: Schloss, Assembly-CSharp
         m_MethodName: "Schlossaufl\xF6sen"
         m_Mode: 1
