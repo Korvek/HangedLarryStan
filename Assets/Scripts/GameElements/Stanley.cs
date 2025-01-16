@@ -22,8 +22,9 @@ using UnityEngine.SceneManagement;
  * IntroScreen
  * Rückkehr zum IntroScreen
  * Abbiegen prüfen ?
- * Weichen aktivierung nicht mitdrehen
  * 
+ * !Weichen aktivierung nicht mitdrehen
+ * !Schlösser Animation
  * Maximale Länge vorwort/nachwort * 
  * Ein Text
  */
