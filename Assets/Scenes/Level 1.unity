@@ -10425,37 +10425,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 89550098}
     m_Modifications:
-    - target: {fileID: 3646919303587978566, guid: d61d14ebb1d3772488a3d98d346efbd4, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 3848262568641168190, guid: d61d14ebb1d3772488a3d98d346efbd4, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 3973182761383435850, guid: d61d14ebb1d3772488a3d98d346efbd4, type: 3}
       propertyPath: m_Name
       value: Stanley 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3973182761383435850, guid: d61d14ebb1d3772488a3d98d346efbd4, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4692770743546531963, guid: d61d14ebb1d3772488a3d98d346efbd4, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6043097384915279228, guid: d61d14ebb1d3772488a3d98d346efbd4, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.062963
-      objectReference: {fileID: 0}
-    - target: {fileID: 6043097384915279228, guid: d61d14ebb1d3772488a3d98d346efbd4, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.062963
-      objectReference: {fileID: 0}
-    - target: {fileID: 6043097384915279228, guid: d61d14ebb1d3772488a3d98d346efbd4, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.062963
       objectReference: {fileID: 0}
     - target: {fileID: 6043097384915279228, guid: d61d14ebb1d3772488a3d98d346efbd4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10496,18 +10468,6 @@ PrefabInstance:
     - target: {fileID: 6043097384915279228, guid: d61d14ebb1d3772488a3d98d346efbd4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6043097384915279228, guid: d61d14ebb1d3772488a3d98d346efbd4, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6627765183969699555, guid: d61d14ebb1d3772488a3d98d346efbd4, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8499706690951933862, guid: d61d14ebb1d3772488a3d98d346efbd4, type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

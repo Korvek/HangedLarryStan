@@ -29,10 +29,10 @@ public class RechtsKurve : StateMachineBehaviour
         //Halbe Länge addieren
         position = position +
             (animator.gameObject.transform.up *
-            (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y * 0.667f));
+            (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y)*1.5f);
         position = position -
             (animator.gameObject.transform.right *
-            (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y * 0.667f));
+            (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y) * 1.5f);
         //Debug.Log("Position vor Rundung: " + position);
         //Debug.Log("Bewegung: " + (animator.gameObject.transform.up *
         //    (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f)));
