@@ -27,9 +27,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952948945441200598}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.000000013546511, y: 0.11363638, z: 0}
-  m_LocalScale: {x: 1.04499, y: 1.04499, z: 1.04499}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 1.25, y: 0, z: 0}
+  m_LocalScale: {x: 12.175177, y: 12.175177, z: 12.175178}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9145806717128455540}
@@ -154,14 +154,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9145806717128455540}
-  - component: {fileID: 9038198901663225025}
-  - component: {fileID: 7849932975848812726}
-  - component: {fileID: 6222089176442715421}
-  - component: {fileID: 777580803520261278}
-  - component: {fileID: 7924811292982433821}
   m_Layer: 0
   m_Name: Weiche
-  m_TagString: PfeilDrehend
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,21 +169,58 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027485280330500476}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 11.651, y: 11.651, z: 11.651}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 818194484446611875}
   - {fileID: 7528423526638570940}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5122563738398133433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 818194484446611875}
+  - component: {fileID: 969246734136426647}
+  - component: {fileID: 3031862947984789881}
+  - component: {fileID: 3498949602262075102}
+  - component: {fileID: 3587944702558648683}
+  - component: {fileID: 4299210548145789226}
+  m_Layer: 0
+  m_Name: Weiche
+  m_TagString: PfeilDrehend
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &818194484446611875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5122563738398133433}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 11.650999, y: 11.650999, z: 11.651}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 9145806717128455540}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!212 &9038198901663225025
+--- !u!212 &969246734136426647
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1027485280330500476}
+  m_GameObject: {fileID: 5122563738398133433}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -234,13 +266,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7849932975848812726
+--- !u!61 &3031862947984789881
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1027485280330500476}
+  m_GameObject: {fileID: 5122563738398133433}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -279,13 +311,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6222089176442715421
+--- !u!114 &3498949602262075102
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1027485280330500476}
+  m_GameObject: {fileID: 5122563738398133433}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95f140bc0a801004bb296af5df41c0dd, type: 3}
@@ -294,13 +326,13 @@ MonoBehaviour:
   richtung: 0
   richtungsListe: 0000000001000000
   actions: {fileID: -944628639613478452, guid: b44b58f16488fda448b3d0d642175356, type: 3}
---- !u!114 &777580803520261278
+--- !u!114 &3587944702558648683
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1027485280330500476}
+  m_GameObject: {fileID: 5122563738398133433}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
@@ -310,7 +342,7 @@ MonoBehaviour:
   onEventTriggered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6222089176442715421}
+      - m_Target: {fileID: 3498949602262075102}
         m_TargetAssemblyTypeName: Weiche, Assembly-CSharp
         m_MethodName: WeicheAktivieren
         m_Mode: 1
@@ -322,13 +354,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7924811292982433821
+--- !u!114 &4299210548145789226
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1027485280330500476}
+  m_GameObject: {fileID: 5122563738398133433}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
@@ -338,7 +370,7 @@ MonoBehaviour:
   onEventTriggered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6222089176442715421}
+      - m_Target: {fileID: 3498949602262075102}
         m_TargetAssemblyTypeName: Weiche, Assembly-CSharp
         m_MethodName: WeicheBlockieren
         m_Mode: 1
