@@ -39,6 +39,7 @@ public class Beulen : MonoBehaviour
     /// </summary>
     public void Autsch()
     {
+        Debug.Log("AUTSCH");
         beulen++; //Erhöhe Beulen Anzahl
         //Wenn die maximale Beulenzahl überschritten ist
         if (beulen > maxBeulen)

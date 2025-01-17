@@ -87,21 +87,17 @@ public class Stanley : MonoBehaviour
     private Vector2 zielrichtung;
     //Animationskomponente
     private Animator anim;
-    //Erstes Wort gelöst
-    private bool wortGelöst=false;
     //Aktionen die auf Inputs reagieren
     private InputAction drehenAktion;
     private InputAction sammelAktion;
     private InputAction startAktion;
     private InputAction stopAktion;
 
-    ////TEST Aktionen die Abbiegen
-    //private InputAction linksAktion;
-    //private InputAction rechtsAktion;
 
     private void Awake()
     {
-        start= transform.position;
+        
+        start = transform.position;
         startRichtung=richtung;
         //Weise Aktionen den Tasten zu
         drehenAktion = actions.FindActionMap("Player").FindAction("DrehenAktion");
@@ -109,9 +105,6 @@ public class Stanley : MonoBehaviour
         stopAktion = actions.FindActionMap("Player").FindAction("StillstandAktion");
         startAktion = actions.FindActionMap("Player").FindAction("StartAktion");
 
-        ////TEST
-        //linksAktion = actions.FindActionMap("Player").FindAction("LinksAktion");
-        //rechtsAktion = actions.FindActionMap("Player").FindAction("RechtsAktion");
 
         //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
         drehenAktion.performed += Abbiegen;
@@ -123,9 +116,6 @@ public class Stanley : MonoBehaviour
         //Verknüpfe sammelAktion mit der Sammeln Methode
         sammelAktion.performed += Sammeln;
 
-        ////TEST
-        //linksAktion.performed += linksAbbiegen;
-        //rechtsAktion.performed += rechtsAbbiegen;
         //Hole Rigidbody Komponente des Objekts
         rigidbody2d = GetComponent<Rigidbody2D>();
         //Hole Animator Komponente des Objekts
@@ -133,19 +123,6 @@ public class Stanley : MonoBehaviour
         //Zielrichtung zum Start ist vorwärts
         zielrichtung = transform.up;
     }
-
-    ////TEST
-    //private void RechtsAbbiegen(InputAction.CallbackContext context)
-    //{
-    //    rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
-    //    anim.SetTrigger("TriggerRechtskurve"); //Rechtskurve
-    //}
-
-    //private void LinksAbbiegen(InputAction.CallbackContext context)
-    //{
-    //    rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
-    //    anim.SetTrigger("TriggerLinkskurve"); //Linkskurve
-    //}
 
     /// <summary>
     /// Hält die Bewegung des Spielers an
@@ -296,55 +273,7 @@ public class Stanley : MonoBehaviour
                 break;
         }
     }
-    public void WortGelöst()
-    {
-        wortGelöst = true;
-    }
-    public void SoftReset(Vector3 newPos, Richtung newRichtung)
-    {        
-        if (!wortGelöst)
-        {
-            transform.position= start;
-            richtung = startRichtung;
-            switch (richtung)
-            {
-                case Richtung.Oben:
-                    transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-                    break;
-                case Richtung.Unten:
-                    transform.rotation = Quaternion.Euler(0f, 0f, 180f);
-                    break;
-                case Richtung.Rechts:
-                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
-                    break;
-                case Richtung.Links:
-                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
-                    break;
-            }
-        }
-        else if(wortGelöst)
-        {
-            transform.position = newPos;
-            richtung = newRichtung;
-            switch (richtung)
-            {
-                case Richtung.Oben:
-                    transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-                    break;
-                case Richtung.Unten:
-                    transform.rotation = Quaternion.Euler(0f, 0f, 180f);
-                    break;
-                case Richtung.Rechts:
-                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
-                    break;
-                case Richtung.Links:
-                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
-                    break;
-            }
-        }
-        rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
-        startAktion.performed += StarteBewegung;
-    }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Bei Betreten eines sammelbaren Objekts
@@ -432,36 +361,21 @@ public class Stanley : MonoBehaviour
     private void OnEnable()
     {
         //Aktiviere InputActions
-        drehenAktion.Enable();
-        sammelAktion.Enable();
-        stopAktion.Enable();
-        //startAktion.Enable();
+        //actions.FindActionMap("Player").Enable();
 
-        ////TEST
-        //linksAktion.Enable();
-        //rechtsAktion.Enable();
     }
     private void OnDisable()
     {
         //Deaktiviere InputActions
-        drehenAktion.Disable();
-        sammelAktion.Disable();
-        stopAktion.Disable();
-        startAktion.Disable();
+        //actions.FindActionMap("Player").Disable();
 
-        ////TEST
-        //linksAktion.Disable();
-        //rechtsAktion.Disable();
-    }    private void OnDestroy()
+    }    
+    private void OnDestroy()
     {
         //Löse Verknüpfungen
         drehenAktion.performed -= Abbiegen;
         startAktion.performed -= StarteBewegung;
         stopAktion.performed -= StoppeBewegung;
         sammelAktion.performed -= Sammeln;
-
-        ////TEST
-        //linksAktion.performed -= linksAbbiegen;
-        //rechtsAktion.performed -= rechtsAbbiegen;
     }
 }

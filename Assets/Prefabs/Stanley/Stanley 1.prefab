@@ -48,8 +48,6 @@ GameObject:
   - component: {fileID: 595801065316637078}
   - component: {fileID: 279976335284528688}
   - component: {fileID: 6882900850247762411}
-  - component: {fileID: 3370797535040176834}
-  - component: {fileID: 3451111047789827719}
   m_Layer: 0
   m_Name: Stanley 1
   m_TagString: Player
@@ -273,62 +271,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
---- !u!114 &3370797535040176834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3973182761383435850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: bb3b5bd4b257c3f4e94096a4bc510a85, type: 2}
-  onEventTriggered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1842115668014837823}
-        m_TargetAssemblyTypeName: Stanley, Assembly-CSharp
-        m_MethodName: "WortGel\xF6st"
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &3451111047789827719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3973182761383435850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2575343826e1a8e4da3770a1499f9ab0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  posEvent: {fileID: 11400000, guid: 41ceb0bd7a0a73a488699a789141f3ff, type: 2}
-  onEventTriggeredPos:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1842115668014837823}
-        m_TargetAssemblyTypeName: Stanley, Assembly-CSharp
-        m_MethodName: SoftReset
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &4030555534148786590
 GameObject:
   m_ObjectHideFlags: 0

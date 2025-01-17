@@ -22,7 +22,7 @@ public class RechtsKurve : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Vector3 position = animator.gameObject.transform.position;
-
+        
         //90° Drehung
         animator.gameObject.transform.Rotate(0f, 0f, -90f);
         //Debug.Log("Position vor Bewegung: " + position);
