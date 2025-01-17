@@ -382,6 +382,11 @@ public class Stanley : MonoBehaviour
         {
             richtung = collision.gameObject.GetComponent<Weiche>().richtung;
         }
+        else if (collision.CompareTag("Stoplinie"))
+        {
+            rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
+            startAktion.performed += StarteBewegung;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
