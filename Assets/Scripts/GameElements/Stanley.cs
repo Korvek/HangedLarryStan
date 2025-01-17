@@ -267,6 +267,7 @@ public class Stanley : MonoBehaviour
     /// </summary>
     private void StarteBewegung(InputAction.CallbackContext context)
     {
+        Debug.Log("HEP");
         rigidbody2d.constraints = RigidbodyConstraints2D.None;
     }
     /// <summary>
@@ -304,7 +305,7 @@ public class Stanley : MonoBehaviour
     {        
         if (!wortGelöst)
         {
-            rigidbody2d.MovePosition(start);
+            transform.position= start;
             richtung = startRichtung;
             switch (richtung)
             {
