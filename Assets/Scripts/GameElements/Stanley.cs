@@ -9,7 +9,6 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 /* TODO Liste
- * Soft Reset
  * Visuelle Bewegung des Spielers bei Schleuder
  *  Animation Rotieren während Bewegung, Landung in richtiger Richtung?
  * Textgröße anpassen
@@ -20,9 +19,16 @@ using UnityEngine.SceneManagement;
  * Credits
  * Video Levelwechsel
  * IntroScreen
+ *  Buttons zur Levelwahl
+ *  Button zu Credits
  * Rückkehr zum IntroScreen
- * Abbiegen prüfen ?
- * Weichen aktivierung nicht mitdrehen
+ * Tutorial Texte
+ *  Piktogramme
+ * Ausrufezeichen bei möglicher Interaktion
+ * VolumeSlider für Stimme
+ *  Vorlesen unterbrechen
+ * 
+ * Game Over Einblendung? (Szene?)
  * 
  * Maximale Länge vorwort/nachwort * 
  * Ein Text

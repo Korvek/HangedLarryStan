@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class WeicheSteuerung : MonoBehaviour
 {
-    public GameEvent weicheStellen;
-    public GameEvent weicheBlocken;
+    public GameEventObject weicheStellen;
+    public GameEventObject weicheBlocken;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,7 +13,7 @@ public class WeicheSteuerung : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             //Weiche ist drehbar
-            weicheStellen.TriggerEvent();
+            weicheStellen.TriggerEvent(transform.parent.gameObject);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -22,7 +22,7 @@ public class WeicheSteuerung : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             //Weiche ist fest
-            weicheBlocken.TriggerEvent();
+            weicheBlocken.TriggerEvent(transform.parent.gameObject);
         }
     }
 }
