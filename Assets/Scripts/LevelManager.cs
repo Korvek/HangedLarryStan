@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     public GameObject stanley;
     public GameObject spielfeld;
     public GameObject resetPunkt;
+    public Richtung resetRichtung;
 
     private GameObject stan;
 
@@ -46,7 +47,7 @@ public class LevelManager : MonoBehaviour
         stan = Renderer.Instantiate(stanley,spielfeld.transform);
         stan.SetActive(true);
     }
-    public void SoftReset(Vector3 pos, Richtung rich)
+    public void SoftReset()
     {
         Quaternion rot = Quaternion.identity;
         Renderer.Destroy(stan);
@@ -57,7 +58,7 @@ public class LevelManager : MonoBehaviour
         }
         else if (wortGelöst)
         {
-            switch (rich)
+            switch (resetRichtung)
             {
                 case Richtung.Oben:
                     rot = Quaternion.Euler(0f, 0f, 0f);
@@ -72,7 +73,7 @@ public class LevelManager : MonoBehaviour
                     rot = Quaternion.Euler(0f, 0f, 90f);
                     break;
             }
-            stan = Renderer.Instantiate(stanley,pos,rot, spielfeld.transform);            
+            stan = Renderer.Instantiate(stanley, resetPunkt.transform.position, rot, spielfeld.transform);            
         }
     }
 

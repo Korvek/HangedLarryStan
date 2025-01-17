@@ -13,9 +13,7 @@ public class Beulen : MonoBehaviour
     /// <summary>
     /// Levelreset Event
     /// </summary>
-    public GameEventPosition softResetGame;
-    public GameObject resetPunkt;
-    public Richtung resetRichtung;
+    public GameEvent softResetGame;
     /// <summary>
     /// Bilder für steigende Anzahl Beulen
     /// </summary>
@@ -39,12 +37,11 @@ public class Beulen : MonoBehaviour
     /// </summary>
     public void Autsch()
     {
-        Debug.Log("AUTSCH");
         beulen++; //Erhöhe Beulen Anzahl
         //Wenn die maximale Beulenzahl überschritten ist
         if (beulen > maxBeulen)
         {
-            softResetGame.TriggerEvent(resetPunkt.transform.position,resetRichtung); //Starte Level neu
+            softResetGame.TriggerEvent(); //Starte Level neu
         }
         else
         {

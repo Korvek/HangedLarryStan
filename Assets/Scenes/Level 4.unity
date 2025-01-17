@@ -2458,7 +2458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 552358045139444451, guid: 47af25fcfea04ec4ba4bdb8e7cc9d755, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -73.88904
+      value: -73.63904
       objectReference: {fileID: 0}
     - target: {fileID: 552358045139444451, guid: 47af25fcfea04ec4ba4bdb8e7cc9d755, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4673,6 +4673,10 @@ PrefabInstance:
       propertyPath: resetPunkt
       value: 
       objectReference: {fileID: 1121839849}
+    - target: {fileID: 1769267598626589567, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
+      propertyPath: resetRichtung
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2647888760912506121, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
       propertyPath: uI
       value: 
