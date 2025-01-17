@@ -18,4 +18,8 @@ public class Volume : MonoBehaviour
     {
         mixer.SetFloat("EffekteVolume", Mathf.Log10(sliderValue) * 20);
     }
+    public void SetLevelSprache(float sliderValue)
+    {
+        mixer.SetFloat("SpracheVolume", Mathf.Log10(sliderValue) * 20);
+    }
 }
