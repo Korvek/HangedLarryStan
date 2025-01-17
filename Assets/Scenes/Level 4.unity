@@ -4661,6 +4661,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1769267598626589567, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
+      propertyPath: stanley
+      value: 
+      objectReference: {fileID: 1975261631}
+    - target: {fileID: 1769267598626589567, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
+      propertyPath: spielfeld
+      value: 
+      objectReference: {fileID: 89550097}
+    - target: {fileID: 1769267598626589567, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
+      propertyPath: resetPunkt
+      value: 
+      objectReference: {fileID: 1121839849}
     - target: {fileID: 2647888760912506121, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
       propertyPath: uI
       value: 
@@ -11857,6 +11869,11 @@ PrefabInstance:
 --- !u!4 &1975261630 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6043097384915279228, guid: d61d14ebb1d3772488a3d98d346efbd4, type: 3}
+  m_PrefabInstance: {fileID: 1975261629}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1975261631 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3973182761383435850, guid: d61d14ebb1d3772488a3d98d346efbd4, type: 3}
   m_PrefabInstance: {fileID: 1975261629}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1979049934
