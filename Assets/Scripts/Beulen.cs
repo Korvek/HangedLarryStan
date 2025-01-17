@@ -13,7 +13,9 @@ public class Beulen : MonoBehaviour
     /// <summary>
     /// Levelreset Event
     /// </summary>
-    public GameEvent resetGame;
+    public GameEventPosition softResetGame;
+    public GameObject resetPunkt;
+    public Richtung resetRichtung;
     /// <summary>
     /// Bilder für steigende Anzahl Beulen
     /// </summary>
@@ -42,7 +44,7 @@ public class Beulen : MonoBehaviour
         //Wenn die maximale Beulenzahl überschritten ist
         if (beulen > maxBeulen)
         {
-            resetGame.TriggerEvent(); //Starte Level neu
+            softResetGame.TriggerEvent(resetPunkt.transform.position,resetRichtung); //Starte Level neu
         }
         else
         {
