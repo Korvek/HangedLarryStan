@@ -265,6 +265,7 @@ public class Stanley : MonoBehaviour
     /// </summary>
     private void StarteBewegung(InputAction.CallbackContext context)
     {
+        Time.timeScale = 1;
         rigidbody2d.constraints = RigidbodyConstraints2D.None;
         startAktion.performed -= StarteBewegung;
     }
@@ -384,8 +385,9 @@ public class Stanley : MonoBehaviour
         }
         else if (collision.CompareTag("Stoplinie"))
         {
-            rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
+            Time.timeScale = 0;
             startAktion.performed += StarteBewegung;
+            collision.gameObject.SetActive(false);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
