@@ -279,6 +279,17 @@
                     "action": "StartGameAktion",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "501956ff-62d8-4b5c-9091-2a1e510fc885",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StartGameAktion",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

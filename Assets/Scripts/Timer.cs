@@ -66,7 +66,7 @@ public class Timer : MonoBehaviour
     private void TimerAktivieren(InputAction.CallbackContext context)
     {        
         abgelaufeneZeit = 0f; //Setze abgelaufene Zeit zurück
-        startAktion.Disable(); //Deaktiviere start des Timers
+        startAktion.performed -= TimerAktivieren; //Deaktiviere start des Timers
         timerT.enabled = true; //Aktiviere Timer Text
     }
     /// <summary>

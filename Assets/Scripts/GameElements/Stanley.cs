@@ -196,8 +196,7 @@ public class Stanley : MonoBehaviour
     /// Das Objekt biegt in Zielrichtung ab
     /// </summary>
     private void Abbiegen(InputAction.CallbackContext context) 
-    {
-        startAktion.performed -= StarteBewegung;
+    {        
         //Bestimme neue Zielrichtung
         switch (richtung)
         {
@@ -217,6 +216,7 @@ public class Stanley : MonoBehaviour
         //Wenn abgebogen werden soll
         if (Vector2.SignedAngle(transform.up, zielrichtung) != 0f)
         {
+            
             drehenAktion.Disable();
             rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
             if (Vector2.Angle(transform.up, zielrichtung) == 180)
@@ -241,8 +241,6 @@ public class Stanley : MonoBehaviour
     }
     public void AnimationBeendet()
     {
-
-        startAktion.performed += StarteBewegung;
         drehenAktion.Enable();
     }
     /// <summary>
@@ -267,8 +265,8 @@ public class Stanley : MonoBehaviour
     /// </summary>
     private void StarteBewegung(InputAction.CallbackContext context)
     {
-        Debug.Log("HEP");
         rigidbody2d.constraints = RigidbodyConstraints2D.None;
+        startAktion.performed -= StarteBewegung;
     }
     /// <summary>
     /// Setzt den Spieler an eine neue Position und gibt ihm eine neue Richtung
@@ -344,6 +342,7 @@ public class Stanley : MonoBehaviour
             }
         }
         rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
+        startAktion.performed += StarteBewegung;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
