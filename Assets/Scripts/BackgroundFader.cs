@@ -32,7 +32,7 @@ public class BackgroundFader : MonoBehaviour
     private List<CanvasRenderer> canvasRenderers;
     private InputAction fadeInAktion;
 
-    void Awake()
+    public void Init()
     {
         initialImageColor = new List<Color>(); 
         initialSpriteColor = new List<Color>();
@@ -51,7 +51,6 @@ public class BackgroundFader : MonoBehaviour
             //Speichere ursprüngliche Farbe
             initialSpriteColor.Add(spriteRenderers[i].color);
         }
-
         //InputAktion zuweisen
         fadeInAktion = actions.FindActionMap("Menu").FindAction("FadeInAktion");
         fadeInAktion.performed += StartFadeIn;

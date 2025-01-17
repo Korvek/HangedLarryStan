@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c36aaf319d8c5ba408311f58aedadd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxBeulen: 3
+  maxBeulen: 0
   softResetGame: {fileID: 11400000, guid: 41ceb0bd7a0a73a488699a789141f3ff, type: 2}
   beulenSprites:
   - {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}

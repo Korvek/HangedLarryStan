@@ -10,13 +10,15 @@ public class LevelManager : MonoBehaviour
     public GameObject spielfeld;
     public GameObject resetPunkt;
     public Richtung resetRichtung;
-
+    [SerializeField] BackgroundFader backgroundFader;
     private GameObject stan;
 
     private bool wortGelöst=false;
     private void Awake()
     {
-        InitGame();
+        InitGame();        
+        backgroundFader.Init();
+        backgroundFader.enabled = true;
     }
     /// <summary>
     /// Lade das nächste Level
