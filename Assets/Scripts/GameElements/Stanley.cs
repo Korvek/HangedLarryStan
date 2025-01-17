@@ -85,6 +85,7 @@ public class Stanley : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("RESTORE");
         //Weise Aktionen den Tasten zu
         drehenAktion = actions.FindActionMap("Player").FindAction("DrehenAktion");
         sammelAktion = actions.FindActionMap("Player").FindAction("SammelAktion");
@@ -158,7 +159,8 @@ public class Stanley : MonoBehaviour
     /// Das Objekt biegt in Zielrichtung ab
     /// </summary>
     private void Abbiegen(InputAction.CallbackContext context) 
-    {        
+    {
+        Debug.Log("HEP");
         //Bestimme neue Zielrichtung
         switch (richtung)
         {
@@ -179,7 +181,7 @@ public class Stanley : MonoBehaviour
         if (Vector2.SignedAngle(transform.up, zielrichtung) != 0f)
         {
             
-            drehenAktion.Disable();
+            drehenAktion.performed -= Abbiegen;
             rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
             if (Vector2.Angle(transform.up, zielrichtung) == 180)
             {
@@ -345,6 +347,7 @@ public class Stanley : MonoBehaviour
     //}  
     private void OnDestroy()
     {
+        Debug.Log("BOOM");
         //Löse Verknüpfungen
         drehenAktion.performed -= Abbiegen;
         startAktion.performed -= StarteBewegung;
