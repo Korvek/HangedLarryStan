@@ -9,8 +9,6 @@ using System; // Namespace für TextMeshPro
 
 public class BackgroundFader : MonoBehaviour
 {
-    public Image backgroundImage; // Das UI-Image-Element für den Hintergrund
-    public TextMeshProUGUI backgroundText; // TMP-Text für den Hintergrundtext
     public float fadeDuration = 0.5f; // Dauer der Überblendung
     public float delay = 0.5f; // Verzögerung vor der Überblendung
     /// <summary>
@@ -28,29 +26,36 @@ public class BackgroundFader : MonoBehaviour
     /// </summary>
     public InputActionAsset actions;
 
-    private Color initialImageColor;
-    private Color initialTextColor;
+    private List<Color> initialImageColor;
+    private List<Color> initialSpriteColor;
     private List<SpriteRenderer> spriteRenderers;
     private List<CanvasRenderer> canvasRenderers;
     private InputAction fadeInAktion;
 
     void Awake()
     {
+        initialImageColor = new List<Color>(); 
+        initialSpriteColor = new List<Color>();
+        //Finde alle Spriterenderer des Spielfelds
+        spriteRenderers = spielfeld.GetComponentsInChildren<SpriteRenderer>().ToList();
+        //Finde alle Canvasrenderer des UIs
+        canvasRenderers = uI.GetComponentsInChildren<CanvasRenderer>().ToList();
         // Speichere die ursprünglichen Farben
-        initialImageColor = backgroundImage.color;
-        initialTextColor = backgroundText.color;
+        for (int i = 0; i < canvasRenderers.Count; i++)
+        {
+            //Speichere ursprüngliche Farbe
+            initialImageColor.Add(canvasRenderers[i].GetColor());
+        }
+        for (int i = 0; i < spriteRenderers.Count; i++)
+        {
+            //Speichere ursprüngliche Farbe
+            initialSpriteColor.Add(spriteRenderers[i].color);
+        }
 
         //InputAktion zuweisen
         fadeInAktion = actions.FindActionMap("Menu").FindAction("FadeInAktion");
         fadeInAktion.performed += StartFadeIn;
 
-        // Bild und Text unsichtbar machen, wenn das Spiel startet
-        backgroundImage.color = new Color(initialImageColor.r, initialImageColor.g, initialImageColor.b, 0f); // Alpha = 0
-        backgroundText.color = new Color(initialTextColor.r, initialTextColor.g, initialTextColor.b, 0f);     // Alpha = 0
-        //Finde alle Spriterenderer des Spielfelds
-        spriteRenderers = spielfeld.GetComponentsInChildren<SpriteRenderer>().ToList();
-        //Finde alle Canvasrenderer des UIs
-        canvasRenderers = uI.GetComponentsInChildren<CanvasRenderer>().ToList();
         //Alle Objekte werden transparent
         foreach (SpriteRenderer spriteRenderer in spriteRenderers)
         {
@@ -89,48 +94,31 @@ public class BackgroundFader : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             float t = Mathf.Clamp01(elapsedTime / fadeDuration); // Fortschritt berechnen (0-1)
-
-            // Interpoliere die Farbe für das Hintergrundbild
-            backgroundImage.color = new Color(
-                initialImageColor.r,
-                initialImageColor.g,
-                initialImageColor.b,
-                Mathf.Lerp(0f, initialImageColor.a, t)
-            );
-
-            // Interpoliere die Farbe für den TMP-Text
-            backgroundText.color = new Color(
-                initialTextColor.r,
-                initialTextColor.g,
-                initialTextColor.b,
-                Mathf.Lerp(0f, initialTextColor.a, t)
-            );
             // Interpoliere die Farbe für alle Sprites
-            foreach ( SpriteRenderer spriteRenderer in spriteRenderers )
+            for (int i = 0; i < canvasRenderers.Count; i++)
             {
-                spriteRenderer.color = new Color(
-                    spriteRenderer.color.r,
-                    spriteRenderer.color.g,
-                    spriteRenderer.color.b,
-                    Mathf.Lerp(0f, 1, t));
+                canvasRenderers[i].SetColor(new Color(
+                    initialImageColor[i].r,
+                    initialImageColor[i].g,
+                    initialImageColor[i].b,
+                    Mathf.Lerp(0f, initialImageColor[i].a, t)));
             }
+            
             // Interpoliere die Farbe für alle UI-Elemente
-            foreach (CanvasRenderer canvasRenderer in canvasRenderers)
+            for (int i = 0; i < spriteRenderers.Count; i++)
             {
-                canvasRenderer.SetColor(new Color(
-                    canvasRenderer.GetColor().r,
-                    canvasRenderer.GetColor().g,
-                    canvasRenderer.GetColor().b,
-                    Mathf.Lerp(0f, 1, t)));
+                spriteRenderers[i].color = new Color(
+                    initialSpriteColor[i].r,
+                    initialSpriteColor[i].g,
+                    initialSpriteColor[i].b,
+                    Mathf.Lerp(0f, initialSpriteColor[i].a, t));
             }
-
-            yield return null; // Warte bis zum nächsten Frame
+            yield return new WaitForEndOfFrame(); // Warte bis zum nächsten Frame
         }
-
-        // Sicherstellen, dass die Farben vollständig sichtbar sind
-        backgroundImage.color = initialImageColor;
-        backgroundText.color = initialTextColor;
+        actions.FindActionMap("Player").Enable();
     }
+
+    
 
     private void OnEnable()
     {

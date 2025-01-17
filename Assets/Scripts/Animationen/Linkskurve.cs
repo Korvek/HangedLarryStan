@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Linkskurve : StateMachineBehaviour
 {
+    public GameEvent bewegungAbgeschlossenLinks;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{
@@ -23,14 +24,17 @@ public class Linkskurve : StateMachineBehaviour
 
         //90° Drehung
         animator.gameObject.transform.Rotate(0f, 0f, 90f);
-        Debug.Log("Position vor Bewegung: " + position);
+        //Debug.Log("Position vor Bewegung: " + position);
         //Halbe Länge addieren
         position = position +
             (animator.gameObject.transform.up *
-            (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f));
-        Debug.Log("Position vor Rundung: " + position);
-        Debug.Log("Bewegung: " + (animator.gameObject.transform.up *
-            (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f)));
+            (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y)*1.5f);
+        position = position +
+            (animator.gameObject.transform.right *
+            (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y)*1.5f);
+        //Debug.Log("Position vor Rundung: " + position);
+        //Debug.Log("Bewegung: " + (animator.gameObject.transform.up *
+        //    (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f)));
         //Position Runden
         if (animator.gameObject.transform.up == Vector3.up || animator.gameObject.transform.up == Vector3.down)
         {
@@ -40,9 +44,10 @@ public class Linkskurve : StateMachineBehaviour
         {
             position.y = (Mathf.Round(2f * position.y) / 2f);
         }
-        Debug.Log("Position nach Rundung: " + position);
+        //Debug.Log("Position nach Rundung: " + position);
         animator.gameObject.transform.position = position;
         animator.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        bewegungAbgeschlossenLinks.TriggerEvent();
     }
 
     //// OnStateMove is called right after Animator.OnAnimatorMove()

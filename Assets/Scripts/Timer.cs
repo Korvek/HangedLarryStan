@@ -25,7 +25,7 @@ public class Timer : MonoBehaviour
     /// Set von Input Aktionen
     /// </summary>
     public InputActionAsset actions;
-    public GameEvent endGameEvent;
+    public GameEvent zeitAbgelaufenEvent;
 
     private InputAction startAktion;
 
@@ -33,45 +33,60 @@ public class Timer : MonoBehaviour
 
     private void Awake()
     {
+        //Textkomponente finden
         timerT = GetComponent<TextMeshProUGUI>();
+        //Abgelaufene Zeit 0 setzen
         abgelaufeneZeit = 0f;
-        startAktion = actions.FindActionMap("Menu").FindAction("StartGameAktion");
+        //Weise Aktionen den Tasten zu
+        startAktion = actions.FindActionMap("Player").FindAction("StartAktion");
+        //Verknüpfe startAktion mit der TimerAktivieren Methode
         startAktion.performed += TimerAktivieren;
-        //Time.timeScale = 0f;
+        timerT.enabled = false;
     }
 
     private void Update()
     {
-        timerT.text=(maxZeit+Mathf.Round(abgelaufeneZeit)).ToString();
+        //Setze neuen Timer Text 
+        timerT.text=(maxZeit-Mathf.Round(abgelaufeneZeit)).ToString();
+        //Wenn die Zeit noch nicht abgelaufen ist
         if (abgelaufeneZeit < maxZeit)
         {
-            abgelaufeneZeit -= Time.deltaTime;
+            //Bestimme vergangene Zeit
+            abgelaufeneZeit += Time.deltaTime;
         }
         else
         {
-            endGameEvent.TriggerEvent();
+            
+            zeitAbgelaufenEvent.TriggerEvent();
         }
     }
+    /// <summary>
+    /// Starte den Timer neu
+    /// </summary>
     private void TimerAktivieren(InputAction.CallbackContext context)
-    {
-        abgelaufeneZeit = 0f;
-        //Time.timeScale = 1;
-        startAktion.Disable();
+    {        
+        abgelaufeneZeit = 0f; //Setze abgelaufene Zeit zurück
+        startAktion.performed -= TimerAktivieren; //Deaktiviere start des Timers
+        timerT.enabled = true; //Aktiviere Timer Text
     }
-
+    /// <summary>
+    /// Funktion für Zeitstrafen
+    /// </summary>
     public void Zeitstrafe()
     {
-        abgelaufeneZeit -= strafZeit;
+        abgelaufeneZeit += strafZeit;
     }
-
+    /// <summary>
+    /// Funktion für Zeitboni
+    /// </summary>
     public void Zeitbonus()
     {
-        abgelaufeneZeit += bonusZeit;
+        abgelaufeneZeit -= bonusZeit;
     }
 
     private void OnEnable()
     {
-        startAktion.Enable();
+        //startAktion.Enable();
     }
     private void OnDisable()
     {

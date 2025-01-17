@@ -16,8 +16,8 @@ public class GameEventListenerPosition : MonoBehaviour
     {
         posEvent.RemoveListener(this);
     }
-    public void OnEventTriggered(Vector3 pos)
+    public void OnEventTriggered(Vector3 pos,Richtung richtung)
     {
-        onEventTriggeredPos.Invoke(pos);
+        onEventTriggeredPos.Invoke(pos, richtung);
     }
 }
