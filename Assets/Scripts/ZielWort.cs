@@ -34,6 +34,11 @@ public class ZielWort : MonoBehaviour
     /// Textelement für Nachwort
     /// </summary>
     public TextMeshProUGUI nachWortT;
+    /// <summary>
+    /// Audioquellen für Buchstabenfunde
+    /// </summary>
+    public AudioSource richtigerBuchstabe;
+    public AudioSource schlechterBuchstabe;
 
     /// <summary>
     /// Event für Zeitbonus
@@ -82,10 +87,12 @@ public class ZielWort : MonoBehaviour
         {
             //Ziehe Zeit ab
             zeitAbzug.TriggerEvent();
+            schlechterBuchstabe.Play();
         }
         //Wenn der gesammelte Buchstabe im Zielwort enthalten ist
         else
         {
+            richtigerBuchstabe.Play();
             //Suche nach dem Buchstaben im Zielwort
             for (int i = 0; i < zielWort.Length; i++)
             {

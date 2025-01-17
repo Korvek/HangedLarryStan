@@ -85,7 +85,6 @@ public class Stanley : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("RESTORE");
         //Weise Aktionen den Tasten zu
         drehenAktion = actions.FindActionMap("Player").FindAction("DrehenAktion");
         sammelAktion = actions.FindActionMap("Player").FindAction("SammelAktion");
@@ -160,7 +159,6 @@ public class Stanley : MonoBehaviour
     /// </summary>
     private void Abbiegen(InputAction.CallbackContext context) 
     {
-        Debug.Log("HEP");
         //Bestimme neue Zielrichtung
         switch (richtung)
         {
@@ -179,8 +177,7 @@ public class Stanley : MonoBehaviour
         }
         //Wenn abgebogen werden soll
         if (Vector2.SignedAngle(transform.up, zielrichtung) != 0f)
-        {
-            
+        {            
             drehenAktion.performed -= Abbiegen;
             rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
             if (Vector2.Angle(transform.up, zielrichtung) == 180)
@@ -203,9 +200,11 @@ public class Stanley : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// Reaktiviere Abbiegen nachdem eine Animation abgeschlossen ist
+    /// </summary>
     public void AnimationBeendet()
     {
-
         drehenAktion.performed += Abbiegen;
     }
     /// <summary>
@@ -300,10 +299,14 @@ public class Stanley : MonoBehaviour
         {
             richtung = collision.gameObject.GetComponent<Weiche>().richtung;
         }
+        //Wenn es eine Stoplinie ist
         else if (collision.CompareTag("Stoplinie"))
         {
+            //Stoppe die Zeit
             Time.timeScale = 0;
+            //Aktiviere Bewegung fortsetzen
             startAktion.performed += StarteBewegung;
+            //Deaktiviere Stoplinie
             collision.gameObject.SetActive(false);
         }
     }
@@ -348,7 +351,6 @@ public class Stanley : MonoBehaviour
     //}  
     private void OnDestroy()
     {
-        Debug.Log("BOOM");
         //Löse Verknüpfungen
         drehenAktion.performed -= Abbiegen;
         startAktion.performed -= StarteBewegung;
