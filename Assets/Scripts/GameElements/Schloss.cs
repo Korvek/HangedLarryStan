@@ -19,6 +19,7 @@ public class Schloss : MonoBehaviour
     /// </summary>
     public void Schlossauflösen()
     {
+        GetComponent<Collider2D>().enabled = false;
         //Löse Animation aus
         anim.SetTrigger("TriggerSchloss");
     }
