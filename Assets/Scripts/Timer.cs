@@ -66,7 +66,7 @@ public class Timer : MonoBehaviour
     private void TimerAktivieren(InputAction.CallbackContext context)
     {        
         abgelaufeneZeit = 0f; //Setze abgelaufene Zeit zurück
-        startAktion.Disable(); //Deaktiviere start des Timers
+        startAktion.performed -= TimerAktivieren; //Deaktiviere start des Timers
         timerT.enabled = true; //Aktiviere Timer Text
     }
     /// <summary>
@@ -74,14 +74,14 @@ public class Timer : MonoBehaviour
     /// </summary>
     public void Zeitstrafe()
     {
-        abgelaufeneZeit -= strafZeit;
+        abgelaufeneZeit += strafZeit;
     }
     /// <summary>
     /// Funktion für Zeitboni
     /// </summary>
     public void Zeitbonus()
     {
-        abgelaufeneZeit += bonusZeit;
+        abgelaufeneZeit -= bonusZeit;
     }
 
     private void OnEnable()
