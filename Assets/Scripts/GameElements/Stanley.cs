@@ -205,7 +205,8 @@ public class Stanley : MonoBehaviour
     }
     public void AnimationBeendet()
     {
-        drehenAktion.Enable();
+
+        drehenAktion.performed += Abbiegen;
     }
     /// <summary>
     /// Sammelt das momentan berührte Objekt ein
