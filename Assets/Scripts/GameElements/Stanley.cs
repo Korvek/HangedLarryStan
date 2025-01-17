@@ -67,16 +67,6 @@ public class Stanley : MonoBehaviour
     /// </summary>
     public GameEvent kollisionEvent;
 
-    /// <summary>
-    /// Startpunkt für SoftReset
-    /// </summary>
-    private Vector2 start;
-    private Richtung startRichtung;
-    /// <summary>
-    /// Startpunkt für Mitte Level
-    /// </summary>
-    public Vector2 resetMitte;
-
     //Körperkomponente
     private Rigidbody2D rigidbody2d;
     //Sammelbares Objekt, das berührt wird
@@ -93,18 +83,14 @@ public class Stanley : MonoBehaviour
     private InputAction startAktion;
     private InputAction stopAktion;
 
-
     private void Awake()
     {
-        
-        start = transform.position;
-        startRichtung=richtung;
+        Debug.Log("RESTORE");
         //Weise Aktionen den Tasten zu
         drehenAktion = actions.FindActionMap("Player").FindAction("DrehenAktion");
         sammelAktion = actions.FindActionMap("Player").FindAction("SammelAktion");
         stopAktion = actions.FindActionMap("Player").FindAction("StillstandAktion");
         startAktion = actions.FindActionMap("Player").FindAction("StartAktion");
-
 
         //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
         drehenAktion.performed += Abbiegen;
@@ -173,7 +159,8 @@ public class Stanley : MonoBehaviour
     /// Das Objekt biegt in Zielrichtung ab
     /// </summary>
     private void Abbiegen(InputAction.CallbackContext context) 
-    {        
+    {
+        Debug.Log("HEP");
         //Bestimme neue Zielrichtung
         switch (richtung)
         {
@@ -194,7 +181,7 @@ public class Stanley : MonoBehaviour
         if (Vector2.SignedAngle(transform.up, zielrichtung) != 0f)
         {
             
-            drehenAktion.Disable();
+            drehenAktion.performed -= Abbiegen;
             rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
             if (Vector2.Angle(transform.up, zielrichtung) == 180)
             {
@@ -357,21 +344,10 @@ public class Stanley : MonoBehaviour
     //        //Starte das Level neu
     //        kollisionEvent.TriggerEvent();
     //    }
-    //}
-    private void OnEnable()
-    {
-        //Aktiviere InputActions
-        //actions.FindActionMap("Player").Enable();
-
-    }
-    private void OnDisable()
-    {
-        //Deaktiviere InputActions
-        //actions.FindActionMap("Player").Disable();
-
-    }    
+    //}  
     private void OnDestroy()
     {
+        Debug.Log("BOOM");
         //Löse Verknüpfungen
         drehenAktion.performed -= Abbiegen;
         startAktion.performed -= StarteBewegung;

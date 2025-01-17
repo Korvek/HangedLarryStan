@@ -10680,50 +10680,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4658358457263532264, guid: 47ef2624d20c7ca44a9ededc76bacfaa, type: 3}
   m_PrefabInstance: {fileID: 2058671322}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2103338575 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5946303490111997158, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
-  m_PrefabInstance: {fileID: 6658401986622349888}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2103338580 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1769267598626589567, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
-  m_PrefabInstance: {fileID: 6658401986622349888}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2103338575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04061b8678fd4694e8f9eb466525fc8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2103338583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2103338575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: bb3b5bd4b257c3f4e94096a4bc510a85, type: 2}
-  onEventTriggered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2103338580}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: "WortGel\xF6st"
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &2104433797
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11621,10 +11577,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5946303490111997158, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2103338583}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
 --- !u!1001 &8491175623421360938
 PrefabInstance:
