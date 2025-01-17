@@ -3932,7 +3932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4014104195207852524, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
       propertyPath: maxZeit
-      value: 90
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4014104195207852524, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
       propertyPath: zeitAbgelaufenEvent
