@@ -366,7 +366,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 233939358}
         m_TargetAssemblyTypeName: Volume, Assembly-CSharp
-        m_MethodName: SetLevelMusik
+        m_MethodName: SetLevelMaster
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1901,7 +1901,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1327425347}
         m_TargetAssemblyTypeName: Volume, Assembly-CSharp
-        m_MethodName: SetLevel
+        m_MethodName: SetLevelEffekte
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
