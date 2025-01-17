@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class Weiche : MonoBehaviour
 {
     /// <summary>
-    /// Aktive Richtung
+    /// Aktive Richtung    X 1 Y 0  RotZ 90     X 1 Y 0,37  RotZ 180
     /// </summary>
     public Richtung richtung;
     /// <summary>
@@ -89,7 +89,6 @@ public class Weiche : MonoBehaviour
     /// </summary>
     public void WeicheBlockieren(GameObject gO)
     {
-        Debug.Log("Exit Weiche: " + transform.parent.gameObject);
         if (gO.Equals(transform.parent.gameObject))
         {
             drehenAktion.performed -= RichtungWechsel;
