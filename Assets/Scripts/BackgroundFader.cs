@@ -115,6 +115,7 @@ public class BackgroundFader : MonoBehaviour
             }
             yield return new WaitForEndOfFrame(); // Warte bis zum nächsten Frame
         }
+        actions.FindActionMap("Player").Enable();
     }
 
     
