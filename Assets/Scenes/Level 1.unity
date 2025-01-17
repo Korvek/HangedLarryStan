@@ -650,6 +650,7 @@ Transform:
   - {fileID: 1463590895}
   - {fileID: 3124598844478140944}
   - {fileID: 5284604732474202444}
+  - {fileID: 531763205}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &112974658
@@ -1972,6 +1973,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4658358457263532264, guid: 47ef2624d20c7ca44a9ededc76bacfaa, type: 3}
   m_PrefabInstance: {fileID: 1250699553}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &531763204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 531763205}
+  m_Layer: 0
+  m_Name: ResetPunkt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &531763205
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531763204}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18.5, y: -31.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 89550098}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &542845124 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1543245145422070800, guid: c11d6bb4c7a34d842bdc216c9825d958, type: 3}
@@ -3710,6 +3742,10 @@ PrefabInstance:
       propertyPath: maxZeit
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4014104195207852524, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
+      propertyPath: zeitAbgelaufenEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 9ebd0916ab4be484ba72532a26d47465, type: 2}
     - target: {fileID: 5782556499891086164, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
       propertyPath: m_Name
       value: Timer
@@ -6362,6 +6398,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5532253882829974419, guid: 55ad0e99e8b5dfa45a6441d3766cd884, type: 3}
       propertyPath: maxBeulen
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5532253882829974419, guid: 55ad0e99e8b5dfa45a6441d3766cd884, type: 3}
+      propertyPath: resetPunkt
+      value: 
+      objectReference: {fileID: 531763204}
+    - target: {fileID: 5532253882829974419, guid: 55ad0e99e8b5dfa45a6441d3766cd884, type: 3}
+      propertyPath: resetRichtung
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6853300066649026107, guid: 55ad0e99e8b5dfa45a6441d3766cd884, type: 3}
@@ -10497,9 +10541,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3973182761383435850, guid: d61d14ebb1d3772488a3d98d346efbd4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5284604732474202446}
     - targetCorrespondingSourceObject: {fileID: 7540524375908871938, guid: d61d14ebb1d3772488a3d98d346efbd4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -10509,38 +10550,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6043097384915279228, guid: d61d14ebb1d3772488a3d98d346efbd4, type: 3}
   m_PrefabInstance: {fileID: 5284604732474202443}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5284604732474202445 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3973182761383435850, guid: d61d14ebb1d3772488a3d98d346efbd4, type: 3}
-  m_PrefabInstance: {fileID: 5284604732474202443}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &5284604732474202446
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5284604732474202445}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 3
 --- !u!1001 &6658401986622349888
 PrefabInstance:
   m_ObjectHideFlags: 0

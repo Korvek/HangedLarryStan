@@ -47,12 +47,12 @@ public class Timer : MonoBehaviour
     private void Update()
     {
         //Setze neuen Timer Text 
-        timerT.text=(maxZeit+Mathf.Round(abgelaufeneZeit)).ToString();
+        timerT.text=(maxZeit-Mathf.Round(abgelaufeneZeit)).ToString();
         //Wenn die Zeit noch nicht abgelaufen ist
         if (abgelaufeneZeit < maxZeit)
         {
             //Bestimme vergangene Zeit
-            abgelaufeneZeit -= Time.deltaTime;
+            abgelaufeneZeit += Time.deltaTime;
         }
         else
         {

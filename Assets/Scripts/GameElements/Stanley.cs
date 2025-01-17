@@ -28,7 +28,12 @@ using UnityEngine.SceneManagement;
  * VolumeSlider für Stimme
  *  Vorlesen unterbrechen
  * 
+ * 39 Sekunden 1.
+ * 40
+ * 80 Sekunden Gesamt
  * Game Over Einblendung? (Szene?)
+ * 
+ * AUSRUFEZEICHEN RICHTUNG
  * 
  * Maximale Länge vorwort/nachwort * 
  * Ein Text
@@ -62,6 +67,16 @@ public class Stanley : MonoBehaviour
     /// </summary>
     public GameEvent kollisionEvent;
 
+    /// <summary>
+    /// Startpunkt für SoftReset
+    /// </summary>
+    private Vector2 start;
+    private Richtung startRichtung;
+    /// <summary>
+    /// Startpunkt für Mitte Level
+    /// </summary>
+    public Vector2 resetMitte;
+
     //Körperkomponente
     private Rigidbody2D rigidbody2d;
     //Sammelbares Objekt, das berührt wird
@@ -72,6 +87,8 @@ public class Stanley : MonoBehaviour
     private Vector2 zielrichtung;
     //Animationskomponente
     private Animator anim;
+    //Erstes Wort gelöst
+    private bool wortGelöst=false;
     //Aktionen die auf Inputs reagieren
     private InputAction drehenAktion;
     private InputAction sammelAktion;
@@ -84,6 +101,8 @@ public class Stanley : MonoBehaviour
 
     private void Awake()
     {
+        start= transform.position;
+        startRichtung=richtung;
         //Weise Aktionen den Tasten zu
         drehenAktion = actions.FindActionMap("Player").FindAction("DrehenAktion");
         sammelAktion = actions.FindActionMap("Player").FindAction("SammelAktion");
@@ -273,6 +292,53 @@ public class Stanley : MonoBehaviour
             case Richtung.Links:
                 transform.rotation = Quaternion.Euler(0f, 0f, 90f);
                 break;
+        }
+    }
+    public void WortGelöst()
+    {
+        wortGelöst = true;
+    }
+    public void SoftReset(Vector3 newPos, Richtung newRichtung)
+    {
+        if (!wortGelöst)
+        {
+            rigidbody2d.MovePosition(start);
+            richtung = startRichtung;
+            switch (richtung)
+            {
+                case Richtung.Oben:
+                    transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                    break;
+                case Richtung.Unten:
+                    transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+                    break;
+                case Richtung.Rechts:
+                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+                    break;
+                case Richtung.Links:
+                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+                    break;
+            }
+        }
+        else if(wortGelöst)
+        {
+            transform.position = newPos;
+            richtung = newRichtung;
+            switch (richtung)
+            {
+                case Richtung.Oben:
+                    transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                    break;
+                case Richtung.Unten:
+                    transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+                    break;
+                case Richtung.Rechts:
+                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+                    break;
+                case Richtung.Links:
+                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+                    break;
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
