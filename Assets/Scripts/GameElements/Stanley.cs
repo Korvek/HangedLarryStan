@@ -9,7 +9,6 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 /* TODO Liste
- * Soft Reset
  * Visuelle Bewegung des Spielers bei Schleuder
  *  Animation Rotieren während Bewegung, Landung in richtiger Richtung?
  * Textgröße anpassen
@@ -20,8 +19,24 @@ using UnityEngine.SceneManagement;
  * Credits
  * Video Levelwechsel
  * IntroScreen
+ *  Buttons zur Levelwahl
+ *  Button zu Credits
  * Rückkehr zum IntroScreen
- * Abbiegen prüfen ?
+ * Tutorial Texte
+ *  Piktogramme
+ * Ausrufezeichen bei möglicher Interaktion
+ * VolumeSlider für Stimme
+ *  Vorlesen unterbrechen
+ * 
+ * 39 Sekunden 1.
+ * 40
+ * 80 Sekunden Gesamt
+ * Game Over Einblendung? (Szene?)
+ * 
+ * AUSRUFEZEICHEN RICHTUNG
+ * 
+ * Maximale Länge vorwort/nachwort * 
+ * Ein Text
  */
 
 public class Stanley : MonoBehaviour
@@ -52,6 +67,16 @@ public class Stanley : MonoBehaviour
     /// </summary>
     public GameEvent kollisionEvent;
 
+    /// <summary>
+    /// Startpunkt für SoftReset
+    /// </summary>
+    private Vector2 start;
+    private Richtung startRichtung;
+    /// <summary>
+    /// Startpunkt für Mitte Level
+    /// </summary>
+    public Vector2 resetMitte;
+
     //Körperkomponente
     private Rigidbody2D rigidbody2d;
     //Sammelbares Objekt, das berührt wird
@@ -68,21 +93,18 @@ public class Stanley : MonoBehaviour
     private InputAction startAktion;
     private InputAction stopAktion;
 
-    ////TEST Aktionen die Abbiegen
-    //private InputAction linksAktion;
-    //private InputAction rechtsAktion;
 
     private void Awake()
     {
+        
+        start = transform.position;
+        startRichtung=richtung;
         //Weise Aktionen den Tasten zu
         drehenAktion = actions.FindActionMap("Player").FindAction("DrehenAktion");
         sammelAktion = actions.FindActionMap("Player").FindAction("SammelAktion");
         stopAktion = actions.FindActionMap("Player").FindAction("StillstandAktion");
-        startAktion = actions.FindActionMap("Menu").FindAction("StartGameAktion");
+        startAktion = actions.FindActionMap("Player").FindAction("StartAktion");
 
-        ////TEST
-        //linksAktion = actions.FindActionMap("Player").FindAction("LinksAktion");
-        //rechtsAktion = actions.FindActionMap("Player").FindAction("RechtsAktion");
 
         //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
         drehenAktion.performed += Abbiegen;
@@ -94,9 +116,6 @@ public class Stanley : MonoBehaviour
         //Verknüpfe sammelAktion mit der Sammeln Methode
         sammelAktion.performed += Sammeln;
 
-        ////TEST
-        //linksAktion.performed += linksAbbiegen;
-        //rechtsAktion.performed += rechtsAbbiegen;
         //Hole Rigidbody Komponente des Objekts
         rigidbody2d = GetComponent<Rigidbody2D>();
         //Hole Animator Komponente des Objekts
@@ -104,19 +123,6 @@ public class Stanley : MonoBehaviour
         //Zielrichtung zum Start ist vorwärts
         zielrichtung = transform.up;
     }
-
-    ////TEST
-    //private void RechtsAbbiegen(InputAction.CallbackContext context)
-    //{
-    //    rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
-    //    anim.SetTrigger("TriggerRechtskurve"); //Rechtskurve
-    //}
-
-    //private void LinksAbbiegen(InputAction.CallbackContext context)
-    //{
-    //    rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
-    //    anim.SetTrigger("TriggerLinkskurve"); //Linkskurve
-    //}
 
     /// <summary>
     /// Hält die Bewegung des Spielers an
@@ -187,6 +193,7 @@ public class Stanley : MonoBehaviour
         //Wenn abgebogen werden soll
         if (Vector2.SignedAngle(transform.up, zielrichtung) != 0f)
         {
+            
             drehenAktion.Disable();
             rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
             if (Vector2.Angle(transform.up, zielrichtung) == 180)
@@ -209,14 +216,8 @@ public class Stanley : MonoBehaviour
             }
         }
     }
-    public void AnimationBeendetLinks()
+    public void AnimationBeendet()
     {
-        Debug.Log("GO L");
-        drehenAktion.Enable();
-    }
-    public void AnimationBeendetRechts()
-    {
-        Debug.Log("GO R");
         drehenAktion.Enable();
     }
     /// <summary>
@@ -241,6 +242,7 @@ public class Stanley : MonoBehaviour
     /// </summary>
     private void StarteBewegung(InputAction.CallbackContext context)
     {
+        Time.timeScale = 1;
         rigidbody2d.constraints = RigidbodyConstraints2D.None;
         startAktion.performed -= StarteBewegung;
     }
@@ -271,6 +273,7 @@ public class Stanley : MonoBehaviour
                 break;
         }
     }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Bei Betreten eines sammelbaren Objekts
@@ -308,6 +311,12 @@ public class Stanley : MonoBehaviour
         else if (collision.CompareTag("PfeilDrehend"))
         {
             richtung = collision.gameObject.GetComponent<Weiche>().richtung;
+        }
+        else if (collision.CompareTag("Stoplinie"))
+        {
+            Time.timeScale = 0;
+            startAktion.performed += StarteBewegung;
+            collision.gameObject.SetActive(false);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -352,36 +361,21 @@ public class Stanley : MonoBehaviour
     private void OnEnable()
     {
         //Aktiviere InputActions
-        drehenAktion.Enable();
-        sammelAktion.Enable();
-        stopAktion.Enable();
-        startAktion.Enable();
+        //actions.FindActionMap("Player").Enable();
 
-        ////TEST
-        //linksAktion.Enable();
-        //rechtsAktion.Enable();
     }
     private void OnDisable()
     {
         //Deaktiviere InputActions
-        drehenAktion.Disable();
-        sammelAktion.Disable();
-        stopAktion.Disable();
-        startAktion.Disable();
+        //actions.FindActionMap("Player").Disable();
 
-        ////TEST
-        //linksAktion.Disable();
-        //rechtsAktion.Disable();
-    }    private void OnDestroy()
+    }    
+    private void OnDestroy()
     {
         //Löse Verknüpfungen
         drehenAktion.performed -= Abbiegen;
         startAktion.performed -= StarteBewegung;
         stopAktion.performed -= StoppeBewegung;
         sammelAktion.performed -= Sammeln;
-
-        ////TEST
-        //linksAktion.performed -= linksAbbiegen;
-        //rechtsAktion.performed -= rechtsAbbiegen;
     }
 }

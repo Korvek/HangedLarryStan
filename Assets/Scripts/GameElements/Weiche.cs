@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class Weiche : MonoBehaviour
 {
     /// <summary>
-    /// Aktive Richtung
+    /// Aktive Richtung    X 1 Y 0  RotZ 90     X 1 Y 0,37  RotZ 180
     /// </summary>
     public Richtung richtung;
     /// <summary>
@@ -21,14 +21,13 @@ public class Weiche : MonoBehaviour
     public InputActionAsset actions;
     //Input der die Weiche dreht
     private InputAction drehenAktion;
-
     private void Awake()
     {
         //Weise Aktion den Tasten zu
         drehenAktion = actions.FindActionMap("Weiche").FindAction("DrehenAktion");
-        //Verknüpfe drehenAktion mit der RichtungsWechsel Methode
-        drehenAktion.performed += RichtungWechsel;
         //Wechselt die Richtung je nach Richtungsvariable
+        drehenAktion.Enable();
+        //Aktiviere Inputs
         Drehen(richtung);
     }
     /// <summary>
@@ -42,11 +41,12 @@ public class Weiche : MonoBehaviour
             richtung = richtungsListe[richtungsListe.IndexOf(richtung) + 1];
         }
         else //Beginn am Ende der Liste von vorne
-        { 
-            richtung = richtungsListe [0];
+        {
+            richtung = richtungsListe[0];
         }
         //Wechselt die Richtung je nach Richtungsvariable
         Drehen(richtung);
+
     }
     /// <summary>
     /// Dreht den Pfeil in die gewählte Richtung
@@ -75,16 +75,24 @@ public class Weiche : MonoBehaviour
     /// <summary>
     /// Aktiviert das Drehen der Weiche
     /// </summary>
-    public void WeicheAktivieren()
+    public void WeicheAktivieren(GameObject gO)
     {
-        drehenAktion.Enable();
+        Debug.Log(gO.Equals(transform.parent.gameObject));
+        if (gO.Equals(transform.parent.gameObject))
+        {
+            Debug.Log("GUT");
+            drehenAktion.performed += RichtungWechsel;
+        }
     }
     /// <summary>
     /// Deaktiviert das Drehen der Weiche
     /// </summary>
-    public void WeicheBlockieren()
+    public void WeicheBlockieren(GameObject gO)
     {
-        drehenAktion.Disable();
+        if (gO.Equals(transform.parent.gameObject))
+        {
+            drehenAktion.performed -= RichtungWechsel;
+        }
     }
     private void OnDisable()
     {

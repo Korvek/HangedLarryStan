@@ -10,6 +10,7 @@ public class Routen : MonoBehaviour
     public GameEvent kollisionEvent;
     private void OnTriggerExit2D(Collider2D collision)
     {
+        Debug.Log("EXIT");
         //Löse Kollisionsevent aus
         kollisionEvent.TriggerEvent();
     }

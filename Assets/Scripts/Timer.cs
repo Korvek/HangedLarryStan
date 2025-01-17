@@ -38,7 +38,7 @@ public class Timer : MonoBehaviour
         //Abgelaufene Zeit 0 setzen
         abgelaufeneZeit = 0f;
         //Weise Aktionen den Tasten zu
-        startAktion = actions.FindActionMap("Menu").FindAction("StartGameAktion");
+        startAktion = actions.FindActionMap("Player").FindAction("StartAktion");
         //Verknüpfe startAktion mit der TimerAktivieren Methode
         startAktion.performed += TimerAktivieren;
         timerT.enabled = false;
@@ -47,12 +47,12 @@ public class Timer : MonoBehaviour
     private void Update()
     {
         //Setze neuen Timer Text 
-        timerT.text=(maxZeit+Mathf.Round(abgelaufeneZeit)).ToString();
+        timerT.text=(maxZeit-Mathf.Round(abgelaufeneZeit)).ToString();
         //Wenn die Zeit noch nicht abgelaufen ist
         if (abgelaufeneZeit < maxZeit)
         {
             //Bestimme vergangene Zeit
-            abgelaufeneZeit -= Time.deltaTime;
+            abgelaufeneZeit += Time.deltaTime;
         }
         else
         {
@@ -66,7 +66,7 @@ public class Timer : MonoBehaviour
     private void TimerAktivieren(InputAction.CallbackContext context)
     {        
         abgelaufeneZeit = 0f; //Setze abgelaufene Zeit zurück
-        startAktion.Disable(); //Deaktiviere start des Timers
+        startAktion.performed -= TimerAktivieren; //Deaktiviere start des Timers
         timerT.enabled = true; //Aktiviere Timer Text
     }
     /// <summary>
@@ -74,19 +74,19 @@ public class Timer : MonoBehaviour
     /// </summary>
     public void Zeitstrafe()
     {
-        abgelaufeneZeit -= strafZeit;
+        abgelaufeneZeit += strafZeit;
     }
     /// <summary>
     /// Funktion für Zeitboni
     /// </summary>
     public void Zeitbonus()
     {
-        abgelaufeneZeit += bonusZeit;
+        abgelaufeneZeit -= bonusZeit;
     }
 
     private void OnEnable()
     {
-        startAktion.Enable();
+        //startAktion.Enable();
     }
     private void OnDisable()
     {

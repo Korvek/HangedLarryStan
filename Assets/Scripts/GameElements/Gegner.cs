@@ -20,11 +20,13 @@ public class Gegner : MonoBehaviour
     public GameEvent kollisionEvent;
     //Startpunkt, des Gegners
     private Vector2 startpunkt;
-    private void OnColliderEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         //Wenn mit dem Spieler kollidiert wird
         if (collision.CompareTag("Player"))
         {
+            Debug.Log("AAAAA");
             kollisionEvent.TriggerEvent();
         }
     }

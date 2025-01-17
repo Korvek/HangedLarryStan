@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Schloss : MonoBehaviour
 {
+    public GameEvent kollision;
     //Animator Komponente
     private Animator anim;
+
     void Awake()
     {
         //Finde Animator Komponente
@@ -17,7 +19,16 @@ public class Schloss : MonoBehaviour
     /// </summary>
     public void Schlossauflösen()
     {
+        GetComponent<Collider2D>().enabled = false;
         //Löse Animation aus
         anim.SetTrigger("TriggerSchloss");
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            kollision.TriggerEvent();
+        }
     }
 }
