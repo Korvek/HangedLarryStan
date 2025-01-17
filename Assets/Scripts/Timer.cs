@@ -74,14 +74,14 @@ public class Timer : MonoBehaviour
     /// </summary>
     public void Zeitstrafe()
     {
-        abgelaufeneZeit -= strafZeit;
+        abgelaufeneZeit += strafZeit;
     }
     /// <summary>
     /// Funktion für Zeitboni
     /// </summary>
     public void Zeitbonus()
     {
-        abgelaufeneZeit += bonusZeit;
+        abgelaufeneZeit -= bonusZeit;
     }
 
     private void OnEnable()
