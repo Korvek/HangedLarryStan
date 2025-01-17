@@ -38,7 +38,7 @@ public class Timer : MonoBehaviour
         //Abgelaufene Zeit 0 setzen
         abgelaufeneZeit = 0f;
         //Weise Aktionen den Tasten zu
-        startAktion = actions.FindActionMap("Menu").FindAction("StartGameAktion");
+        startAktion = actions.FindActionMap("Player").FindAction("StartAktion");
         //Verknüpfe startAktion mit der TimerAktivieren Methode
         startAktion.performed += TimerAktivieren;
         timerT.enabled = false;
@@ -86,7 +86,7 @@ public class Timer : MonoBehaviour
 
     private void OnEnable()
     {
-        startAktion.Enable();
+        //startAktion.Enable();
     }
     private void OnDisable()
     {

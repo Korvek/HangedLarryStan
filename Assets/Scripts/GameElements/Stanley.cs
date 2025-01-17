@@ -107,7 +107,7 @@ public class Stanley : MonoBehaviour
         drehenAktion = actions.FindActionMap("Player").FindAction("DrehenAktion");
         sammelAktion = actions.FindActionMap("Player").FindAction("SammelAktion");
         stopAktion = actions.FindActionMap("Player").FindAction("StillstandAktion");
-        startAktion = actions.FindActionMap("Menu").FindAction("StartGameAktion");
+        startAktion = actions.FindActionMap("Player").FindAction("StartAktion");
 
         ////TEST
         //linksAktion = actions.FindActionMap("Player").FindAction("LinksAktion");
@@ -433,7 +433,7 @@ public class Stanley : MonoBehaviour
         drehenAktion.Enable();
         sammelAktion.Enable();
         stopAktion.Enable();
-        startAktion.Enable();
+        //startAktion.Enable();
 
         ////TEST
         //linksAktion.Enable();
