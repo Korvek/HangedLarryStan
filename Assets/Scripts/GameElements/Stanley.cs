@@ -340,6 +340,11 @@ public class Stanley : MonoBehaviour
             //Vergiss den Pfeil
             pfeilObjekt = null;
         }
+        else if (collision.CompareTag("PfeilDrehend"))
+        {
+            //Vergiss den Pfeil
+            pfeilObjekt = null;
+        }
     }
     //private void OnCollisionEnter2D(Collision2D collision)
     //{
