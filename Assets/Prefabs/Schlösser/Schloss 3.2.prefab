@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kollision: {fileID: 11400000, guid: 853da0a708cd4f74a82bc54c1d7c6202, type: 2}
+  buchstabeRichtig: {fileID: 8300000, guid: bfdef31a183a1944eb990fb03d20d474, type: 3}
 --- !u!114 &-6315353440325053580
 MonoBehaviour:
   m_ObjectHideFlags: 0

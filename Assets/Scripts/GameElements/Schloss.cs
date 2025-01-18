@@ -5,6 +5,7 @@ using UnityEngine;
 public class Schloss : MonoBehaviour
 {
     public GameEvent kollision;
+    public AudioClip buchstabeRichtig;
     //Animator Komponente
     private Animator anim;
 
@@ -20,8 +21,7 @@ public class Schloss : MonoBehaviour
     public void Schlossauflösen()
     {
         GetComponent<Collider2D>().enabled = false;
-        //Löse Animation aus
-        anim.SetTrigger("TriggerSchloss");
+        StartCoroutine(Knacken());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,5 +30,13 @@ public class Schloss : MonoBehaviour
         {
             kollision.TriggerEvent();
         }
+    }
+
+    IEnumerator Knacken()
+    {
+        yield return new WaitForSeconds(buchstabeRichtig.length);
+        
+        //Löse Animation aus
+        anim.SetTrigger("TriggerSchloss");
     }
 }
