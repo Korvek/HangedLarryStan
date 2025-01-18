@@ -30,9 +30,13 @@ public class SoundManager : MonoBehaviour
     {
         audioSources["BuchstabeFalsch"].Play();
     }
-    public void SchlossKnacken()
+    public void PlaySchlossKnacken()
     {
         audioSources["SchlossKnacken"].Play();
+    }
+    public void PlayGegnerKollision()
+    {
+        audioSources["GegnerKollision"].Play();
     }
 
 }

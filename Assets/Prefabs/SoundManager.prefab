@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 9038273328473757024}
   - component: {fileID: 5186942914368183588}
   - component: {fileID: 5186596134188945225}
+  - component: {fileID: 1660335743602170948}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -187,6 +188,8 @@ MonoBehaviour:
     source: {fileID: 4531635096549222471}
   - name: SchlossKnacken
     source: {fileID: 221776511746957182}
+  - name: GegnerKollision
+    source: {fileID: 2607484216325279870}
 --- !u!114 &7809503089071417883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +264,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 343048213367024150}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: SchlossKnacken
+        m_MethodName: PlaySchlossKnacken
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -289,7 +292,35 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 343048213367024150}
         m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: SchlossKnacken
+        m_MethodName: PlaySchlossKnacken
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1660335743602170948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057384797920025157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 526309292d533e94caf5cf1024a6a713, type: 2}
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 343048213367024150}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlayGegnerKollision
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
