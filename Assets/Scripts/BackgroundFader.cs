@@ -32,6 +32,8 @@ public class BackgroundFader : MonoBehaviour
     private List<CanvasRenderer> canvasRenderers;
     private InputAction fadeInAktion;
 
+    public GameEvent levelEnter;
+
     public void Init()
     {
         initialImageColor = new List<Color>(); 
@@ -76,6 +78,7 @@ public class BackgroundFader : MonoBehaviour
 
     private void StartFadeIn(InputAction.CallbackContext context)
     {
+        levelEnter.TriggerEvent();
         // Überblendung starten
         StartCoroutine(FadeIn());
         fadeInAktion.performed -= StartFadeIn;

@@ -268,15 +268,37 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "a92ef40f-7c1e-440c-a6ea-976c3ebb25a6",
+                    "name": "Start",
+                    "id": "763236bd-55c4-40aa-acbd-5b6907c754db",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FadeInAktion",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "16c82d85-1ea1-4aea-8b9f-b2e1ee62dfff",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "FadeInAktion",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "ddec70b3-8780-4d90-9499-d52568dc559b",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FadeInAktion",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
@@ -290,15 +312,37 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "45bcfff6-ecbd-461a-a4c1-b808c1fe7ce7",
+                    "name": "Start",
+                    "id": "f4f3162f-aae4-4130-8eae-0d561e0ca959",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CameraMoveAktion",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "42753c84-7860-4ac7-9ba5-7c06d27c0cd7",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "CameraMoveAktion",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "72769d40-737e-48fc-93e4-9b25c4951d0d",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CameraMoveAktion",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "",

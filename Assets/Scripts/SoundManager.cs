@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 [Serializable]
 public struct Audios
@@ -40,43 +41,42 @@ public class SoundManager : MonoBehaviour
     }
     public void PlaySeite1()
     {
-        Debug.Log("1");
-        audioSources["Seite1"].PlayDelayed(2f);
+        audioSources["Seite1"].PlayDelayed(0f);
     }
     public void PlaySeite2()
     {
-        Debug.Log("2");
-        audioSources["Seite2"].PlayDelayed(2f);
+        audioSources["Seite2"].PlayDelayed(0f);
     }
     public void PlaySeite3()
     {
-        Debug.Log("3");
-        audioSources["Seite3"].PlayDelayed(2f);
+        audioSources["Seite3"].PlayDelayed(0f);
     }
     public void PlaySeite4()
     {
-        Debug.Log("4");
-        audioSources["Seite4"].PlayDelayed(2f);
+        audioSources["Seite4"].PlayDelayed(0f);
     }
     public void PlaySeite5()
     {
-        Debug.Log("5");
-        audioSources["Seite5"].PlayDelayed(2f);
+        audioSources["Seite5"].PlayDelayed(0f);
     }
     public void PlaySeite6()
     {
-        Debug.Log("6");
-        audioSources["Seite6"].PlayDelayed(2f);
+        audioSources["Seite6"].PlayDelayed(0f);
     }
     public void PlaySeite7()
     {
-        Debug.Log("7");
-        audioSources["Seite7"].PlayDelayed(2f);
+        audioSources["Seite7"].PlayDelayed(0f);
     }
     public void PlaySeite8()
     {
-        Debug.Log("8");
-        audioSources["Seite8"].PlayDelayed(2f);
+        audioSources["Seite8"].PlayDelayed(0f);
+    }
+    public void LevelStart()
+    {
+        foreach(Audios audio in audiosList)
+        {
+            audio.source.Stop();
+        }
     }
 
 

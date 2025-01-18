@@ -12,10 +12,16 @@ public class StartHinweis : MonoBehaviour
     public InputActionAsset actions;
     private InputAction cameraMoveAktion;
 
-    private void Awake()
+    private void Start()
     {
         cameraMoveAktion = actions.FindActionMap("Menu").FindAction("CameraMoveAktion");
         cameraMoveAktion.performed += Verschwinde;
+        GetComponent<CanvasRenderer>().SetColor(new Color(
+            GetComponent<CanvasRenderer>().GetColor().r,
+            GetComponent<CanvasRenderer>().GetColor().g,
+            GetComponent<CanvasRenderer>().GetColor().b,
+            0));
+        StartCoroutine(Erscheine());
     }
 
     private void Verschwinde(InputAction.CallbackContext context)
@@ -25,5 +31,15 @@ public class StartHinweis : MonoBehaviour
     private void OnDestroy()
     {
         cameraMoveAktion.performed -= Verschwinde;
+    }
+    IEnumerator Erscheine()
+    {
+        yield return new WaitForSeconds(3);
+        GetComponent<CanvasRenderer>().SetColor(new Color(
+            GetComponent<CanvasRenderer>().GetColor().r,
+            GetComponent<CanvasRenderer>().GetColor().g,
+            GetComponent<CanvasRenderer>().GetColor().b,
+            1));
+        //yield return null;
     }
 }
