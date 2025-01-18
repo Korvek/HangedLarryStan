@@ -3858,6 +3858,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 66913424}
     m_Modifications:
     - target: {fileID: 580520584153665245, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
+      propertyPath: m_margin.w
+      value: 1.6239109
+      objectReference: {fileID: 0}
+    - target: {fileID: 580520584153665245, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
       objectReference: {fileID: 0}
@@ -3899,11 +3903,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7338069999711405639, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 140.1
+      value: 198.446
       objectReference: {fileID: 0}
     - target: {fileID: 7338069999711405639, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 42.693
       objectReference: {fileID: 0}
     - target: {fileID: 7338069999711405639, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3935,11 +3939,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7338069999711405639, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -777
+      value: -781.27875
       objectReference: {fileID: 0}
     - target: {fileID: 7338069999711405639, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 434
+      value: 432
       objectReference: {fileID: 0}
     - target: {fileID: 7338069999711405639, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7388,8 +7392,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 829.3, y: 432}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 781.3374, y: 432}
+  m_SizeDelta: {x: 195.919, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1397043021
 MonoBehaviour:
@@ -7474,7 +7478,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -46.92269, y: 0, z: 56.669655, w: 8.211494}
+  m_margin: {x: -2.0215454, y: 0, z: 2.5843048, w: 8.211494}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
