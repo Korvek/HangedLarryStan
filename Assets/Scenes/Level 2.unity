@@ -5331,7 +5331,7 @@ PrefabInstance:
       objectReference: {fileID: 697981378}
     - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
       propertyPath: zielWort
-      value: S
+      value: Seiten
       objectReference: {fileID: 0}
     - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
       propertyPath: nachWort2
