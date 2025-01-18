@@ -34,11 +34,6 @@ public class ZielWort : MonoBehaviour
     /// Textelement für Nachwort
     /// </summary>
     public TextMeshProUGUI nachWortT;
-    /// <summary>
-    /// Audioquellen für Buchstabenfunde
-    /// </summary>
-    public AudioSource richtigerBuchstabe;
-    public AudioSource schlechterBuchstabe;
 
     /// <summary>
     /// Event für Zeitbonus
@@ -56,6 +51,14 @@ public class ZielWort : MonoBehaviour
     /// Event für zweites gefundenes Wort
     /// </summary>
     public GameEvent wortGefunden2;
+    /// <summary>
+    /// Event für richtigen Buchstaben
+    /// </summary>
+    public GameEvent buchstabeRichtig;
+    /// <summary>
+    /// Event für falschen Buchstaben
+    /// </summary>
+    public GameEvent buchstabeFalsch;
 
     //String zum speichern der Lösung
     private string gelöstesWort;
@@ -87,12 +90,12 @@ public class ZielWort : MonoBehaviour
         {
             //Ziehe Zeit ab
             zeitAbzug.TriggerEvent();
-            schlechterBuchstabe.Play();
+            buchstabeFalsch.TriggerEvent();
         }
         //Wenn der gesammelte Buchstabe im Zielwort enthalten ist
         else
         {
-            richtigerBuchstabe.Play();
+            buchstabeRichtig.TriggerEvent();
             //Suche nach dem Buchstaben im Zielwort
             for (int i = 0; i < zielWort.Length; i++)
             {
