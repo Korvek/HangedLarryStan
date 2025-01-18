@@ -80,6 +80,29 @@ public class LevelManager : MonoBehaviour
             stan.SetActive(true);
         }
     }
+    public void Sprung(Vector3 newPos, Richtung newRichtung)
+    {
+        Renderer.Destroy(stan);
+        Quaternion rot = Quaternion.identity;
+        switch (newRichtung)
+        {
+            case Richtung.Oben:
+                rot = Quaternion.Euler(0f, 0f, 0f);
+                break;
+            case Richtung.Unten:
+                rot = Quaternion.Euler(0f, 0f, 180f);
+                break;
+            case Richtung.Rechts:
+                rot = Quaternion.Euler(0f, 0f, -90f);
+                break;
+            case Richtung.Links:
+                rot = Quaternion.Euler(0f, 0f, 90f);
+                break;
+        }
+        stan = Renderer.Instantiate(stanley, newPos, rot, spielfeld.transform);
+        stan.GetComponent<Stanley>().richtung = resetRichtung;
+        stan.SetActive(true);
+    }
 
     public void WortGelöst()
     {

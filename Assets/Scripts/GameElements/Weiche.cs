@@ -77,10 +77,8 @@ public class Weiche : MonoBehaviour
     /// </summary>
     public void WeicheAktivieren(GameObject gO)
     {
-        Debug.Log(gO.Equals(transform.parent.gameObject));
         if (gO.Equals(transform.parent.gameObject))
         {
-            Debug.Log("GUT");
             drehenAktion.performed += RichtungWechsel;
         }
     }
