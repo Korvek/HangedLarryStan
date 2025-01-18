@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevel: {fileID: 11400000, guid: d67da6ed9c24751498c4179fd199dae4, type: 2}
-  resetGane: {fileID: 11400000, guid: 9ebd0916ab4be484ba72532a26d47465, type: 2}
+  resetGame: {fileID: 11400000, guid: 41ceb0bd7a0a73a488699a789141f3ff, type: 2}
 --- !u!114 &385152854338609803
 MonoBehaviour:
   m_ObjectHideFlags: 0
