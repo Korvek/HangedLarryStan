@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -8727483690959657588}
   - component: {fileID: 8751950774879852382}
   - component: {fileID: 3245582474717379898}
+  - component: {fileID: 6884839094063218706}
   m_Layer: 5
   m_Name: LevelManager
   m_TagString: Untagged
@@ -208,6 +209,34 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: "WortGel\xF6st"
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6884839094063218706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5946303490111997158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2575343826e1a8e4da3770a1499f9ab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posEvent: {fileID: 11400000, guid: d4ac4c038a8f45e4880981c0f0e58337, type: 2}
+  onEventTriggeredPos:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1769267598626589567}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: Sprung
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
