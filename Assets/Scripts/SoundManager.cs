@@ -42,42 +42,42 @@ public class SoundManager : MonoBehaviour
     public void PlaySeite1()
     {
         Debug.Log("1");
-        audioSources["Seite1"].Play();
+        audioSources["Seite1"].PlayDelayed(2f);
     }
     public void PlaySeite2()
     {
         Debug.Log("2");
-        audioSources["Seite2"].Play();
+        audioSources["Seite2"].PlayDelayed(2f);
     }
     public void PlaySeite3()
     {
         Debug.Log("3");
-        audioSources["Seite3"].Play();
+        audioSources["Seite3"].PlayDelayed(2f);
     }
     public void PlaySeite4()
     {
         Debug.Log("4");
-        audioSources["Seite4"].Play();
+        audioSources["Seite4"].PlayDelayed(2f);
     }
     public void PlaySeite5()
     {
         Debug.Log("5");
-        audioSources["Seite5"].Play();
+        audioSources["Seite5"].PlayDelayed(2f);
     }
     public void PlaySeite6()
     {
         Debug.Log("6");
-        audioSources["Seite6"].Play();
+        audioSources["Seite6"].PlayDelayed(2f);
     }
     public void PlaySeite7()
     {
         Debug.Log("7");
-        audioSources["Seite7"].Play();
+        audioSources["Seite7"].PlayDelayed(2f);
     }
     public void PlaySeite8()
     {
         Debug.Log("8");
-        audioSources["Seite8"].Play();
+        audioSources["Seite8"].PlayDelayed(2f);
     }
 
 

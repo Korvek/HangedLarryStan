@@ -21,7 +21,6 @@ public class LevelManager : MonoBehaviour
         InitGame();        
         backgroundFader.Init();
         backgroundFader.enabled = true;
-        Debug.Log("G");
         seite1.TriggerEvent();
     }
     /// <summary>
