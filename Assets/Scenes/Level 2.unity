@@ -1149,16 +1149,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 1030640440}
     m_Modifications:
     - target: {fileID: 4021467925557810013, guid: b631f3d6bad1b924c823c8016120fe23, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 15.470986
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021467925557810013, guid: b631f3d6bad1b924c823c8016120fe23, type: 3}
       propertyPath: m_LocalScale.y
-      value: 105.55
+      value: 117.94027
       objectReference: {fileID: 0}
     - target: {fileID: 4021467925557810013, guid: b631f3d6bad1b924c823c8016120fe23, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -96.1327
+      value: -91.1455
       objectReference: {fileID: 0}
     - target: {fileID: 4021467925557810013, guid: b631f3d6bad1b924c823c8016120fe23, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -19.1182
+      value: -23.7614
       objectReference: {fileID: 0}
     - target: {fileID: 4021467925557810013, guid: b631f3d6bad1b924c823c8016120fe23, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3808,7 +3812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8930774965597640182, guid: bbb0c984688e48947b19372685f8086d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -44.7226
+      value: -66.2
       objectReference: {fileID: 0}
     - target: {fileID: 8930774965597640182, guid: bbb0c984688e48947b19372685f8086d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5965,6 +5969,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1645608960}
     m_Modifications:
+    - target: {fileID: 818194484446611875, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 818194484446611875, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1027485280330500476, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
       propertyPath: m_Name
       value: Weiche (8)
@@ -7347,8 +7359,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -605.92456, y: 285.99646}
-  m_SizeDelta: {x: 258.677, y: 50}
+  m_AnchoredPosition: {x: -605.92456, y: 268.41}
+  m_SizeDelta: {x: 258.677, y: 31.172}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &964298519
 MonoBehaviour:
@@ -7379,8 +7391,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7433,7 +7445,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -0.0000018925796, w: 0}
+  m_margin: {x: 0, y: 0, z: -0.0000018925796, w: -0.3595581}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7735,8 +7747,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -591.3824, y: -189.0485}
-  m_SizeDelta: {x: 450, y: 50}
+  m_AnchoredPosition: {x: -682.3091, y: -210.12}
+  m_SizeDelta: {x: 268.15, y: 68.359}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1013136648
 MonoBehaviour:
@@ -7760,7 +7772,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Q - Dreht Pfeil
 
-    Blau - Uhrzeigersinn'
+    Blau - Wanderrichtung'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7769,8 +7781,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7823,7 +7835,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -0.000000004448831, z: 0, w: -0.0000019117997}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8224,14 +8236,14 @@ CompositeCollider2D:
         Y: -824048640
   - m_Collider: {fileID: 1344696910}
     m_ColliderPaths:
-    - - X: -906326976
-        Y: 336568000
-      - X: -1016326976
-        Y: 336568000
-      - X: -1016326976
-        Y: -718932032
-      - X: -906326976
-        Y: -718932032
+    - - X: -834100032
+        Y: 352087360
+      - X: -988809984
+        Y: 352087360
+      - X: -988809984
+        Y: -827315392
+      - X: -834100032
+        Y: -827315392
   - m_Collider: {fileID: 2027413667}
     m_ColliderPaths:
     - - X: 1623000064
@@ -8499,16 +8511,8 @@ CompositeCollider2D:
       - {x: -153.37381, y: -82.57279}
       - {x: -83.4055, y: -82.95262}
       - {x: -83.32034, y: -67.262115}
-      - {x: -90.6327, y: -67.2224}
-      - {x: -90.63267, y: -42.282673}
-      - {x: -83.5405, y: -42.321148}
-      - {x: -83.45776, y: -27.075523}
-      - {x: -90.6327, y: -27.036541}
-      - {x: -90.63267, y: -12.153952}
-      - {x: -83.53331, y: -12.192464}
-      - {x: -83.450615, y: 3.0457737}
-      - {x: -90.6327, y: 3.0847943}
-      - {x: -90.63267, y: 19.558956}
+      - {x: -83.41, y: -67.261604}
+      - {x: -83.40997, y: 19.519745}
       - {x: -44.303566, y: 19.307463}
       - {x: -44.218945, y: 34.900143}
       - {x: -44.64706, y: 34.902496}
@@ -8540,10 +8544,14 @@ CompositeCollider2D:
       - {x: -44.76111, y: 75.996315}
       - {x: -60.656223, y: 75.95218}
       - {x: -60.54259, y: 34.988766}
+      - {x: -83.41, y: 35.112946}
+      - {x: -83.410034, y: 35.208736}
+      - {x: -98.881, y: 35.208706}
+      - {x: -98.881035, y: 35.196907}
       - {x: -98.92924, y: 35.19714}
-      - {x: -98.93763, y: 33.6568}
-      - {x: -101.6327, y: 33.656773}
-      - {x: -101.63273, y: 3.1444845}
+      - {x: -99.013855, y: 19.604458}
+      - {x: -98.881, y: 19.603708}
+      - {x: -98.881035, y: 3.1295455}
       - {x: -153.61247, y: 3.4267104}
       - {x: -153.64407, y: 14.826661}
       - {x: -129.63876, y: 14.696307}
@@ -8651,14 +8659,14 @@ CompositeCollider2D:
       - {x: 99.92363, y: 3.3221884}
       - {x: 99.92366, y: 19.732916}
       - {x: 115.683044, y: 19.64733}
-    - - {x: -101.6327, y: -26.976822}
+    - - {x: -98.881, y: -26.99176}
       - {x: -153.52888, y: -26.69508}
       - {x: -153.57014, y: -11.812264}
-      - {x: -101.6327, y: -12.094261}
-    - - {x: -101.6327, y: -67.16267}
+      - {x: -98.881, y: -12.1092005}
+    - - {x: -98.881, y: -67.17761}
       - {x: -153.41739, y: -66.88154}
       - {x: -153.48656, y: -41.94144}
-      - {x: -101.6327, y: -42.222984}
+      - {x: -98.881, y: -42.23792}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -9746,6 +9754,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1645608960}
     m_Modifications:
+    - target: {fileID: 818194484446611875, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.9
+      objectReference: {fileID: 0}
     - target: {fileID: 1027485280330500476, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
       propertyPath: m_Name
       value: Weiche (7)
@@ -11994,7 +12006,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -687.94824, y: 322.358}
+  m_AnchoredPosition: {x: -492, y: 317}
   m_SizeDelta: {x: 485.393, y: 29.034}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1669913276
@@ -12026,8 +12038,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278979596
+  m_fontColor: {r: 0.047169805, g: 0.047169805, b: 0.047169805, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -14340,7 +14352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 501096162874740369, guid: ea6f35f18b07e5f49bac964082c55d81, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -40.04873
+      value: -42.6
       objectReference: {fileID: 0}
     - target: {fileID: 501096162874740369, guid: ea6f35f18b07e5f49bac964082c55d81, type: 3}
       propertyPath: m_LocalPosition.z
