@@ -173,6 +173,17 @@
                 },
                 {
                     "name": "",
+                    "id": "5c56688a-f665-4bf1-9b63-469fe95c36ad",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StartAktion",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "5ce2c04d-28e8-4440-a7a2-bcbae916bd4f",
                     "path": "<Keyboard>/q",
                     "interactions": "",
