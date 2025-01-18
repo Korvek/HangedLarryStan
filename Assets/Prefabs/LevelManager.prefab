@@ -76,6 +76,8 @@ MonoBehaviour:
   spielfeld: {fileID: 0}
   resetPunkt: {fileID: 0}
   resetRichtung: 0
+  seite1: {fileID: 11400000, guid: 0f7e51daecbcf7741a299cae02c31aea, type: 2}
+  seite2: {fileID: 11400000, guid: b2fb7899358ab684fbd2c5d3b8d0ef92, type: 2}
   backgroundFader: {fileID: 2647888760912506121}
 --- !u!114 &2150164659936829228
 MonoBehaviour:

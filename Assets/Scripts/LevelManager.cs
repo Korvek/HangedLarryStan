@@ -10,6 +10,8 @@ public class LevelManager : MonoBehaviour
     public GameObject spielfeld;
     public GameObject resetPunkt;
     public Richtung resetRichtung;
+    public GameEvent seite1;
+    public GameEvent seite2;
     [SerializeField] BackgroundFader backgroundFader;
     private GameObject stan;
 
@@ -19,6 +21,8 @@ public class LevelManager : MonoBehaviour
         InitGame();        
         backgroundFader.Init();
         backgroundFader.enabled = true;
+        Debug.Log("G");
+        seite1.TriggerEvent();
     }
     /// <summary>
     /// Lade das nächste Level
@@ -106,6 +110,8 @@ public class LevelManager : MonoBehaviour
 
     public void WortGelöst()
     {
+        if (!wortGelöst)
+            seite2.TriggerEvent();
         wortGelöst = true;
     }
 }

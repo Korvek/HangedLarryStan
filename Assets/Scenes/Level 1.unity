@@ -3863,11 +3863,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4014104195207852524, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
       propertyPath: maxZeit
-      value: 70
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4014104195207852524, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
       propertyPath: bonusZeit
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4014104195207852524, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
       propertyPath: zeitAbgelaufenEvent
@@ -11642,6 +11642,38 @@ PrefabInstance:
     - target: {fileID: 7590357690576575415, guid: 0bfc091184fbd36439202b89f5fabbab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197251948295727042, guid: 0bfc091184fbd36439202b89f5fabbab, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197251948295727042, guid: 0bfc091184fbd36439202b89f5fabbab, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySeite2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197251948295727042, guid: 0bfc091184fbd36439202b89f5fabbab, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SoundManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8197251948295727042, guid: 0bfc091184fbd36439202b89f5fabbab, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833315165484671471, guid: 0bfc091184fbd36439202b89f5fabbab, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833315165484671471, guid: 0bfc091184fbd36439202b89f5fabbab, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySeite1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833315165484671471, guid: 0bfc091184fbd36439202b89f5fabbab, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SoundManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833315165484671471, guid: 0bfc091184fbd36439202b89f5fabbab, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
