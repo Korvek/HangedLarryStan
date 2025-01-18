@@ -3525,6 +3525,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 89550097}
     - target: {fileID: 2647888760912506121, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
+      propertyPath: levelEnter
+      value: 
+      objectReference: {fileID: 11400000, guid: 4aa193d9727e04a44879c3a56a15f675, type: 2}
+    - target: {fileID: 2647888760912506121, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
       propertyPath: backgroundText
       value: 
       objectReference: {fileID: 697981378}
