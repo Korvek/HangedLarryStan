@@ -105,6 +105,8 @@ AudioMixerController:
     name: MusikVolume
   - guid: 6ffe400c3509d5548882316d5f3d2da5
     name: SpracheVolume
+  - guid: 93732b2d70305e346bddf75ea83e3106
+    name: TimerVolume
   m_AudioMixerGroupViews:
   - guids:
     - fc670792887396c4cb810ba829964e2c
@@ -160,7 +162,9 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 25a49a087f6f6984aacc8361f6fdfe91
-  m_FloatValues: {}
+  m_FloatValues:
+    2956ad454f6a8ec44afd2d10be520654: 0.3945702
+    93732b2d70305e346bddf75ea83e3106: 0
   m_TransitionOverrides: {}
 --- !u!243 &946993244057136452
 AudioMixerGroupController:

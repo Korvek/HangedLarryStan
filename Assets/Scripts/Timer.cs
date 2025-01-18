@@ -30,11 +30,12 @@ public class Timer : MonoBehaviour
     private InputAction startAktion;
 
     private TextMeshProUGUI timerT;
-
+    private AudioSource tickTack;
     private void Awake()
     {
         //Textkomponente finden
         timerT = GetComponent<TextMeshProUGUI>();
+        tickTack = GetComponent<AudioSource>();
         //Abgelaufene Zeit 0 setzen
         abgelaufeneZeit = 0f;
         //Weise Aktionen den Tasten zu
@@ -53,6 +54,7 @@ public class Timer : MonoBehaviour
         {
             //Bestimme vergangene Zeit
             abgelaufeneZeit += Time.deltaTime;
+            tickTack.outputAudioMixerGroup.audioMixer.SetFloat("TimerVolume", Mathf.Log10(Mathf.Lerp(0.00001f,1f, abgelaufeneZeit/maxZeit)) * 20);
         }
         else
         {
@@ -68,6 +70,7 @@ public class Timer : MonoBehaviour
         abgelaufeneZeit = 0f; //Setze abgelaufene Zeit zurück
         startAktion.performed -= TimerAktivieren; //Deaktiviere start des Timers
         timerT.enabled = true; //Aktiviere Timer Text
+        tickTack.Play();
     }
     /// <summary>
     /// Funktion für Zeitstrafen
