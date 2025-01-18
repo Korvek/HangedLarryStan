@@ -149,6 +149,9 @@ public class Stanley : MonoBehaviour
                 case "PfeilUnten":
                     richtung = Richtung.Unten;
                     break;
+                case "PfeilDrehend":
+                    richtung = pfeilObjekt.gameObject.GetComponent<Weiche>().richtung;
+                    break;
                 default:
                     break;
             }
@@ -159,6 +162,7 @@ public class Stanley : MonoBehaviour
     /// </summary>
     private void Abbiegen(InputAction.CallbackContext context) 
     {
+        RichtungWechsel();
         //Bestimme neue Zielrichtung
         switch (richtung)
         {
@@ -274,30 +278,27 @@ public class Stanley : MonoBehaviour
         {
             //Speichere das Objekt
             pfeilObjekt = collision.gameObject;
-            RichtungWechsel();
         }
         else if (collision.CompareTag("PfeilLinks"))
         {
             //Speichere das Objekt
             pfeilObjekt = collision.gameObject;
-            RichtungWechsel();
         }
         else if (collision.CompareTag("PfeilOben"))
         {
             //Speichere das Objekt
             pfeilObjekt = collision.gameObject;
-            RichtungWechsel();
         }
         else if (collision.CompareTag("PfeilUnten"))
         {
             //Speichere das Objekt
             pfeilObjekt = collision.gameObject;
-            RichtungWechsel();
         }
         //Wenn es ein drehender Pfeil ist
         else if (collision.CompareTag("PfeilDrehend"))
         {
-            richtung = collision.gameObject.GetComponent<Weiche>().richtung;
+            pfeilObjekt = collision.gameObject;
+            //richtung = collision.gameObject.GetComponent<Weiche>().richtung;
         }
         //Wenn es eine Stoplinie ist
         else if (collision.CompareTag("Stoplinie"))
