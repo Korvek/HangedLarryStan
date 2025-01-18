@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour
     private GameObject stan;
 
     private bool wortGelöst=false;
-    private void Awake()
+    private void Start()
     {
         InitGame();        
         backgroundFader.Init();

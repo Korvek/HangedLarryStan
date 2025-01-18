@@ -8611,6 +8611,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47ef2624d20c7ca44a9ededc76bacfaa, type: 3}
+--- !u!114 &1553696865 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 343048213367024150, guid: 0bfc091184fbd36439202b89f5fabbab, type: 3}
+  m_PrefabInstance: {fileID: 6657574544864618272}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d1acf7f940f86949b431d72ca151f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &1569217873 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 7441165302894408790, guid: b631f3d6bad1b924c823c8016120fe23, type: 3}
@@ -11839,6 +11850,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8197251948295727042, guid: 0bfc091184fbd36439202b89f5fabbab, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1553696865}
+    - target: {fileID: 8197251948295727042, guid: 0bfc091184fbd36439202b89f5fabbab, type: 3}
       propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlaySeite2
       objectReference: {fileID: 0}
@@ -11854,6 +11869,10 @@ PrefabInstance:
       propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8833315165484671471, guid: 0bfc091184fbd36439202b89f5fabbab, type: 3}
+      propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1553696865}
     - target: {fileID: 8833315165484671471, guid: 0bfc091184fbd36439202b89f5fabbab, type: 3}
       propertyPath: onEventTriggered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PlaySeite1
