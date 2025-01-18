@@ -137,11 +137,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3498949602262075102, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
       propertyPath: richtung
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3498949602262075102, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
       propertyPath: richtungsListe.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3498949602262075102, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
       propertyPath: richtungsListe.Array.data[0]
@@ -149,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3498949602262075102, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
       propertyPath: richtungsListe.Array.data[1]
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3498949602262075102, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
       propertyPath: richtungsListe.Array.data[2]
