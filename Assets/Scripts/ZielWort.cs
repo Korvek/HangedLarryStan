@@ -111,8 +111,7 @@ public class ZielWort : MonoBehaviour
             
             //Wenn keine _ mehr im gelösten Wort übrig sind
             if (!gelöstesWort.Contains('_'))
-            {
-                zeitBonus.TriggerEvent();
+            {                
                 //Löse ein Wort gefunden Event aus
                 wortGefunden.TriggerEvent();
                 //Lade das zweite Zielwort
@@ -131,6 +130,10 @@ public class ZielWort : MonoBehaviour
                     zielwortT.text = zielWort2;
                     vorWortT.text = vorWort2;
                     nachWortT.text = nachWort2;
+                }
+                else
+                {
+                    zeitBonus.TriggerEvent();
                 }
                 //Setze den erstes Wort gelöst Marker
                 erstesWortgelöst = true;

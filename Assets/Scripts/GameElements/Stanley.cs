@@ -158,6 +158,16 @@ public class Stanley : MonoBehaviour
         }
     }
     /// <summary>
+    /// Startet die Bewegung bei Tastendruck
+    /// </summary>
+    private void StarteBewegung(InputAction.CallbackContext context)
+    {
+        Debug.Log("BBB");
+        Time.timeScale = 1;
+        rigidbody2d.constraints = RigidbodyConstraints2D.None;
+        startAktion.performed -= StarteBewegung;
+    }
+    /// <summary>
     /// Das Objekt biegt in Zielrichtung ab
     /// </summary>
     private void Abbiegen(InputAction.CallbackContext context) 
@@ -181,7 +191,8 @@ public class Stanley : MonoBehaviour
         }
         //Wenn abgebogen werden soll
         if (Vector2.SignedAngle(transform.up, zielrichtung) != 0f)
-        {            
+        {
+            Debug.Log("AAA");
             drehenAktion.performed -= Abbiegen;
             rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
             if (Vector2.Angle(transform.up, zielrichtung) == 180)
@@ -228,15 +239,7 @@ public class Stanley : MonoBehaviour
             }
         }
     }
-    /// <summary>
-    /// Startet die Bewegung bei Tastendruck
-    /// </summary>
-    private void StarteBewegung(InputAction.CallbackContext context)
-    {
-        Time.timeScale = 1;
-        rigidbody2d.constraints = RigidbodyConstraints2D.None;
-        startAktion.performed -= StarteBewegung;
-    }
+    
     /// <summary>
     /// Setzt den Spieler an eine neue Position und gibt ihm eine neue Richtung
     /// </summary>

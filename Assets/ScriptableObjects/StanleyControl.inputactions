@@ -6,6 +6,15 @@
             "id": "e7629076-0d91-429e-bb4d-2af557f38569",
             "actions": [
                 {
+                    "name": "StartAktion",
+                    "type": "Button",
+                    "id": "98151fd4-906e-488f-97b4-b534f0fd63e5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "DrehenAktion",
                     "type": "Button",
                     "id": "d4bcf292-dec0-4319-9a8d-c6ce74971011",
@@ -49,29 +58,9 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "StartAktion",
-                    "type": "Button",
-                    "id": "98151fd4-906e-488f-97b4-b534f0fd63e5",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "5ce2c04d-28e8-4440-a7a2-bcbae916bd4f",
-                    "path": "<Keyboard>/q",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DrehenAktion",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "fc424fd7-5112-49ee-86fe-094d2809e561",
@@ -179,6 +168,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "StartAktion",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5ce2c04d-28e8-4440-a7a2-bcbae916bd4f",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DrehenAktion",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

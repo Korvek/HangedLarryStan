@@ -19,7 +19,6 @@ public class SoundManager : MonoBehaviour
         {
             audioSources[audios.name] = audios.source;
         }
-        Debug.Log("AU");
     }
     
 
