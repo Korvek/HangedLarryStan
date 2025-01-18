@@ -22,4 +22,8 @@ public class StartHinweis : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    private void OnDestroy()
+    {
+        cameraMoveAktion.performed -= Verschwinde;
+    }
 }

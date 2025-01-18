@@ -54,11 +54,18 @@ public class Timer : MonoBehaviour
         {
             //Bestimme vergangene Zeit
             abgelaufeneZeit += Time.deltaTime;
-            tickTack.outputAudioMixerGroup.audioMixer.SetFloat("TimerVolume", Mathf.Log10(Mathf.Lerp(0.00001f,1f, abgelaufeneZeit/maxZeit)) * 20);
+            if (maxZeit - abgelaufeneZeit >= 30f)
+            {
+                tickTack.outputAudioMixerGroup.audioMixer.SetFloat("TimerVolume", Mathf.Log10(Mathf.Lerp(0.00001f, 1f, abgelaufeneZeit / maxZeit)) * 20);
+                 }
+            else
+            {
+                tickTack.outputAudioMixerGroup.audioMixer.SetFloat("TimerVolume", 0.00001f);
+            }
         }
         else
         {
-            
+
             zeitAbgelaufenEvent.TriggerEvent();
         }
     }
