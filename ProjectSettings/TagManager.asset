@@ -21,7 +21,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Tutorial
   - 
   - 
   - 
@@ -65,4 +65,7 @@ TagManager:
     locked: 0
   - name: "W\xE4nde"
     uniqueID: 482203985
+    locked: 0
+  - name: Tutorial
+    uniqueID: 1950773887
     locked: 0
