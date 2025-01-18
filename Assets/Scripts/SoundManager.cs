@@ -32,7 +32,7 @@ public class SoundManager : MonoBehaviour
     }
     public void SchlossKnacken()
     {
-        audioSources["SchlossKnacken"].PlayDelayed(audioSources["BuchstabeRichtig"].clip.length);
+        audioSources["SchlossKnacken"].Play();
     }
 
 }

@@ -95,7 +95,7 @@ public class ZielWort : MonoBehaviour
         //Wenn der gesammelte Buchstabe im Zielwort enthalten ist
         else
         {
-            buchstabeRichtig.TriggerEvent();
+            
             //Suche nach dem Buchstaben im Zielwort
             for (int i = 0; i < zielWort.Length; i++)
             {
@@ -108,10 +108,11 @@ public class ZielWort : MonoBehaviour
                 }
             }
             //Gib Bonus Zeit
-            zeitBonus.TriggerEvent();
+            
             //Wenn keine _ mehr im gelösten Wort übrig sind
             if (!gelöstesWort.Contains('_'))
             {
+                zeitBonus.TriggerEvent();
                 //Löse ein Wort gefunden Event aus
                 wortGefunden.TriggerEvent();
                 //Lade das zweite Zielwort
@@ -133,6 +134,10 @@ public class ZielWort : MonoBehaviour
                 }
                 //Setze den erstes Wort gelöst Marker
                 erstesWortgelöst = true;
+            }
+            else
+            {
+                buchstabeRichtig.TriggerEvent();
             }
         }
     }
