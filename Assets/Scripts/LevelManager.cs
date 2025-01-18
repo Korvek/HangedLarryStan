@@ -75,7 +75,8 @@ public class LevelManager : MonoBehaviour
                     rot = Quaternion.Euler(0f, 0f, 90f);
                     break;
             }
-            stan = Renderer.Instantiate(stanley, resetPunkt.transform.position, rot, spielfeld.transform);            
+            stan = Renderer.Instantiate(stanley, resetPunkt.transform.position, rot, spielfeld.transform);
+            stan.SetActive(true);
         }
     }
 

@@ -3344,7 +3344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1252021236458324384, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 91.06655
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1252021236458324384, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3396,7 +3396,7 @@ PrefabInstance:
       objectReference: {fileID: 808188282}
     - target: {fileID: 1769267598626589567, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
       propertyPath: resetRichtung
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2647888760912506121, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
       propertyPath: uI
@@ -5327,7 +5327,7 @@ PrefabInstance:
       objectReference: {fileID: 697981378}
     - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
       propertyPath: zielWort
-      value: Seiten
+      value: S
       objectReference: {fileID: 0}
     - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
       propertyPath: nachWort2
@@ -6087,7 +6087,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 808188282}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2062963, y: 0.2062963, z: 0.2062963}
   m_ConstrainProportionsScale: 0
   m_Children: []
