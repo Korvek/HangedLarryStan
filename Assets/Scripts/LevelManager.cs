@@ -76,6 +76,7 @@ public class LevelManager : MonoBehaviour
                     break;
             }
             stan = Renderer.Instantiate(stanley, resetPunkt.transform.position, rot, spielfeld.transform);
+            stan.GetComponent<Stanley>().richtung = resetRichtung;
             stan.SetActive(true);
         }
     }

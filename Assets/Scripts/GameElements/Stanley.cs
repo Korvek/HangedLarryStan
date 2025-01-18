@@ -44,7 +44,7 @@ public class Stanley : MonoBehaviour
     /// <summary>
     /// Richtungsvariable. Gibt die Bewegungsrichtung an. 
     /// </summary>
-    [SerializeField] Richtung richtung; //[SerializeField] ermöglicht Zugriff über Unity Editor
+    public Richtung richtung;
     /// <summary>
     /// Geschwindigkeitsvariable. Gibt die Bewegungsgeschwindigkeit an.
     /// </summary>
