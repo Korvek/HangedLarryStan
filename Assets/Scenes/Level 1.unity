@@ -7943,7 +7943,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1461172612
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12126,6 +12126,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stoplinie
       objectReference: {fileID: 0}
+    - target: {fileID: 8089516715227643317, guid: ea6f35f18b07e5f49bac964082c55d81, type: 3}
+      propertyPath: tutorialText
+      value: 
+      objectReference: {fileID: 1461172611}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
