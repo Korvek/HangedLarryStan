@@ -163,8 +163,8 @@ public class Stanley : MonoBehaviour
     private void StarteBewegung(InputAction.CallbackContext context)
     {
         Time.timeScale = 1;
-        
-        rigidbody2d.constraints = RigidbodyConstraints2D.None;
+        if (rigidbody2d != null)
+            rigidbody2d.constraints = RigidbodyConstraints2D.None;
         startAktion.performed -= StarteBewegung;
     }
     /// <summary>
