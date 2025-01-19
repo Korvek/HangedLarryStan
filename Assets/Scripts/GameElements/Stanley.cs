@@ -305,12 +305,9 @@ public class Stanley : MonoBehaviour
         //Wenn es eine Stoplinie ist
         else if (collision.CompareTag("Stoplinie"))
         {
-            //Stoppe die Zeit
-            Time.timeScale = 0;
+            rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
             //Aktiviere Bewegung fortsetzen
             startAktion.performed += StarteBewegung;
-            //Deaktiviere Stoplinie
-            collision.gameObject.SetActive(false);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
