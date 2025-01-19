@@ -5191,6 +5191,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 933353193}
     m_Modifications:
+    - target: {fileID: 818194484446611875, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 818194484446611875, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1027485280330500476, guid: ea6df6d41a2051f40ab8757eddc3bf85, type: 3}
       propertyPath: m_Name
       value: Weiche
