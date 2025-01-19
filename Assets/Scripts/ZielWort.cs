@@ -128,12 +128,13 @@ public class ZielWort : MonoBehaviour
     }
     public void ZielwortWechseln()
     {
-        zeitBonus.TriggerEvent();
+        
+        
+        zielWort = zielWort2;
         //Fülle das gelöste Wort mit _
         gelöstesWort = new string('_', zielWort.Length);
         //Textelemente neu setzen
         zielwortT.text = gelöstesWort;
-        zielWort = zielWort2;
         vorWortT.text = vorWort2;
         nachWortT.text = nachWort2;
     }
