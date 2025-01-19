@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 8811800620765322496}
   - component: {fileID: -8727483690959657588}
   - component: {fileID: 8751950774879852382}
-  - component: {fileID: 3245582474717379898}
   - component: {fileID: 6884839094063218706}
+  - component: {fileID: 8066140980565838725}
   m_Layer: 5
   m_Name: LevelManager
   m_TagString: Untagged
@@ -79,6 +79,7 @@ MonoBehaviour:
   resetRichtung: 0
   seite1: {fileID: 11400000, guid: 0f7e51daecbcf7741a299cae02c31aea, type: 2}
   seite2: {fileID: 11400000, guid: b2fb7899358ab684fbd2c5d3b8d0ef92, type: 2}
+  zeitBonus: {fileID: 11400000, guid: 556e781260b0bd8499e1e313128d659e, type: 2}
   backgroundFader: {fileID: 2647888760912506121}
 --- !u!114 &2150164659936829228
 MonoBehaviour:
@@ -192,34 +193,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3245582474717379898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5946303490111997158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: bb3b5bd4b257c3f4e94096a4bc510a85, type: 2}
-  onEventTriggered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1769267598626589567}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: "WortGel\xF6st"
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &6884839094063218706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +213,34 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: Sprung
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8066140980565838725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5946303490111997158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 2c6a454d3824ccb4499e31e3e2e88c8d, type: 2}
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1769267598626589567}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: Seitenwechsel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
