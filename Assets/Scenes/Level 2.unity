@@ -7663,6 +7663,7 @@ GameObject:
   - component: {fileID: 964298518}
   - component: {fileID: 964298520}
   - component: {fileID: 964298519}
+  - component: {fileID: 964298521}
   m_Layer: 5
   m_Name: Spielstart
   m_TagString: Untagged
@@ -7743,8 +7744,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -7786,6 +7787,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964298517}
   m_CullTransparentMesh: 1
+--- !u!95 &964298521
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964298517}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4e4df794547af5347aa44a4606ee5fa6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &971334363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8138,6 +8160,7 @@ GameObject:
   - component: {fileID: 1013136647}
   - component: {fileID: 1013136649}
   - component: {fileID: 1013136648}
+  - component: {fileID: 1013136650}
   m_Layer: 5
   m_Name: DrehungDrehenderPfeil
   m_TagString: Untagged
@@ -8161,7 +8184,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -682.3091, y: -229.29}
+  m_AnchoredPosition: {x: -709, y: -212}
   m_SizeDelta: {x: 268.15, y: 68.359}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1013136648
@@ -8220,8 +8243,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -8263,6 +8286,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013136646}
   m_CullTransparentMesh: 1
+--- !u!95 &1013136650
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013136646}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4e4df794547af5347aa44a4606ee5fa6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1024964507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10008,6 +10052,7 @@ GameObject:
   - component: {fileID: 1185301606}
   - component: {fileID: 1185301608}
   - component: {fileID: 1185301607}
+  - component: {fileID: 1185301609}
   m_Layer: 5
   m_Name: DrehungPfeil
   m_TagString: Untagged
@@ -10088,8 +10133,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -10131,6 +10176,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185301605}
   m_CullTransparentMesh: 1
+--- !u!95 &1185301609
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185301605}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4e4df794547af5347aa44a4606ee5fa6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1226752396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11898,6 +11964,7 @@ GameObject:
   - component: {fileID: 1520311667}
   - component: {fileID: 1520311669}
   - component: {fileID: 1520311668}
+  - component: {fileID: 1520311670}
   m_Layer: 5
   m_Name: Sammeln
   m_TagString: Untagged
@@ -11978,8 +12045,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -12021,6 +12088,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1520311666}
   m_CullTransparentMesh: 1
+--- !u!95 &1520311670
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520311666}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4e4df794547af5347aa44a4606ee5fa6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1527522478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12548,6 +12636,7 @@ GameObject:
   - component: {fileID: 1669913275}
   - component: {fileID: 1669913277}
   - component: {fileID: 1669913276}
+  - component: {fileID: 1669913278}
   m_Layer: 5
   m_Name: Neustarthinweis
   m_TagString: Untagged
@@ -12628,8 +12717,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -12671,6 +12760,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669913274}
   m_CullTransparentMesh: 1
+--- !u!95 &1669913278
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669913274}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4e4df794547af5347aa44a4606ee5fa6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1676886653
 GameObject:
   m_ObjectHideFlags: 0
@@ -13496,6 +13606,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stoplinie (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8089516715227643317, guid: ea6f35f18b07e5f49bac964082c55d81, type: 3}
+      propertyPath: tutorialText
+      value: 
+      objectReference: {fileID: 1013136646}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14771,6 +14885,7 @@ GameObject:
   - component: {fileID: 1976143070}
   - component: {fileID: 1976143072}
   - component: {fileID: 1976143071}
+  - component: {fileID: 1976143073}
   m_Layer: 5
   m_Name: Drehung90
   m_TagString: Untagged
@@ -14851,8 +14966,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -14894,6 +15009,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1976143069}
   m_CullTransparentMesh: 1
+--- !u!95 &1976143073
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976143069}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4e4df794547af5347aa44a4606ee5fa6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1991326756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15097,6 +15233,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stoplinie
       objectReference: {fileID: 0}
+    - target: {fileID: 8089516715227643317, guid: ea6f35f18b07e5f49bac964082c55d81, type: 3}
+      propertyPath: tutorialText
+      value: 
+      objectReference: {fileID: 1013136646}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
