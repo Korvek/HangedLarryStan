@@ -114,9 +114,14 @@ public class Stanley : MonoBehaviour
     /// </summary>
     private void StoppeBewegung(InputAction.CallbackContext context)
     {
-        rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
+        if(context.performed)
+        {
+            rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
+            anim.SetTrigger("TriggerStop");
+        }        
         if (context.canceled)
         {
+            anim.SetTrigger("TriggerWeiter");
             rigidbody2d.constraints = RigidbodyConstraints2D.None;
         }
     }
@@ -162,6 +167,10 @@ public class Stanley : MonoBehaviour
     /// </summary>
     private void StarteBewegung(InputAction.CallbackContext context)
     {
+        if (context.canceled)
+        {
+            anim.SetTrigger("TriggerWeiter");
+        }
         Time.timeScale = 1;
         if (rigidbody2d != null)
             rigidbody2d.constraints = RigidbodyConstraints2D.None;
@@ -238,34 +247,6 @@ public class Stanley : MonoBehaviour
             }
         }
     }
-    
-    /// <summary>
-    /// Setzt den Spieler an eine neue Position und gibt ihm eine neue Richtung
-    /// </summary>
-    /// <param name="newPos">Neue Position</param>
-    /// <param name="newRichtung">Neue Richtung</param>
-    //public void Sprung(Vector3 newPos, Richtung newRichtung)
-    //{
-    //    ////Bewege den Spieler
-    //    //rigidbody2d.MovePosition(newPos);
-    //    ////Setze neue Richtung
-    //    //richtung = newRichtung;
-    //    //switch (richtung)
-    //    //{
-    //    //    case Richtung.Oben:
-    //    //        transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-    //    //        break;
-    //    //    case Richtung.Unten:
-    //    //        transform.rotation = Quaternion.Euler(0f, 0f, 180f);
-    //    //        break;
-    //    //    case Richtung.Rechts:
-    //    //        transform.rotation = Quaternion.Euler(0f, 0f, -90f);
-    //    //        break;
-    //    //    case Richtung.Links:
-    //    //        transform.rotation = Quaternion.Euler(0f, 0f, 90f);
-    //    //        break;
-    //    //}
-    //}
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
