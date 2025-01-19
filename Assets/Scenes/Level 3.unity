@@ -921,6 +921,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 89550097}
     - target: {fileID: 2647888760912506121, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
+      propertyPath: startPopUp
+      value: 
+      objectReference: {fileID: 1066750450}
+    - target: {fileID: 2647888760912506121, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
       propertyPath: backgroundText
       value: 
       objectReference: {fileID: 697981378}
@@ -7315,7 +7319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1066750451
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7332,7 +7336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -804.6679, y: 319.92822}
+  m_AnchoredPosition: {x: -847, y: 319.92822}
   m_SizeDelta: {x: 258.677, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1066750452
@@ -7389,8 +7393,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -7398,7 +7402,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}

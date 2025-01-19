@@ -33,6 +33,7 @@ public class BackgroundFader : MonoBehaviour
     private InputAction fadeInAktion;
 
     public GameEvent levelEnter;
+    public GameObject startPopUp;
 
     public void Init()
     {
@@ -118,6 +119,7 @@ public class BackgroundFader : MonoBehaviour
             yield return new WaitForEndOfFrame(); // Warte bis zum nächsten Frame
         }
         actions.FindActionMap("Player").Enable();
+        startPopUp.SetActive(true);
     }
 
     
