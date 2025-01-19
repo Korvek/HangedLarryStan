@@ -31,6 +31,7 @@ public class BackgroundFader : MonoBehaviour
     private List<SpriteRenderer> spriteRenderers;
     private List<CanvasRenderer> canvasRenderers;
     private InputAction fadeInAktion;
+    private InputAction tutorialPopUpAktion;
 
     public GameEvent levelEnter;
     public GameObject startPopUp;
@@ -57,6 +58,8 @@ public class BackgroundFader : MonoBehaviour
         //InputAktion zuweisen
         fadeInAktion = actions.FindActionMap("Menu").FindAction("FadeInAktion");
         fadeInAktion.performed += StartFadeIn;
+        tutorialPopUpAktion = actions.FindActionMap("Player").FindAction("StartAktion");
+        tutorialPopUpAktion.performed += disableStart;
 
         //Alle Objekte werden transparent
         foreach (SpriteRenderer spriteRenderer in spriteRenderers)
@@ -75,6 +78,11 @@ public class BackgroundFader : MonoBehaviour
                 canvasRenderer.GetColor().b,
                 0));
         }
+    }
+
+    private void disableStart(InputAction.CallbackContext context)
+    {
+        startPopUp.SetActive(false);
     }
 
     private void StartFadeIn(InputAction.CallbackContext context)
