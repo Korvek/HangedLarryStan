@@ -82,7 +82,8 @@ public class BackgroundFader : MonoBehaviour
 
     private void disableStart(InputAction.CallbackContext context)
     {
-        startPopUp.SetActive(false);
+        if (startPopUp != null)
+            startPopUp.SetActive(false);
     }
 
     private void StartFadeIn(InputAction.CallbackContext context)
@@ -127,7 +128,8 @@ public class BackgroundFader : MonoBehaviour
             yield return new WaitForEndOfFrame(); // Warte bis zum nächsten Frame
         }
         actions.FindActionMap("Player").Enable();
-        startPopUp.SetActive(true);
+        if (startPopUp != null)
+            startPopUp.SetActive(true);
     }
 
     
