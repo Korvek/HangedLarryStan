@@ -94,8 +94,7 @@ public class ZielWort : MonoBehaviour
         }
         //Wenn der gesammelte Buchstabe im Zielwort enthalten ist
         else
-        {
-            
+        {            
             //Suche nach dem Buchstaben im Zielwort
             for (int i = 0; i < zielWort.Length; i++)
             {
@@ -107,33 +106,16 @@ public class ZielWort : MonoBehaviour
                     zielwortT.text = gelöstesWort;
                 }
             }
-            //Gib Bonus Zeit
-            
             //Wenn keine _ mehr im gelösten Wort übrig sind
             if (!gelöstesWort.Contains('_'))
             {                
                 //Löse ein Wort gefunden Event aus
                 wortGefunden.TriggerEvent();
-                //Lade das zweite Zielwort
-                zielWort = zielWort2;
-                //Fülle das gelöste Wort mit _
-                gelöstesWort = new string('_', zielWort.Length);
-                //Textelemente neu setzen
-                zielwortT.text = gelöstesWort;
-                vorWortT.text = vorWort2;
-                nachWortT.text = nachWort2;
                 //Wenn das erste Wort gelöst war
                 if (erstesWortgelöst)
                 {
                     //Löse das zweite Wort gefunden Event aus
                     wortGefunden2.TriggerEvent();
-                    zielwortT.text = zielWort2;
-                    vorWortT.text = vorWort2;
-                    nachWortT.text = nachWort2;
-                }
-                else
-                {
-                    zeitBonus.TriggerEvent();
                 }
                 //Setze den erstes Wort gelöst Marker
                 erstesWortgelöst = true;
@@ -143,5 +125,17 @@ public class ZielWort : MonoBehaviour
                 buchstabeRichtig.TriggerEvent();
             }
         }
+    }
+    public void ZielwortWechseln()
+    {
+        
+        
+        zielWort = zielWort2;
+        //Fülle das gelöste Wort mit _
+        gelöstesWort = new string('_', zielWort.Length);
+        //Textelemente neu setzen
+        zielwortT.text = gelöstesWort;
+        vorWortT.text = vorWort2;
+        nachWortT.text = nachWort2;
     }
 }

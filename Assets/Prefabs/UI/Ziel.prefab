@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5399736971006537126}
   - component: {fileID: 2463554406281069279}
   - component: {fileID: -4711655151347485389}
+  - component: {fileID: 4738349103264167722}
   m_Layer: 5
   m_Name: Ziel
   m_TagString: Untagged
@@ -182,6 +183,34 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ZielWort, Assembly-CSharp
         m_MethodName: checkBuchstabe
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4738349103264167722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6273082697288646066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 2c6a454d3824ccb4499e31e3e2e88c8d, type: 2}
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2463554406281069279}
+        m_TargetAssemblyTypeName: ZielWort, Assembly-CSharp
+        m_MethodName: ZielwortWechseln
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
