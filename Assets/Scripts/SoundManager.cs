@@ -86,6 +86,10 @@ public class SoundManager : MonoBehaviour
     {
         audioSources["Seitenwechsel"].Play();
     }
+    public void Sprungfeder()
+    {
+        audioSources["Sprungfeder"].Play();
+    }
         
 
 
