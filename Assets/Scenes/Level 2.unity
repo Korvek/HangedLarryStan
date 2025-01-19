@@ -2548,8 +2548,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\xFCber alles."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
+  m_sharedMaterial: {fileID: -8291489830157450155, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4439,8 +4439,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Lvl. 2
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
+  m_sharedMaterial: {fileID: -8291489830157450155, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5417,8 +5417,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Stanley liebte
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
+  m_sharedMaterial: {fileID: -8291489830157450155, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5625,12 +5625,20 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5399736971006537126, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -8291489830157450155, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
+    - target: {fileID: 5399736971006537126, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
       propertyPath: m_characterSpacing
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5399736971006537126, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5399736971006537126, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6273082697288646066, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
       propertyPath: m_Name

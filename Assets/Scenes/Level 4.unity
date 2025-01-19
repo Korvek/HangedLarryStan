@@ -1158,7 +1158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2191163665520389204, guid: d61d0e6fd3763ca4c9539936d78eadb9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 110.4
+      value: 119.9
       objectReference: {fileID: 0}
     - target: {fileID: 2191163665520389204, guid: d61d0e6fd3763ca4c9539936d78eadb9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1202,7 +1202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8851020337648148844, guid: d61d0e6fd3763ca4c9539936d78eadb9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 70.1
+      value: 59.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1576,8 +1576,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Lvl. 4
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
+  m_sharedMaterial: {fileID: -8291489830157450155, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1784,8 +1784,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\xFCber alles."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
+  m_sharedMaterial: {fileID: -8291489830157450155, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2090,7 +2090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2191163665520389204, guid: d61d0e6fd3763ca4c9539936d78eadb9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 110.2
+      value: 111.5
       objectReference: {fileID: 0}
     - target: {fileID: 2191163665520389204, guid: d61d0e6fd3763ca4c9539936d78eadb9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2128,13 +2128,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3865116695503018628, guid: d61d0e6fd3763ca4c9539936d78eadb9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 67.4
+      objectReference: {fileID: 0}
     - target: {fileID: 5597560714694413980, guid: d61d0e6fd3763ca4c9539936d78eadb9, type: 3}
       propertyPath: m_Name
       value: Gegner (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8851020337648148844, guid: d61d0e6fd3763ca4c9539936d78eadb9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 71
+      value: 23.2
       objectReference: {fileID: 0}
     - target: {fileID: 8851020337648148844, guid: d61d0e6fd3763ca4c9539936d78eadb9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3966,8 +3970,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Stanley liebte
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
+  m_sharedMaterial: {fileID: -8291489830157450155, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
