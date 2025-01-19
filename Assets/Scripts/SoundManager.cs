@@ -42,6 +42,7 @@ public class SoundManager : MonoBehaviour
     public void PlaySeite1()
     {
         audioSources["Seite1"].PlayDelayed(0f);
+        audioSources["Seite2"].PlayDelayed(audioSources["Seite1"].clip.length);
     }
     public void PlaySeite2()
     {
@@ -50,6 +51,7 @@ public class SoundManager : MonoBehaviour
     public void PlaySeite3()
     {
         audioSources["Seite3"].PlayDelayed(0f);
+        audioSources["Seite4"].PlayDelayed(audioSources["Seite3"].clip.length);
     }
     public void PlaySeite4()
     {
@@ -58,6 +60,7 @@ public class SoundManager : MonoBehaviour
     public void PlaySeite5()
     {
         audioSources["Seite5"].PlayDelayed(0f);
+        audioSources["Seite6"].PlayDelayed(audioSources["Seite5"].clip.length);
     }
     public void PlaySeite6()
     {
@@ -66,6 +69,7 @@ public class SoundManager : MonoBehaviour
     public void PlaySeite7()
     {
         audioSources["Seite7"].PlayDelayed(0f);
+        audioSources["Seite8"].PlayDelayed(audioSources["Seite7"].clip.length);
     }
     public void PlaySeite8()
     {
@@ -78,6 +82,15 @@ public class SoundManager : MonoBehaviour
             audio.source.Stop();
         }
     }
+    public void Seitenwechsel()
+    {
+        audioSources["Seitenwechsel"].Play();
+    }
+    public void Sprungfeder()
+    {
+        audioSources["Sprungfeder"].Play();
+    }
+        
 
 
 }

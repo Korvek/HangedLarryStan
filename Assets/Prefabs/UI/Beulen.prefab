@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5298132037019854713}
   - component: {fileID: 5532253882829974419}
   - component: {fileID: 1862738327319473742}
+  - component: {fileID: 1608734802624786874}
   m_Layer: 5
   m_Name: Beulen
   m_TagString: Untagged
@@ -115,6 +116,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: 853da0a708cd4f74a82bc54c1d7c6202, type: 2}
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5532253882829974419}
+        m_TargetAssemblyTypeName: Beulen, Assembly-CSharp
+        m_MethodName: Autsch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1608734802624786874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6951378433065844635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 526309292d533e94caf5cf1024a6a713, type: 2}
   onEventTriggered:
     m_PersistentCalls:
       m_Calls:

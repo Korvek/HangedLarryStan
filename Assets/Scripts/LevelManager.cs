@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     public Richtung resetRichtung;
     public GameEvent seite1;
     public GameEvent seite2;
+    public GameEvent zeitBonus;
     [SerializeField] BackgroundFader backgroundFader;
     private GameObject stan;
 
@@ -107,10 +108,10 @@ public class LevelManager : MonoBehaviour
         stan.SetActive(true);
     }
 
-    public void WortGelöst()
+    public void Seitenwechsel()
     {
-        if (!wortGelöst)
-            seite2.TriggerEvent();
         wortGelöst = true;
+        zeitBonus.TriggerEvent();
+
     }
 }
