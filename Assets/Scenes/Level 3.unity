@@ -1403,9 +1403,57 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 672794389}
     m_Modifications:
+    - target: {fileID: 1682689817917692830, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682689817917692830, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682689817917692830, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1065614049
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922670396094624535, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922670396094624535, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922670396094624535, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1065614049
+      objectReference: {fileID: 0}
     - target: {fileID: 1944795603165236165, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
       propertyPath: m_Name
       value: Stan_Schloss Level 1.2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767247072938223917, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767247072938223917, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767247072938223917, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1065614049
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722820783295879049, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722820783295879049, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722820783295879049, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1065614049
       objectReference: {fileID: 0}
     - target: {fileID: 5699745669967361545, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
       propertyPath: m_LocalScale.x
@@ -4227,8 +4275,28 @@ PrefabInstance:
       value: ____
       objectReference: {fileID: 0}
     - target: {fileID: 995343260416248194, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: vorWort
+      value: ...das ihm auf den
+      objectReference: {fileID: 0}
+    - target: {fileID: 995343260416248194, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: nachWort
+      value: gefallen war...
+      objectReference: {fileID: 0}
+    - target: {fileID: 995343260416248194, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: vorWort2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 995343260416248194, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: zielWort
       value: Kopf
+      objectReference: {fileID: 0}
+    - target: {fileID: 995343260416248194, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: nachWort2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 995343260416248194, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: zielWort2
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1284809947366392317, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -4344,7 +4412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6685274932223628155, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7050449617709693380, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -4363,6 +4431,14 @@ PrefabInstance:
       value: "zu r\xFCcken."
       objectReference: {fileID: 0}
     - target: {fileID: 7763941415484727744, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: vorWort
+      value: ... an ihren richtigen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763941415484727744, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: nachWort
+      value: "zu r\xFCcken."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763941415484727744, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: zielWort
       value: Platz
       objectReference: {fileID: 0}
@@ -4372,7 +4448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7920708128801385831, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8403100127146996982, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_IsActive
@@ -9756,6 +9832,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -0.08
       objectReference: {fileID: 0}
+    - target: {fileID: 1682689817917692830, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682689817917692830, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682689817917692830, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1065614049
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922670396094624535, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922670396094624535, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922670396094624535, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1065614049
+      objectReference: {fileID: 0}
     - target: {fileID: 1944795603165236165, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
       propertyPath: m_Name
       value: Stan_Schloss Level 1.2.1
@@ -9763,6 +9863,30 @@ PrefabInstance:
     - target: {fileID: 1960318851541794897, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767247072938223917, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767247072938223917, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767247072938223917, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1065614049
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722820783295879049, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722820783295879049, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722820783295879049, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1065614049
       objectReference: {fileID: 0}
     - target: {fileID: 4669211283846276201, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9822,7 +9946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8114937216189782098, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8114937216189782098, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
       propertyPath: m_SortingOrder
@@ -9830,7 +9954,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8114937216189782098, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
       propertyPath: m_SortingLayerID
-      value: 1584450367
+      value: 1065614049
+      objectReference: {fileID: 0}
+    - target: {fileID: 8657728336233449502, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8657728336233449502, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8657728336233449502, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1065614049
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

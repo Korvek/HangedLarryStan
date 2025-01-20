@@ -10998,8 +10998,28 @@ PrefabInstance:
       value: ____
       objectReference: {fileID: 0}
     - target: {fileID: 995343260416248194, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: vorWort
+      value: ... noch mehr der
+      objectReference: {fileID: 0}
+    - target: {fileID: 995343260416248194, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: nachWort
+      value: der Bibliothek.
+      objectReference: {fileID: 0}
+    - target: {fileID: 995343260416248194, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: vorWort2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 995343260416248194, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: zielWort
       value: Held
+      objectReference: {fileID: 0}
+    - target: {fileID: 995343260416248194, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: nachWort2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 995343260416248194, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: zielWort2
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1284809947366392317, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -11128,6 +11148,18 @@ PrefabInstance:
     - target: {fileID: 7624362909327556358, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_text
       value: alles wieder in Ordnung bringen.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763941415484727744, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: vorWort
+      value: '...und einem guten '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763941415484727744, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: nachWort
+      value: alles wieder in Ordnung bringen.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763941415484727744, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: zielWort
+      value: Plan
       objectReference: {fileID: 0}
     - target: {fileID: 7888553505930938790, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_text
