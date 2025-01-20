@@ -33,7 +33,7 @@ public class SoundManager : MonoBehaviour
     }
     public void PlaySchlossKnacken()
     {
-        audioSources["SchlossKnacken"].Play();
+        audioSources["SchlossKnacken"].PlayDelayed(0.8f);
     }
     public void PlayGegnerKollision()
     {
