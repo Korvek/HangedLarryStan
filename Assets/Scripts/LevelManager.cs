@@ -54,6 +54,7 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void ResetGame()
     {
+        Renderer.Destroy(stan);
         //SceneManager.LoadScene(.name);
         Debug.Log("MANA");
         StartCoroutine(LoadAsync(SceneManager.GetActiveScene().buildIndex));
