@@ -3313,6 +3313,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 552358045139444451, guid: 47af25fcfea04ec4ba4bdb8e7cc9d755, type: 3}
   m_PrefabInstance: {fileID: 377841104}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &395603517 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 501096162874740369, guid: ea6f35f18b07e5f49bac964082c55d81, type: 3}
+  m_PrefabInstance: {fileID: 1687976283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &412581656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7708,6 +7713,7 @@ Transform:
   - {fileID: 226221428}
   - {fileID: 1746104705}
   - {fileID: 956968898}
+  - {fileID: 395603517}
   m_Father: {fileID: 89550098}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &956968897
@@ -12991,6 +12997,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 29.31, y: 0, z: 0}
+--- !u!1001 &1687976283
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 952891781}
+    m_Modifications:
+    - target: {fileID: 501096162874740369, guid: ea6f35f18b07e5f49bac964082c55d81, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -31.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 501096162874740369, guid: ea6f35f18b07e5f49bac964082c55d81, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 21.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 501096162874740369, guid: ea6f35f18b07e5f49bac964082c55d81, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 501096162874740369, guid: ea6f35f18b07e5f49bac964082c55d81, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 501096162874740369, guid: ea6f35f18b07e5f49bac964082c55d81, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 501096162874740369, guid: ea6f35f18b07e5f49bac964082c55d81, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 501096162874740369, guid: ea6f35f18b07e5f49bac964082c55d81, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 501096162874740369, guid: ea6f35f18b07e5f49bac964082c55d81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 501096162874740369, guid: ea6f35f18b07e5f49bac964082c55d81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 501096162874740369, guid: ea6f35f18b07e5f49bac964082c55d81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267655197079070951, guid: ea6f35f18b07e5f49bac964082c55d81, type: 3}
+      propertyPath: m_Name
+      value: Stoplinie (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089516715227643317, guid: ea6f35f18b07e5f49bac964082c55d81, type: 3}
+      propertyPath: tutorialText
+      value: 
+      objectReference: {fileID: 1976143069}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ea6f35f18b07e5f49bac964082c55d81, type: 3}
 --- !u!1001 &1709121426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15045,7 +15112,7 @@ GameObject:
   - component: {fileID: 1976143071}
   - component: {fileID: 1976143073}
   m_Layer: 5
-  m_Name: Drehung90
+  m_Name: Schleuder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15067,7 +15134,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.265708, y: 0}
+  m_AnchoredPosition: {x: -153.90485, y: 283.5727}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1976143071
@@ -15090,7 +15157,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Q - 90\xB0 Drehung \nim Uhrzeigersinn"
+  m_text: Sprungfeder - Schleudert Spieler
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15099,8 +15166,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4279746048
+  m_fontColor: {r: 0, g: 0.745283, b: 0.08832083, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -15117,8 +15184,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -15133,7 +15200,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
