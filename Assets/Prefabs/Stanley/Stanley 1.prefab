@@ -47,6 +47,8 @@ GameObject:
   - component: {fileID: 5881667022409573920}
   - component: {fileID: 279976335284528688}
   - component: {fileID: 6882900850247762411}
+  - component: {fileID: 4875348045462013430}
+  - component: {fileID: 5946004086759247795}
   m_Layer: 0
   m_Name: Stanley 1
   m_TagString: Player
@@ -179,7 +181,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1842115668014837823}
         m_TargetAssemblyTypeName: Stanley, Assembly-CSharp
-        m_MethodName: AnimationBeendet
+        m_MethodName: AnimationBeendetRechts
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -241,6 +243,62 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
+--- !u!114 &4875348045462013430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3973182761383435850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 5a205a2e0edfb8e4a93b917137506071, type: 2}
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1842115668014837823}
+        m_TargetAssemblyTypeName: Stanley, Assembly-CSharp
+        m_MethodName: AnimationBeendetLinks
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5946004086759247795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3973182761383435850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 90518b436c9ed5642887e8f582e79090, type: 2}
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1842115668014837823}
+        m_TargetAssemblyTypeName: Stanley, Assembly-CSharp
+        m_MethodName: AnimationBeendetWende
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4030555534148786590
 GameObject:
   m_ObjectHideFlags: 0

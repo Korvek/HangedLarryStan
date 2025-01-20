@@ -161,7 +161,9 @@ public class Stanley : MonoBehaviour
                     break;
             }
         }
+        
     }
+    
     /// <summary>
     /// Startet die Bewegung bei Tastendruck
     /// </summary>
@@ -226,14 +228,107 @@ public class Stanley : MonoBehaviour
     /// <summary>
     /// Reaktiviere Abbiegen nachdem eine Animation abgeschlossen ist
     /// </summary>
-    public void AnimationBeendet()
+    public void AnimationBeendetRechts()
     {
+        Vector3 position = transform.position;
+
+        //90° Drehung
+        transform.Rotate(0f, 0f, -90f);
+        //Debug.Log("Position vor Bewegung: " + position);
+        //Halbe Länge addieren
+        position = position +
+            (transform.up *
+            (GetComponent<SpriteRenderer>().sprite.bounds.size.y) * 1.5f);
+        position = position -
+            (transform.right *
+            (GetComponent<SpriteRenderer>().sprite.bounds.size.y) * 1.5f);
+        //Debug.Log("Position vor Rundung: " + position);
+        //Debug.Log("Bewegung: " + (animator.gameObject.transform.up *
+        //    (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f)));
+        //Position Runden
+        if (transform.up == Vector3.up || transform.up == Vector3.down)
+        {
+            position.x = (Mathf.Round(2f * position.x) / 2f);
+        }
+        else if (transform.up == Vector3.right || transform.up == Vector3.left)
+        {
+            position.y = (Mathf.Round(2f * position.y) / 2f);
+        }
+        //Debug.Log("Position nach Rundung: " + position);
+        transform.position = position;
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        drehenAktion.performed += Abbiegen;
+    }
+
+    /// <summary>
+    /// Reaktiviere Abbiegen nachdem eine Animation abgeschlossen ist
+    /// </summary>
+    public void AnimationBeendetLinks()
+    {
+        Vector3 position = transform.position;
+
+        //90° Drehung
+        transform.Rotate(0f, 0f, 90f);
+        //Debug.Log("Position vor Bewegung: " + position);
+        //Halbe Länge addieren
+        position = position +
+            (transform.up *
+            (GetComponent<SpriteRenderer>().sprite.bounds.size.y) * 1.5f);
+        position = position +
+            (transform.right *
+            (GetComponent<SpriteRenderer>().sprite.bounds.size.y) * 1.5f);
+        //Debug.Log("Position vor Rundung: " + position);
+        //Debug.Log("Bewegung: " + (animator.gameObject.transform.up *
+        //    (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f)));
+        //Position Runden
+        if (transform.up == Vector3.up || transform.up == Vector3.down)
+        {
+            position.x = (Mathf.Round(2f * position.x) / 2f);
+        }
+        else if (transform.up == Vector3.right || transform.up == Vector3.left)
+        {
+            position.y = (Mathf.Round(2f * position.y) / 2f);
+        }
+        //Debug.Log("Position nach Rundung: " + position);
+        transform.position = position;
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         drehenAktion.performed += Abbiegen;
     }
     /// <summary>
-    /// Sammelt das momentan berührte Objekt ein
+    /// Reaktiviere Abbiegen nachdem eine Animation abgeschlossen ist
     /// </summary>
-    private void Sammeln(InputAction.CallbackContext context)
+    public void AnimationBeendetWende()
+    {
+        Vector3 position = transform.position;
+
+        //90° Drehung
+        transform.Rotate(0f, 0f, 180f);
+        //Debug.Log("Position vor Bewegung: " + position);
+        //Halbe Länge addieren
+        position = position +
+            (transform.up *
+            (GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f));
+        //Debug.Log("Position vor Rundung: " + position);
+        //Debug.Log("Bewegung: " + (animator.gameObject.transform.up *
+        //    (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f)));
+        //Position Runden
+        if (transform.up == Vector3.up || transform.up == Vector3.down)
+        {
+            position.x = (Mathf.Round(2f * position.x) / 2f);
+        }
+        else if (transform.up == Vector3.right || transform.up == Vector3.left)
+        {
+            position.y = (Mathf.Round(2f * position.y) / 2f);
+        }
+        //Debug.Log("Position nach Rundung: " + position);
+        transform.position = position;
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        drehenAktion.performed += Abbiegen;
+    }
+        /// <summary>
+        /// Sammelt das momentan berührte Objekt ein
+        /// </summary>
+        private void Sammeln(InputAction.CallbackContext context)
     {
         if (sammelObjekt != null)
         {
