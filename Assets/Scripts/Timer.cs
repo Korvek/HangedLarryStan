@@ -65,7 +65,7 @@ public class Timer : MonoBehaviour
         }
         else
         {
-
+            gameObject.SetActive(false);
             zeitAbgelaufenEvent.TriggerEvent();
         }
     }

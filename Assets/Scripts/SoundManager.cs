@@ -96,6 +96,7 @@ public class SoundManager : MonoBehaviour
     }
     public void Reset()
     {
+        Debug.Log("Res");
         audioSources["Reset"].Play();
     }
 
