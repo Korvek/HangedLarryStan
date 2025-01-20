@@ -1287,7 +1287,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Dr\xFCcke Enter zum starten"
+  m_text: "Dr\xFCcke E zum starten"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
   m_sharedMaterial: {fileID: -8291489830157450155, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
@@ -3009,31 +3009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80a6bcb8112612f46b996d73485074dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startAktion:
-    m_Name: Start Aktion
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 9877000c-87a1-4e18-a4a0-f19f46c4846b
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 6b5659aa-acc0-42ce-bd15-08ca01f788c1
-      m_Path: <Keyboard>/q
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Start Aktion
-      m_Flags: 0
-    - m_Name: 
-      m_Id: 7ec1f330-ace2-47f5-b1e1-d67394bd8114
-      m_Path: <Keyboard>/enter
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Start Aktion
-      m_Flags: 0
-    m_Flags: 0
+  actionAsset: {fileID: -944628639613478452, guid: b44b58f16488fda448b3d0d642175356, type: 3}
 --- !u!4 &1736328931
 Transform:
   m_ObjectHideFlags: 0

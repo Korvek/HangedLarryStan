@@ -19,7 +19,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] BackgroundFader backgroundFader;
     private GameObject stan;
 
-    private bool wortGelöst=false;
+    private bool zweiteSeiteerreicht=false;
     private void Start()
     {
         InitGame();        
@@ -32,7 +32,7 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void NextLevel()
     {
-        if (SceneManager.GetActiveScene().buildIndex > 4)
+        if (SceneManager.GetActiveScene().buildIndex >= 4)
         {
             SceneManager.LoadScene(0);
         }
@@ -59,22 +59,27 @@ public class LevelManager : MonoBehaviour
         Debug.Log("MANA");
         StartCoroutine(LoadAsync(SceneManager.GetActiveScene().buildIndex));
     }
-
+    /// <summary>
+    /// Instanziere Stanley
+    /// </summary>
     public void InitGame()
     {
         stan = Renderer.Instantiate(stanley,spielfeld.transform);
         stan.SetActive(true);
     }
+    /// <summary>
+    /// Reaktion auf Kollision
+    /// </summary>
     public void SoftReset()
     {
         Quaternion rot = Quaternion.identity;
         Renderer.Destroy(stan);
-        if (!wortGelöst)
+        if (!zweiteSeiteerreicht)
         {
             stan = Renderer.Instantiate(stanley, spielfeld.transform);
             stan.SetActive(true);
         }
-        else if (wortGelöst)
+        else if (zweiteSeiteerreicht)
         {
             switch (resetRichtung)
             {
@@ -96,9 +101,14 @@ public class LevelManager : MonoBehaviour
             stan.SetActive(true);
         }
     }
+    /// <summary>
+    /// Versetze den Spieler
+    /// </summary>
+    /// <param name="newPos">Neue Position</param>
+    /// <param name="newRichtung">Neue Richtung</param>
     public void Sprung(Vector3 newPos, Richtung newRichtung)
     {
-        Renderer.Destroy(stan);
+        Renderer.Destroy(stan); //Lösche alte Spielerfigur
         Quaternion rot = Quaternion.identity;
         switch (newRichtung)
         {
@@ -115,14 +125,17 @@ public class LevelManager : MonoBehaviour
                 rot = Quaternion.Euler(0f, 0f, 90f);
                 break;
         }
+        //Erzeuge neue Spielerfigur
         stan = Renderer.Instantiate(stanley, newPos, rot, spielfeld.transform);
         stan.GetComponent<Stanley>().richtung = newRichtung;
         stan.SetActive(true);
     }
-
+    /// <summary>
+    /// Übergang zur nächsten Seite
+    /// </summary>
     public void Seitenwechsel()
     {
-        wortGelöst = true;
+        zweiteSeiteerreicht = true;
         zielwort2.SetActive(true);
         zielwort1.SetActive(false);
         zeitBonus.TriggerEvent();
@@ -132,15 +145,11 @@ public class LevelManager : MonoBehaviour
     {
         UnityEngine.AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(buildIndex);
         asyncLoad.allowSceneActivation = false;
-        Debug.Log("Start");
         Time.timeScale = 1.0f;
         yield return new WaitForSeconds(4.33f);
-        Debug.Log("Wait");
         asyncLoad.allowSceneActivation = true;
-        Debug.Log("Waited");
         while (!asyncLoad.isDone)
         {
-            Debug.Log("Done");
             yield return null;
         }
     }
