@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8114937216189782098}
   - component: {fileID: 1769464939674138130}
   - component: {fileID: 5011272116725794165}
+  - component: {fileID: 7161670396049540194}
   m_Layer: 0
   m_Name: Stan_Schloss Level 1.2.1
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -1, w: 0}
   m_LocalPosition: {x: 1.1, y: -70.9, z: 0}
   m_LocalScale: {x: 3.1093125, y: 2.6913633, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5355098395538543670}
   - {fileID: 1282666676019687751}
@@ -152,6 +153,27 @@ MonoBehaviour:
   kollision: {fileID: 11400000, guid: 853da0a708cd4f74a82bc54c1d7c6202, type: 2}
   schloss2: 0
   wort1: 0
+--- !u!95 &7161670396049540194
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944795603165236165}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 82b22964ca036674ba158d7f73984c6b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2537808995259419872
 GameObject:
   m_ObjectHideFlags: 0
