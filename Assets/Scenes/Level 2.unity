@@ -2483,6 +2483,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.11
       objectReference: {fileID: 0}
+    - target: {fileID: 1682689817917692830, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922670396094624535, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1944795603165236165, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
       propertyPath: m_Name
       value: Stan_Schloss Level 1.2.1
@@ -2490,6 +2498,14 @@ PrefabInstance:
     - target: {fileID: 1960318851541794897, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767247072938223917, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722820783295879049, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4669211283846276201, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2545,15 +2561,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8114937216189782098, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8114937216189782098, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
-      propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 8114937216189782098, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1584450367
+    - target: {fileID: 8657728336233449502, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -8092,9 +8104,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1784772047}
     m_Modifications:
+    - target: {fileID: 1682689817917692830, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922670396094624535, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1944795603165236165, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
       propertyPath: m_Name
       value: Stan_Schloss Level 1.2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767247072938223917, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3722820783295879049, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5699745669967361545, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8140,13 +8168,13 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 8114937216189782098, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
-      propertyPath: m_SortingOrder
+    - target: {fileID: 8323533164023118520, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayer
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 8114937216189782098, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1065614049
+    - target: {fileID: 8657728336233449502, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9933,7 +9961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1122276771
 SpriteRenderer:
   m_ObjectHideFlags: 0
