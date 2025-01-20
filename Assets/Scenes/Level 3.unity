@@ -922,6 +922,10 @@ PrefabInstance:
       propertyPath: resetPunkt
       value: 
       objectReference: {fileID: 556986116}
+    - target: {fileID: 1769267598626589567, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
+      propertyPath: resetRichtung
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2647888760912506121, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
       propertyPath: uI
       value: 
