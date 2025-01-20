@@ -5618,7 +5618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
       propertyPath: vorWort2
-      value: Wie sollte er nun den
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
       propertyPath: vorWortT
@@ -5630,7 +5630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
       propertyPath: nachWort2
-      value: und Erwachsenen helfen
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
       propertyPath: nachWortT
@@ -5638,7 +5638,7 @@ PrefabInstance:
       objectReference: {fileID: 281977596}
     - target: {fileID: 2463554406281069279, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
       propertyPath: zielWort2
-      value: Kindern
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5399736971006537126, guid: c86da3aa109b31048954e6a2672ac34a, type: 3}
       propertyPath: m_text
@@ -11628,12 +11628,32 @@ PrefabInstance:
       value: -1.1
       objectReference: {fileID: 0}
     - target: {fileID: 995343260416248194, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: vorWort
+      value: ... dass die Buchstaben auf den
+      objectReference: {fileID: 0}
+    - target: {fileID: 995343260416248194, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: nachWort
+      value: sich seltsam verhielten.
+      objectReference: {fileID: 0}
+    - target: {fileID: 995343260416248194, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: vorWort2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 995343260416248194, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: zielWort
       value: Seiten
       objectReference: {fileID: 0}
+    - target: {fileID: 995343260416248194, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: nachWort2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 995343260416248194, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: zielWort2
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1284809947366392317, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 161.1
+      value: 164.4
       objectReference: {fileID: 0}
     - target: {fileID: 1284809947366392317, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -11733,11 +11753,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2923570866102208679, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -40.2
+      value: -57.8
       objectReference: {fileID: 0}
     - target: {fileID: 2923570866102208679, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 85.1
+      value: 84.3
       objectReference: {fileID: 0}
     - target: {fileID: 4481611892304040910, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_text
@@ -11777,11 +11797,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7624362909327556358, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_text
-      value: auf Stans Kopf
+      value: und Erwachsenen helfen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763941415484727744, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: vorWort
+      value: 'Wie sollte er nun den '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763941415484727744, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: nachWort
+      value: und Erwachsenen helfen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763941415484727744, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: zielWort
+      value: Kindern
       objectReference: {fileID: 0}
     - target: {fileID: 7888553505930938790, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_text
-      value: _____
+      value: _______
       objectReference: {fileID: 0}
     - target: {fileID: 7920708128801385831, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_IsActive
@@ -11789,7 +11821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8561010380821480564, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_text
-      value: "hinterlie\xDF eine kleine"
+      value: 'Wie sollte er nun den '
       objectReference: {fileID: 0}
     - target: {fileID: 8561010380821480564, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_margin.x

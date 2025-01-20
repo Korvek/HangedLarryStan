@@ -595,8 +595,8 @@ MonoBehaviour:
   vorWort2: "und hinterlie\xDF eine kleine"
   nachWort: "\xFCber alles"
   nachWort2: ' auf Stans Kopf. '
-  vorWortT: {fileID: 0}
-  nachWortT: {fileID: 0}
+  vorWortT: {fileID: 4481611892304040910}
+  nachWortT: {fileID: 504291884036506121}
   zeitBonus: {fileID: 11400000, guid: 556e781260b0bd8499e1e313128d659e, type: 2}
   zeitAbzug: {fileID: 11400000, guid: a35455193471adf40af6fa5d17aa06f6, type: 2}
   wortGefunden: {fileID: 11400000, guid: bb3b5bd4b257c3f4e94096a4bc510a85, type: 2}
