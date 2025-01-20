@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5699745669967361545}
   - component: {fileID: 8114937216189782098}
+  - component: {fileID: 1769464939674138130}
+  - component: {fileID: 5011272116725794165}
   m_Layer: 0
   m_Name: Stan_Schloss Level 1.2.1
   m_TagString: Untagged
@@ -90,6 +92,66 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1769464939674138130
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944795603165236165}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 16.89, y: 16.28}
+    newSize: {x: 16.89, y: 16.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 16.89, y: 16.28}
+  m_EdgeRadius: 0
+--- !u!114 &5011272116725794165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944795603165236165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb93dfdf9f531e246aad77f8e18d33c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kollision: {fileID: 11400000, guid: 853da0a708cd4f74a82bc54c1d7c6202, type: 2}
+  schloss2: 0
+  wort1: 0
 --- !u!1 &2537808995259419872
 GameObject:
   m_ObjectHideFlags: 0

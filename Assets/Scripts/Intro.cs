@@ -7,18 +7,16 @@ using UnityEngine.SceneManagement;
 
 public class Intro : MonoBehaviour
 {
-    public InputAction startAktion;
+    public InputActionAsset actionAsset;
+    private InputAction startAktion;
     void Awake()
     {
+        startAktion = actionAsset.FindActionMap("Menu").FindAction("IntroAktion");
         startAktion.performed += StarteSpiel;
     }
     private void OnEnable()
     {
         startAktion.Enable();
-    }
-    private void OnDisable()
-    {
-        startAktion.Disable();
     }
     private void OnDestroy()
     {

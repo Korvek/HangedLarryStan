@@ -164,7 +164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: -0.24}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.132, y: -0.059}
+  m_AnchoredPosition: {x: -0.132, y: 0.011}
   m_SizeDelta: {x: 340.887, y: 36.699}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &11383859
@@ -220,9 +220,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Dr\xFCcke \"e\" um einen Buchstaben einzusammeln.\nDoch Vorsicht: Bei
+  m_text: "Dr\xFCcke \"E\" um einen Buchstaben einzusammeln.\nDoch Vorsicht: Bei
     einem falschen Buchstaben \nverlierst du 10 Sekunden der Zeit!\n\nWorauf wartest
-    du? Beeil dich!"
+    du? Beeil dich!\nDu musst nicht den kompletten Text lesen!!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
   m_sharedMaterial: {fileID: -8291489830157450155, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
@@ -2885,7 +2885,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Hey Du,\n\nIch bin Stanley. aber nenn mich gerne \"Stan\". W\xE4rst du
     bitte \nso freundlich, mir beim Einsammeln der  richtigen Buchstaben \nzu helfen? 
-    Ich bin momentan etwas neben der Spur.\n\n- Dr\xFCcke \"q\" um loszulaufen -"
+    Ich bin momentan etwas neben der Spur.\n\n- Dr\xFCcke \"Q\" um loszulaufen -"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
   m_sharedMaterial: {fileID: -8291489830157450155, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
@@ -3940,6 +3940,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4021467925557810013, guid: b631f3d6bad1b924c823c8016120fe23, type: 3}
   m_PrefabInstance: {fileID: 825363283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &837540308 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1944795603165236165, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+  m_PrefabInstance: {fileID: 4548605043794491543}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &853811882
 PrefabInstance:
@@ -11582,13 +11587,55 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1944795603165236165, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4548605043794491548}
   m_SourcePrefab: {fileID: 100100000, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
 --- !u!4 &4548605043794491544 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5699745669967361545, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
   m_PrefabInstance: {fileID: 4548605043794491543}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4548605043794491545 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5011272116725794165, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+  m_PrefabInstance: {fileID: 4548605043794491543}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837540308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb93dfdf9f531e246aad77f8e18d33c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4548605043794491548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837540308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: bb3b5bd4b257c3f4e94096a4bc510a85, type: 2}
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4548605043794491545}
+        m_TargetAssemblyTypeName: Schloss, Assembly-CSharp
+        m_MethodName: "Schlossaufl\xF6sen"
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &4910018085098280868
 PrefabInstance:
   m_ObjectHideFlags: 0

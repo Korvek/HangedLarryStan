@@ -253,6 +253,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "IntroAktion",
+                    "type": "Button",
+                    "id": "861e2101-79e2-420a-bb53-3e4f37ed5cc2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -363,6 +372,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "StartGameAktion",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9f859a8f-2810-4aeb-beb9-4e289e0bb0d3",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "IntroAktion",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "67103991-d63d-47c0-8b79-cd9e90724225",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "IntroAktion",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
