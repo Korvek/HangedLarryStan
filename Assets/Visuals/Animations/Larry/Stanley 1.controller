@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19f65024b909e54a95a344028310da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bewegungAbgeschlossen: {fileID: 11400000, guid: 7a517b1b44c04d847af5f4651dd87c6a, type: 2}
+  bewegungAbgeschlossen: {fileID: 11400000, guid: 90518b436c9ed5642887e8f582e79090, type: 2}
 --- !u!1102 &-2382014529949454347
 AnimatorState:
   serializedVersion: 6
@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9603a42bbfb416f44957f24a2e2389d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bewegungAbgeschlossenLinks: {fileID: 11400000, guid: 7a517b1b44c04d847af5f4651dd87c6a, type: 2}
+  bewegungAbgeschlossenLinks: {fileID: 11400000, guid: 5a205a2e0edfb8e4a93b917137506071, type: 2}
 --- !u!1101 &8647709626816927793
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
