@@ -31,14 +31,15 @@ public class Schloss : MonoBehaviour
             {
                 GetComponent<Collider2D>().enabled = false;
                 //Löse Animation aus
-                anim.SetTrigger("TriggerSchloss");
+                anim.SetTrigger("TriggerSchloss2");
             }
         }
         else
         {
+            Debug.LogWarning(anim.name);
             GetComponent<Collider2D>().enabled = false;
             //Löse Animation aus
-            anim.SetTrigger("TriggerSchloss");
+            anim.SetTrigger("TriggerSchloss1");
         }
         
     }
