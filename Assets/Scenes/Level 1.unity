@@ -11391,6 +11391,10 @@ PrefabInstance:
       propertyPath: m_text
       value: eine kleine
       objectReference: {fileID: 0}
+    - target: {fileID: 8561010380821480564, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: m_lineSpacing
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
