@@ -31,6 +31,7 @@ public class Timer : MonoBehaviour
 
     private TextMeshProUGUI timerT;
     private AudioSource tickTack;
+    private bool timerAktiviert = false;
     private void Awake()
     {
         //Textkomponente finden
@@ -42,31 +43,34 @@ public class Timer : MonoBehaviour
         startAktion = actions.FindActionMap("Player").FindAction("StartAktion");
         //Verknüpfe startAktion mit der TimerAktivieren Methode
         startAktion.performed += TimerAktivieren;
-        timerT.enabled = false;
+        //timerT.enabled = false;
     }
 
     private void Update()
     {
-        //Setze neuen Timer Text 
-        timerT.text=(maxZeit-Mathf.Round(abgelaufeneZeit)).ToString();
-        //Wenn die Zeit noch nicht abgelaufen ist
-        if (abgelaufeneZeit < maxZeit)
+        if (timerAktiviert)
         {
-            //Bestimme vergangene Zeit
-            abgelaufeneZeit += Time.deltaTime;
-            if ((maxZeit - abgelaufeneZeit) <= 30f)
+            //Setze neuen Timer Text 
+            timerT.text = (maxZeit - Mathf.Round(abgelaufeneZeit)).ToString();
+            //Wenn die Zeit noch nicht abgelaufen ist
+            if (abgelaufeneZeit < maxZeit)
             {
-                tickTack.outputAudioMixerGroup.audioMixer.SetFloat("TimerVolume", Mathf.Log10(Mathf.Lerp(0.00001f, 1f, abgelaufeneZeit / maxZeit)) * 20);
-                 }
+                //Bestimme vergangene Zeit
+                abgelaufeneZeit += Time.deltaTime;
+                if ((maxZeit - abgelaufeneZeit) <= 30f)
+                {
+                    tickTack.outputAudioMixerGroup.audioMixer.SetFloat("TimerVolume", Mathf.Log10(Mathf.Lerp(0.00001f, 1f, abgelaufeneZeit / maxZeit)) * 20);
+                }
+                else
+                {
+                    tickTack.outputAudioMixerGroup.audioMixer.SetFloat("TimerVolume", Mathf.Log10(0.00001f) * 20);
+                }
+            }
             else
             {
-                tickTack.outputAudioMixerGroup.audioMixer.SetFloat("TimerVolume", Mathf.Log10(0.00001f) * 20);
+                gameObject.SetActive(false);
+                zeitAbgelaufenEvent.TriggerEvent();
             }
-        }
-        else
-        {
-            gameObject.SetActive(false);
-            zeitAbgelaufenEvent.TriggerEvent();
         }
     }
     /// <summary>
@@ -78,6 +82,7 @@ public class Timer : MonoBehaviour
         startAktion.performed -= TimerAktivieren; //Deaktiviere start des Timers
         timerT.enabled = true; //Aktiviere Timer Text
         tickTack.Play();
+        timerAktiviert = true;
     }
     /// <summary>
     /// Funktion für Zeitstrafen
