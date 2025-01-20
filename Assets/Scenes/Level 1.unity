@@ -164,7 +164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: -0.24}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.132, y: -0.059}
+  m_AnchoredPosition: {x: -0.132, y: 0.011}
   m_SizeDelta: {x: 340.887, y: 36.699}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &11383859
@@ -220,9 +220,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Dr\xFCcke \"e\" um einen Buchstaben einzusammeln.\nDoch Vorsicht: Bei
+  m_text: "Dr\xFCcke \"E\" um einen Buchstaben einzusammeln.\nDoch Vorsicht: Bei
     einem falschen Buchstaben \nverlierst du 10 Sekunden der Zeit!\n\nWorauf wartest
-    du? Beeil dich!"
+    du? Beeil dich!\nDu musst nicht den kompletten Text lesen!!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
   m_sharedMaterial: {fileID: -8291489830157450155, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
@@ -2885,7 +2885,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Hey Du,\n\nIch bin Stanley. aber nenn mich gerne \"Stan\". W\xE4rst du
     bitte \nso freundlich, mir beim Einsammeln der  richtigen Buchstaben \nzu helfen? 
-    Ich bin momentan etwas neben der Spur.\n\n- Dr\xFCcke \"q\" um loszulaufen -"
+    Ich bin momentan etwas neben der Spur.\n\n- Dr\xFCcke \"Q\" um loszulaufen -"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
   m_sharedMaterial: {fileID: -8291489830157450155, guid: 86b23531a63a87e439d7083efff7a8f8, type: 2}
