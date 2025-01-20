@@ -2326,6 +2326,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 184c86b982832f64fbd3e90258fdeae8, type: 3}
+--- !u!1 &613956809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6685274932223628155, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+  m_PrefabInstance: {fileID: 2643993607096062551}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &615981594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11452,7 +11457,9 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3234668770410736284, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+    - {fileID: 2166223740720852003, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
     m_RemovedGameObjects:
     - {fileID: 8403100127146996982, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
     - {fileID: 3536324075621814393, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
@@ -12086,6 +12093,14 @@ PrefabInstance:
       propertyPath: spielfeld
       value: 
       objectReference: {fileID: 89550097}
+    - target: {fileID: 1769267598626589567, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
+      propertyPath: zielwort1
+      value: 
+      objectReference: {fileID: 613956809}
+    - target: {fileID: 1769267598626589567, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
+      propertyPath: zielwort2
+      value: 
+      objectReference: {fileID: 1723421948}
     - target: {fileID: 1769267598626589567, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
       propertyPath: resetPunkt
       value: 

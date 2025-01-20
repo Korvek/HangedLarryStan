@@ -34,7 +34,6 @@ public class ZielWort : MonoBehaviour
     /// Textelement für Nachwort
     /// </summary>
     public TextMeshProUGUI nachWortT;
-    public GameObject zielWortT2;
 
     /// <summary>
     /// Event für Zeitbonus
@@ -63,8 +62,6 @@ public class ZielWort : MonoBehaviour
     /// Textanzeige für das Zielwort
     /// </summary>
     private TextMeshProUGUI zielwortT;
-    //Ob das erste Zielwort gelöst worden ist
-    private bool erstesWortgelöst = false;
     void Awake()
     {
         //Finde Textkomponente
@@ -114,14 +111,6 @@ public class ZielWort : MonoBehaviour
             {
                 buchstabeRichtig.TriggerEvent();
             }
-        }
-    }
-    public void ZielwortWechseln()
-    {
-        if (zielWortT2 != null)
-        {
-            zielWortT2.SetActive(true);
-            gameObject.SetActive(false);
         }
     }
 }
