@@ -9,6 +9,8 @@ public class LevelManager : MonoBehaviour
     public GameObject stanley;
     public GameObject spielfeld;
     public GameObject resetPunkt;
+    public GameObject zielwort1;
+    public GameObject zielwort2;
     public Richtung resetRichtung;
     public GameEvent seite1;
     public GameEvent seite2;
@@ -111,6 +113,8 @@ public class LevelManager : MonoBehaviour
     public void Seitenwechsel()
     {
         wortGelöst = true;
+        zielwort2.SetActive(true);
+        zielwort1.SetActive(false);
         zeitBonus.TriggerEvent();
 
     }

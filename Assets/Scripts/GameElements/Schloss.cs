@@ -7,6 +7,8 @@ public class Schloss : MonoBehaviour
     public GameEvent kollision;
     //Animator Komponente
     private Animator anim;
+    public bool schloss2;
+    public bool wort1;
 
     void Awake()
     {
@@ -19,9 +21,26 @@ public class Schloss : MonoBehaviour
     /// </summary>
     public void Schlossauflösen()
     {
-        GetComponent<Collider2D>().enabled = false;
-        //Löse Animation aus
-        anim.SetTrigger("TriggerSchloss");
+        if (schloss2)
+        {
+            if (!wort1)
+            {
+                wort1 = true;
+            }
+            else
+            {
+                GetComponent<Collider2D>().enabled = false;
+                //Löse Animation aus
+                anim.SetTrigger("TriggerSchloss");
+            }
+        }
+        else
+        {
+            GetComponent<Collider2D>().enabled = false;
+            //Löse Animation aus
+            anim.SetTrigger("TriggerSchloss");
+        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
