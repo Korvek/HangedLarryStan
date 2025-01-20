@@ -1,43 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
-using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
-
-/* TODO Liste
- * Visuelle Bewegung des Spielers bei Schleuder
- *  Animation Rotieren während Bewegung, Landung in richtiger Richtung?
- * Textgröße anpassen
- * Sounds verteilen
- *  Sounds abspielen wenn nötig
- * Automatisch Ranzoomen bei Levelstart
- *  Vielleicht kratzendes oder blätterndes Geräusch
- * Credits
- * Video Levelwechsel
- * IntroScreen
- *  Buttons zur Levelwahl
- *  Button zu Credits
- * Rückkehr zum IntroScreen
- * Tutorial Texte
- *  Piktogramme
- * Ausrufezeichen bei möglicher Interaktion
- * VolumeSlider für Stimme
- *  Vorlesen unterbrechen
- * 
- * 39 Sekunden 1.
- * 40
- * 80 Sekunden Gesamt
- * Game Over Einblendung? (Szene?)
- * 
- * AUSRUFEZEICHEN RICHTUNG
- * 
- * Maximale Länge vorwort/nachwort * 
- * Ein Text
- */
 
 public class Stanley : MonoBehaviour
 {
@@ -230,32 +193,6 @@ public class Stanley : MonoBehaviour
     /// </summary>
     public void AnimationBeendetRechts()
     {
-        Vector3 position = transform.position;
-
-        //90° Drehung
-        transform.Rotate(0f, 0f, -90f);
-        //Debug.Log("Position vor Bewegung: " + position);
-        //Halbe Länge addieren
-        position = position +
-            (transform.up *
-            (GetComponent<SpriteRenderer>().sprite.bounds.size.y) * 1.5f);
-        position = position -
-            (transform.right *
-            (GetComponent<SpriteRenderer>().sprite.bounds.size.y) * 1.5f);
-        //Debug.Log("Position vor Rundung: " + position);
-        //Debug.Log("Bewegung: " + (animator.gameObject.transform.up *
-        //    (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f)));
-        //Position Runden
-        if (transform.up == Vector3.up || transform.up == Vector3.down)
-        {
-            position.x = (Mathf.Round(2f * position.x) / 2f);
-        }
-        else if (transform.up == Vector3.right || transform.up == Vector3.left)
-        {
-            position.y = (Mathf.Round(2f * position.y) / 2f);
-        }
-        //Debug.Log("Position nach Rundung: " + position);
-        transform.position = position;
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         drehenAktion.performed += Abbiegen;
     }
@@ -265,32 +202,6 @@ public class Stanley : MonoBehaviour
     /// </summary>
     public void AnimationBeendetLinks()
     {
-        Vector3 position = transform.position;
-
-        //90° Drehung
-        transform.Rotate(0f, 0f, 90f);
-        //Debug.Log("Position vor Bewegung: " + position);
-        //Halbe Länge addieren
-        position = position +
-            (transform.up *
-            (GetComponent<SpriteRenderer>().sprite.bounds.size.y) * 1.5f);
-        position = position +
-            (transform.right *
-            (GetComponent<SpriteRenderer>().sprite.bounds.size.y) * 1.5f);
-        //Debug.Log("Position vor Rundung: " + position);
-        //Debug.Log("Bewegung: " + (animator.gameObject.transform.up *
-        //    (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f)));
-        //Position Runden
-        if (transform.up == Vector3.up || transform.up == Vector3.down)
-        {
-            position.x = (Mathf.Round(2f * position.x) / 2f);
-        }
-        else if (transform.up == Vector3.right || transform.up == Vector3.left)
-        {
-            position.y = (Mathf.Round(2f * position.y) / 2f);
-        }
-        //Debug.Log("Position nach Rundung: " + position);
-        transform.position = position;
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         drehenAktion.performed += Abbiegen;
     }
@@ -299,31 +210,19 @@ public class Stanley : MonoBehaviour
     /// </summary>
     public void AnimationBeendetWende()
     {
-        Vector3 position = transform.position;
-
-        //90° Drehung
-        transform.Rotate(0f, 0f, 180f);
-        //Debug.Log("Position vor Bewegung: " + position);
-        //Halbe Länge addieren
-        position = position +
-            (transform.up *
-            (GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f));
-        //Debug.Log("Position vor Rundung: " + position);
-        //Debug.Log("Bewegung: " + (animator.gameObject.transform.up *
-        //    (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f)));
-        //Position Runden
-        if (transform.up == Vector3.up || transform.up == Vector3.down)
-        {
-            position.x = (Mathf.Round(2f * position.x) / 2f);
-        }
-        else if (transform.up == Vector3.right || transform.up == Vector3.left)
-        {
-            position.y = (Mathf.Round(2f * position.y) / 2f);
-        }
-        //Debug.Log("Position nach Rundung: " + position);
-        transform.position = position;
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         drehenAktion.performed += Abbiegen;
+    }
+    public void onReset()
+    {
+        Debug.Log("Deactivate");
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        drehenAktion.performed -= Abbiegen;
+        startAktion.performed -= StarteBewegung;
+        stopAktion.performed -= StoppeBewegung;
+        sammelAktion.performed -= Sammeln;
+        stopAktion.canceled -= StarteBewegung;
+        drehenAktion.Disable();
     }
         /// <summary>
         /// Sammelt das momentan berührte Objekt ein
@@ -437,5 +336,6 @@ public class Stanley : MonoBehaviour
         startAktion.performed -= StarteBewegung;
         stopAktion.performed -= StoppeBewegung;
         sammelAktion.performed -= Sammeln;
+        stopAktion.canceled -= StarteBewegung;
     }
 }

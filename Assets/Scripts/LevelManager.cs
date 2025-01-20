@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -31,8 +32,14 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
-        //TODO: Zurück zum Startscreen
+        if (SceneManager.GetActiveScene().buildIndex > 4)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
     /// <summary>
     /// Beende das Spiel
@@ -47,7 +54,10 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void ResetGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Renderer.Destroy(stan);
+        //SceneManager.LoadScene(.name);
+        Debug.Log("MANA");
+        StartCoroutine(LoadAsync(SceneManager.GetActiveScene().buildIndex));
     }
 
     public void InitGame()
@@ -117,5 +127,21 @@ public class LevelManager : MonoBehaviour
         zielwort1.SetActive(false);
         zeitBonus.TriggerEvent();
 
+    }
+    IEnumerator LoadAsync(int buildIndex)
+    {
+        UnityEngine.AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(buildIndex);
+        asyncLoad.allowSceneActivation = false;
+        Debug.Log("Start");
+        Time.timeScale = 1.0f;
+        yield return new WaitForSeconds(4.33f);
+        Debug.Log("Wait");
+        asyncLoad.allowSceneActivation = true;
+        Debug.Log("Waited");
+        while (!asyncLoad.isDone)
+        {
+            Debug.Log("Done");
+            yield return null;
+        }
     }
 }
