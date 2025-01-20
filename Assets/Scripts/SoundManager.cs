@@ -39,6 +39,10 @@ public class SoundManager : MonoBehaviour
     {
         audioSources["GegnerKollision"].Play();
     }
+    public void PlayMauerKollision()
+    {
+        audioSources["GegnerKollision"].Play();
+    }
     public void PlaySeite1()
     {
         audioSources["Seite1"].PlayDelayed(0f);
