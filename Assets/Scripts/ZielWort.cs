@@ -34,6 +34,7 @@ public class ZielWort : MonoBehaviour
     /// Textelement für Nachwort
     /// </summary>
     public TextMeshProUGUI nachWortT;
+    public GameObject zielWortT2;
 
     /// <summary>
     /// Event für Zeitbonus
@@ -47,10 +48,6 @@ public class ZielWort : MonoBehaviour
     /// Event für erstes gefundenes Wort
     /// </summary>
     public GameEvent wortGefunden;
-    /// <summary>
-    /// Event für zweites gefundenes Wort
-    /// </summary>
-    public GameEvent wortGefunden2;
     /// <summary>
     /// Event für richtigen Buchstaben
     /// </summary>
@@ -94,7 +91,7 @@ public class ZielWort : MonoBehaviour
         }
         //Wenn der gesammelte Buchstabe im Zielwort enthalten ist
         else
-        {            
+        {
             //Suche nach dem Buchstaben im Zielwort
             for (int i = 0; i < zielWort.Length; i++)
             {
@@ -108,17 +105,10 @@ public class ZielWort : MonoBehaviour
             }
             //Wenn keine _ mehr im gelösten Wort übrig sind
             if (!gelöstesWort.Contains('_'))
-            {                
+            {
                 //Löse ein Wort gefunden Event aus
                 wortGefunden.TriggerEvent();
-                //Wenn das erste Wort gelöst war
-                if (erstesWortgelöst)
-                {
-                    //Löse das zweite Wort gefunden Event aus
-                    wortGefunden2.TriggerEvent();
-                }
-                //Setze den erstes Wort gelöst Marker
-                erstesWortgelöst = true;
+                
             }
             else
             {
@@ -128,14 +118,10 @@ public class ZielWort : MonoBehaviour
     }
     public void ZielwortWechseln()
     {
-        
-        
-        zielWort = zielWort2;
-        //Fülle das gelöste Wort mit _
-        gelöstesWort = new string('_', zielWort.Length);
-        //Textelemente neu setzen
-        zielwortT.text = gelöstesWort;
-        vorWortT.text = vorWort2;
-        nachWortT.text = nachWort2;
+        if (zielWortT2 != null)
+        {
+            zielWortT2.SetActive(true);
+            gameObject.SetActive(false);
+        }
     }
 }

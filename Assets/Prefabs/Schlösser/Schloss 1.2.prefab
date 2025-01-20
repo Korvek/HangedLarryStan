@@ -122,7 +122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kollision: {fileID: 11400000, guid: 853da0a708cd4f74a82bc54c1d7c6202, type: 2}
-  buchstabeRichtig: {fileID: 8300000, guid: bfdef31a183a1944eb990fb03d20d474, type: 3}
+  schloss2: 1
+  wort1: 0
 --- !u!114 &812644613788310851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 1a14d56ac9c18974db397cd97012b8c4, type: 2}
+  gameEvent: {fileID: 11400000, guid: bb3b5bd4b257c3f4e94096a4bc510a85, type: 2}
   onEventTriggered:
     m_PersistentCalls:
       m_Calls:
