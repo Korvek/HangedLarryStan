@@ -2511,6 +2511,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -4.99
       objectReference: {fileID: 0}
+    - target: {fileID: 5011272116725794165, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: schloss2
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5355098395538543670, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.66
