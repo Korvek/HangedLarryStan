@@ -11441,9 +11441,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zielwort
       objectReference: {fileID: 0}
+    - target: {fileID: 2923570866102208679, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -12.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685274932223628155, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624362909327556358, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: m_text
+      value: auf Stans Kopf.
+      objectReference: {fileID: 0}
     - target: {fileID: 7920708128801385831, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8561010380821480564, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: m_text
+      value: eine kleine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
