@@ -36,10 +36,10 @@ public class Schloss : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning(anim.name);
             GetComponent<Collider2D>().enabled = false;
             //Löse Animation aus
             anim.SetTrigger("TriggerSchloss1");
+           
         }
         
     }
