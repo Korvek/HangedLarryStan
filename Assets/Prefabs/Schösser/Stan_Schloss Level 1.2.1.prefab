@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1769464939674138130}
   - component: {fileID: 5011272116725794165}
   - component: {fileID: 7161670396049540194}
+  - component: {fileID: 6972662922298179346}
   m_Layer: 0
   m_Name: Stan_Schloss Level 1.2.1
   m_TagString: Untagged
@@ -166,7 +167,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 82b22964ca036674ba158d7f73984c6b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -174,6 +175,34 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6972662922298179346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944795603165236165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: bb3b5bd4b257c3f4e94096a4bc510a85, type: 2}
+  onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5011272116725794165}
+        m_TargetAssemblyTypeName: Schloss, Assembly-CSharp
+        m_MethodName: "Schlossaufl\xF6sen"
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2537808995259419872
 GameObject:
   m_ObjectHideFlags: 0
