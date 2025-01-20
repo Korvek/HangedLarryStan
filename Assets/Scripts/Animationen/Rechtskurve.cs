@@ -34,7 +34,6 @@ public class RechtsKurve : StateMachineBehaviour
             (animator.gameObject.transform.right *
             (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y) * 1.5f);
         animator.gameObject.transform.position = position;
-        animator.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         bewegungAbgeschlossenRechts.TriggerEvent();
     }
 

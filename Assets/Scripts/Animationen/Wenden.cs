@@ -31,7 +31,6 @@ public class Wenden : StateMachineBehaviour
             (animator.gameObject.transform.up *
             (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f));
         animator.gameObject.transform.position = position;
-        animator.gameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
 
         bewegungAbgeschlossen.TriggerEvent();
     }

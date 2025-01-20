@@ -193,20 +193,7 @@ public class Stanley : MonoBehaviour
     /// </summary>
     public void AnimationBeendetRechts()
     {
-        //Vector3 position = transform.position;
-
-        ////90° Drehung
-        //transform.Rotate(0f, 0f, -90f);
-        ////Debug.Log("Position vor Bewegung: " + position);
-        ////Halbe Länge addieren
-        //position = position +
-        //    (transform.up *
-        //    (GetComponent<SpriteRenderer>().sprite.bounds.size.y) * 1.5f);
-        //position = position -
-        //    (transform.right *
-        //    (GetComponent<SpriteRenderer>().sprite.bounds.size.y) * 1.5f);
-        //transform.position = position;
-        //GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         drehenAktion.performed += Abbiegen;
     }
 
@@ -215,20 +202,7 @@ public class Stanley : MonoBehaviour
     /// </summary>
     public void AnimationBeendetLinks()
     {
-        //Vector3 position = transform.position;
-
-        ////90° Drehung
-        //transform.Rotate(0f, 0f, 90f);
-        ////Debug.Log("Position vor Bewegung: " + position);
-        ////Halbe Länge addieren
-        //position = position +
-        //    (transform.up *
-        //    (GetComponent<SpriteRenderer>().sprite.bounds.size.y) * 1.5f);
-        //position = position +
-        //    (transform.right *
-        //    (GetComponent<SpriteRenderer>().sprite.bounds.size.y) * 1.5f);
-        //transform.position = position;
-        //GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         drehenAktion.performed += Abbiegen;
     }
     /// <summary>
@@ -236,17 +210,7 @@ public class Stanley : MonoBehaviour
     /// </summary>
     public void AnimationBeendetWende()
     {
-        //Vector3 position = transform.position;
-
-        ////90° Drehung
-        //transform.Rotate(0f, 0f, 180f);
-        ////Debug.Log("Position vor Bewegung: " + position);
-        ////Halbe Länge addieren
-        //position = position +
-        //    (transform.up *
-        //    (GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f));
-        //transform.position = position;
-        //GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         drehenAktion.performed += Abbiegen;
     }
     public void onReset()
