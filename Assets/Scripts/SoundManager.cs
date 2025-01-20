@@ -94,7 +94,12 @@ public class SoundManager : MonoBehaviour
     {
         audioSources["Sprungfeder"].Play();
     }
-        
+    public void Reset()
+    {
+        Debug.Log("Res");
+        audioSources["Reset"].Play();
+    }
+
 
 
 }

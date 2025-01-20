@@ -20,7 +20,18 @@ public class Wenden : StateMachineBehaviour
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+
+        Vector3 position = animator.gameObject.transform.position;
+
+        //90° Drehung
+        animator.gameObject.transform.Rotate(0f, 0f, 180f);
+        //Debug.Log("Position vor Bewegung: " + position);
+        //Halbe Länge addieren
+        position = position +
+            (animator.gameObject.transform.up *
+            (animator.gameObject.GetComponent<SpriteRenderer>().sprite.bounds.size.y / 2f));
+        animator.gameObject.transform.position = position;
+
         bewegungAbgeschlossen.TriggerEvent();
     }
 
