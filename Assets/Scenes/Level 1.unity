@@ -3604,16 +3604,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4014104195207852524, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
       propertyPath: maxZeit
-      value: 70
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4014104195207852524, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
       propertyPath: bonusZeit
       value: 60
       objectReference: {fileID: 0}
-    - target: {fileID: 4014104195207852524, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
-      propertyPath: zeitAbgelaufenEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: 9ebd0916ab4be484ba72532a26d47465, type: 2}
     - target: {fileID: 5782556499891086164, guid: bb18686a262b3bb4b98bdca5f7b76d8e, type: 3}
       propertyPath: m_Name
       value: Timer
@@ -3806,6 +3802,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 89550098}
     m_Modifications:
+    - target: {fileID: 164222974694309961, guid: 228bf797707237a4ea720f2b541566f8, type: 3}
+      propertyPath: resetGame
+      value: 
+      objectReference: {fileID: 11400000, guid: 9ebd0916ab4be484ba72532a26d47465, type: 2}
+    - target: {fileID: 385152854338609803, guid: 228bf797707237a4ea720f2b541566f8, type: 3}
+      propertyPath: gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 1a14d56ac9c18974db397cd97012b8c4, type: 2}
     - target: {fileID: 2106667632708955947, guid: 228bf797707237a4ea720f2b541566f8, type: 3}
       propertyPath: m_Name
       value: Wurm aus Szene
@@ -11444,10 +11448,6 @@ PrefabInstance:
     - target: {fileID: 7624362909327556358, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_text
       value: auf Stans Kopf.
-      objectReference: {fileID: 0}
-    - target: {fileID: 7888553505930938790, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7920708128801385831, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_IsActive
