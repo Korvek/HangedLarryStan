@@ -16,7 +16,6 @@ public class Stanley : MonoBehaviour
     /// Set von Input Aktionen
     /// </summary>
     public InputActionAsset actions;
-
     /// <summary>
     /// Event, das ausgelöst wird wenn ein Buchstabe gesammelt wird
     /// </summary>
@@ -213,7 +212,7 @@ public class Stanley : MonoBehaviour
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         drehenAktion.performed += Abbiegen;
     }
-    public void onReset()
+    public void OnReset()
     {
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         drehenAktion.performed -= Abbiegen;
@@ -222,6 +221,16 @@ public class Stanley : MonoBehaviour
         sammelAktion.performed -= Sammeln;
         stopAktion.canceled -= StarteBewegung;
         drehenAktion.Disable();
+    }
+    public void OnKollision()
+    {
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        drehenAktion.performed -= Abbiegen;
+        startAktion.performed -= StarteBewegung;
+        stopAktion.performed -= StoppeBewegung;
+        sammelAktion.performed -= Sammeln;
+        stopAktion.canceled -= StarteBewegung;
+        anim.SetTrigger("TriggerCollision");
     }
     public void Loch()
     {
