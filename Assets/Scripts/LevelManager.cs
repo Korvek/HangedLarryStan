@@ -46,7 +46,7 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void EndGame()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
     /// <summary>
