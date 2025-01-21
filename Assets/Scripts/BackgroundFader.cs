@@ -38,6 +38,7 @@ public class BackgroundFader : MonoBehaviour
 
     public void Init()
     {
+        actions.FindActionMap("Player").Disable();
         initialImageColor = new List<Color>(); 
         initialSpriteColor = new List<Color>();
         //Finde alle Spriterenderer des Spielfelds
