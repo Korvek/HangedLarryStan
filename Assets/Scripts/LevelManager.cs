@@ -126,28 +126,30 @@ public class LevelManager : MonoBehaviour
     }
     IEnumerator LoadAsyncReset(int buildIndex)
     {
-        UnityEngine.AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(buildIndex);
-        asyncLoad.allowSceneActivation = false;
+        //UnityEngine.AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(buildIndex);
+        //asyncLoad.allowSceneActivation = false;
         Time.timeScale = 1.0f;
         yield return new WaitForSeconds(4.33f);
-        asyncLoad.allowSceneActivation = true;
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
+        SceneManager.LoadScene(buildIndex);
+        //asyncLoad.allowSceneActivation = true;
+        //while (!asyncLoad.isDone)
+        //{            
+        //    yield return null;
+        //}
     }
 
     IEnumerator LoadAsyncNextLevel(int buildIndex)
     {
-        UnityEngine.AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(buildIndex);
-        asyncLoad.allowSceneActivation = false;
+        //UnityEngine.AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(buildIndex);
+        //asyncLoad.allowSceneActivation = false;
         Time.timeScale = 1.0f;
         yield return new WaitForSeconds(2f);
-        asyncLoad.allowSceneActivation = true;
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
+        SceneManager.LoadScene(buildIndex);
+        //asyncLoad.allowSceneActivation = true;
+        //while (!asyncLoad.isDone)
+        //{
+        //    yield return null;
+        //}
     }
 
     IEnumerator LochBewegung(Vector3 newPos, Richtung newRichtung)
