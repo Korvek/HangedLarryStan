@@ -128,8 +128,9 @@ public class LevelManager : MonoBehaviour
     {
         //UnityEngine.AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(buildIndex);
         //asyncLoad.allowSceneActivation = false;
-        Time.timeScale = 1.0f;
+        
         yield return new WaitForSeconds(4.33f);
+        Time.timeScale = 0.0f;
         SceneManager.LoadScene(buildIndex);
         //asyncLoad.allowSceneActivation = true;
         //while (!asyncLoad.isDone)
@@ -142,8 +143,9 @@ public class LevelManager : MonoBehaviour
     {
         //UnityEngine.AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(buildIndex);
         //asyncLoad.allowSceneActivation = false;
-        Time.timeScale = 1.0f;
+        
         yield return new WaitForSeconds(2f);
+        Time.timeScale = 0.0f;
         SceneManager.LoadScene(buildIndex);
         //asyncLoad.allowSceneActivation = true;
         //while (!asyncLoad.isDone)
