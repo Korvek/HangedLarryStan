@@ -96,10 +96,13 @@ public class SoundManager : MonoBehaviour
     }
     public void Reset()
     {
-        Debug.Log("Res");
         audioSources["Reset"].Play();
     }
 
+    public void PlayKapitel()
+    {
+        audioSources["Kapitel"].Play();
+    }
 
 
 }

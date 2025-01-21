@@ -29,7 +29,7 @@ public class Stanley : MonoBehaviour
     /// Kollisions Event
     /// </summary>
     public GameEvent kollisionEvent;
-
+    public GameObject LochAnimation;
     //Körperkomponente
     private Rigidbody2D rigidbody2d;
     //Sammelbares Objekt, das berührt wird
@@ -215,7 +215,6 @@ public class Stanley : MonoBehaviour
     }
     public void onReset()
     {
-        Debug.Log("Deactivate");
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         drehenAktion.performed -= Abbiegen;
         startAktion.performed -= StarteBewegung;
@@ -223,6 +222,13 @@ public class Stanley : MonoBehaviour
         sammelAktion.performed -= Sammeln;
         stopAktion.canceled -= StarteBewegung;
         drehenAktion.Disable();
+    }
+    public void Loch()
+    {
+        LochAnimation.SetActive(true);
+        rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
+        GetComponent<SpriteRenderer>().forceRenderingOff = true;
+        
     }
         /// <summary>
         /// Sammelt das momentan berührte Objekt ein

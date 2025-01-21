@@ -34,11 +34,13 @@ public class LevelManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex >= 4)
         {
-            SceneManager.LoadScene(0);
+            StartCoroutine(LoadAsyncNextLevel(0));
+            //SceneManager.LoadScene(0);
         }
         else
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            StartCoroutine(LoadAsyncNextLevel(SceneManager.GetActiveScene().buildIndex + 1));
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
     /// <summary>
@@ -54,7 +56,7 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void ResetGame()
     {
-        StartCoroutine(LoadAsync(SceneManager.GetActiveScene().buildIndex));
+        StartCoroutine(LoadAsyncReset(SceneManager.GetActiveScene().buildIndex));
         Renderer.Destroy(stan);
     }
     /// <summary>
@@ -139,12 +141,25 @@ public class LevelManager : MonoBehaviour
         zeitBonus.TriggerEvent();
 
     }
-    IEnumerator LoadAsync(int buildIndex)
+    IEnumerator LoadAsyncReset(int buildIndex)
     {
         UnityEngine.AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(buildIndex);
         asyncLoad.allowSceneActivation = false;
         Time.timeScale = 1.0f;
         yield return new WaitForSeconds(4.33f);
+        asyncLoad.allowSceneActivation = true;
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
+
+    IEnumerator LoadAsyncNextLevel(int buildIndex)
+    {
+        UnityEngine.AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(buildIndex);
+        asyncLoad.allowSceneActivation = false;
+        Time.timeScale = 1.0f;
+        yield return new WaitForSeconds(2f);
         asyncLoad.allowSceneActivation = true;
         while (!asyncLoad.isDone)
         {
