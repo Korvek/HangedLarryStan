@@ -80,10 +80,12 @@ public class Stanley : MonoBehaviour
         {
             rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
             anim.SetTrigger("TriggerStop");
+            anim.SetBool("BoolStop", true);
         }        
         if (context.canceled)
         {
             anim.SetTrigger("TriggerWeiter");
+            anim.SetBool("BoolStop", false);
             rigidbody2d.constraints = RigidbodyConstraints2D.None;
         }
     }
@@ -134,6 +136,7 @@ public class Stanley : MonoBehaviour
         if (context.canceled)
         {
             anim.SetTrigger("TriggerWeiter");
+            anim.SetBool("BoolStop",false);
         }
         Time.timeScale = 1;
         if (rigidbody2d != null)
