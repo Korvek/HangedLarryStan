@@ -72,34 +72,8 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void SoftReset()
     {
-        Quaternion rot = Quaternion.identity;
-        Renderer.Destroy(stan);
-        if (!zweiteSeiteerreicht)
-        {
-            stan = Renderer.Instantiate(stanley, spielfeld.transform);
-            stan.SetActive(true);
-        }
-        else if (zweiteSeiteerreicht)
-        {
-            switch (resetRichtung)
-            {
-                case Richtung.Oben:
-                    rot = Quaternion.Euler(0f, 0f, 0f);
-                    break;
-                case Richtung.Unten:
-                    rot = Quaternion.Euler(0f, 0f, 180f);
-                    break;
-                case Richtung.Rechts:
-                    rot = Quaternion.Euler(0f, 0f, -90f);
-                    break;
-                case Richtung.Links:
-                    rot = Quaternion.Euler(0f, 0f, 90f);
-                    break;
-            }
-            stan = Renderer.Instantiate(stanley, resetPunkt.transform.position, rot, spielfeld.transform);
-            stan.GetComponent<Stanley>().richtung = resetRichtung;
-            stan.SetActive(true);
-        }
+        StartCoroutine(Kollision());
+        
     }
     /// <summary>
     /// Versetze den Spieler
@@ -201,5 +175,37 @@ public class LevelManager : MonoBehaviour
         stan.GetComponent<Stanley>().richtung = newRichtung;
         stan.SetActive(true);
 
+    }
+    IEnumerator Kollision()
+    { 
+        yield return new WaitForSeconds(1.5f);
+        Quaternion rot = Quaternion.identity;
+        Renderer.Destroy(stan);
+        if (!zweiteSeiteerreicht)
+        {
+            stan = Renderer.Instantiate(stanley, spielfeld.transform);
+            stan.SetActive(true);
+        }
+        else if (zweiteSeiteerreicht)
+        {
+            switch (resetRichtung)
+            {
+                case Richtung.Oben:
+                    rot = Quaternion.Euler(0f, 0f, 0f);
+                    break;
+                case Richtung.Unten:
+                    rot = Quaternion.Euler(0f, 0f, 180f);
+                    break;
+                case Richtung.Rechts:
+                    rot = Quaternion.Euler(0f, 0f, -90f);
+                    break;
+                case Richtung.Links:
+                    rot = Quaternion.Euler(0f, 0f, 90f);
+                    break;
+            }
+            stan = Renderer.Instantiate(stanley, resetPunkt.transform.position, rot, spielfeld.transform);
+            stan.GetComponent<Stanley>().richtung = resetRichtung;
+            stan.SetActive(true);
+        }
     }
 }
