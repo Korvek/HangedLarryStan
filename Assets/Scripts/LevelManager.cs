@@ -131,6 +131,15 @@ public class LevelManager : MonoBehaviour
         stan.SetActive(true);
     }
     /// <summary>
+    /// Versetze den Spieler
+    /// </summary>
+    /// <param name="newPos">Neue Position</param>
+    /// <param name="newRichtung">Neue Richtung</param>
+    public void Tunneln(Vector3 newPos, Richtung newRichtung)
+    {
+        StartCoroutine(LochBewegung(newPos, newRichtung));
+    }
+    /// <summary>
     /// Übergang zur nächsten Seite
     /// </summary>
     public void Seitenwechsel()
@@ -165,5 +174,32 @@ public class LevelManager : MonoBehaviour
         {
             yield return null;
         }
+    }
+
+    IEnumerator LochBewegung(Vector3 newPos, Richtung newRichtung)
+    {
+        yield return new WaitForSeconds(2);
+        Renderer.Destroy(stan); //Lösche alte Spielerfigur
+        Quaternion rot = Quaternion.identity;
+        switch (newRichtung)
+        {
+            case Richtung.Oben:
+                rot = Quaternion.Euler(0f, 0f, 0f);
+                break;
+            case Richtung.Unten:
+                rot = Quaternion.Euler(0f, 0f, 180f);
+                break;
+            case Richtung.Rechts:
+                rot = Quaternion.Euler(0f, 0f, -90f);
+                break;
+            case Richtung.Links:
+                rot = Quaternion.Euler(0f, 0f, 90f);
+                break;
+        }
+        //Erzeuge neue Spielerfigur
+        stan = Renderer.Instantiate(stanley, newPos, rot, spielfeld.transform);
+        stan.GetComponent<Stanley>().richtung = newRichtung;
+        stan.SetActive(true);
+
     }
 }

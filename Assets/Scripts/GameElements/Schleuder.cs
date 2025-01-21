@@ -12,11 +12,14 @@ public class Schleuder : MonoBehaviour
     /// Ausgelöstes Event
     /// </summary>
     public GameEventPosition sprung;
+    public GameEventPosition tunneln;
 
     /// <summary>
     /// Richtung des Spielers nachdem er geschleudert wurde
     /// </summary>
     public Richtung richtung;
+
+    public bool istLoch=false;
     //Animator Komponente
     private Animator anim;
 
@@ -30,10 +33,17 @@ public class Schleuder : MonoBehaviour
         //Wenn der Spieler die Schleuder berührt
         if (collision.gameObject.CompareTag("Player"))
         {
-            //Starte Animation
-            anim.SetTrigger("TriggerSprungfeder");
-            //Setz ihn an den Zielpunkt
-            sprung.TriggerEvent(zielpunkt.transform.position,richtung);
+            if (!istLoch)
+            {
+                //Starte Animation
+                anim.SetTrigger("TriggerSprungfeder");
+                //Setz ihn an den Zielpunkt
+                sprung.TriggerEvent(zielpunkt.transform.position, richtung);
+            }
+            else
+            {
+                tunneln.TriggerEvent(zielpunkt.transform.position, richtung);
+            }
         }
     }
 }

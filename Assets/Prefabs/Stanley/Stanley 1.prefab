@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 5946004086759247795}
   - component: {fileID: 4757718464578763847}
   - component: {fileID: 7299025528392377004}
+  - component: {fileID: 8619248729304256169}
   m_Layer: 0
   m_Name: Stanley 1
   m_TagString: Player
@@ -507,6 +508,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: d67da6ed9c24751498c4179fd199dae4, type: 2}
   onEventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1842115668014837823}
+        m_TargetAssemblyTypeName: Stanley, Assembly-CSharp
+        m_MethodName: Loch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8619248729304256169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3973182761383435850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2575343826e1a8e4da3770a1499f9ab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posEvent: {fileID: 11400000, guid: 3598e53d1529ddc47a304a0c55100b23, type: 2}
+  onEventTriggeredPos:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1842115668014837823}
