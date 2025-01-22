@@ -1566,10 +1566,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stanley Neu
       objectReference: {fileID: 0}
-    - target: {fileID: 432389292689305659, guid: 963d47c38f059d349830ec65dd666b5b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5165062072786444134, guid: 963d47c38f059d349830ec65dd666b5b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.3
