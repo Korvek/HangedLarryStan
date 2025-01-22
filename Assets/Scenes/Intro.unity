@@ -3010,6 +3010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionAsset: {fileID: -944628639613478452, guid: b44b58f16488fda448b3d0d642175356, type: 3}
+  inputActions: {fileID: -944628639613478452, guid: b44b58f16488fda448b3d0d642175356, type: 3}
 --- !u!4 &1736328931
 Transform:
   m_ObjectHideFlags: 0
