@@ -22,7 +22,6 @@ public class Gegner : MonoBehaviour
         //Wenn mit dem Spieler kollidiert wird
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("AAAAA");
             kollisionEvent.TriggerEvent();
         }
     }
@@ -42,6 +41,7 @@ public class Gegner : MonoBehaviour
             Vector2 tmpStart = new Vector2(startpunkt.x, startpunkt.y);
             startpunkt = zielpunkt.transform.position;
             zielpunkt.transform.position = tmpStart;
+            transform.Rotate(new Vector3(0f, 0f, 180f));
         }
     }
 }
