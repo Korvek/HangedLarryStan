@@ -18,7 +18,7 @@ public class Gegner : MonoBehaviour
     private Vector2 startpunkt;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        Debug.Log("A");
         //Wenn mit dem Spieler kollidiert wird
         if (collision.CompareTag("Player"))
         {
