@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
@@ -20,16 +22,31 @@ public class LevelManager : MonoBehaviour
     public GameEvent stanEintritt;
     [SerializeField] BackgroundFader backgroundFader;
     private GameObject stan;
+    public InputActionAsset inputActions;
+    private InputAction endGame;
 
     private bool zweiteSeiteerreicht=false;
     private void Start()
     {
+        endGame = inputActions.FindActionMap("Menu").FindAction("EscAktion");
+        endGame.performed += EndGame;
+        endGame.Enable();
         Time.timeScale = 1f;
         InitGame();        
         backgroundFader.Init();
         backgroundFader.enabled = true;
         seite1.TriggerEvent();
     }
+    /// <summary>
+    /// Beende das Spiel
+    /// </summary>
+    private void EndGame(InputAction.CallbackContext context)
+    {
+        Debug.Log("Ende");
+        //UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
+    }
+
     /// <summary>
     /// Lade das nächste Level
     /// </summary>
@@ -45,14 +62,6 @@ public class LevelManager : MonoBehaviour
             StartCoroutine(LoadAsyncNextLevel(SceneManager.GetActiveScene().buildIndex + 1));
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
-    }
-    /// <summary>
-    /// Beende das Spiel
-    /// </summary>
-    public void EndGame()
-    {
-        //UnityEditor.EditorApplication.isPlaying = false;
-        Application.Quit();
     }
     /// <summary>
     /// Starte das aktuelle Level neu

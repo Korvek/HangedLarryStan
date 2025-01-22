@@ -5359,6 +5359,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1121839849}
     - target: {fileID: 1769267598626589567, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
+      propertyPath: inputActions
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: b44b58f16488fda448b3d0d642175356, type: 3}
+    - target: {fileID: 1769267598626589567, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
       propertyPath: resetRichtung
       value: 1
       objectReference: {fileID: 0}
