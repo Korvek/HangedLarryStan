@@ -48,7 +48,8 @@ public class Stanley : MonoBehaviour
 
     private void Awake()
     {
-        
+        GetComponent<SpriteRenderer>().enabled = false;
+        StanleyEintritt.SetActive(true);
         //Weise Aktionen den Tasten zu
         drehenAktion = actions.FindActionMap("Player").FindAction("DrehenAktion");
         sammelAktion = actions.FindActionMap("Player").FindAction("SammelAktion");
@@ -241,17 +242,6 @@ public class Stanley : MonoBehaviour
         rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
         GetComponent<SpriteRenderer>().forceRenderingOff = true;
         
-    }
-    public void EintrittStart()
-    {
-        Debug.Log("Q");
-        GetComponent<SpriteRenderer>().enabled = false;
-        StanleyEintritt.SetActive(true);
-    }
-    public void EintrittEnde()
-    {
-        GetComponent<SpriteRenderer>().enabled = true;
-        StanleyEintritt.SetActive(false);
     }
         /// <summary>
         /// Sammelt das momentan berührte Objekt ein

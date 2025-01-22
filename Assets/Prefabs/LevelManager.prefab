@@ -62,7 +62,6 @@ MonoBehaviour:
   uI: {fileID: 0}
   actions: {fileID: -944628639613478452, guid: b44b58f16488fda448b3d0d642175356, type: 3}
   levelEnter: {fileID: 11400000, guid: 4aa193d9727e04a44879c3a56a15f675, type: 2}
-  stanleyEnter: {fileID: 11400000, guid: 6e2a07369118bd74889ff8bf9a67155d, type: 2}
   startPopUp: {fileID: 0}
 --- !u!114 &1769267598626589567
 MonoBehaviour:
@@ -81,7 +80,6 @@ MonoBehaviour:
   resetPunkt: {fileID: 0}
   zielwort1: {fileID: 0}
   zielwort2: {fileID: 0}
-  video: {fileID: 0}
   resetRichtung: 0
   seite1: {fileID: 11400000, guid: 0f7e51daecbcf7741a299cae02c31aea, type: 2}
   seite2: {fileID: 11400000, guid: b2fb7899358ab684fbd2c5d3b8d0ef92, type: 2}
