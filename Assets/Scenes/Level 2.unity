@@ -12344,10 +12344,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 89550098}
     m_Modifications:
-    - target: {fileID: 164222974694309961, guid: 228bf797707237a4ea720f2b541566f8, type: 3}
-      propertyPath: resetGame
-      value: 
-      objectReference: {fileID: 11400000, guid: d67da6ed9c24751498c4179fd199dae4, type: 2}
     - target: {fileID: 2106667632708955947, guid: 228bf797707237a4ea720f2b541566f8, type: 3}
       propertyPath: m_Name
       value: Wurm aus Szene
@@ -12370,11 +12366,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6840340881640952195, guid: 228bf797707237a4ea720f2b541566f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -177.49998
+      value: 176
       objectReference: {fileID: 0}
     - target: {fileID: 6840340881640952195, guid: 228bf797707237a4ea720f2b541566f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 6840340881640952195, guid: 228bf797707237a4ea720f2b541566f8, type: 3}
       propertyPath: m_LocalPosition.z
