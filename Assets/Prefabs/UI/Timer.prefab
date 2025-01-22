@@ -249,7 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxZeit: 120
   abgelaufeneZeit: 0
-  strafZeit: 5
+  strafZeit: 10
   bonusZeit: 0
   actions: {fileID: -944628639613478452, guid: b44b58f16488fda448b3d0d642175356, type: 3}
   zeitAbgelaufenEvent: {fileID: 11400000, guid: 9ebd0916ab4be484ba72532a26d47465, type: 2}

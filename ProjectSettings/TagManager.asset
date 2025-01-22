@@ -14,6 +14,7 @@ TagManager:
   - PfeilDrehendSteuerung
   - PfeilAbbiegen
   - Stoplinie
+  - Musik
   layers:
   - Default
   - TransparentFX
