@@ -34,6 +34,7 @@ public class BackgroundFader : MonoBehaviour
     private InputAction tutorialPopUpAktion;
 
     public GameEvent levelEnter;
+    public GameEvent stanleyEnter;
     public GameObject startPopUp;
 
     public void Init()
@@ -127,6 +128,7 @@ public class BackgroundFader : MonoBehaviour
             }
             yield return new WaitForEndOfFrame(); // Warte bis zum nächsten Frame
         }
+        stanleyEnter.TriggerEvent();
         actions.FindActionMap("Player").Enable();
         if (startPopUp != null)
             startPopUp.SetActive(true);
