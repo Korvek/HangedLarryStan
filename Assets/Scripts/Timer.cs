@@ -99,10 +99,6 @@ public class Timer : MonoBehaviour
     {
         abgelaufeneZeit -= bonusZeit;
     }
-    public void Zeitbonus(float bonus)
-    {
-        abgelaufeneZeit -= bonus;
-    }
 
     private void OnEnable()
     {

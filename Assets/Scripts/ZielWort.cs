@@ -39,7 +39,6 @@ public class ZielWort : MonoBehaviour
     /// Event für Zeitbonus
     /// </summary>
     public GameEvent zeitBonus;
-    public GameEventFloat zeitBonusZahl;
     /// <summary>
     /// Event für Zeitabzug
     /// </summary>
@@ -56,7 +55,7 @@ public class ZielWort : MonoBehaviour
     /// Event für falschen Buchstaben
     /// </summary>
     public GameEvent buchstabeFalsch;
-    public float bonusZeit;
+
     //String zum speichern der Lösung
     private string gelöstesWort;
     /// <summary>
@@ -106,13 +105,11 @@ public class ZielWort : MonoBehaviour
             {
                 //Löse ein Wort gefunden Event aus
                 wortGefunden.TriggerEvent();
-                zeitBonusZahl.TriggerEvent(bonusZeit);
-
+                
             }
             else
             {
                 buchstabeRichtig.TriggerEvent();
-                zeitBonusZahl.TriggerEvent(bonusZeit);
             }
         }
     }

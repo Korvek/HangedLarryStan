@@ -24,14 +24,7 @@ public class Intro : MonoBehaviour
     }
     private void StarteSpiel(InputAction.CallbackContext context)
     {
-        if (SceneManager.GetActiveScene().buildIndex >= 5)
-        {
-            SceneManager.LoadScene(0);
-        }
-        else
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+        SceneManager.LoadScene(1);
     }
 
     // Update is called once per frame
