@@ -29,6 +29,7 @@ public class Stanley : MonoBehaviour
     /// </summary>
     public GameEvent kollisionEvent;
     public GameObject LochAnimation;
+    public GameObject StanleyEintritt;
     //Körperkomponente
     private Rigidbody2D rigidbody2d;
     //Sammelbares Objekt, das berührt wird
@@ -47,6 +48,8 @@ public class Stanley : MonoBehaviour
 
     private void Awake()
     {
+        GetComponent<SpriteRenderer>().enabled = false;
+        StanleyEintritt.SetActive(true);
         //Weise Aktionen den Tasten zu
         drehenAktion = actions.FindActionMap("Player").FindAction("DrehenAktion");
         sammelAktion = actions.FindActionMap("Player").FindAction("SammelAktion");
