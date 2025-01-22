@@ -68,6 +68,7 @@ public class LevelManager : MonoBehaviour
     public void InitGame()
     {
         stan = Renderer.Instantiate(stanley,spielfeld.transform);
+        stan.GetComponent<SpriteRenderer>().enabled = false;
         stan.SetActive(true);
     }
     /// <summary>
@@ -77,6 +78,10 @@ public class LevelManager : MonoBehaviour
     {
         StartCoroutine(Kollision());
         
+    }
+    public void StanleyEnter()
+    {
+        stan.GetComponent<SpriteRenderer>().enabled = true;
     }
     /// <summary>
     /// Versetze den Spieler
@@ -136,8 +141,9 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator LoadAsyncNextLevel(int buildIndex)
     {
-        yield return new WaitForSeconds(2f);
-        Time.timeScale = 0.0f;
+        yield return new WaitForSeconds(1.2f);
+        video.SetActive(true);
+        yield return new WaitForSeconds(1.2f);
         SceneManager.LoadScene(buildIndex);
     }
 
