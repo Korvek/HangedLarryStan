@@ -4425,50 +4425,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4021467925557810013, guid: b631f3d6bad1b924c823c8016120fe23, type: 3}
   m_PrefabInstance: {fileID: 531340160}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &537147176 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1057384797920025157, guid: 0bfc091184fbd36439202b89f5fabbab, type: 3}
-  m_PrefabInstance: {fileID: 1865988772}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &537147187 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 343048213367024150, guid: 0bfc091184fbd36439202b89f5fabbab, type: 3}
-  m_PrefabInstance: {fileID: 1865988772}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 537147176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d1acf7f940f86949b431d72ca151f59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &537147189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 537147176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 853da0a708cd4f74a82bc54c1d7c6202, type: 2}
-  onEventTriggered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 537147187}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: PlayMauerKollision
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!4 &542845124 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1543245145422070800, guid: c11d6bb4c7a34d842bdc216c9825d958, type: 3}
@@ -15665,10 +15621,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1057384797920025157, guid: 0bfc091184fbd36439202b89f5fabbab, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 537147189}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bfc091184fbd36439202b89f5fabbab, type: 3}
 --- !u!1 &1881455903
 GameObject:

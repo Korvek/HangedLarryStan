@@ -22,6 +22,7 @@ public class LevelManager : MonoBehaviour
     private bool zweiteSeiteerreicht=false;
     private void Start()
     {
+        Time.timeScale = 1f;
         InitGame();        
         backgroundFader.Init();
         backgroundFader.enabled = true;
