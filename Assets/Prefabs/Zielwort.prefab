@@ -598,12 +598,10 @@ MonoBehaviour:
   vorWortT: {fileID: 4481611892304040910}
   nachWortT: {fileID: 504291884036506121}
   zeitBonus: {fileID: 11400000, guid: 556e781260b0bd8499e1e313128d659e, type: 2}
-  zeitBonusZahl: {fileID: 11400000, guid: 7cee1abd1ef99284cb104288ad4d4f86, type: 2}
   zeitAbzug: {fileID: 11400000, guid: a35455193471adf40af6fa5d17aa06f6, type: 2}
   wortGefunden: {fileID: 11400000, guid: bb3b5bd4b257c3f4e94096a4bc510a85, type: 2}
   buchstabeRichtig: {fileID: 11400000, guid: ca9ecd685ce8e184a9ead2e097125e9c, type: 2}
   buchstabeFalsch: {fileID: 11400000, guid: 8f8319c2f4d3e4b4d8430026f4e959c5, type: 2}
-  bonusZeit: 5
 --- !u!114 &4272702443787396639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -925,12 +923,10 @@ MonoBehaviour:
   vorWortT: {fileID: 8561010380821480564}
   nachWortT: {fileID: 7624362909327556358}
   zeitBonus: {fileID: 11400000, guid: 556e781260b0bd8499e1e313128d659e, type: 2}
-  zeitBonusZahl: {fileID: 11400000, guid: 7cee1abd1ef99284cb104288ad4d4f86, type: 2}
   zeitAbzug: {fileID: 11400000, guid: a35455193471adf40af6fa5d17aa06f6, type: 2}
   wortGefunden: {fileID: 11400000, guid: bb3b5bd4b257c3f4e94096a4bc510a85, type: 2}
   buchstabeRichtig: {fileID: 11400000, guid: ca9ecd685ce8e184a9ead2e097125e9c, type: 2}
   buchstabeFalsch: {fileID: 11400000, guid: 8f8319c2f4d3e4b4d8430026f4e959c5, type: 2}
-  bonusZeit: 5
 --- !u!114 &3251388608793250954
 MonoBehaviour:
   m_ObjectHideFlags: 0
