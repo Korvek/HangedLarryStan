@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     public GameObject resetPunkt;
     public GameObject zielwort1;
     public GameObject zielwort2;
+    public GameObject video;
     public Richtung resetRichtung;
     public GameEvent seite1;
     public GameEvent seite2;

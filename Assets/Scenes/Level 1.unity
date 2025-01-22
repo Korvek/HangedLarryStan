@@ -11719,6 +11719,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Bl\xE4ttern"
       objectReference: {fileID: 0}
+    - target: {fileID: 1985675415602549131, guid: 5656550953a6d2d4fb4bb4aaad89739e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5601570798351772018, guid: 5656550953a6d2d4fb4bb4aaad89739e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
