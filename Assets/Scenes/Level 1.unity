@@ -11797,6 +11797,10 @@ PrefabInstance:
       propertyPath: m_text
       value: auf Stans Kopf.
       objectReference: {fileID: 0}
+    - target: {fileID: 7763941415484727744, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
+      propertyPath: vorWort
+      value: eine kleine
+      objectReference: {fileID: 0}
     - target: {fileID: 7920708128801385831, guid: b99e5c32a5ce943488d3b6ba5d1aade2, type: 3}
       propertyPath: m_IsActive
       value: 0
