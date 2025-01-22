@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 6884839094063218706}
   - component: {fileID: 8066140980565838725}
   - component: {fileID: 8208271569269684918}
-  - component: {fileID: 4644794651396899935}
   m_Layer: 5
   m_Name: LevelManager
   m_TagString: Untagged
@@ -276,34 +275,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: Tunneln
         m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &4644794651396899935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5946303490111997158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe5701442620e04882b3a75def312b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 6e2a07369118bd74889ff8bf9a67155d, type: 2}
-  onEventTriggered:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1769267598626589567}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: StanleyEnter
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

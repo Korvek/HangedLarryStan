@@ -67,12 +67,7 @@ public class LevelManager : MonoBehaviour
     public void InitGame()
     {
         stan = Renderer.Instantiate(stanley,spielfeld.transform);
-        stan.GetComponent<SpriteRenderer>().enabled = false;
         stan.SetActive(true);
-    }
-    public void StanleyEnter()
-    {
-        stan.GetComponent<SpriteRenderer>().enabled = true;
     }
     /// <summary>
     /// Reaktion auf Kollision
