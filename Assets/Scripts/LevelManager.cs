@@ -135,9 +135,7 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator LoadAsyncNextLevel(int buildIndex)
     {
-        yield return new WaitForSeconds(1.2f);
-        video.SetActive(true);
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(2f);
         Time.timeScale = 0.0f;
         SceneManager.LoadScene(buildIndex);
     }
