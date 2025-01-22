@@ -4058,6 +4058,10 @@ PrefabInstance:
       propertyPath: backgroundImage
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5500090589511345916, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5946303490111997158, guid: 7f0cb776d02f6c146a23db83fb6a584d, type: 3}
       propertyPath: m_Name
       value: LevelManager
@@ -12340,6 +12344,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 89550098}
     m_Modifications:
+    - target: {fileID: 164222974694309961, guid: 228bf797707237a4ea720f2b541566f8, type: 3}
+      propertyPath: resetGame
+      value: 
+      objectReference: {fileID: 11400000, guid: d67da6ed9c24751498c4179fd199dae4, type: 2}
     - target: {fileID: 2106667632708955947, guid: 228bf797707237a4ea720f2b541566f8, type: 3}
       propertyPath: m_Name
       value: Wurm aus Szene
@@ -12362,11 +12370,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6840340881640952195, guid: 228bf797707237a4ea720f2b541566f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 176.17
+      value: -177.49998
       objectReference: {fileID: 0}
     - target: {fileID: 6840340881640952195, guid: 228bf797707237a4ea720f2b541566f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 47.6
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 6840340881640952195, guid: 228bf797707237a4ea720f2b541566f8, type: 3}
       propertyPath: m_LocalPosition.z
