@@ -16,7 +16,6 @@ public class Stanley : MonoBehaviour
     /// Set von Input Aktionen
     /// </summary>
     public InputActionAsset actions;
-
     /// <summary>
     /// Event, das ausgelöst wird wenn ein Buchstabe gesammelt wird
     /// </summary>
@@ -29,7 +28,7 @@ public class Stanley : MonoBehaviour
     /// Kollisions Event
     /// </summary>
     public GameEvent kollisionEvent;
-
+    public GameObject LochAnimation;
     //Körperkomponente
     private Rigidbody2D rigidbody2d;
     //Sammelbares Objekt, das berührt wird
@@ -80,11 +79,11 @@ public class Stanley : MonoBehaviour
         if(context.performed)
         {
             rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
-            anim.SetTrigger("TriggerStop");
+            anim.SetBool("BoolStop", true);
         }        
         if (context.canceled)
         {
-            anim.SetTrigger("TriggerWeiter");
+            anim.SetBool("BoolStop", false);
             rigidbody2d.constraints = RigidbodyConstraints2D.None;
         }
     }
@@ -135,6 +134,7 @@ public class Stanley : MonoBehaviour
         if (context.canceled)
         {
             anim.SetTrigger("TriggerWeiter");
+            anim.SetBool("BoolStop",false);
         }
         Time.timeScale = 1;
         if (rigidbody2d != null)
@@ -213,9 +213,8 @@ public class Stanley : MonoBehaviour
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         drehenAktion.performed += Abbiegen;
     }
-    public void onReset()
+    public void OnReset()
     {
-        Debug.Log("Deactivate");
         GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         drehenAktion.performed -= Abbiegen;
         startAktion.performed -= StarteBewegung;
@@ -223,6 +222,23 @@ public class Stanley : MonoBehaviour
         sammelAktion.performed -= Sammeln;
         stopAktion.canceled -= StarteBewegung;
         drehenAktion.Disable();
+    }
+    public void OnKollision()
+    {
+        GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        drehenAktion.performed -= Abbiegen;
+        startAktion.performed -= StarteBewegung;
+        stopAktion.performed -= StoppeBewegung;
+        sammelAktion.performed -= Sammeln;
+        stopAktion.canceled -= StarteBewegung;
+        anim.SetTrigger("TriggerCollision");
+    }
+    public void Loch()
+    {
+        LochAnimation.SetActive(true);
+        rigidbody2d.constraints = RigidbodyConstraints2D.FreezePosition;
+        GetComponent<SpriteRenderer>().forceRenderingOff = true;
+        
     }
         /// <summary>
         /// Sammelt das momentan berührte Objekt ein

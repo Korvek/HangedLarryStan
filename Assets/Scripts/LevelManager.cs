@@ -34,11 +34,13 @@ public class LevelManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex >= 4)
         {
-            SceneManager.LoadScene(0);
+            StartCoroutine(LoadAsyncNextLevel(0));
+            //SceneManager.LoadScene(0);
         }
         else
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            StartCoroutine(LoadAsyncNextLevel(SceneManager.GetActiveScene().buildIndex + 1));
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
     /// <summary>
@@ -54,7 +56,7 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void ResetGame()
     {
-        StartCoroutine(LoadAsync(SceneManager.GetActiveScene().buildIndex));
+        StartCoroutine(LoadAsyncReset(SceneManager.GetActiveScene().buildIndex));
         Renderer.Destroy(stan);
     }
     /// <summary>
@@ -70,34 +72,8 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void SoftReset()
     {
-        Quaternion rot = Quaternion.identity;
-        Renderer.Destroy(stan);
-        if (!zweiteSeiteerreicht)
-        {
-            stan = Renderer.Instantiate(stanley, spielfeld.transform);
-            stan.SetActive(true);
-        }
-        else if (zweiteSeiteerreicht)
-        {
-            switch (resetRichtung)
-            {
-                case Richtung.Oben:
-                    rot = Quaternion.Euler(0f, 0f, 0f);
-                    break;
-                case Richtung.Unten:
-                    rot = Quaternion.Euler(0f, 0f, 180f);
-                    break;
-                case Richtung.Rechts:
-                    rot = Quaternion.Euler(0f, 0f, -90f);
-                    break;
-                case Richtung.Links:
-                    rot = Quaternion.Euler(0f, 0f, 90f);
-                    break;
-            }
-            stan = Renderer.Instantiate(stanley, resetPunkt.transform.position, rot, spielfeld.transform);
-            stan.GetComponent<Stanley>().richtung = resetRichtung;
-            stan.SetActive(true);
-        }
+        StartCoroutine(Kollision());
+        
     }
     /// <summary>
     /// Versetze den Spieler
@@ -129,6 +105,15 @@ public class LevelManager : MonoBehaviour
         stan.SetActive(true);
     }
     /// <summary>
+    /// Versetze den Spieler
+    /// </summary>
+    /// <param name="newPos">Neue Position</param>
+    /// <param name="newRichtung">Neue Richtung</param>
+    public void Tunneln(Vector3 newPos, Richtung newRichtung)
+    {
+        StartCoroutine(LochBewegung(newPos, newRichtung));
+    }
+    /// <summary>
     /// Übergang zur nächsten Seite
     /// </summary>
     public void Seitenwechsel()
@@ -139,16 +124,92 @@ public class LevelManager : MonoBehaviour
         zeitBonus.TriggerEvent();
 
     }
-    IEnumerator LoadAsync(int buildIndex)
+    IEnumerator LoadAsyncReset(int buildIndex)
     {
-        UnityEngine.AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(buildIndex);
-        asyncLoad.allowSceneActivation = false;
-        Time.timeScale = 1.0f;
+        //UnityEngine.AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(buildIndex);
+        //asyncLoad.allowSceneActivation = false;
+        
         yield return new WaitForSeconds(4.33f);
-        asyncLoad.allowSceneActivation = true;
-        while (!asyncLoad.isDone)
+        Time.timeScale = 0.0f;
+        SceneManager.LoadScene(buildIndex);
+        //asyncLoad.allowSceneActivation = true;
+        //while (!asyncLoad.isDone)
+        //{            
+        //    yield return null;
+        //}
+    }
+
+    IEnumerator LoadAsyncNextLevel(int buildIndex)
+    {
+        //UnityEngine.AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(buildIndex);
+        //asyncLoad.allowSceneActivation = false;
+        
+        yield return new WaitForSeconds(2f);
+        Time.timeScale = 0.0f;
+        SceneManager.LoadScene(buildIndex);
+        //asyncLoad.allowSceneActivation = true;
+        //while (!asyncLoad.isDone)
+        //{
+        //    yield return null;
+        //}
+    }
+
+    IEnumerator LochBewegung(Vector3 newPos, Richtung newRichtung)
+    {
+        yield return new WaitForSeconds(2);
+        Renderer.Destroy(stan); //Lösche alte Spielerfigur
+        Quaternion rot = Quaternion.identity;
+        switch (newRichtung)
         {
-            yield return null;
+            case Richtung.Oben:
+                rot = Quaternion.Euler(0f, 0f, 0f);
+                break;
+            case Richtung.Unten:
+                rot = Quaternion.Euler(0f, 0f, 180f);
+                break;
+            case Richtung.Rechts:
+                rot = Quaternion.Euler(0f, 0f, -90f);
+                break;
+            case Richtung.Links:
+                rot = Quaternion.Euler(0f, 0f, 90f);
+                break;
+        }
+        //Erzeuge neue Spielerfigur
+        stan = Renderer.Instantiate(stanley, newPos, rot, spielfeld.transform);
+        stan.GetComponent<Stanley>().richtung = newRichtung;
+        stan.SetActive(true);
+
+    }
+    IEnumerator Kollision()
+    { 
+        yield return new WaitForSeconds(1.5f);
+        Quaternion rot = Quaternion.identity;
+        Renderer.Destroy(stan);
+        if (!zweiteSeiteerreicht)
+        {
+            stan = Renderer.Instantiate(stanley, spielfeld.transform);
+            stan.SetActive(true);
+        }
+        else if (zweiteSeiteerreicht)
+        {
+            switch (resetRichtung)
+            {
+                case Richtung.Oben:
+                    rot = Quaternion.Euler(0f, 0f, 0f);
+                    break;
+                case Richtung.Unten:
+                    rot = Quaternion.Euler(0f, 0f, 180f);
+                    break;
+                case Richtung.Rechts:
+                    rot = Quaternion.Euler(0f, 0f, -90f);
+                    break;
+                case Richtung.Links:
+                    rot = Quaternion.Euler(0f, 0f, 90f);
+                    break;
+            }
+            stan = Renderer.Instantiate(stanley, resetPunkt.transform.position, rot, spielfeld.transform);
+            stan.GetComponent<Stanley>().richtung = resetRichtung;
+            stan.SetActive(true);
         }
     }
 }

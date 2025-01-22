@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8751950774879852382}
   - component: {fileID: 6884839094063218706}
   - component: {fileID: 8066140980565838725}
+  - component: {fileID: 8208271569269684918}
   m_Layer: 5
   m_Name: LevelManager
   m_TagString: Untagged
@@ -61,6 +62,7 @@ MonoBehaviour:
   uI: {fileID: 0}
   actions: {fileID: -944628639613478452, guid: b44b58f16488fda448b3d0d642175356, type: 3}
   levelEnter: {fileID: 11400000, guid: 4aa193d9727e04a44879c3a56a15f675, type: 2}
+  startPopUp: {fileID: 0}
 --- !u!114 &1769267598626589567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,6 +78,8 @@ MonoBehaviour:
   stanley: {fileID: 0}
   spielfeld: {fileID: 0}
   resetPunkt: {fileID: 0}
+  zielwort1: {fileID: 0}
+  zielwort2: {fileID: 0}
   resetRichtung: 0
   seite1: {fileID: 11400000, guid: 0f7e51daecbcf7741a299cae02c31aea, type: 2}
   seite2: {fileID: 11400000, guid: b2fb7899358ab684fbd2c5d3b8d0ef92, type: 2}
@@ -241,6 +245,34 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: Seitenwechsel
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8208271569269684918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5946303490111997158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2575343826e1a8e4da3770a1499f9ab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posEvent: {fileID: 11400000, guid: 3598e53d1529ddc47a304a0c55100b23, type: 2}
+  onEventTriggeredPos:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1769267598626589567}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: Tunneln
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
