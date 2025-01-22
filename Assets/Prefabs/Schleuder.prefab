@@ -110,7 +110,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6a65174eebc80a047b137ab2c71b98b2, type: 3}
-  m_Color: {r: 0, g: 0.6792453, b: 0.023973322, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -179,6 +179,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zielpunkt: {fileID: 2587217306271785281}
   sprung: {fileID: 11400000, guid: d4ac4c038a8f45e4880981c0f0e58337, type: 2}
+  tunneln: {fileID: 0}
+  richtung: 0
+  istLoch: 0
 --- !u!114 &9071112774981877307
 MonoBehaviour:
   m_ObjectHideFlags: 0
