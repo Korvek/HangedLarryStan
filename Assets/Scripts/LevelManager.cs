@@ -17,6 +17,7 @@ public class LevelManager : MonoBehaviour
     public GameEvent seite1;
     public GameEvent seite2;
     public GameEvent zeitBonus;
+    public GameEvent stanEintritt;
     [SerializeField] BackgroundFader backgroundFader;
     private GameObject stan;
 
@@ -163,7 +164,9 @@ public class LevelManager : MonoBehaviour
         //Erzeuge neue Spielerfigur
         stan = Renderer.Instantiate(stanley, newPos, rot, spielfeld.transform);
         stan.GetComponent<Stanley>().richtung = newRichtung;
+        stan.GetComponent<SpriteRenderer>().enabled = false;
         stan.SetActive(true);
+        stanEintritt.TriggerEvent();
 
     }
     IEnumerator Kollision()
