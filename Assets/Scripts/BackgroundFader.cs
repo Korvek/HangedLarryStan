@@ -38,6 +38,7 @@ public class BackgroundFader : MonoBehaviour
 
     public void Init()
     {
+        actions.FindActionMap("Player").Disable();
         initialImageColor = new List<Color>(); 
         initialSpriteColor = new List<Color>();
         //Finde alle Spriterenderer des Spielfelds
@@ -115,7 +116,6 @@ public class BackgroundFader : MonoBehaviour
                     initialImageColor[i].b,
                     Mathf.Lerp(0f, initialImageColor[i].a, t)));
             }
-            
             // Interpoliere die Farbe für alle UI-Elemente
             for (int i = 0; i < spriteRenderers.Count; i++)
             {
