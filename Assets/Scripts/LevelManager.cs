@@ -110,6 +110,7 @@ public class LevelManager : MonoBehaviour
         //Erzeuge neue Spielerfigur
         stan = Renderer.Instantiate(stanley, newPos, rot, spielfeld.transform);
         stan.GetComponent<Stanley>().richtung = newRichtung;
+        stan.GetComponent<SpriteRenderer>().enabled = true;
         stan.SetActive(true);
     }
     /// <summary>
