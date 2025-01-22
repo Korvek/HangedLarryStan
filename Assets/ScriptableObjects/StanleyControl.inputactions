@@ -311,6 +311,17 @@
                 },
                 {
                     "name": "",
+                    "id": "36f81ed5-2e11-4322-a406-68c2e75b572e",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FadeInAktion",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "90e08bca-c4b3-4dbf-85a3-03b0711aad43",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -352,6 +363,17 @@
                     "action": "CameraMoveAktion",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "6ff44db2-ff4f-4946-aca8-e44c49ca0179",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CameraMoveAktion",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
