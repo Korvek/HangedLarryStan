@@ -244,13 +244,11 @@ public class Stanley : MonoBehaviour
     }
     public void EintrittStart()
     {
-        Debug.Log("A");
         GetComponent<SpriteRenderer>().enabled = false;
         StanleyEintritt.SetActive(true);
     }
     public void EintrittEnde()
     {
-        Debug.Log("NO");
         GetComponent<SpriteRenderer>().enabled = true;
         StanleyEintritt.SetActive(false);
     }

@@ -183,7 +183,9 @@ public class LevelManager : MonoBehaviour
         if (!zweiteSeiteerreicht)
         {
             stan = Renderer.Instantiate(stanley, spielfeld.transform);
+            stan.GetComponent<SpriteRenderer>().enabled = false;
             stan.SetActive(true);
+            stanEintritt.TriggerEvent();
         }
         else if (zweiteSeiteerreicht)
         {
@@ -204,7 +206,9 @@ public class LevelManager : MonoBehaviour
             }
             stan = Renderer.Instantiate(stanley, resetPunkt.transform.position, rot, spielfeld.transform);
             stan.GetComponent<Stanley>().richtung = resetRichtung;
+            stan.GetComponent<SpriteRenderer>().enabled = false;
             stan.SetActive(true);
+            stanEintritt.TriggerEvent();
         }
     }
 }
