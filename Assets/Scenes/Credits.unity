@@ -367,7 +367,6 @@ GameObject:
   - component: {fileID: 785468798}
   - component: {fileID: 785468800}
   - component: {fileID: 785468799}
-  - component: {fileID: 785468801}
   m_Layer: 5
   m_Name: Beteiligte
   m_TagString: Untagged
@@ -492,27 +491,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785468797}
   m_CullTransparentMesh: 1
---- !u!95 &785468801
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 785468797}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e74a38e64585b694d82b34e0aa646d79, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &957572508
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,7 +961,6 @@ GameObject:
   - component: {fileID: 1649046324}
   - component: {fileID: 1649046327}
   - component: {fileID: 1649046326}
-  - component: {fileID: 1649046325}
   m_Layer: 5
   m_Name: Bedankte
   m_TagString: Untagged
@@ -1010,27 +987,6 @@ RectTransform:
   m_AnchoredPosition: {x: 409, y: 104}
   m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &1649046325
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1649046323}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e74a38e64585b694d82b34e0aa646d79, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1649046326
 MonoBehaviour:
   m_ObjectHideFlags: 0
