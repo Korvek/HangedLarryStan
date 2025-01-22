@@ -68,9 +68,8 @@ public class Timer : MonoBehaviour
             }
             else
             {
-                zeitAbgelaufenEvent.TriggerEvent();
-                
-                
+                timerAktiviert = false;
+                zeitAbgelaufenEvent.TriggerEvent();                
             }
         }
     }
@@ -98,6 +97,10 @@ public class Timer : MonoBehaviour
     public void Zeitbonus()
     {
         abgelaufeneZeit -= bonusZeit;
+    }
+    public void Zeitbonus(float bonus)
+    {
+        abgelaufeneZeit -= bonus;
     }
 
     private void OnEnable()

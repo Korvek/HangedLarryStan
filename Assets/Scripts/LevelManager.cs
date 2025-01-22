@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     public GameObject resetPunkt;
     public GameObject zielwort1;
     public GameObject zielwort2;
+    public GameObject video;
     public Richtung resetRichtung;
     public GameEvent seite1;
     public GameEvent seite2;
@@ -33,7 +34,7 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void NextLevel()
     {
-        if (SceneManager.GetActiveScene().buildIndex >= 4)
+        if (SceneManager.GetActiveScene().buildIndex >= 5)
         {
             StartCoroutine(LoadAsyncNextLevel(0));
             //SceneManager.LoadScene(0);
@@ -127,32 +128,16 @@ public class LevelManager : MonoBehaviour
     }
     IEnumerator LoadAsyncReset(int buildIndex)
     {
-        //UnityEngine.AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(buildIndex);
-        //asyncLoad.allowSceneActivation = false;
-        
         yield return new WaitForSeconds(4.33f);
         Time.timeScale = 0.0f;
         SceneManager.LoadScene(buildIndex);
-        //asyncLoad.allowSceneActivation = true;
-        //while (!asyncLoad.isDone)
-        //{            
-        //    yield return null;
-        //}
     }
 
     IEnumerator LoadAsyncNextLevel(int buildIndex)
     {
-        //UnityEngine.AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(buildIndex);
-        //asyncLoad.allowSceneActivation = false;
-        
         yield return new WaitForSeconds(2f);
         Time.timeScale = 0.0f;
         SceneManager.LoadScene(buildIndex);
-        //asyncLoad.allowSceneActivation = true;
-        //while (!asyncLoad.isDone)
-        //{
-        //    yield return null;
-        //}
     }
 
     IEnumerator LochBewegung(Vector3 newPos, Richtung newRichtung)
