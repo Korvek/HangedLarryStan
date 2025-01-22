@@ -23,7 +23,6 @@ public class Ausgang : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         //Wenn der Spieler das Element betritt
         if (collision.CompareTag("Player"))
         {

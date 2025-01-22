@@ -68,9 +68,8 @@ public class Timer : MonoBehaviour
             }
             else
             {
-                zeitAbgelaufenEvent.TriggerEvent();
-                
-                
+                timerAktiviert = false;
+                zeitAbgelaufenEvent.TriggerEvent();                
             }
         }
     }
