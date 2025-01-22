@@ -587,6 +587,14 @@ PrefabInstance:
       propertyPath: richtung
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7077104606648099414, guid: 1f8805e022396ba4186a80582d46402e, type: 3}
+      propertyPath: m_Size.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7077104606648099414, guid: 1f8805e022396ba4186a80582d46402e, type: 3}
+      propertyPath: m_Size.y
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7199484206925633582, guid: 1f8805e022396ba4186a80582d46402e, type: 3}
       propertyPath: m_Color.b
       value: 1
