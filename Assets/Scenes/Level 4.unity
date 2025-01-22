@@ -1233,6 +1233,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stan_Schloss Level 1.2.1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5011272116725794165, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: schloss2
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5699745669967361545, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 168.8
@@ -5486,6 +5490,10 @@ PrefabInstance:
     - target: {fileID: 5699745669967361545, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699745669967361545, guid: 8ce92ba4e978e764c8d24de12f41bd4c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
