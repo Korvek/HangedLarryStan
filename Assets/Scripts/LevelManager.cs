@@ -33,7 +33,7 @@ public class LevelManager : MonoBehaviour
     /// </summary>
     public void NextLevel()
     {
-        if (SceneManager.GetActiveScene().buildIndex >= 4)
+        if (SceneManager.GetActiveScene().buildIndex >= 5)
         {
             StartCoroutine(LoadAsyncNextLevel(0));
             //SceneManager.LoadScene(0);
