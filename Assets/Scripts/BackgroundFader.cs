@@ -129,6 +129,7 @@ public class BackgroundFader : MonoBehaviour
             yield return new WaitForEndOfFrame(); // Warte bis zum nächsten Frame
         }
         stanleyEnter.TriggerEvent();
+        yield return new WaitForSeconds(1.2f);
         actions.FindActionMap("Player").Enable();
         if (startPopUp != null)
             startPopUp.SetActive(true);
